@@ -816,8 +816,7 @@ $("ppBtn").innerHTML = ICON_PLAY;
 $("menu").addEventListener("click", e => {
   const b = e.target.closest(".mi"); if (!b || b.dataset.tab === tab) return;
   tab = b.dataset.tab; lsSet("nr.tab", tab); renderList(true);
-  // already listening: switch the broadcast to the category just picked
-  if (player.isPlaying() && visible().length) { playUnheard(); toast(`开始播报「${tabLabel(tab)}」`); }
+  // while something is playing, switching category only browses; it doesn't interrupt
 });
 $("list").addEventListener("click", e => {
   if (e.target.closest("#clearHeard")) { played = {}; savePlayed(); renderList(true); toast("已清空收听记录"); return; }
