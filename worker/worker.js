@@ -20,9 +20,11 @@ const STATIC = {
   "/icon-512.png": ["icon-512.png", "image/png", 86400],
 };
 const CATS = ["ai", "econ", "stock", "tech", "robot", "ent", "travel", "general"];
-const AUDIO_VERSION = "v2";
+const AUDIO_VERSION = "v3";
 
 export default {
+  // Cron trigger: turn new news into speech ahead of time, so play starts at once.
+  async scheduled(event, env, ctx) { ctx.waitUntil(pregen(env, 36)); },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const p = url.pathname;
@@ -36,6 +38,7 @@ export default {
       if (request.method === "GET" && p === "/api/news") {
         const [newsR, meta, sources] = await Promise.all([gh("data/news.json", 60), ghJSON("data/meta.json", {}), loadSources(env)]);
         const newsText = newsR.ok ? await newsR.text() : "[]";
+        if (env.AI) ctx.waitUntil(pregen(env, 12).catch(() => {}));   // someone is listening: get the next clips ready
         const body = `{"news":${newsText},"sources":${JSON.stringify(sources)},"meta":${JSON.stringify({ ...meta, voice: !!env.AI })}}`;
         return new Response(body, { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
       }
@@ -86,35 +89,84 @@ async function audio(request, env, ctx, url) {
   const intro = Math.max(0, Math.min(999, parseInt(url.searchParams.get("intro") || "0", 10) || 0));
   if (!/^[\w.-]{1,120}$/.test(id)) return json({ error: "bad_id" }, 400);
 
-  const key = `a:${AUDIO_VERSION}:${id}:${mode}:${lead ? 1 : 0}:${intro}`;
-  const cached = await env.NEWS_KV.get(key, "arrayBuffer");
-  if (cached) return wav(cached, request);
-
-  const news = await ghJSON("data/news.json", []);
-  const n = news.find(x => x.id === id);
-  if (!n) return json({ error: "not_found" }, 404);
-
-  // Speak the opener, the title and the body as separate clips, then join them
-  // with real silence so each sentence has room to land.
-  const segs = speechSegments(n, mode, lead, intro);
+  // The news clip is made once (usually ahead of time by pregen) and reused;
+  // the short opener ("下一条" / "为你播报N条新闻") is its own cached clip.
+  const corePromise = (async () => {
+    const hit = await env.NEWS_KV.get(coreKey(id, mode), "arrayBuffer");
+    if (hit) return decodeWav(hit);
+    const news = await ghJSON("data/news.json", []);
+    const n = news.find(x => x.id === id);
+    if (!n) return null;
+    return makeClip(env, ctx, coreKey(id, mode), speechSegments(n, mode));
+  })();
+  const openText = intro ? `为你播报${intro}条新闻。` : lead ? "下一条。" : "";
+  const openKey = intro ? `a:${AUDIO_VERSION}:_intro:${intro}` : `a:${AUDIO_VERSION}:_next`;
+  const openPromise = openText ? cachedClip(env, ctx, openKey, [{ text: openText, gap: intro ? 600 : 500 }], 30 * 86400) : null;
+  const [core, open] = await Promise.all([corePromise, openPromise]);
+  if (!core) return json({ error: "not_found" }, 404);
+  const parts = open && open.rate === core.rate ? [open.samples, core.samples] : [core.samples];
+  return wav(encodeWav(parts, core.rate), request);
+}
+const coreKey = (id, mode) => `a:${AUDIO_VERSION}:${id}:${mode}`;
+async function cachedClip(env, ctx, key, segs, ttl) {
+  const hit = await env.NEWS_KV.get(key, "arrayBuffer");
+  return hit ? decodeWav(hit) : makeClip(env, ctx, key, segs, ttl);
+}
+/* Speak each piece separately and join them with real silence, then cache the WAV. */
+async function makeClip(env, ctx, key, segs, ttl = 3 * 86400) {
   const pcm = await mapLimit(segs, 4, s => tts(env, s.text).then(decodeWav));
-  const rate = pcm.find(Boolean)?.rate || 22050;
+  const rate = pcm.find(Boolean).rate;
   const chunks = [];
-  segs.forEach((s, i) => { if (pcm[i]) { chunks.push(pcm[i].samples); chunks.push(silence(rate, s.gap)); } });
-  const out = encodeWav(chunks, rate);
-  ctx.waitUntil(env.NEWS_KV.put(key, out, { expirationTtl: 3 * 86400 }));
-  return wav(out, request);
+  segs.forEach((s, i) => { if (pcm[i] && pcm[i].rate === rate) { chunks.push(pcm[i].samples); chunks.push(silence(rate, s.gap)); } });
+  const buf = encodeWav(chunks, rate);
+  const put = env.NEWS_KV.put(key, buf, { expirationTtl: ttl });
+  if (ctx) ctx.waitUntil(put); else await put;
+  return { rate, samples: concat(chunks) };
+}
+function concat(chunks) {
+  const out = new Int16Array(chunks.reduce((s, c) => s + c.length, 0)); let o = 0;
+  for (const c of chunks) { out.set(c, o); o += c.length; }
+  return out;
 }
 
-/* Opener / title / body pieces, each with the pause (ms) that follows it. */
-function speechSegments(n, mode, lead, intro) {
+/* Make speech for today's news ahead of time: short versions first, then detailed ones.
+   `budget` caps the number of text-to-speech calls in one run. */
+async function pregen(env, budget) {
+  if (!env.AI || !env.NEWS_KV) return;
+  const news = await ghJSON("data/news.json", []);
+  const since = Date.now() - 48 * 3600e3;
+  const fresh = news.filter(n => !(Date.parse(n.publishedAt) < since));
+  const doneList = (await env.NEWS_KV.get(`pregen_${AUDIO_VERSION}`, "json")) || [];
+  const done = new Set(doneList);
+  let calls = 0, made = 0, changed = false;
+  outer: for (const mode of ["brief", "detail"]) {
+    for (const n of fresh) {
+      const k = `${n.id}:${mode}`;
+      if (done.has(k)) continue;
+      if (mode === "detail" && !n.detail) { done.add(k); changed = true; continue; }
+      const segs = speechSegments(n, mode);
+      if (calls + segs.length > budget) break outer;
+      calls += segs.length;
+      try {
+        if (!(await env.NEWS_KV.get(coreKey(n.id, mode), "arrayBuffer"))) { await makeClip(env, null, coreKey(n.id, mode), segs); made++; }
+        done.add(k); changed = true;
+      } catch {}
+    }
+  }
+  if (changed) {
+    const live = new Set(fresh.map(n => n.id));
+    await env.NEWS_KV.put(`pregen_${AUDIO_VERSION}`, JSON.stringify([...done].filter(k => live.has(k.slice(0, k.lastIndexOf(":"))))));
+  }
+  return { made, calls };
+}
+
+/* Title and body pieces, each with the pause (ms) that follows it. */
+function speechSegments(n, mode) {
   const segs = [];
-  if (intro) segs.push({ text: `为你播报${intro}条新闻。`, gap: 600 });
-  else if (lead) segs.push({ text: "下一条。", gap: 500 });
-  const t = speechText(n, "title", false, 0);
+  const t = speechText(n, "title");
   segs.push({ text: t, gap: mode === "title" ? 1200 : 800 });
   if (mode !== "title") {
-    const body = speechText(n, mode, false, 0).slice(t.length);
+    const body = speechText(n, mode).slice(t.length);
     for (const piece of splitForTTS(body, 90)) segs.push({ text: piece, gap: 450 });
     segs[segs.length - 1].gap = 1200;
   }

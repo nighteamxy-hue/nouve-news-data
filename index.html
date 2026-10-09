@@ -641,6 +641,20 @@ au.preload = "auto"; au.setAttribute("playsinline", ""); au.preservesPitch = tru
 let audioOK = true;   // flips to false if the AI voice fails, for the rest of the visit
 const useAudio = () => audioOK && meta.voice === true;
 const audioURL = (n, lead, introN) => `/api/audio?id=${encodeURIComponent(n.id)}&mode=${prefs.mode}&lead=${lead ? 1 : 0}&intro=${introN || 0}`;
+/* Download the next clips while the current one plays, so switching is instant. */
+const preload = new Map();   // url -> { blob: object URL or null }
+function preloadAudio(url){
+  if (preload.has(url)) return;
+  const e = { blob: null };
+  preload.set(url, e);
+  fetch(url).then(r => r.ok ? r.blob() : null).then(b => { if (b && b.size > 2000) e.blob = URL.createObjectURL(b); }).catch(() => {});
+  while (preload.size > 6) {
+    const [k, v] = preload.entries().next().value;
+    if (v.blob && au.src === v.blob) break;
+    if (v.blob) URL.revokeObjectURL(v.blob);
+    preload.delete(k);
+  }
+}
 
 const player = (() => {
   let queue = [], idx = -1, playing = false, tok = 0, intro = "", introN = 0, loading = false;
@@ -680,13 +694,15 @@ const player = (() => {
     if (useAudio()) {
       keepAwake(false);                       // let the screen turn off — audio keeps going
       loading = true; ui(); scrollToCurrent();
-      au.src = audioURL(n, !isFirst && lead, isFirst ? introN : 0);
+      const url = audioURL(n, !isFirst && lead, isFirst ? introN : 0);
+      const ready = preload.get(url);
+      au.src = (ready && ready.blob) || url;
       introN = 0; intro = "";
       au.playbackRate = prefs.rate;
       const p = au.play();
       if (p && p.catch) p.catch(err => { if (err && err.name === "NotAllowedError") { playing = false; loading = false; ui(); toast("点一下 ▶ 开始播放"); } });
       // warm up the next clip so the switch is instant
-      const nx = queue[i + 1]; if (nx) fetch(audioURL(nx, true, 0)).catch(() => {});
+      for (const nx of queue.slice(i + 1, i + 3)) preloadAudio(audioURL(nx, true, 0));
       return;
     }
     speakWithPhone(n, lead && !isFirst);
