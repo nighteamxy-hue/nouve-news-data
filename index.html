@@ -24,7 +24,7 @@
   --bg:#F3F4F6; --surface:#FFFFFF; --surface-2:#F8F9FB; --ink:#12161C; --muted:#69707C; --line:#E3E6EB;
   --accent:#0B7A73; --accent-soft:#DDF0EE; --onair:#E5484D;
   --studio:#12161C; --studio-ink:#F2F4F7; --studio-muted:#9AA3AF;
-  --c-ai:#6E56CF; --c-econ:#12A594; --c-tech:#3E63DD; --c-robot:#E5701B; --c-ent:#D6409F; --c-travel:#0894B3; --c-general:#8B8D98; --c-watch:#E5484D;
+  --c-ai:#6E56CF; --c-econ:#12A594; --c-stock:#D1352B; --c-tech:#3E63DD; --c-robot:#E5701B; --c-ent:#D6409F; --c-travel:#0894B3; --c-general:#8B8D98; --c-watch:#E5484D;
   --shadow:0 1px 2px rgba(18,22,28,.04),0 4px 14px rgba(18,22,28,.05);
   --f-display:"Noto Serif SC","Songti SC","STSong",serif;
   --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
@@ -37,7 +37,7 @@
   --bg:#0A0E13; --surface:#141A21; --surface-2:#10151B; --ink:#ECEFF3; --muted:#8C96A3; --line:#232B34;
   --accent:#3DBAB0; --accent-soft:#12302E; --onair:#FF6369;
   --studio:#171E26; --studio-ink:#F2F4F7; --studio-muted:#97A1AE;
-  --c-ai:#9B8AFB; --c-econ:#3DD6B5; --c-tech:#7C9BFF; --c-robot:#FF9A4D; --c-ent:#F27BC4; --c-travel:#4CC9E6; --c-general:#A3A6B3; --c-watch:#FF6369;
+  --c-ai:#9B8AFB; --c-econ:#3DD6B5; --c-stock:#FF7B72; --c-tech:#7C9BFF; --c-robot:#FF9A4D; --c-ent:#F27BC4; --c-travel:#4CC9E6; --c-general:#A3A6B3; --c-watch:#FF6369;
   --shadow:0 1px 0 rgba(255,255,255,.03);
   color-scheme:dark}}
 
@@ -76,8 +76,8 @@ button{cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-se
 .btn-ghost{height:52px;padding:0 16px;border-radius:16px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--studio-ink);font-weight:500;font-size:14px}
 
 /* ---------- category tiles ---------- */
-.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}
-.mi{--c:var(--c-general);position:relative;min-height:82px;border:1px solid var(--line);background:var(--surface);border-radius:18px;
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mi{--c:var(--c-general);position:relative;min-height:84px;border:1px solid var(--line);background:var(--surface);border-radius:18px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px 4px;box-shadow:var(--shadow);
   transition:background .25s var(--ease),border-color .25s var(--ease),transform .18s var(--ease)}
 .mi:active{transform:scale(.95)}
@@ -354,11 +354,12 @@ section.blk h3{margin:0 0 4px;font-size:16px}
 
 <script>
 (() => {
-const CAT = {ai:"AI", econ:"经济", tech:"科技", robot:"机器人", ent:"娱乐", travel:"文旅", general:"综合"};
+const CAT = {ai:"AI", econ:"经济", stock:"股市", tech:"科技", robot:"机器人", ent:"娱乐", travel:"文旅", general:"综合"};
 const ICONS = {
   mine:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>',
   ai:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/><circle cx="19" cy="19" r="2"/></svg>',
   econ:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
+  stock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v4M6 15v6M12 6v3M12 17v4M18 2v6M18 14v3"/><rect x="4" y="7" width="4" height="8" rx="1"/><rect x="10" y="9" width="4" height="8" rx="1" fill="currentColor"/><rect x="16" y="8" width="4" height="6" rx="1"/></svg>',
   tech:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg>',
   robot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3" r="1.2" fill="currentColor"/><circle cx="9" cy="14" r="1.3" fill="currentColor"/><circle cx="15" cy="14" r="1.3" fill="currentColor"/></svg>',
   ent:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 3l5 3 5-3"/></svg>',
@@ -372,7 +373,7 @@ const RATES = [1, 1.1, 1.25, 1.5, 1.75];
 const IS_IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const realRate = r => IS_IOS ? (r <= 1 ? r * 0.95 : 0.95 + (r - 1) * 0.6) : r;
 const MODES = [["brief","简要"],["detail","完整总结"],["title","只读标题"]];
-const DEFAULT_PREFS = {categories:["ai","econ","tech","robot","ent","travel","general"], keywords:[], rate:1.25, mode:"brief"};
+const DEFAULT_PREFS = {categories:["ai","econ","stock","tech","robot","ent","travel","general"], keywords:[], rate:1.25, mode:"brief"};
 const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>';
 const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
 
@@ -386,6 +387,10 @@ let news = [], sources = [], meta = {};
 let prefs = (() => { try { return {...DEFAULT_PREFS, ...JSON.parse(lsGet("nr.prefs") || "{}")}; } catch { return {...DEFAULT_PREFS}; } })();
 if (!RATES.includes(prefs.rate)) prefs.rate = 1.25;
 if (!MODES.some(m => m[0] === prefs.mode)) prefs.mode = "brief";
+// one-time: turn on the new 股市 category for phones that saved settings before it existed
+if (!prefs.seenStock) { if (!prefs.categories.includes("stock")) prefs.categories.push("stock"); prefs.seenStock = true; lsSet("nr.prefs", JSON.stringify(prefs)); }
+// only today's and yesterday's news (local time)
+const freshSince = () => { const d = new Date(); d.setHours(0,0,0,0); d.setDate(d.getDate() - 1); return d.getTime(); };
 let tab = lsGet("nr.tab") || "mine";
 let loaded = false, loadError = false, openId = null, lastSig = "";
 const token = () => lsGet("nr.token") || "";
@@ -415,7 +420,9 @@ async function api(path, opts = {}){
 async function load(){
   try {
     const d = await api("/api/news");
-    news = d.news || []; sources = d.sources || []; meta = d.meta || {};
+    const since = freshSince();
+    news = (d.news || []).filter(n => (Date.parse(n.publishedAt || n.fetchedAt) || 0) >= since);
+    sources = d.sources || []; meta = d.meta || {};
     loaded = true; loadError = false;
   } catch { loaded = true; loadError = !news.length; }
   const sig = news.length + "|" + (news[0] && news[0].id) + "|" + meta.lastScanAt;

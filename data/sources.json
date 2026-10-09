@@ -165,7 +165,7 @@
   "id": "us-benzinga",
   "name": "Benzinga",
   "region": "us",
-  "category": "econ",
+  "category": "stock",
   "url": "https://www.benzinga.com/news",
   "enabled": true,
   "builtin": true
@@ -212,6 +212,24 @@
   "region": "us",
   "category": "tech",
   "url": "https://spectrum.ieee.org/feeds/feed.rss",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-eastmoney",
+  "name": "东方财富 股市",
+  "region": "cn",
+  "category": "stock",
+  "url": "https://finance.eastmoney.com/a/czqyw.html",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-hk-finance",
+  "name": "한국경제 증권",
+  "region": "kr",
+  "category": "stock",
+  "url": "https://www.hankyung.com/feed/finance",
   "enabled": true,
   "builtin": true
  }
