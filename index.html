@@ -311,6 +311,7 @@ section.blk h3{margin:0 0 4px;font-size:16px}
         <div class="seg" id="modeSeg"></div>
         <div class="lbl">声音</div>
         <select class="field" id="voiceSel" style="width:100%"></select>
+        <p class="hint" style="margin:10px 0 0">听不清时：在 iPhone 的 设置 → 辅助功能 → 朗读内容 → 声音 → 中文 里，下载带「增强」或「优化」字样的中文声音，再回到这里选它，会清楚很多。</p>
       </section>
 
       <section class="blk">
@@ -365,7 +366,11 @@ const ICONS = {
   general:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>',
   watch:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>'
 };
-const RATES = [1, 1.25, 1.5, 1.75, 2];
+const RATES = [1, 1.1, 1.25, 1.5, 1.75];
+// iPhone/iPad voices speak noticeably faster than desktop at the same rate value,
+// so the shown speed is mapped to a gentler real rate there (1.25× shown ≈ 1.1 real).
+const IS_IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const realRate = r => IS_IOS ? (r <= 1 ? r * 0.95 : 0.95 + (r - 1) * 0.6) : r;
 const MODES = [["brief","简要"],["detail","完整总结"],["title","只读标题"]];
 const DEFAULT_PREFS = {categories:["ai","econ","tech","robot","ent","travel","general"], keywords:[], rate:1.25, mode:"brief"};
 const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>';
@@ -572,12 +577,14 @@ function pickVoice(){
   return (saved && voices.find(v => v.voiceURI===saved)) || voices.find(v => /zh[-_]CN/i.test(v.lang)) || voices.find(v => /^zh/i.test(v.lang)) || null;
 }
 if (synth) { loadVoices(); synth.onvoiceschanged = loadVoices; }
+// One sentence per utterance: short pieces give natural pauses (clearer at higher speed)
+// and let a speed change take effect from the very next sentence without restarting.
 function chunk(text){
-  const parts = String(text).replace(/\s+/g," ").split(/(?<=[。！？；!?;])/);
-  const out = []; let buf = "";
-  for (const p of parts) { if ((buf+p).length > 110 && buf) { out.push(buf); buf = p; } else buf += p; }
-  if (buf.trim()) out.push(buf);
-  return out.flatMap(s => s.length > 160 ? (s.match(/.{1,120}(，|,|$)/g) || [s]) : [s]).filter(s => s.trim());
+  const sentences = String(text).replace(/\s+/g," ").split(/(?<=[。！？；!?;])/).map(s => s.trim()).filter(Boolean);
+  return sentences.flatMap(s => s.length > 70 ? (s.match(/[^，,、]+[，,、]?/g) || [s]).reduce((acc, p) => {
+    if (acc.length && (acc[acc.length-1] + p).length <= 70) acc[acc.length-1] += p; else acc.push(p);
+    return acc;
+  }, []) : [s]).filter(s => s.trim());
 }
 let wakeLock = null;
 async function keepAwake(on){
@@ -629,7 +636,7 @@ const player = (() => {
       if (k >= parts.length) { setTimeout(() => { if (my === tok) speakIdx(idx+1); }, 500); return; }
       const u = new SpeechSynthesisUtterance(parts[k++]);
       u.lang = v ? v.lang : "zh-CN"; if (v) u.voice = v;
-      u.rate = prefs.rate || 1.25;
+      u.rate = realRate(prefs.rate || 1.25);  // read per sentence, so speed changes apply mid-item
       u.onend = next;
       u.onerror = e => { if (my !== tok) return; if (e.error === "interrupted" || e.error === "canceled") return; next(); };
       synth.speak(u);
@@ -683,16 +690,16 @@ $("ppBtn").addEventListener("click", () => player.toggle());
 $("nextBtn").addEventListener("click", () => player.next());
 $("prevBtn").addEventListener("click", () => player.prev());
 $("lockBtn").addEventListener("click", lockOn);
-$("speedBtn").addEventListener("click", () => { const i = RATES.indexOf(prefs.rate); prefs.rate = RATES[(i+1) % RATES.length]; savePrefs(); player.restart(); player.ui(); toast("播报速度 "+prefs.rate+"×"); });
+$("speedBtn").addEventListener("click", () => { const i = RATES.indexOf(prefs.rate); prefs.rate = RATES[(i+1) % RATES.length]; savePrefs(); player.ui(); toast(player.isPlaying() ? `下一句起改为 ${prefs.rate}×` : `播报速度 ${prefs.rate}×`); });
 $("dPlay").addEventListener("click", () => { if (!openId) return; const id = openId; player.playList(visible().some(n => n.id===id) ? visible() : news, id, false); closeSheet($("detail")); });
 $("openSettings").addEventListener("click", () => { renderSettings(); openSheet($("sheet")); });
 
 $("subCats").addEventListener("change", e => { const k = e.target.dataset.sc; if (!k) return; prefs.categories = e.target.checked ? [...new Set([...prefs.categories,k])] : prefs.categories.filter(x=>x!==k); savePrefs(); });
-$("rateSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.rate = parseFloat(b.dataset.v); savePrefs(); renderSettings(); player.restart(); player.ui(); });
+$("rateSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.rate = parseFloat(b.dataset.v); savePrefs(); renderSettings(); player.ui(); });
 $("modeSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.mode = b.dataset.v; savePrefs(); renderSettings(); });
 $("kwForm").addEventListener("submit", e => { e.preventDefault(); const v = $("kwInput").value.trim(); if (!v) return; prefs.keywords = [...new Set([...(prefs.keywords||[]), ...v.split(/[,，、\s]+/).filter(Boolean)])].slice(0,40); $("kwInput").value = ""; savePrefs(); renderSettings(); });
 $("kwList").addEventListener("click", e => { const b = e.target.closest("[data-kwdel]"); if (!b) return; prefs.keywords = prefs.keywords.filter((_,i)=>i!==+b.dataset.kwdel); savePrefs(); renderSettings(); });
-$("voiceSel").addEventListener("change", e => { lsSet("nr.voice", e.target.value); player.restart(); });
+$("voiceSel").addEventListener("change", e => { lsSet("nr.voice", e.target.value); toast("下一句起换成新声音"); });
 
 $("tokenForm").addEventListener("submit", async e => {
   e.preventDefault(); const v = $("tokenInput").value.trim(); if (!v) return;
