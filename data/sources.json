@@ -232,5 +232,32 @@
   "url": "https://www.hankyung.com/feed/finance",
   "enabled": true,
   "builtin": true
+ },
+ {
+  "id": "cn-nweon",
+  "name": "映维网",
+  "region": "cn",
+  "category": "tech",
+  "url": "https://news.nweon.com/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-uploadvr",
+  "name": "UploadVR",
+  "region": "us",
+  "category": "tech",
+  "url": "https://www.uploadvr.com/rss/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-roadtovr",
+  "name": "Road to VR",
+  "region": "us",
+  "category": "tech",
+  "url": "https://www.roadtovr.com/feed/",
+  "enabled": true,
+  "builtin": true
  }
 ]
