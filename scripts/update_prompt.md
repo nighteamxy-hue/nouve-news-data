@@ -41,6 +41,6 @@ category 只能是：ai（AI）、econ（宏观经济/公司财经/产业）、s
 9. 新旧合并，按 publishedAt 从新到旧排序；删除首尔时间"昨天 0 点"之前的条目；最多 600 条。写回 data/news.json：`json.dumps(data, ensure_ascii=False, indent=0)`。
 10. 写 data/meta.json：{"lastScanAt": 当前UTC ISO, "lastScanStatus": 一句中文如"新增 23 条，2 个源失败：A、B", "intervalHours": 6}。
 11. `git add data && git commit -m "更新新闻 <UTC时间>"`（提交信息末尾加两行：`Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` 和 `Claude-Session: https://claude.ai/code/session_01KQihy8LhAk9dNTFGHfNbL1`），然后 `git pull --rebase origin main && git push origin HEAD:main`。失败等 10 秒重试一次。
-12. 用 WebFetch 打开 https://news.nouve.cn/api/log?m=<消息>（消息用 urllib.parse.quote 编码，如"更新完成 新增N条 commit xxx" 或 "推送失败 <报错前300字>"），prompt 写"原样输出"。
+12. 用 WebFetch 打开 https://news.nouve.cn/api/log?m=<消息>（消息用 urllib.parse.quote 编码，如"更新完成 新增N条 commit xxx" 或 "推送失败 <错误类型>"，错误类型只写一个简短分类，如 权限被拒403、网络错误、合并冲突，不要附报错原文或仓库地址），prompt 写"原样输出"。
 
 某个源或某篇文章失败时，记下来继续，不要停。
