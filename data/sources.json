@@ -59,7 +59,7 @@
   "region": "cn",
   "category": "robot",
   "url": "https://www.gg-robot.com/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -158,7 +158,7 @@
   "region": "us",
   "category": "econ",
   "url": "https://feeds.bloomberg.com/markets/news.rss",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {

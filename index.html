@@ -24,7 +24,7 @@
   --bg:#F3F4F6; --surface:#FFFFFF; --surface-2:#F8F9FB; --ink:#12161C; --muted:#69707C; --line:#E3E6EB;
   --accent:#0B7A73; --accent-soft:#DDF0EE; --onair:#E5484D;
   --studio:#12161C; --studio-ink:#F2F4F7; --studio-muted:#9AA3AF;
-  --c-ai:#6E56CF; --c-econ:#12A594; --c-stock:#D1352B; --c-tech:#3E63DD; --c-robot:#E5701B; --c-ent:#D6409F; --c-travel:#0894B3; --c-general:#8B8D98; --c-watch:#E5484D;
+  --c-ai:#6E56CF; --c-econ:#12A594; --c-stock:#D1352B; --c-tech:#3E63DD; --c-robot:#E5701B; --c-ent:#D6409F; --c-travel:#0894B3; --c-general:#8B8D98; --c-watch:#E5484D;--c-done:#2f9e6b;
   --shadow:0 1px 2px rgba(18,22,28,.04),0 4px 14px rgba(18,22,28,.05);
   --f-display:"Noto Serif SC","Songti SC","STSong",serif;
   --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
@@ -37,7 +37,7 @@
   --bg:#0A0E13; --surface:#141A21; --surface-2:#10151B; --ink:#ECEFF3; --muted:#8C96A3; --line:#232B34;
   --accent:#3DBAB0; --accent-soft:#12302E; --onair:#FF6369;
   --studio:#171E26; --studio-ink:#F2F4F7; --studio-muted:#97A1AE;
-  --c-ai:#9B8AFB; --c-econ:#3DD6B5; --c-stock:#FF7B72; --c-tech:#7C9BFF; --c-robot:#FF9A4D; --c-ent:#F27BC4; --c-travel:#4CC9E6; --c-general:#A3A6B3; --c-watch:#FF6369;
+  --c-ai:#9B8AFB; --c-econ:#3DD6B5; --c-stock:#FF7B72; --c-tech:#7C9BFF; --c-robot:#FF9A4D; --c-ent:#F27BC4; --c-travel:#4CC9E6; --c-general:#A3A6B3; --c-watch:#FF6369; --c-done:#4FD18E;
   --shadow:0 1px 0 rgba(255,255,255,.03);
   color-scheme:dark}}
 
@@ -113,6 +113,12 @@ button{cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-se
 @keyframes eq{0%,100%{height:3px}50%{height:12px}}
 .card.now .eq{display:inline-flex}
 .card.now.paused .eq i{animation-play-state:paused}
+.card.done{background:color-mix(in srgb,var(--c-done) 7%,var(--surface));border-color:color-mix(in srgb,var(--c-done) 35%,var(--line));box-shadow:none}
+.card.done h3{color:var(--muted);font-weight:600}
+.tag.done{color:var(--c-done);background:color-mix(in srgb,var(--c-done) 14%,transparent);border-color:transparent;font-weight:700}
+.heard{display:flex;align-items:center;gap:10px;margin:8px 2px 0;font-size:12.5px;color:var(--c-done);font-weight:700}
+.heard::before,.heard::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--c-done) 35%,transparent)}
+.heard button{border:0;background:none;color:var(--muted);font:inherit;font-weight:500;padding:6px 4px;text-decoration:underline;text-underline-offset:3px}
 .list.anim .card{animation:rise .42s var(--ease) both;animation-delay:calc(var(--i,0) * 35ms)}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 mark{background:var(--accent-soft);color:inherit;padding:0 2px;border-radius:3px}
@@ -397,6 +403,13 @@ let tab = lsGet("nr.tab") || "mine";
 let loaded = false, loadError = false, openId = null, lastSig = "";
 const token = () => lsGet("nr.token") || "";
 const savePrefs = () => lsSet("nr.prefs", JSON.stringify(prefs));
+/* News that has been played to the end: marked green, moved to the bottom, skipped by 连播. */
+let played = (() => { try { return JSON.parse(lsGet("nr.played") || "{}") || {}; } catch { return {}; } })();
+(() => { const cut = Date.now() - 4 * 86400e3; for (const k in played) if (played[k] < cut) delete played[k]; })();
+const isPlayed = n => !!played[n.id];
+const savePlayed = () => lsSet("nr.played", JSON.stringify(played));
+function markPlayed(n){ if (!n || played[n.id]) return; played[n.id] = Date.now(); savePlayed(); renderList(false); }
+const ordered = list => [...list.filter(n => !isPlayed(n)), ...list.filter(isPlayed)];
 const catColor = k => `var(--c-${k})`;
 
 const fmtTime = d => d.toLocaleString("zh-CN",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false});
@@ -444,7 +457,14 @@ function setFor(k){
   if (k === "watch") return news.filter(kwHit);
   return news.filter(n => catOf(n) === k);
 }
-const visible = () => setFor(tab);
+const visible = () => ordered(setFor(tab));
+/* 连播: start from what hasn't been heard; once everything is heard, play the whole list again. */
+function playUnheard(){
+  const v = visible(), fresh = v.filter(n => !isPlayed(n));
+  if (!v.length) return;
+  if (!fresh.length) toast("这里的新闻都听过了，从头再播一遍");
+  player.playList(fresh.length ? fresh : v, null, true);
+}
 const tabLabel = k => k === "mine" ? "全部" : k === "watch" ? "★ 关注" : CAT[k];
 function highlight(text){
   let h = esc(text);
@@ -473,7 +493,8 @@ function renderList(animate){
   const mixed = tab === "mine" || tab === "watch";
   $("secTitle").textContent = tabLabel(tab);
   $("listCount").textContent = v.length ? `${v.length} 条` : "";
-  $("playAllText").textContent = tab === "mine" ? `连播全部 · ${v.length} 条` : `连播${tabLabel(tab)} · ${v.length} 条`;
+  const unheard = v.filter(n => !isPlayed(n)).length;
+  $("playAllText").textContent = unheard && unheard < v.length ? `连播未听 · ${unheard} 条` : tab === "mine" ? `连播全部 · ${v.length} 条` : `连播${tabLabel(tab)} · ${v.length} 条`;
   $("playAll").disabled = !v.length;
   const L = $("list");
   if (!loaded) return;
@@ -485,8 +506,9 @@ function renderList(animate){
   }
   const cur = player.current(); const playing = player.isPlaying();
   L.classList.remove("anim");
-  L.innerHTML = v.map((n, i) => `
-    <button class="card${cur && cur.id===n.id ? " now" + (playing ? "" : " paused") : ""}" style="--c:${catColor(catOf(n))};--i:${Math.min(i,12)}" data-id="${esc(n.id)}">
+  const firstHeard = v.findIndex(isPlayed);
+  L.innerHTML = v.map((n, i) => `${i === firstHeard ? `<div class="heard">已听过 ${v.length - i} 条<button type="button" id="clearHeard">清空记录</button></div>` : ""}
+    <button class="card${isPlayed(n) ? " done" : ""}${cur && cur.id===n.id ? " now" + (playing ? "" : " paused") : ""}" style="--c:${catColor(catOf(n))};--i:${Math.min(i,12)}" data-id="${esc(n.id)}">
       <div class="meta">
         ${mixed ? `<span class="cat">${CAT[catOf(n)]}</span><span class="dotsep"></span>` : ""}
         <span>${esc(n.sourceName)}</span><span class="dotsep"></span>
@@ -494,7 +516,7 @@ function renderList(animate){
         <span class="eq"><i></i><i></i><i></i></span>
       </div>
       <h3>${highlight(n.title)}</h3>
-      ${(n.detail || kwHit(n)) ? `<div class="tags">${n.detail ? '<span class="tag ai">AI 总结</span>' : ""}${kwHit(n) ? '<span class="tag star">★ 关注</span>' : ""}</div>` : ""}
+      ${(n.detail || kwHit(n) || isPlayed(n)) ? `<div class="tags">${isPlayed(n) ? '<span class="tag done">✓ 已听</span>' : ""}${n.detail ? '<span class="tag ai">AI 总结</span>' : ""}${kwHit(n) ? '<span class="tag star">★ 关注</span>' : ""}</div>` : ""}
     </button>`).join("");
   if (animate && !reduced) { void L.offsetWidth; L.classList.add("anim"); }
 }
@@ -716,7 +738,7 @@ const player = (() => {
     let k = 0;
     const next = () => {
       if (my !== tok) return;
-      if (k >= segs.length) { playIdx(idx + 1); return; }
+      if (k >= segs.length) { markPlayed(current()); playIdx(idx + 1); return; }
       const seg = segs[k++];
       const v = pickVoice();
       const u = new SpeechSynthesisUtterance(seg.t);
@@ -731,7 +753,7 @@ const player = (() => {
   }
   au.addEventListener("playing", () => { loading = false; au.playbackRate = prefs.rate; ui(); });
   au.addEventListener("waiting", () => { loading = true; ui(); });
-  au.addEventListener("ended", () => { if (playing) playIdx(idx + 1); });
+  au.addEventListener("ended", () => { if (playing) { markPlayed(current()); playIdx(idx + 1); } });
   au.addEventListener("error", () => {
     if (!playing || !au.src) return;
     audioOK = false; loading = false;
@@ -753,7 +775,7 @@ const player = (() => {
     },
     toggle(){
       if (playing) { playing = false; tok++; if (synth) synth.cancel(); au.pause(); keepAwake(false); ui(); return; }
-      if (!queue.length) { api.playList(visible(), null, true); return; }
+      if (!queue.length) { playUnheard(); return; }
       if (useAudio() && au.src && !au.ended && au.currentTime > 0) { playing = true; au.playbackRate = prefs.rate; au.play().catch(() => {}); ui(); return; }  // resume where it stopped
       playIdx(Math.max(0, idx), false);
     },
@@ -791,8 +813,11 @@ hold.addEventListener("keyup", holdEnd);
 /* ---------- events ---------- */
 $("ppBtn").innerHTML = ICON_PLAY;
 $("menu").addEventListener("click", e => { const b = e.target.closest(".mi"); if (!b || b.dataset.tab === tab) return; tab = b.dataset.tab; lsSet("nr.tab", tab); renderList(true); });
-$("list").addEventListener("click", e => { const r = e.target.closest(".card"); if (r) openDetail(r.dataset.id); });
-$("playAll").addEventListener("click", () => player.playList(visible(), null, true));
+$("list").addEventListener("click", e => {
+  if (e.target.closest("#clearHeard")) { played = {}; savePlayed(); renderList(true); toast("已清空收听记录"); return; }
+  const r = e.target.closest(".card"); if (r) openDetail(r.dataset.id);
+});
+$("playAll").addEventListener("click", playUnheard);
 $("ppBtn").addEventListener("click", () => player.toggle());
 $("nextBtn").addEventListener("click", () => player.next());
 $("prevBtn").addEventListener("click", () => player.prev());
