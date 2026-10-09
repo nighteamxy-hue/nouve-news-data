@@ -41,6 +41,15 @@ export default {
       }
       if (request.method === "GET" && p === "/api/audio") return audio(request, env, ctx, url);
       if (request.method === "GET" && p === "/api/sources") return json(await loadSources(env));
+      if (request.method === "GET" && p === "/api/log") {
+        // Run log for the 6-hourly update task: ?m=<message> appends, no m reads.
+        const log = (await env.NEWS_KV.get("tasklog", "json")) || [];
+        const m = (url.searchParams.get("m") || "").slice(0, 1500);
+        if (!m) return json(log);
+        log.unshift({ at: new Date().toISOString(), m });
+        await env.NEWS_KV.put("tasklog", JSON.stringify(log.slice(0, 40)));
+        return json({ ok: true });
+      }
       if (p === "/api/check") return authorized(request, env) ? json({ ok: true }) : json({ error: "unauthorized" }, 401);
       if (request.method === "POST" && p === "/api/sources") {
         if (!authorized(request, env)) return json({ error: "unauthorized" }, 401);
