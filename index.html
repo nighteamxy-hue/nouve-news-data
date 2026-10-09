@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="定制新闻台">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#F3F4F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0E13" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="icon" href="/icon-180.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<title>定制新闻台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: phone-first. A dark "studio" hero card, a 4×2 grid of category tiles, a stack of headline cards,
+   bottom sheets for detail and settings, and a floating player dock with a touch lock. */
+:root{
+  --bg:#F3F4F6; --surface:#FFFFFF; --surface-2:#F8F9FB; --ink:#12161C; --muted:#69707C; --line:#E3E6EB;
+  --accent:#0B7A73; --accent-soft:#DDF0EE; --onair:#E5484D;
+  --studio:#12161C; --studio-ink:#F2F4F7; --studio-muted:#9AA3AF;
+  --c-ai:#6E56CF; --c-econ:#12A594; --c-tech:#3E63DD; --c-robot:#E5701B; --c-ent:#D6409F; --c-travel:#0894B3; --c-general:#8B8D98; --c-watch:#E5484D;
+  --shadow:0 1px 2px rgba(18,22,28,.04),0 4px 14px rgba(18,22,28,.05);
+  --f-display:"Noto Serif SC","Songti SC","STSong",serif;
+  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --ease:cubic-bezier(.22,.8,.24,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0A0E13; --surface:#141A21; --surface-2:#10151B; --ink:#ECEFF3; --muted:#8C96A3; --line:#232B34;
+  --accent:#3DBAB0; --accent-soft:#12302E; --onair:#FF6369;
+  --studio:#171E26; --studio-ink:#F2F4F7; --studio-muted:#97A1AE;
+  --c-ai:#9B8AFB; --c-econ:#3DD6B5; --c-tech:#7C9BFF; --c-robot:#FF9A4D; --c-ent:#F27BC4; --c-travel:#4CC9E6; --c-general:#A3A6B3; --c-watch:#FF6369;
+  --shadow:0 1px 0 rgba(255,255,255,.03);
+  color-scheme:dark}}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
+  padding-inline:max(14px,env(safe-area-inset-left,0px)) max(14px,env(safe-area-inset-right,0px));
+  padding-block:calc(var(--sat) + 10px) calc(var(--sab) + 190px);-webkit-text-size-adjust:100%}
+.wrap{max-width:680px;margin:0 auto}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+[hidden]{display:none!important}
+.press{transition:transform .18s var(--ease)}
+.press:active{transform:scale(.96)}
+
+/* ---------- studio hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--studio);color:var(--studio-ink);border-radius:26px;padding:18px 18px 18px}
+.hero::after{content:"";position:absolute;right:-60px;top:-80px;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--accent) 45%,transparent) 0%,transparent 70%);opacity:.55;pointer-events:none}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative;z-index:1}
+.chip-air{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;color:var(--studio-muted);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px 10px}
+.chip-air i{width:6px;height:6px;border-radius:50%;background:var(--studio-muted)}
+.chip-air.on{color:#fff;border-color:transparent;background:var(--onair)}
+.chip-air.on i{background:#fff;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:var(--studio-ink);display:grid;place-items:center}
+.icon-btn svg{width:20px;height:20px}
+.hero h1{position:relative;z-index:1;font-family:var(--f-display);font-weight:900;font-size:clamp(30px,8.4vw,38px);line-height:1.1;margin:16px 0 6px;letter-spacing:.04em}
+.hero .sub{position:relative;z-index:1;font-size:13px;color:var(--studio-muted)}
+.hero .sub b{color:var(--studio-ink);font-weight:500}
+.hero-actions{position:relative;z-index:1;display:flex;gap:10px;margin-top:16px}
+.btn-play{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:52px;border:0;border-radius:16px;background:var(--studio-ink);color:var(--studio);font-weight:700;font-size:16px}
+.btn-play svg{width:18px;height:18px}
+.btn-ghost{height:52px;padding:0 16px;border-radius:16px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--studio-ink);font-weight:500;font-size:14px}
+
+/* ---------- category tiles ---------- */
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}
+.mi{--c:var(--c-general);position:relative;min-height:82px;border:1px solid var(--line);background:var(--surface);border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px 4px;box-shadow:var(--shadow);
+  transition:background .25s var(--ease),border-color .25s var(--ease),transform .18s var(--ease)}
+.mi:active{transform:scale(.95)}
+.mi .ic{width:32px;height:32px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c);transition:background .25s var(--ease),color .25s var(--ease)}
+.mi .ic svg{width:18px;height:18px}
+.mi .lb{font-size:14px;font-weight:700;line-height:1}
+.mi .n{position:absolute;top:6px;right:8px;font-family:var(--f-mono);font-size:10px;color:var(--muted)}
+.mi[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.mi[aria-pressed="true"] .ic{background:rgba(255,255,255,.2);color:#fff}
+.mi[aria-pressed="true"] .n{color:rgba(255,255,255,.8)}
+
+/* ---------- list ---------- */
+.sec{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:22px 4px 10px}
+.sec h2{margin:0;font-family:var(--f-display);font-size:20px;font-weight:900}
+.sec .cnt{font-size:13px;color:var(--muted);font-family:var(--f-mono)}
+.list{display:flex;flex-direction:column;gap:10px}
+.card{--c:var(--c-general);display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:14px 16px 15px;box-shadow:var(--shadow);
+  transition:transform .18s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.card:active{transform:scale(.985)}
+.card .meta{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;font-size:12px;color:var(--muted)}
+.card .cat{display:inline-flex;align-items:center;gap:5px;font-weight:700;color:var(--c)}
+.card .cat::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.card .dotsep{width:3px;height:3px;border-radius:50%;background:var(--line)}
+.card h3{font-family:var(--f-display);font-weight:700;font-size:17.5px;line-height:1.5;margin:6px 0 0;text-wrap:pretty}
+.card .tags{display:flex;gap:6px;margin-top:8px}
+.tag{font-size:11px;font-weight:500;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+.tag.ai{color:var(--accent);background:var(--accent-soft);border-color:transparent}
+.tag.star{color:var(--c-watch);border-color:transparent;background:color-mix(in srgb,var(--c-watch) 12%,transparent)}
+.card.now{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.eq{display:none;align-items:flex-end;gap:2px;height:12px;margin-left:auto}
+.eq i{width:3px;background:var(--accent);border-radius:1px;animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:3px}50%{height:12px}}
+.card.now .eq{display:inline-flex}
+.card.now.paused .eq i{animation-play-state:paused}
+.list.anim .card{animation:rise .42s var(--ease) both;animation-delay:calc(var(--i,0) * 35ms)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+mark{background:var(--accent-soft);color:inherit;padding:0 2px;border-radius:3px}
+.empty{padding:44px 16px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:18px}
+.empty h4{font-family:var(--f-display);font-size:18px;color:var(--ink);margin:0 0 6px}
+
+/* ---------- player dock ---------- */
+.dock{position:fixed;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:calc(var(--sab) + 10px);z-index:20;
+  max-width:660px;margin:0 auto;border-radius:26px;color:var(--studio-ink);
+  background:color-mix(in srgb,var(--studio) 88%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);padding:12px 14px 14px;overflow:hidden}
+.prog{position:absolute;left:0;top:0;height:3px;background:var(--accent);width:0;transition:width .5s var(--ease)}
+.now{display:flex;align-items:center;gap:10px;min-width:0}
+.now-t{flex:1;min-width:0}
+.now-t .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px;font-weight:500}
+.now-t .s{font-size:12px;color:var(--studio-muted)}
+.ctrls{display:grid;grid-template-columns:52px 1fr 58px 76px 58px 1fr 52px;align-items:center;margin-top:10px}
+.cb{height:54px;border:0;border-radius:18px;background:rgba(255,255,255,.08);color:var(--studio-ink);display:grid;place-items:center;transition:transform .18s var(--ease),background .2s}
+.cb:active{transform:scale(.92)}
+.cb svg{width:24px;height:24px}
+.cb.main{height:76px;width:76px;border-radius:50%;background:var(--studio-ink);color:var(--studio)}
+.cb.main svg{width:32px;height:32px}
+.cb.small{height:44px;border-radius:14px;font-family:var(--f-mono);font-size:13px}
+#prevBtn{grid-column:3}#ppBtn{grid-column:4;justify-self:center}#nextBtn{grid-column:5}
+#speedBtn{grid-column:1}#lockBtn{grid-column:7}
+#lockBtn svg{width:20px;height:20px}
+
+/* ---------- lock ---------- */
+.lock{position:fixed;inset:0;z-index:80;background:rgba(6,9,12,.92);color:#F2F4F7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+  touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility 0s linear .3s}
+.lock.open{opacity:1;visibility:visible;transition-delay:0s}
+.lock .lt{font-size:14px;color:#97A1AE;text-align:center;max-width:22em}
+.lock .lnow{font-family:var(--f-display);font-size:21px;text-align:center;max-width:20em;text-wrap:balance}
+.hold{width:136px;height:136px;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:none;color:#F2F4F7;display:grid;place-items:center;position:relative;font-size:16px;-webkit-touch-callout:none}
+.hold svg.ring{position:absolute;inset:-2px;width:140px;height:140px;transform:rotate(-90deg)}
+.hold circle{fill:none;stroke:#3DBAB0;stroke-width:4;stroke-dasharray:427;stroke-dashoffset:427}
+.hold.pressing circle{transition:stroke-dashoffset 1.2s linear;stroke-dashoffset:0}
+
+/* ---------- bottom sheets ---------- */
+.sheet{position:fixed;inset:0;z-index:40;visibility:hidden;pointer-events:none;transition:visibility 0s linear .36s}
+.sheet.open{visibility:visible;pointer-events:auto;transition-delay:0s}
+.sheet .backdrop{position:absolute;inset:0;background:rgba(6,9,12,.45);opacity:0;transition:opacity .36s var(--ease)}
+.sheet.open .backdrop{opacity:1}
+.panel{position:absolute;left:0;right:0;bottom:0;max-width:680px;margin:0 auto;height:calc(100% - var(--sat) - 28px);background:var(--bg);border-radius:26px 26px 0 0;
+  transform:translateY(100%);transition:transform .36s var(--ease);display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,.18)}
+.sheet.open .panel{transform:translateY(0)}
+.panel.dragging{transition:none}
+.grab{padding:10px 0 4px;display:grid;place-items:center;touch-action:none;cursor:grab}
+.grab i{width:40px;height:5px;border-radius:3px;background:var(--line)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 18px 10px;touch-action:none}
+.ph h2{margin:0;font-family:var(--f-display);font-size:20px}
+.x{width:38px;height:38px;border-radius:50%;border:0;background:var(--surface);color:var(--ink);display:grid;place-items:center;box-shadow:var(--shadow)}
+.x svg{width:18px;height:18px}
+.scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0 18px calc(var(--sab) + 24px);overscroll-behavior:contain}
+
+/* detail */
+.d-cat{--c:var(--c-general);display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);padding:4px 10px;border-radius:999px}
+.d-title{font-family:var(--f-display);font-weight:900;font-size:clamp(23px,6.2vw,28px);line-height:1.42;margin:12px 0 8px;text-wrap:balance}
+.d-meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.d-box{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px 16px 6px;box-shadow:var(--shadow)}
+.d-label{display:flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:8px}
+.d-label svg{width:14px;height:14px}
+.d-body{font-size:16.5px;line-height:1.85}
+.d-body p{margin:0 0 12px}
+.d-body ul{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-direction:column;gap:10px}
+.d-body li{position:relative;padding-left:18px}
+.d-body li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.d-note{font-size:13px;color:var(--muted);margin:8px 2px 0}
+.d-acts{position:sticky;bottom:0;display:flex;gap:10px;padding:14px 0 4px;background:linear-gradient(to top,var(--bg) 70%,transparent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:0 18px;height:52px;font-size:15px;font-weight:500;text-decoration:none;color:var(--ink)}
+.btn.primary{flex:1;background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+.btn svg{width:18px;height:18px}
+.btn[disabled]{opacity:.5}
+
+/* settings */
+section.blk{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:12px;box-shadow:var(--shadow)}
+section.blk h3{margin:0 0 4px;font-size:16px}
+.hint{font-size:13px;color:var(--muted);margin:0 0 12px}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{--c:var(--c-general);display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:15px;cursor:pointer;min-height:46px;transition:background .2s,border-color .2s}
+.checks label:has(input:checked){border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,transparent)}
+.checks input{accent-color:var(--c);width:18px;height:18px;margin:0}
+.kw{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.kw span{background:var(--accent-soft);border-radius:999px;padding:2px 4px 2px 12px;font-size:14px;display:inline-flex;align-items:center;gap:2px}
+.kw button{border:0;background:none;color:var(--muted);width:32px;height:32px;border-radius:50%}
+.frow{display:flex;gap:8px;flex-wrap:wrap}
+.frow > *{min-width:0}
+.field{border:1px solid var(--line);background:var(--surface-2);border-radius:12px;padding:11px 12px;font-size:16px;flex:1 1 150px;min-height:48px}
+.seg{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:3px;gap:3px}
+.seg button{flex:1;border:0;background:transparent;border-radius:9px;height:40px;font-size:14px;font-weight:500;color:var(--muted);transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.lbl{font-size:13px;color:var(--muted);margin:12px 0 6px}
+.src-group h4{font-size:12px;color:var(--muted);margin:14px 0 4px;letter-spacing:.06em}
+.src{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding-block:10px;border-top:1px solid var(--line);align-items:center}
+.src .nm{font-weight:500;font-size:15px;min-width:0}
+.src .u{font-size:11px;color:var(--muted);word-break:break-all;grid-column:1}
+.src .ctl{grid-row:1/3;grid-column:2;display:flex;gap:8px;align-items:center}
+.sw{appearance:none;-webkit-appearance:none;width:50px;height:30px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;margin:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .22s var(--ease)}
+.sw:checked{background:var(--accent)}
+.sw:checked::after{left:23px}
+.del{border:0;background:none;color:var(--muted);font-size:13px;text-decoration:underline;padding:10px 6px}
+.del.confirm{color:var(--onair)}
+.err{color:var(--onair);font-size:13px;margin-top:6px}
+.ok-msg{color:var(--accent);font-size:13px;margin-top:6px}
+.toast{position:fixed;left:50%;bottom:calc(var(--sab) + 196px);z-index:90;max-width:calc(100% - 32px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;
+  transform:translate(-50%,10px);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (min-width:600px){ .menu{gap:12px} .mi{min-height:90px} }
+@media (prefers-reduced-motion:reduce){ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero" aria-label="定制新闻台">
+    <div class="hero-top">
+      <span class="chip-air" id="airChip"><i></i>ON AIR</span>
+      <button class="icon-btn press" id="openSettings" aria-label="设置"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+    </div>
+    <h1>定制新闻台</h1>
+    <div class="sub"><span id="today"></span> · 今日 <b id="todayCount">—</b> 条 · 更新于 <span class="mono" id="lastScan">—</span></div>
+    <div class="hero-actions">
+      <button class="btn-play press" id="playAll"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg><span id="playAllText">连播全部</span></button>
+    </div>
+  </section>
+
+  <nav class="menu" id="menu" aria-label="新闻类目"></nav>
+
+  <div class="sec"><h2 id="secTitle">全部</h2><span class="cnt" id="listCount"></span></div>
+  <div class="list" id="list">
+    <div class="empty"><h4>正在加载新闻…</h4>稍等片刻。</div>
+  </div>
+</div>
+
+<div class="dock" role="region" aria-label="播报控制台">
+  <div class="prog" id="prog"></div>
+  <div class="now">
+    <div class="now-t">
+      <div class="t" id="nowTitle">点 ▶ 开始收听</div>
+      <div class="s mono" id="nowSub">中文语音</div>
+    </div>
+  </div>
+  <div class="ctrls">
+    <button class="cb small" id="speedBtn" aria-label="播报速度">1.25×</button>
+    <button class="cb" id="prevBtn" aria-label="上一条"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+    <button class="cb main" id="ppBtn" aria-label="播放"></button>
+    <button class="cb" id="nextBtn" aria-label="下一条"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+    <button class="cb small" id="lockBtn" aria-label="锁定屏幕，防止误触"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+  </div>
+</div>
+
+<div class="lock" id="lock" aria-hidden="true">
+  <div class="lt">已锁定，点击不会有反应，耳机里继续播报。</div>
+  <div class="lnow" id="lockNow"></div>
+  <button class="hold" id="holdBtn" aria-label="长按解锁"><svg class="ring" viewBox="0 0 140 140"><circle cx="70" cy="70" r="68"/></svg>长按解锁</button>
+</div>
+
+<div class="sheet" id="detail" aria-hidden="true">
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-label="新闻详情">
+    <div class="grab"><i></i></div>
+    <div class="ph"><span class="d-cat" id="dCat"></span><button class="x press" data-close aria-label="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="scroll" id="dScroll">
+      <h2 class="d-title" id="dTitle"></h2>
+      <div class="d-meta" id="dMeta"></div>
+      <div class="d-box">
+        <div class="d-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.6L19.5 9l-5.7 1.5L12 16l-1.8-5.5L4.5 9l5.7-1.4z"/></svg>AI 总结</div>
+        <div class="d-body" id="dBody"></div>
+      </div>
+      <div class="d-note" id="dNote"></div>
+      <div class="d-acts">
+        <button class="btn primary press" id="dPlay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>播报这条</button>
+        <a class="btn press" id="dLink" target="_blank" rel="noopener">原文 ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="backdrop" data-close></div>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <div class="grab"><i></i></div>
+    <div class="ph"><h2 id="setTitle">设置</h2><button class="x press" data-close aria-label="完成"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12l5 5L19 7"/></svg></button></div>
+    <div class="scroll">
+      <section class="blk">
+        <h3>我的订阅</h3>
+        <p class="hint">只显示勾选的类目，“全部”把它们按时间混在一起。</p>
+        <div class="checks" id="subCats"></div>
+      </section>
+
+      <section class="blk">
+        <h3>语音播报</h3>
+        <div class="lbl">速度</div>
+        <div class="seg" id="rateSeg"></div>
+        <div class="lbl">播报内容</div>
+        <div class="seg" id="modeSeg"></div>
+        <div class="lbl">声音</div>
+        <select class="field" id="voiceSel" style="width:100%"></select>
+      </section>
+
+      <section class="blk">
+        <h3>关注词</h3>
+        <p class="hint">标题或总结里出现这些词的新闻会进“★关注”。</p>
+        <div class="kw" id="kwList"></div>
+        <form class="frow" id="kwForm">
+          <input class="field" id="kwInput" placeholder="例如：英伟达、三星、人形机器人" autocomplete="off">
+          <button class="btn primary press" type="submit" style="flex:0 0 auto">添加</button>
+        </form>
+      </section>
+
+      <section class="blk">
+        <h3>新闻源</h3>
+        <p class="hint">每 6 小时自动扫描所有已开启的源。修改新闻源需要管理密码。</p>
+        <form class="frow" id="tokenForm" style="margin-bottom:6px">
+          <input class="field" id="tokenInput" type="password" placeholder="管理密码" autocomplete="current-password">
+          <button class="btn press" type="submit" style="flex:0 0 auto">保存</button>
+        </form>
+        <div class="ok-msg" id="tokenMsg" hidden></div>
+        <div id="srcList"></div>
+      </section>
+
+      <section class="blk">
+        <h3>添加新闻源</h3>
+        <p class="hint">RSS 地址最稳定；新闻列表页的网址也可以。</p>
+        <form id="srcForm" style="display:flex;flex-direction:column;gap:8px">
+          <input class="field" id="srcName" placeholder="名称，例如：澎湃新闻" required autocomplete="off">
+          <input class="field" id="srcUrl" placeholder="https://…" required inputmode="url" autocomplete="off" autocapitalize="off">
+          <select class="field" id="srcCat" aria-label="类目"></select>
+          <button class="btn primary press" type="submit">添加新闻源</button>
+          <div class="err" id="srcErr" hidden></div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+const CAT = {ai:"AI", econ:"经济", tech:"科技", robot:"机器人", ent:"娱乐", travel:"文旅", general:"综合"};
+const ICONS = {
+  mine:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>',
+  ai:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/><circle cx="19" cy="19" r="2"/></svg>',
+  econ:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
+  tech:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg>',
+  robot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3" r="1.2" fill="currentColor"/><circle cx="9" cy="14" r="1.3" fill="currentColor"/><circle cx="15" cy="14" r="1.3" fill="currentColor"/></svg>',
+  ent:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 3l5 3 5-3"/></svg>',
+  travel:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 3-4 5 9z"/><circle cx="17" cy="5" r="2"/></svg>',
+  general:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"/></svg>',
+  watch:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>'
+};
+const RATES = [1, 1.25, 1.5, 1.75, 2];
+const MODES = [["brief","简要"],["detail","完整总结"],["title","只读标题"]];
+const DEFAULT_PREFS = {categories:["ai","econ","tech","robot","ent","travel","general"], keywords:[], rate:1.25, mode:"brief"};
+const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>';
+const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const lsGet = k => { try { return localStorage.getItem(k); } catch { return null; } };
+const lsSet = (k,v) => { try { localStorage.setItem(k,v); } catch {} };
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let news = [], sources = [], meta = {};
+let prefs = (() => { try { return {...DEFAULT_PREFS, ...JSON.parse(lsGet("nr.prefs") || "{}")}; } catch { return {...DEFAULT_PREFS}; } })();
+if (!RATES.includes(prefs.rate)) prefs.rate = 1.25;
+if (!MODES.some(m => m[0] === prefs.mode)) prefs.mode = "brief";
+let tab = lsGet("nr.tab") || "mine";
+let loaded = false, loadError = false, openId = null, lastSig = "";
+const token = () => lsGet("nr.token") || "";
+const savePrefs = () => lsSet("nr.prefs", JSON.stringify(prefs));
+const catColor = k => `var(--c-${k})`;
+
+const fmtTime = d => d.toLocaleString("zh-CN",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false});
+function ago(iso){
+  const t = Date.parse(iso); if (!t) return "";
+  const m = Math.round((Date.now()-t)/60000);
+  if (m < 2) return "刚刚"; if (m < 60) return m+" 分钟前";
+  const h = Math.round(m/60); if (h < 24) return h+" 小时前";
+  const d = Math.round(h/24); if (d < 7) return d+" 天前";
+  return fmtTime(new Date(t));
+}
+$("today").textContent = new Date().toLocaleDateString("zh-CN",{month:"long",day:"numeric",weekday:"short"});
+
+/* ---------- data ---------- */
+async function api(path, opts = {}){
+  const headers = {"content-type":"application/json"};
+  if (opts.auth) headers["authorization"] = "Bearer " + token();
+  const r = await fetch(path, {method: opts.method || "GET", headers, body: opts.body ? JSON.stringify(opts.body) : undefined, cache:"no-store"});
+  if (r.status === 401) throw new Error("auth");
+  if (!r.ok) throw new Error("http " + r.status);
+  return r.json();
+}
+async function load(){
+  try {
+    const d = await api("/api/news");
+    news = d.news || []; sources = d.sources || []; meta = d.meta || {};
+    loaded = true; loadError = false;
+  } catch { loaded = true; loadError = !news.length; }
+  const sig = news.length + "|" + (news[0] && news[0].id) + "|" + meta.lastScanAt;
+  renderList(sig !== lastSig); lastSig = sig; renderStatus();
+  if ($("sheet").classList.contains("open")) renderSettings();
+}
+
+/* ---------- views ---------- */
+const catOf = n => CAT[n.category] ? n.category : "general";
+function kwHit(n){
+  const ks = prefs.keywords || []; if (!ks.length) return false;
+  const hay = ((n.title||"")+" "+(n.summary||"")+" "+(n.detail||"")).toLowerCase();
+  return ks.some(k => k && hay.includes(k.toLowerCase()));
+}
+function setFor(k){
+  if (k === "mine") return news.filter(n => prefs.categories.includes(catOf(n)));
+  if (k === "watch") return news.filter(kwHit);
+  return news.filter(n => catOf(n) === k);
+}
+const visible = () => setFor(tab);
+const tabLabel = k => k === "mine" ? "全部" : k === "watch" ? "★ 关注" : CAT[k];
+function highlight(text){
+  let h = esc(text);
+  for (const k of (prefs.keywords||[])) {
+    if (!k) continue;
+    const re = new RegExp(esc(k).replace(/[.*+?^${}()|[\]\\]/g,"\\$&"), "gi");
+    h = h.replace(re, m => "<mark>"+m+"</mark>");
+  }
+  return h;
+}
+
+function renderMenu(){
+  const cats = Object.keys(CAT).filter(k => prefs.categories.includes(k) && (k!=="general" || setFor("general").length));
+  if (tab !== "mine" && tab !== "watch" && !cats.includes(tab)) tab = "mine";
+  const items = ["mine", ...cats, "watch"];
+  $("menu").innerHTML = items.map(k => {
+    const c = k === "mine" ? "var(--accent)" : k === "watch" ? "var(--c-watch)" : catColor(k);
+    return `<button class="mi" style="--c:${c}" data-tab="${k}" aria-pressed="${tab===k}">
+      <span class="ic">${ICONS[k] || ICONS.general}</span><span class="lb">${k==="watch"?"关注":tabLabel(k)}</span><span class="n">${loaded ? setFor(k).length : ""}</span></button>`;
+  }).join("");
+}
+function renderList(animate){
+  renderMenu();
+  const v = visible();
+  const mixed = tab === "mine" || tab === "watch";
+  $("secTitle").textContent = tabLabel(tab);
+  $("listCount").textContent = v.length ? `${v.length} 条` : "";
+  $("playAllText").textContent = tab === "mine" ? `连播全部 · ${v.length} 条` : `连播${tabLabel(tab)} · ${v.length} 条`;
+  $("playAll").disabled = !v.length;
+  const L = $("list");
+  if (!loaded) return;
+  if (loadError) { L.innerHTML = `<div class="empty"><h4>新闻没加载出来</h4>检查一下网络，稍后再打开。</div>`; return; }
+  if (!news.length) { L.innerHTML = `<div class="empty"><h4>还没有新闻</h4>第一次自动更新后这里就有内容了。</div>`; return; }
+  if (!v.length) {
+    const msg = tab==="watch" ? ((prefs.keywords||[]).length ? "最近的新闻里还没出现你的关注词。" : "在右上角设置里添加关注词。") : tab==="mine" ? "在右上角设置里勾选想听的类目。" : "这个类目暂时没有新消息。";
+    L.innerHTML = `<div class="empty"><h4>这里还没有新闻</h4>${msg}</div>`; return;
+  }
+  const cur = player.current(); const playing = player.isPlaying();
+  L.classList.remove("anim");
+  L.innerHTML = v.map((n, i) => `
+    <button class="card${cur && cur.id===n.id ? " now" + (playing ? "" : " paused") : ""}" style="--c:${catColor(catOf(n))};--i:${Math.min(i,12)}" data-id="${esc(n.id)}">
+      <div class="meta">
+        ${mixed ? `<span class="cat">${CAT[catOf(n)]}</span><span class="dotsep"></span>` : ""}
+        <span>${esc(n.sourceName)}</span><span class="dotsep"></span>
+        <span class="mono">${ago(n.publishedAt||n.fetchedAt)}</span>
+        <span class="eq"><i></i><i></i><i></i></span>
+      </div>
+      <h3>${highlight(n.title)}</h3>
+      ${(n.detail || kwHit(n)) ? `<div class="tags">${n.detail ? '<span class="tag ai">AI 总结</span>' : ""}${kwHit(n) ? '<span class="tag star">★ 关注</span>' : ""}</div>` : ""}
+    </button>`).join("");
+  if (animate && !reduced) { void L.offsetWidth; L.classList.add("anim"); }
+}
+function renderStatus(){
+  $("lastScan").textContent = meta.lastScanAt ? fmtTime(new Date(meta.lastScanAt)) : "—";
+  const dayAgo = Date.now() - 24*3600*1000;
+  $("todayCount").textContent = news.filter(n => Date.parse(n.publishedAt||n.fetchedAt) > dayAgo).length;
+}
+function detailHtml(text){
+  const lines = String(text).split(/\n+/).map(s => s.trim()).filter(Boolean);
+  let out = "", inList = false;
+  for (const l of lines) {
+    const m = l.match(/^([•·\-*]|\d+[.、)])\s*(.*)$/);
+    if (m) { if (!inList) { out += "<ul>"; inList = true; } out += `<li>${highlight(m[2])}</li>`; }
+    else { if (inList) { out += "</ul>"; inList = false; } out += `<p>${highlight(l)}</p>`; }
+  }
+  if (inList) out += "</ul>";
+  return out;
+}
+
+/* ---------- sheets (with swipe-down to close) ---------- */
+function openSheet(el){ el.classList.add("open"); el.setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden"; }
+function closeSheet(el){ el.classList.remove("open"); el.setAttribute("aria-hidden","true"); if (!document.querySelector(".sheet.open")) document.body.style.overflow = ""; if (el.id === "detail") openId = null; if (el.id === "sheet") renderList(false); }
+document.querySelectorAll(".sheet").forEach(sh => {
+  sh.addEventListener("click", e => { if (e.target.closest("[data-close]")) closeSheet(sh); });
+  const panel = sh.querySelector(".panel");
+  let y0 = null, dy = 0;
+  const start = e => { y0 = e.touches[0].clientY; dy = 0; panel.classList.add("dragging"); };
+  const move = e => { if (y0 == null) return; dy = Math.max(0, e.touches[0].clientY - y0); panel.style.transform = `translateY(${dy}px)`; };
+  const end = () => { if (y0 == null) return; panel.classList.remove("dragging"); panel.style.transform = ""; if (dy > 110) closeSheet(sh); y0 = null; };
+  sh.querySelectorAll(".grab,.ph").forEach(h => { h.addEventListener("touchstart", start, {passive:true}); h.addEventListener("touchmove", move, {passive:true}); h.addEventListener("touchend", end); h.addEventListener("touchcancel", end); });
+});
+document.addEventListener("keydown", e => { if (e.key !== "Escape") return; const o = [...document.querySelectorAll(".sheet.open")].pop(); if (o) closeSheet(o); });
+
+function openDetail(id){
+  const n = news.find(x => x.id === id); if (!n) return;
+  openId = id;
+  const c = catOf(n);
+  const dc = $("dCat"); dc.style.setProperty("--c", catColor(c)); dc.textContent = CAT[c];
+  $("dTitle").innerHTML = highlight(n.title);
+  $("dMeta").innerHTML = `<span>${esc(n.sourceName)}</span><span class="mono">${ago(n.publishedAt||n.fetchedAt)}</span>`;
+  $("dBody").innerHTML = detailHtml(n.detail || n.summary || "");
+  $("dNote").textContent = n.detail ? "" : "这条没能读到原文全文，只有简要。";
+  const a = $("dLink"); if (n.url) { a.href = n.url; a.hidden = false; } else a.hidden = true;
+  $("dScroll").scrollTop = 0;
+  openSheet($("detail"));
+}
+
+function segHtml(items, cur){ return items.map(([v,l]) => `<button type="button" data-v="${v}" aria-pressed="${String(v)===String(cur)}">${l}</button>`).join(""); }
+function renderSettings(){
+  $("subCats").innerHTML = Object.entries(CAT).filter(([k]) => k!=="general").map(([k,l]) => `<label style="--c:${catColor(k)}"><input type="checkbox" data-sc="${k}" ${prefs.categories.includes(k)?"checked":""}>${l}</label>`).join("");
+  $("rateSeg").innerHTML = segHtml(RATES.map(r => [r, r+"×"]), prefs.rate);
+  $("modeSeg").innerHTML = segHtml(MODES, prefs.mode);
+  $("kwList").innerHTML = (prefs.keywords||[]).map((k,i) => `<span>${esc(k)}<button data-kwdel="${i}" aria-label="删除 ${esc(k)}">×</button></span>`).join("") || '<span style="background:none;padding:0;color:var(--muted)">还没有关注词</span>';
+  if (!$("srcCat").options.length) $("srcCat").innerHTML = Object.entries(CAT).map(([k,l]) => `<option value="${k}">${l}</option>`).join("");
+  if (token()) $("tokenInput").placeholder = "管理密码已保存（重新输入可更换）";
+  const groups = {}; Object.keys(CAT).forEach(k => groups[k] = []);
+  sources.forEach(s => groups[CAT[s.category] ? s.category : "general"].push(s));
+  $("srcList").innerHTML = Object.entries(groups).map(([c,arr]) => arr.length ? `
+    <div class="src-group"><h4>${CAT[c]} · ${arr.length} 个</h4>
+    ${arr.sort((a,b)=>(a.name>b.name?1:-1)).map(s => `
+      <div class="src">
+        <div class="nm">${esc(s.name)}</div>
+        <div class="u">${esc(s.url)}</div>
+        <div class="ctl">
+          <button class="del" data-del="${esc(s.id)}">删除</button>
+          <input type="checkbox" class="sw" data-tog="${esc(s.id)}" ${s.enabled!==false?"checked":""} aria-label="开启 ${esc(s.name)}">
+        </div>
+      </div>`).join("")}</div>` : "").join("") || '<p class="hint">新闻源加载中…</p>';
+}
+
+let toastT;
+function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2600); }
+function authFail(){ toast("管理密码不对，请在设置里重新输入"); }
+
+/* ---------- speech ---------- */
+const synth = window.speechSynthesis;
+let voices = [];
+function loadVoices(){
+  if (!synth) return;
+  voices = synth.getVoices();
+  const zh = voices.filter(v => /^zh/i.test(v.lang) || /chinese|中文|普通话/i.test(v.name));
+  const list = zh.length ? zh : voices;
+  const saved = lsGet("nr.voice");
+  $("voiceSel").innerHTML = '<option value="">自动选择中文声音</option>' + list.map(v => `<option value="${esc(v.voiceURI)}" ${v.voiceURI===saved?"selected":""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("");
+}
+function pickVoice(){
+  const saved = lsGet("nr.voice");
+  return (saved && voices.find(v => v.voiceURI===saved)) || voices.find(v => /zh[-_]CN/i.test(v.lang)) || voices.find(v => /^zh/i.test(v.lang)) || null;
+}
+if (synth) { loadVoices(); synth.onvoiceschanged = loadVoices; }
+function chunk(text){
+  const parts = String(text).replace(/\s+/g," ").split(/(?<=[。！？；!?;])/);
+  const out = []; let buf = "";
+  for (const p of parts) { if ((buf+p).length > 110 && buf) { out.push(buf); buf = p; } else buf += p; }
+  if (buf.trim()) out.push(buf);
+  return out.flatMap(s => s.length > 160 ? (s.match(/.{1,120}(，|,|$)/g) || [s]) : [s]).filter(s => s.trim());
+}
+let wakeLock = null;
+async function keepAwake(on){
+  try {
+    if (on && !wakeLock && navigator.wakeLock) { wakeLock = await navigator.wakeLock.request("screen"); wakeLock.addEventListener("release", () => wakeLock = null); }
+    if (!on && wakeLock) { await wakeLock.release(); wakeLock = null; }
+  } catch {}
+}
+
+const player = (() => {
+  let queue = [], idx = -1, playing = false, tok = 0, intro = "";
+  const current = () => (idx >= 0 && queue[idx]) || null;
+  function textFor(n){
+    const head = `${CAT[catOf(n)]}，${n.sourceName||""}。`;
+    const body = prefs.mode === "title" ? "" : prefs.mode === "detail" ? (n.detail || n.summary || "") : (n.summary || "");
+    return head + (n.title||"") + "。" + body.replace(/^[•·\-*]\s*/gm, "");
+  }
+  function ui(){
+    const n = current();
+    $("airChip").classList.toggle("on", playing);
+    $("ppBtn").setAttribute("aria-label", playing ? "暂停" : "播放");
+    $("ppBtn").innerHTML = playing ? ICON_PAUSE : ICON_PLAY;
+    $("nowTitle").textContent = n ? n.title : "点 ▶ 开始收听";
+    $("nowSub").textContent = n ? `${idx+1}/${queue.length} · ${CAT[catOf(n)]} · ${n.sourceName||""} · ${prefs.rate}×` : `中文语音 · ${prefs.rate}×`;
+    $("prog").style.width = n ? ((idx+1)/queue.length*100) + "%" : "0";
+    $("lockNow").textContent = n ? (playing ? "正在播报：" : "已暂停：") + n.title : "";
+    $("speedBtn").textContent = prefs.rate + "×";
+    document.querySelectorAll(".card").forEach(el => { const on = !!n && el.dataset.id===n.id; el.classList.toggle("now", on); el.classList.toggle("paused", on && !playing); });
+  }
+  function speakIdx(i){
+    if (!synth) { toast("这个浏览器不支持语音播报，请用 Safari"); return; }
+    tok++; const my = tok;
+    synth.cancel();
+    if (i < 0 || i >= queue.length) {
+      playing = false; keepAwake(false);
+      if (i >= queue.length && queue.length) { idx = queue.length-1; toast("这组新闻播报完了"); }
+      ui(); return;
+    }
+    idx = i; playing = true; keepAwake(true); ui();
+    const el = document.querySelector(`.card[data-id="${CSS.escape(queue[i].id)}"]`);
+    if (el && !$("lock").classList.contains("open")) el.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"});
+    let text = textFor(queue[i]);
+    if (intro && i === 0) text = intro + text;
+    intro = "";
+    const parts = chunk(text); const v = pickVoice();
+    let k = 0;
+    const next = () => {
+      if (my !== tok) return;
+      if (k >= parts.length) { setTimeout(() => { if (my === tok) speakIdx(idx+1); }, 500); return; }
+      const u = new SpeechSynthesisUtterance(parts[k++]);
+      u.lang = v ? v.lang : "zh-CN"; if (v) u.voice = v;
+      u.rate = prefs.rate || 1.25;
+      u.onend = next;
+      u.onerror = e => { if (my !== tok) return; if (e.error === "interrupted" || e.error === "canceled") return; next(); };
+      synth.speak(u);
+    };
+    next();
+  }
+  return {
+    current, ui, isPlaying: () => playing,
+    playList(list, startId, withIntro){
+      queue = list.slice();
+      const i = startId ? Math.max(0, queue.findIndex(n => n.id===startId)) : 0;
+      if (withIntro) {
+        const d = new Date();
+        intro = `现在是${d.getMonth()+1}月${d.getDate()}日${d.getHours()}点${d.getMinutes()?d.getMinutes()+"分":"整"}，为你播报${queue.length}条新闻。`;
+      }
+      speakIdx(i);
+    },
+    toggle(){
+      if (playing) { tok++; synth && synth.cancel(); playing = false; keepAwake(false); ui(); }
+      else if (queue.length) speakIdx(Math.max(0, idx));
+      else player.playList(visible(), null, true);
+    },
+    next(){ if (queue.length) speakIdx(Math.min(idx+1, queue.length)); },
+    prev(){ if (queue.length) speakIdx(Math.max(idx-1, 0)); },
+    restart(){ if (playing) speakIdx(idx); else ui(); }
+  };
+})();
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") { if (player.isPlaying()) keepAwake(true); load(); }
+});
+
+/* ---------- lock ---------- */
+let holdT = null;
+const lockEl = $("lock"), hold = $("holdBtn");
+function lockOn(){ lockEl.classList.add("open"); lockEl.setAttribute("aria-hidden","false"); player.ui(); keepAwake(true); }
+function lockOff(){ lockEl.classList.remove("open"); lockEl.setAttribute("aria-hidden","true"); }
+["click","dblclick","contextmenu","touchmove"].forEach(ev => lockEl.addEventListener(ev, e => { if (e.cancelable) e.preventDefault(); e.stopPropagation(); }, {passive:false}));
+function holdStart(e){ if (e.cancelable) e.preventDefault(); hold.classList.add("pressing"); clearTimeout(holdT); holdT = setTimeout(() => { hold.classList.remove("pressing"); lockOff(); }, 1200); }
+function holdEnd(){ hold.classList.remove("pressing"); clearTimeout(holdT); }
+hold.addEventListener("pointerdown", holdStart);
+["pointerup","pointerleave","pointercancel"].forEach(ev => hold.addEventListener(ev, holdEnd));
+hold.addEventListener("keydown", e => { if ((e.key==="Enter"||e.key===" ") && !e.repeat) holdStart(e); });
+hold.addEventListener("keyup", holdEnd);
+
+/* ---------- events ---------- */
+$("ppBtn").innerHTML = ICON_PLAY;
+$("menu").addEventListener("click", e => { const b = e.target.closest(".mi"); if (!b || b.dataset.tab === tab) return; tab = b.dataset.tab; lsSet("nr.tab", tab); renderList(true); });
+$("list").addEventListener("click", e => { const r = e.target.closest(".card"); if (r) openDetail(r.dataset.id); });
+$("playAll").addEventListener("click", () => player.playList(visible(), null, true));
+$("ppBtn").addEventListener("click", () => player.toggle());
+$("nextBtn").addEventListener("click", () => player.next());
+$("prevBtn").addEventListener("click", () => player.prev());
+$("lockBtn").addEventListener("click", lockOn);
+$("speedBtn").addEventListener("click", () => { const i = RATES.indexOf(prefs.rate); prefs.rate = RATES[(i+1) % RATES.length]; savePrefs(); player.restart(); player.ui(); toast("播报速度 "+prefs.rate+"×"); });
+$("dPlay").addEventListener("click", () => { if (!openId) return; const id = openId; player.playList(visible().some(n => n.id===id) ? visible() : news, id, false); closeSheet($("detail")); });
+$("openSettings").addEventListener("click", () => { renderSettings(); openSheet($("sheet")); });
+
+$("subCats").addEventListener("change", e => { const k = e.target.dataset.sc; if (!k) return; prefs.categories = e.target.checked ? [...new Set([...prefs.categories,k])] : prefs.categories.filter(x=>x!==k); savePrefs(); });
+$("rateSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.rate = parseFloat(b.dataset.v); savePrefs(); renderSettings(); player.restart(); player.ui(); });
+$("modeSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.mode = b.dataset.v; savePrefs(); renderSettings(); });
+$("kwForm").addEventListener("submit", e => { e.preventDefault(); const v = $("kwInput").value.trim(); if (!v) return; prefs.keywords = [...new Set([...(prefs.keywords||[]), ...v.split(/[,，、\s]+/).filter(Boolean)])].slice(0,40); $("kwInput").value = ""; savePrefs(); renderSettings(); });
+$("kwList").addEventListener("click", e => { const b = e.target.closest("[data-kwdel]"); if (!b) return; prefs.keywords = prefs.keywords.filter((_,i)=>i!==+b.dataset.kwdel); savePrefs(); renderSettings(); });
+$("voiceSel").addEventListener("change", e => { lsSet("nr.voice", e.target.value); player.restart(); });
+
+$("tokenForm").addEventListener("submit", async e => {
+  e.preventDefault(); const v = $("tokenInput").value.trim(); if (!v) return;
+  lsSet("nr.token", v); $("tokenInput").value = "";
+  const m = $("tokenMsg");
+  try { await api("/api/check", {auth:true}); m.textContent = "管理密码正确，已保存。"; m.className = "ok-msg"; }
+  catch (x) { m.textContent = x.message === "auth" ? "管理密码不对，请再检查一下。" : "已保存，但暂时没法验证。"; m.className = "err"; }
+  m.hidden = false; renderSettings();
+});
+let pendingDel = null;
+$("srcList").addEventListener("click", async e => {
+  const d = e.target.closest("[data-del]"); if (!d) return;
+  const id = d.dataset.del;
+  if (pendingDel !== id) { pendingDel = id; renderSettings(); const b = document.querySelector(`[data-del="${CSS.escape(id)}"]`); if (b) { b.textContent = "确认删除？"; b.classList.add("confirm"); } return; }
+  pendingDel = null;
+  try { const r = await api("/api/sources", {method:"POST", auth:true, body:{action:"delete", id}}); sources = r.sources; renderSettings(); toast("已删除新闻源"); }
+  catch (x) { x.message === "auth" ? authFail() : toast("删除没成功，请稍后再试"); }
+});
+$("srcList").addEventListener("change", async e => {
+  const t = e.target.closest("[data-tog]"); if (!t) return;
+  try { const r = await api("/api/sources", {method:"POST", auth:true, body:{action:"toggle", id:t.dataset.tog, enabled:t.checked}}); sources = r.sources; toast(t.checked ? "已开启" : "已关闭"); }
+  catch (x) { t.checked = !t.checked; x.message === "auth" ? authFail() : toast("切换没成功，请稍后再试"); }
+});
+$("srcForm").addEventListener("submit", async e => {
+  e.preventDefault(); const err = $("srcErr"); err.hidden = true;
+  const name = $("srcName").value.trim(), url = $("srcUrl").value.trim();
+  if (!/^https?:\/\/[^\s.]+\.[^\s]+$/i.test(url)) { err.textContent = "网址要以 http:// 或 https:// 开头。"; err.hidden = false; return; }
+  try {
+    const r = await api("/api/sources", {method:"POST", auth:true, body:{action:"add", name, url, category:$("srcCat").value}});
+    sources = r.sources; renderSettings(); $("srcName").value = ""; $("srcUrl").value = ""; toast("已添加「"+name+"」，下次更新开始抓取");
+  } catch (x) { err.textContent = x.message === "auth" ? "管理密码不对，先在上面保存正确的管理密码。" : "没保存上，请稍后再试。"; err.hidden = false; }
+});
+
+/* ---------- boot ---------- */
+renderList(false); player.ui(); load();
+setInterval(() => { if (document.visibilityState === "visible") load(); }, 5 * 60 * 1000);
+setInterval(() => { if (loaded) renderList(false); }, 60000);
+})();
+</script>
+</body>
+</html>

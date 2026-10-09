@@ -1,0 +1,218 @@
+[
+ {
+  "id": "cn-36kr",
+  "name": "36氪",
+  "region": "cn",
+  "category": "tech",
+  "url": "https://36kr.com/feed",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-qbitai",
+  "name": "量子位",
+  "region": "cn",
+  "category": "ai",
+  "url": "https://www.qbitai.com/feed",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-cls",
+  "name": "财联社",
+  "region": "cn",
+  "category": "econ",
+  "url": "https://www.cls.cn/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-ithome",
+  "name": "IT之家",
+  "region": "cn",
+  "category": "tech",
+  "url": "https://www.ithome.com/rss/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-1905",
+  "name": "1905电影网",
+  "region": "cn",
+  "category": "ent",
+  "url": "https://www.1905.com/news/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-sina-ent",
+  "name": "新浪娱乐",
+  "region": "cn",
+  "category": "ent",
+  "url": "https://ent.sina.com.cn/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-ggrobot",
+  "name": "高工机器人",
+  "region": "cn",
+  "category": "robot",
+  "url": "https://www.gg-robot.com/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-dili360",
+  "name": "中国国家地理",
+  "region": "cn",
+  "category": "travel",
+  "url": "https://www.dili360.com/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-ctnews",
+  "name": "中国旅游新闻网",
+  "region": "cn",
+  "category": "travel",
+  "url": "https://www.ctnews.com.cn/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-osen",
+  "name": "OSEN",
+  "region": "kr",
+  "category": "ent",
+  "url": "https://www.osen.co.kr/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-starnews",
+  "name": "스타뉴스 Star News",
+  "region": "kr",
+  "category": "ent",
+  "url": "https://www.starnewskorea.com/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-hk-econ",
+  "name": "한국경제 경제",
+  "region": "kr",
+  "category": "econ",
+  "url": "https://www.hankyung.com/feed/economy",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-hk-it",
+  "name": "한국경제 IT",
+  "region": "kr",
+  "category": "tech",
+  "url": "https://www.hankyung.com/feed/it",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-edaily",
+  "name": "이데일리 Edaily",
+  "region": "kr",
+  "category": "econ",
+  "url": "https://www.edaily.co.kr/News/RealTimeNews",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-etnews",
+  "name": "전자신문",
+  "region": "kr",
+  "category": "tech",
+  "url": "https://www.etnews.com/news/section.html?id1=03",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-tenasia",
+  "name": "텐아시아 TenAsia",
+  "region": "kr",
+  "category": "ent",
+  "url": "https://www.tenasia.co.kr/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-irobot",
+  "name": "로봇신문",
+  "region": "kr",
+  "category": "robot",
+  "url": "https://www.irobotnews.com/rss/allArticle.xml",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-bloomberg",
+  "name": "Bloomberg 彭博社",
+  "region": "us",
+  "category": "econ",
+  "url": "https://feeds.bloomberg.com/markets/news.rss",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-benzinga",
+  "name": "Benzinga",
+  "region": "us",
+  "category": "econ",
+  "url": "https://www.benzinga.com/news",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-venturebeat",
+  "name": "VentureBeat",
+  "region": "us",
+  "category": "ai",
+  "url": "https://venturebeat.com/feed/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-techcrunch",
+  "name": "TechCrunch",
+  "region": "us",
+  "category": "tech",
+  "url": "https://techcrunch.com/feed/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-robotreport",
+  "name": "The Robot Report",
+  "region": "us",
+  "category": "robot",
+  "url": "https://www.therobotreport.com/feed/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-cnbc",
+  "name": "CNBC",
+  "region": "us",
+  "category": "econ",
+  "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-ieee",
+  "name": "IEEE Spectrum",
+  "region": "us",
+  "category": "tech",
+  "url": "https://spectrum.ieee.org/feeds/feed.rss",
+  "enabled": true,
+  "builtin": true
+ }
+]
