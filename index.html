@@ -608,10 +608,11 @@ function phrases(sentence){
     return acc;
   }, []).map(s => s.trim()).filter(Boolean);
 }
-function segmentsFor(n, mode, intro){
+function segmentsFor(n, mode, intro, lead){
   const m = parseFloat(prefs.pause || "1");
   const segs = [];
   if (intro) segs.push({ t: intro, gap: GAPS.title * m });
+  else if (lead) segs.push({ t: "下一条。", gap: GAPS.sentence * m });
   const title = speakable(n.title || "");
   if (title) segs.push({ t: title, gap: GAPS.title * m });
   const body = mode === "title" ? "" : mode === "detail" ? (n.detail || n.summary || "") : (n.summary || "");
@@ -631,8 +632,18 @@ async function keepAwake(on){
   } catch {}
 }
 
+/* Two engines:
+   1) AI-voice audio files played through one <audio> element — keeps playing with the
+      screen off or in another app, and answers lock-screen / earphone buttons.
+   2) The phone's own voice (speechSynthesis) — used when AI voice is unavailable. */
+const au = new Audio();
+au.preload = "auto"; au.setAttribute("playsinline", ""); au.preservesPitch = true;
+let audioOK = true;   // flips to false if the AI voice fails, for the rest of the visit
+const useAudio = () => audioOK && meta.voice === true;
+const audioURL = (n, lead, introN) => `/api/audio?id=${encodeURIComponent(n.id)}&mode=${prefs.mode}&lead=${lead ? 1 : 0}&intro=${introN || 0}`;
+
 const player = (() => {
-  let queue = [], idx = -1, playing = false, tok = 0, intro = "";
+  let queue = [], idx = -1, playing = false, tok = 0, intro = "", introN = 0, loading = false;
   const current = () => (idx >= 0 && queue[idx]) || null;
   function ui(){
     const n = current();
@@ -640,36 +651,61 @@ const player = (() => {
     $("ppBtn").setAttribute("aria-label", playing ? "暂停" : "播放");
     $("ppBtn").innerHTML = playing ? ICON_PAUSE : ICON_PLAY;
     $("nowTitle").textContent = n ? n.title : "点 ▶ 开始收听";
-    $("nowSub").textContent = n ? `${idx+1}/${queue.length} · ${CAT[catOf(n)]} · ${n.sourceName||""} · ${prefs.rate}×` : `中文语音 · ${prefs.rate}×`;
+    $("nowSub").textContent = n ? (loading ? "正在准备语音…" : `${idx+1}/${queue.length} · ${CAT[catOf(n)]} · ${n.sourceName||""} · ${prefs.rate}×`) : `中文语音 · ${prefs.rate}×`;
     $("prog").style.width = n ? ((idx+1)/queue.length*100) + "%" : "0";
     $("lockNow").textContent = n ? (playing ? "正在播报：" : "已暂停：") + n.title : "";
     $("speedBtn").textContent = prefs.rate + "×";
     document.querySelectorAll(".card").forEach(el => { const on = !!n && el.dataset.id===n.id; el.classList.toggle("now", on); el.classList.toggle("paused", on && !playing); });
-  }
-  function speakIdx(i){
-    if (!synth) { toast("这个浏览器不支持语音播报，请用 Safari"); return; }
-    tok++; const my = tok;
-    synth.cancel();
-    if (i < 0 || i >= queue.length) {
-      playing = false; keepAwake(false);
-      if (i >= queue.length && queue.length) { idx = queue.length-1; toast("这组新闻播报完了"); }
-      ui(); return;
+    if ("mediaSession" in navigator) {
+      try {
+        navigator.mediaSession.playbackState = playing ? "playing" : (n ? "paused" : "none");
+        if (n) navigator.mediaSession.metadata = new MediaMetadata({ title: n.title, artist: `定制新闻台 · ${CAT[catOf(n)]}`, album: n.sourceName || "", artwork: [{ src: "/icon-512.png", sizes: "512x512", type: "image/png" }] });
+      } catch {}
     }
-    idx = i; playing = true; keepAwake(true); ui();
-    const el = document.querySelector(`.card[data-id="${CSS.escape(queue[i].id)}"]`);
-    if (el && !$("lock").classList.contains("open")) el.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"});
-    // Read only the headline and its summary — no category or source name.
-    const segs = segmentsFor(queue[i], prefs.mode, i === 0 ? intro : "");
-    intro = "";
+  }
+  function stopAll(){ tok++; if (synth) synth.cancel(); au.pause(); }
+  function finish(){ playing = false; loading = false; keepAwake(false); if (queue.length) { idx = queue.length - 1; toast("这组新闻播报完了"); } ui(); }
+  function scrollToCurrent(){
+    const n = current(); if (!n) return;
+    const el = document.querySelector(`.card[data-id="${CSS.escape(n.id)}"]`);
+    if (el && !$("lock").classList.contains("open") && document.visibilityState === "visible") el.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"});
+  }
+  function playIdx(i, lead = true){
+    stopAll();
+    if (i < 0) i = 0;
+    if (i >= queue.length) { finish(); return; }
+    idx = i; playing = true;
+    const n = queue[i];
+    const isFirst = introN > 0;
+    if (useAudio()) {
+      keepAwake(false);                       // let the screen turn off — audio keeps going
+      loading = true; ui(); scrollToCurrent();
+      au.src = audioURL(n, !isFirst && lead, isFirst ? introN : 0);
+      introN = 0; intro = "";
+      au.playbackRate = prefs.rate;
+      const p = au.play();
+      if (p && p.catch) p.catch(err => { if (err && err.name === "NotAllowedError") { playing = false; loading = false; ui(); toast("点一下 ▶ 开始播放"); } });
+      // warm up the next clip so the switch is instant
+      const nx = queue[i + 1]; if (nx) fetch(audioURL(nx, true, 0)).catch(() => {});
+      return;
+    }
+    speakWithPhone(n, lead && !isFirst);
+  }
+  function speakWithPhone(n, lead){
+    if (!synth) { toast("这个浏览器不支持语音播报，请用 Safari"); playing = false; ui(); return; }
+    const my = ++tok;
+    keepAwake(true); loading = false; ui(); scrollToCurrent();
+    const segs = segmentsFor(n, prefs.mode, intro, lead && !intro);
+    intro = ""; introN = 0;
     let k = 0;
     const next = () => {
       if (my !== tok) return;
-      if (k >= segs.length) { speakIdx(idx + 1); return; }
+      if (k >= segs.length) { playIdx(idx + 1); return; }
       const seg = segs[k++];
       const v = pickVoice();
       const u = new SpeechSynthesisUtterance(seg.t);
       u.lang = v ? v.lang : "zh-CN"; if (v) u.voice = v;
-      u.rate = realRate(prefs.rate || 1.25);  // read per phrase, so speed changes apply mid-item
+      u.rate = realRate(prefs.rate || 1.25);
       const after = () => { if (my === tok) setTimeout(next, seg.gap); };
       u.onend = after;
       u.onerror = e => { if (my !== tok) return; if (e.error === "interrupted" || e.error === "canceled") return; after(); };
@@ -677,29 +713,50 @@ const player = (() => {
     };
     next();
   }
-  return {
+  au.addEventListener("playing", () => { loading = false; au.playbackRate = prefs.rate; ui(); });
+  au.addEventListener("waiting", () => { loading = true; ui(); });
+  au.addEventListener("ended", () => { if (playing) playIdx(idx + 1); });
+  au.addEventListener("error", () => {
+    if (!playing || !au.src) return;
+    audioOK = false; loading = false;
+    toast("AI 语音暂时不可用，改用手机朗读（黑屏后会暂停）");
+    const n = current(); if (n) speakWithPhone(n, idx > 0);
+  });
+  const api = {
     current, ui, isPlaying: () => playing,
     playList(list, startId, withIntro){
       queue = list.slice();
       const i = startId ? Math.max(0, queue.findIndex(n => n.id===startId)) : 0;
+      introN = 0; intro = "";
       if (withIntro) {
         const d = new Date();
+        introN = queue.length;
         intro = `现在是${d.getMonth()+1}月${d.getDate()}日${d.getHours()}点${d.getMinutes()?d.getMinutes()+"分":"整"}，为你播报${queue.length}条新闻。`;
       }
-      speakIdx(i);
+      playIdx(i, false);
     },
     toggle(){
-      if (playing) { tok++; synth && synth.cancel(); playing = false; keepAwake(false); ui(); }
-      else if (queue.length) speakIdx(Math.max(0, idx));
-      else player.playList(visible(), null, true);
+      if (playing) { playing = false; tok++; if (synth) synth.cancel(); au.pause(); keepAwake(false); ui(); return; }
+      if (!queue.length) { api.playList(visible(), null, true); return; }
+      if (useAudio() && au.src && !au.ended && au.currentTime > 0) { playing = true; au.playbackRate = prefs.rate; au.play().catch(() => {}); ui(); return; }  // resume where it stopped
+      playIdx(Math.max(0, idx), false);
     },
-    next(){ if (queue.length) speakIdx(Math.min(idx+1, queue.length)); },
-    prev(){ if (queue.length) speakIdx(Math.max(idx-1, 0)); },
-    restart(){ if (playing) speakIdx(idx); else ui(); }
+    next(){ if (queue.length) playIdx(Math.min(idx+1, queue.length)); },
+    prev(){ if (queue.length) playIdx(Math.max(idx-1, 0)); },
+    setRate(){ au.playbackRate = prefs.rate; ui(); }
   };
+  if ("mediaSession" in navigator) {
+    const ms = navigator.mediaSession;
+    const set = (a, f) => { try { ms.setActionHandler(a, f); } catch {} };
+    set("play", () => { if (!playing) api.toggle(); });
+    set("pause", () => { if (playing) api.toggle(); });
+    set("nexttrack", () => api.next());
+    set("previoustrack", () => api.prev());
+  }
+  return api;
 })();
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") { if (player.isPlaying()) keepAwake(true); load(); }
+  if (document.visibilityState === "visible") { if (player.isPlaying() && !useAudio()) keepAwake(true); load(); }
 });
 
 /* ---------- lock ---------- */
@@ -724,12 +781,12 @@ $("ppBtn").addEventListener("click", () => player.toggle());
 $("nextBtn").addEventListener("click", () => player.next());
 $("prevBtn").addEventListener("click", () => player.prev());
 $("lockBtn").addEventListener("click", lockOn);
-$("speedBtn").addEventListener("click", () => { const i = RATES.indexOf(prefs.rate); prefs.rate = RATES[(i+1) % RATES.length]; savePrefs(); player.ui(); toast(player.isPlaying() ? `下一句起改为 ${prefs.rate}×` : `播报速度 ${prefs.rate}×`); });
+$("speedBtn").addEventListener("click", () => { const i = RATES.indexOf(prefs.rate); prefs.rate = RATES[(i+1) % RATES.length]; savePrefs(); player.setRate(); toast(`播报速度 ${prefs.rate}×`); });
 $("dPlay").addEventListener("click", () => { if (!openId) return; const id = openId; player.playList(visible().some(n => n.id===id) ? visible() : news, id, false); closeSheet($("detail")); });
 $("openSettings").addEventListener("click", () => { renderSettings(); openSheet($("sheet")); });
 
 $("subCats").addEventListener("change", e => { const k = e.target.dataset.sc; if (!k) return; prefs.categories = e.target.checked ? [...new Set([...prefs.categories,k])] : prefs.categories.filter(x=>x!==k); savePrefs(); });
-$("rateSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.rate = parseFloat(b.dataset.v); savePrefs(); renderSettings(); player.ui(); });
+$("rateSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.rate = parseFloat(b.dataset.v); savePrefs(); renderSettings(); player.setRate(); });
 $("modeSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.mode = b.dataset.v; savePrefs(); renderSettings(); });
 $("pauseSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.pause = b.dataset.v; savePrefs(); renderSettings(); toast("下一条起使用新的停顿"); });
 $("kwForm").addEventListener("submit", e => { e.preventDefault(); const v = $("kwInput").value.trim(); if (!v) return; prefs.keywords = [...new Set([...(prefs.keywords||[]), ...v.split(/[,，、\s]+/).filter(Boolean)])].slice(0,40); $("kwInput").value = ""; savePrefs(); renderSettings(); });
