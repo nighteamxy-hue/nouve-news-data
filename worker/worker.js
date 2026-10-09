@@ -20,7 +20,7 @@ const STATIC = {
   "/icon-512.png": ["icon-512.png", "image/png", 86400],
 };
 const CATS = ["ai", "econ", "stock", "tech", "robot", "ent", "travel", "general"];
-const AUDIO_VERSION = "v1";
+const AUDIO_VERSION = "v2";
 
 export default {
   async fetch(request, env, ctx) {
@@ -79,21 +79,77 @@ async function audio(request, env, ctx, url) {
 
   const key = `a:${AUDIO_VERSION}:${id}:${mode}:${lead ? 1 : 0}:${intro}`;
   const cached = await env.NEWS_KV.get(key, "arrayBuffer");
-  if (cached) return mp3(cached);
+  if (cached) return wav(cached, request);
 
   const news = await ghJSON("data/news.json", []);
   const n = news.find(x => x.id === id);
   if (!n) return json({ error: "not_found" }, 404);
 
-  const text = speechText(n, mode, lead, intro);
-  const pieces = splitForTTS(text, 220);
-  const parts = [];
-  for (const piece of pieces) parts.push(await tts(env, piece));
-  const total = parts.reduce((s, b) => s + b.byteLength, 0);
-  const out = new Uint8Array(total); let o = 0;
-  for (const b of parts) { out.set(new Uint8Array(b), o); o += b.byteLength; }
-  ctx.waitUntil(env.NEWS_KV.put(key, out.buffer, { expirationTtl: 3 * 86400 }));
-  return mp3(out.buffer);
+  // Speak the opener, the title and the body as separate clips, then join them
+  // with real silence so each sentence has room to land.
+  const segs = speechSegments(n, mode, lead, intro);
+  const pcm = await mapLimit(segs, 4, s => tts(env, s.text).then(decodeWav));
+  const rate = pcm.find(Boolean)?.rate || 22050;
+  const chunks = [];
+  segs.forEach((s, i) => { if (pcm[i]) { chunks.push(pcm[i].samples); chunks.push(silence(rate, s.gap)); } });
+  const out = encodeWav(chunks, rate);
+  ctx.waitUntil(env.NEWS_KV.put(key, out, { expirationTtl: 3 * 86400 }));
+  return wav(out, request);
+}
+
+/* Opener / title / body pieces, each with the pause (ms) that follows it. */
+function speechSegments(n, mode, lead, intro) {
+  const segs = [];
+  if (intro) segs.push({ text: `为你播报${intro}条新闻。`, gap: 600 });
+  else if (lead) segs.push({ text: "下一条。", gap: 500 });
+  const t = speechText(n, "title", false, 0);
+  segs.push({ text: t, gap: mode === "title" ? 1200 : 800 });
+  if (mode !== "title") {
+    const body = speechText(n, mode, false, 0).slice(t.length);
+    for (const piece of splitForTTS(body, 90)) segs.push({ text: piece, gap: 450 });
+    segs[segs.length - 1].gap = 1200;
+  }
+  return segs;
+}
+async function mapLimit(items, limit, fn) {
+  const out = new Array(items.length); let next = 0;
+  async function worker() { while (next < items.length) { const i = next++; try { out[i] = await fn(items[i]); } catch { out[i] = null; } } }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  if (!out.some(Boolean)) throw new Error("tts_failed");
+  return out;
+}
+/* Parse a 16-bit PCM WAV; halve 44.1/48 kHz audio to keep files small. */
+function decodeWav(buf) {
+  const v = new DataView(buf);
+  if (v.getUint32(0, false) !== 0x52494646) throw new Error("not_wav");
+  let o = 12, rate = 44100, ch = 1, bits = 16, data = null;
+  while (o + 8 <= buf.byteLength) {
+    const id = v.getUint32(o, false), size = v.getUint32(o + 4, true);
+    if (id === 0x666d7420) { ch = v.getUint16(o + 10, true); rate = v.getUint32(o + 12, true); bits = v.getUint16(o + 22, true); }
+    else if (id === 0x64617461) { data = new Int16Array(buf.slice(o + 8, o + 8 + Math.min(size, buf.byteLength - o - 8) & ~1)); break; }
+    o += 8 + size + (size & 1);
+  }
+  if (!data || bits !== 16) throw new Error("bad_wav");
+  if (ch > 1) { const m = new Int16Array(Math.floor(data.length / ch)); for (let i = 0; i < m.length; i++) m[i] = data[i * ch]; data = m; }
+  if (rate >= 44100) {
+    const h = new Int16Array(Math.floor(data.length / 2));
+    for (let i = 0; i < h.length; i++) h[i] = (data[2 * i] + data[2 * i + 1]) >> 1;
+    data = h; rate = Math.round(rate / 2);
+  }
+  return { rate, samples: data };
+}
+function silence(rate, ms) { return new Int16Array(Math.round(rate * ms / 1000)); }
+function encodeWav(chunks, rate) {
+  const n = chunks.reduce((s, c) => s + c.length, 0);
+  const buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
+  const w = (o, s) => { for (let i = 0; i < 4; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, "RIFF"); v.setUint32(4, 36 + n * 2, true); w(8, "WAVE");
+  w(12, "fmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+  w(36, "data"); v.setUint32(40, n * 2, true);
+  const pcm = new Int16Array(buf, 44); let o = 0;
+  for (const c of chunks) { pcm.set(c, o); o += c.length; }
+  return buf;
 }
 
 function speechText(n, mode, lead, intro) {
@@ -114,7 +170,9 @@ function speechText(n, mode, lead, intro) {
   return t;
 }
 function splitForTTS(text, max) {
-  const sentences = text.split(/(?<=[。！？；!?;])/).filter(s => s.trim());
+  const sentences = text.split(/(?<=[。！？；!?;])/).filter(s => s.trim())
+    .flatMap(s => s.length <= max ? [s] : s.split(/(?<=[，,、：:])/))
+    .flatMap(s => s.length <= max ? [s] : s.match(new RegExp(`[\\s\\S]{1,${max}}`, "g")));
   const out = []; let buf = "";
   for (const s of sentences) {
     if ((buf + s).length > max && buf) { out.push(buf); buf = s; } else buf += s;
@@ -133,8 +191,18 @@ async function tts(env, prompt) {
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   return bytes.buffer;
 }
-function mp3(buf) {
-  return new Response(buf, { headers: { "content-type": "audio/mpeg", "cache-control": "public, max-age=86400", "accept-ranges": "none" } });
+function wav(buf, request) {
+  // iPhone Safari fetches audio in byte ranges; answer them so playback starts.
+  const size = buf.byteLength;
+  const h = { "content-type": "audio/wav", "cache-control": "public, max-age=86400", "accept-ranges": "bytes" };
+  const m = /^bytes=(\d*)-(\d*)$/.exec((request && request.headers.get("range")) || "");
+  if (m && (m[1] || m[2])) {
+    let start = m[1] ? +m[1] : Math.max(0, size - +m[2]);
+    let end = m[1] && m[2] ? Math.min(+m[2], size - 1) : size - 1;
+    if (start >= size || start > end) return new Response(null, { status: 416, headers: { ...h, "content-range": `bytes */${size}` } });
+    return new Response(buf.slice(start, end + 1), { status: 206, headers: { ...h, "content-range": `bytes ${start}-${end}/${size}`, "content-length": String(end - start + 1) } });
+  }
+  return new Response(buf, { headers: { ...h, "content-length": String(size) } });
 }
 
 /* ---------- helpers ---------- */
