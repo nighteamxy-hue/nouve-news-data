@@ -309,6 +309,8 @@ section.blk h3{margin:0 0 4px;font-size:16px}
         <div class="seg" id="rateSeg"></div>
         <div class="lbl">播报内容</div>
         <div class="seg" id="modeSeg"></div>
+        <div class="lbl">句间停顿</div>
+        <div class="seg" id="pauseSeg"></div>
         <div class="lbl">声音</div>
         <select class="field" id="voiceSel" style="width:100%"></select>
         <p class="hint" style="margin:10px 0 0">听不清时：在 iPhone 的 设置 → 辅助功能 → 朗读内容 → 声音 → 中文 里，下载带「增强」或「优化」字样的中文声音，再回到这里选它，会清楚很多。</p>
@@ -373,7 +375,7 @@ const RATES = [1, 1.1, 1.25, 1.5, 1.75];
 const IS_IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const realRate = r => IS_IOS ? (r <= 1 ? r * 0.95 : 0.95 + (r - 1) * 0.6) : r;
 const MODES = [["brief","简要"],["detail","完整总结"],["title","只读标题"]];
-const DEFAULT_PREFS = {categories:["ai","econ","stock","tech","robot","ent","travel","general"], keywords:[], rate:1.25, mode:"brief"};
+const DEFAULT_PREFS = {categories:["ai","econ","stock","tech","robot","ent","travel","general"], keywords:[], rate:1.25, mode:"brief", pause:"1"};
 const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>';
 const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
 
@@ -546,6 +548,7 @@ function renderSettings(){
   $("subCats").innerHTML = Object.entries(CAT).filter(([k]) => k!=="general").map(([k,l]) => `<label style="--c:${catColor(k)}"><input type="checkbox" data-sc="${k}" ${prefs.categories.includes(k)?"checked":""}>${l}</label>`).join("");
   $("rateSeg").innerHTML = segHtml(RATES.map(r => [r, r+"×"]), prefs.rate);
   $("modeSeg").innerHTML = segHtml(MODES, prefs.mode);
+  $("pauseSeg").innerHTML = segHtml(PAUSES, prefs.pause || "1");
   $("kwList").innerHTML = (prefs.keywords||[]).map((k,i) => `<span>${esc(k)}<button data-kwdel="${i}" aria-label="删除 ${esc(k)}">×</button></span>`).join("") || '<span style="background:none;padding:0;color:var(--muted)">还没有关注词</span>';
   if (!$("srcCat").options.length) $("srcCat").innerHTML = Object.entries(CAT).map(([k,l]) => `<option value="${k}">${l}</option>`).join("");
   if (token()) $("tokenInput").placeholder = "管理密码已保存（重新输入可更换）";
@@ -584,14 +587,41 @@ function pickVoice(){
   return (saved && voices.find(v => v.voiceURI===saved)) || voices.find(v => /zh[-_]CN/i.test(v.lang)) || voices.find(v => /^zh/i.test(v.lang)) || null;
 }
 if (synth) { loadVoices(); synth.onvoiceschanged = loadVoices; }
-// One sentence per utterance: short pieces give natural pauses (clearer at higher speed)
-// and let a speed change take effect from the very next sentence without restarting.
-function chunk(text){
-  const sentences = String(text).replace(/\s+/g," ").split(/(?<=[。！？；!?;])/).map(s => s.trim()).filter(Boolean);
-  return sentences.flatMap(s => s.length > 70 ? (s.match(/[^，,、]+[，,、]?/g) || [s]).reduce((acc, p) => {
-    if (acc.length && (acc[acc.length-1] + p).length <= 70) acc[acc.length-1] += p; else acc.push(p);
+/* Speech is built as a list of short phrases, each followed by a real silence:
+   after the headline, after every sentence, a shorter one inside long sentences,
+   and the longest between two news items. Each phrase reads the current speed,
+   so changing speed takes effect from the next phrase without restarting. */
+const GAPS = { title: 900, sentence: 550, comma: 220, item: 1700 };
+const PAUSES = [["0.6","短"],["1","适中"],["1.6","长"]];
+function speakable(s){
+  return String(s)
+    .replace(/[（(][^）)]{0,30}[）)]/g, "")   // drop asides in brackets
+    .replace(/[“”"「」『』【】《》]/g, "")
+    .replace(/\s*[\/｜|]\s*/g, "，")
+    .replace(/\s+/g, " ").trim();
+}
+function phrases(sentence){
+  if (sentence.length <= 28) return [sentence];
+  const parts = sentence.match(/[^，,、：:]+[，,、：:]?/g) || [sentence];
+  return parts.reduce((acc, p) => {
+    if (acc.length && (acc[acc.length-1] + p).length <= 24) acc[acc.length-1] += p; else acc.push(p);
     return acc;
-  }, []) : [s]).filter(s => s.trim());
+  }, []).map(s => s.trim()).filter(Boolean);
+}
+function segmentsFor(n, mode, intro){
+  const m = parseFloat(prefs.pause || "1");
+  const segs = [];
+  if (intro) segs.push({ t: intro, gap: GAPS.title * m });
+  const title = speakable(n.title || "");
+  if (title) segs.push({ t: title, gap: GAPS.title * m });
+  const body = mode === "title" ? "" : mode === "detail" ? (n.detail || n.summary || "") : (n.summary || "");
+  const sentences = String(body).replace(/^[•·\-*]\s*/gm, "").split(/\n+|(?<=[。！？；!?;])/).map(speakable).filter(s => s.replace(/[。！？；!?;，,\s]/g, ""));
+  for (const s of sentences) {
+    const ps = phrases(s);
+    ps.forEach((p, i) => segs.push({ t: p, gap: (i === ps.length - 1 ? GAPS.sentence : GAPS.comma) * m }));
+  }
+  if (segs.length) segs[segs.length - 1].gap = GAPS.item * m;
+  return segs;
 }
 let wakeLock = null;
 async function keepAwake(on){
@@ -604,11 +634,6 @@ async function keepAwake(on){
 const player = (() => {
   let queue = [], idx = -1, playing = false, tok = 0, intro = "";
   const current = () => (idx >= 0 && queue[idx]) || null;
-  function textFor(n){
-    // Read only the headline and its summary — no category or source name.
-    const body = prefs.mode === "title" ? "" : prefs.mode === "detail" ? (n.detail || n.summary || "") : (n.summary || "");
-    return (n.title||"") + "。" + body.replace(/^[•·\-*]\s*/gm, "");
-  }
   function ui(){
     const n = current();
     $("airChip").classList.toggle("on", playing);
@@ -633,19 +658,21 @@ const player = (() => {
     idx = i; playing = true; keepAwake(true); ui();
     const el = document.querySelector(`.card[data-id="${CSS.escape(queue[i].id)}"]`);
     if (el && !$("lock").classList.contains("open")) el.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"});
-    let text = textFor(queue[i]);
-    if (intro && i === 0) text = intro + text;
+    // Read only the headline and its summary — no category or source name.
+    const segs = segmentsFor(queue[i], prefs.mode, i === 0 ? intro : "");
     intro = "";
-    const parts = chunk(text); const v = pickVoice();
     let k = 0;
     const next = () => {
       if (my !== tok) return;
-      if (k >= parts.length) { setTimeout(() => { if (my === tok) speakIdx(idx+1); }, 500); return; }
-      const u = new SpeechSynthesisUtterance(parts[k++]);
+      if (k >= segs.length) { speakIdx(idx + 1); return; }
+      const seg = segs[k++];
+      const v = pickVoice();
+      const u = new SpeechSynthesisUtterance(seg.t);
       u.lang = v ? v.lang : "zh-CN"; if (v) u.voice = v;
-      u.rate = realRate(prefs.rate || 1.25);  // read per sentence, so speed changes apply mid-item
-      u.onend = next;
-      u.onerror = e => { if (my !== tok) return; if (e.error === "interrupted" || e.error === "canceled") return; next(); };
+      u.rate = realRate(prefs.rate || 1.25);  // read per phrase, so speed changes apply mid-item
+      const after = () => { if (my === tok) setTimeout(next, seg.gap); };
+      u.onend = after;
+      u.onerror = e => { if (my !== tok) return; if (e.error === "interrupted" || e.error === "canceled") return; after(); };
       synth.speak(u);
     };
     next();
@@ -704,6 +731,7 @@ $("openSettings").addEventListener("click", () => { renderSettings(); openSheet(
 $("subCats").addEventListener("change", e => { const k = e.target.dataset.sc; if (!k) return; prefs.categories = e.target.checked ? [...new Set([...prefs.categories,k])] : prefs.categories.filter(x=>x!==k); savePrefs(); });
 $("rateSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.rate = parseFloat(b.dataset.v); savePrefs(); renderSettings(); player.ui(); });
 $("modeSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.mode = b.dataset.v; savePrefs(); renderSettings(); });
+$("pauseSeg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (!b) return; prefs.pause = b.dataset.v; savePrefs(); renderSettings(); toast("下一条起使用新的停顿"); });
 $("kwForm").addEventListener("submit", e => { e.preventDefault(); const v = $("kwInput").value.trim(); if (!v) return; prefs.keywords = [...new Set([...(prefs.keywords||[]), ...v.split(/[,，、\s]+/).filter(Boolean)])].slice(0,40); $("kwInput").value = ""; savePrefs(); renderSettings(); });
 $("kwList").addEventListener("click", e => { const b = e.target.closest("[data-kwdel]"); if (!b) return; prefs.keywords = prefs.keywords.filter((_,i)=>i!==+b.dataset.kwdel); savePrefs(); renderSettings(); });
 $("voiceSel").addEventListener("change", e => { lsSet("nr.voice", e.target.value); toast("下一句起换成新声音"); });
