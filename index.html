@@ -598,9 +598,9 @@ const player = (() => {
   let queue = [], idx = -1, playing = false, tok = 0, intro = "";
   const current = () => (idx >= 0 && queue[idx]) || null;
   function textFor(n){
-    const head = `${CAT[catOf(n)]}，${n.sourceName||""}。`;
+    // Read only the headline and its summary — no category or source name.
     const body = prefs.mode === "title" ? "" : prefs.mode === "detail" ? (n.detail || n.summary || "") : (n.summary || "");
-    return head + (n.title||"") + "。" + body.replace(/^[•·\-*]\s*/gm, "");
+    return (n.title||"") + "。" + body.replace(/^[•·\-*]\s*/gm, "");
   }
   function ui(){
     const n = current();
