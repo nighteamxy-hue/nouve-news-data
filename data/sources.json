@@ -41,7 +41,7 @@
   "region": "cn",
   "category": "ent",
   "url": "https://www.1905.com/news/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -203,7 +203,7 @@
   "region": "us",
   "category": "econ",
   "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
