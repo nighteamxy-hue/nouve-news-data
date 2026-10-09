@@ -679,6 +679,7 @@ function preloadAudio(url){
 }
 
 const player = (() => {
+  let queueTab = null;   // which category the current play queue came from
   let queue = [], idx = -1, playing = false, tok = 0, intro = "", introN = 0, loading = false;
   const current = () => (idx >= 0 && queue[idx]) || null;
   function ui(){
@@ -761,9 +762,9 @@ const player = (() => {
     const n = current(); if (n) speakWithPhone(n, idx > 0);
   });
   const api = {
-    current, ui, isPlaying: () => playing,
+    current, ui, isPlaying: () => playing, queueTab: () => queueTab,
     playList(list, startId, withIntro){
-      queue = list.slice();
+      queue = list.slice(); queueTab = tab;
       const i = startId ? Math.max(0, queue.findIndex(n => n.id===startId)) : 0;
       introN = 0; intro = "";
       if (withIntro) {
@@ -775,7 +776,7 @@ const player = (() => {
     },
     toggle(){
       if (playing) { playing = false; tok++; if (synth) synth.cancel(); au.pause(); keepAwake(false); ui(); return; }
-      if (!queue.length) { playUnheard(); return; }
+      if (!queue.length || queueTab !== tab) { playUnheard(); return; }   // ▶ always plays the category on screen
       if (useAudio() && au.src && !au.ended && au.currentTime > 0) { playing = true; au.playbackRate = prefs.rate; au.play().catch(() => {}); ui(); return; }  // resume where it stopped
       playIdx(Math.max(0, idx), false);
     },
@@ -812,7 +813,12 @@ hold.addEventListener("keyup", holdEnd);
 
 /* ---------- events ---------- */
 $("ppBtn").innerHTML = ICON_PLAY;
-$("menu").addEventListener("click", e => { const b = e.target.closest(".mi"); if (!b || b.dataset.tab === tab) return; tab = b.dataset.tab; lsSet("nr.tab", tab); renderList(true); });
+$("menu").addEventListener("click", e => {
+  const b = e.target.closest(".mi"); if (!b || b.dataset.tab === tab) return;
+  tab = b.dataset.tab; lsSet("nr.tab", tab); renderList(true);
+  // already listening: switch the broadcast to the category just picked
+  if (player.isPlaying() && visible().length) { playUnheard(); toast(`开始播报「${tabLabel(tab)}」`); }
+});
 $("list").addEventListener("click", e => {
   if (e.target.closest("#clearHeard")) { played = {}; savePlayed(); renderList(true); toast("已清空收听记录"); return; }
   const r = e.target.closest(".card"); if (r) openDetail(r.dataset.id);
