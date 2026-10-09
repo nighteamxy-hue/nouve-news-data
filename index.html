@@ -443,7 +443,8 @@ function highlight(text){
 }
 
 function renderMenu(){
-  const cats = Object.keys(CAT).filter(k => prefs.categories.includes(k) && (k!=="general" || setFor("general").length));
+  // "综合" stays inside 全部 only, so the grid is always a clean 4×2
+  const cats = Object.keys(CAT).filter(k => k !== "general" && prefs.categories.includes(k));
   if (tab !== "mine" && tab !== "watch" && !cats.includes(tab)) tab = "mine";
   const items = ["mine", ...cats, "watch"];
   $("menu").innerHTML = items.map(k => {
