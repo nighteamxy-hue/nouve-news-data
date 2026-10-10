@@ -43,4 +43,6 @@ category 只能是：ai（AI）、econ（宏观经济/公司财经/产业）、s
 11. `git add data && git commit -m "更新新闻 <UTC时间>"`（提交信息末尾加两行：`Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` 和 `Claude-Session: https://claude.ai/code/session_01KQihy8LhAk9dNTFGHfNbL1`），然后 `git pull --rebase origin main && git push origin HEAD:main`。失败等 10 秒重试一次。
 12. 用 WebFetch 打开 https://news.nouve.cn/api/log?m=<消息>（消息用 urllib.parse.quote 编码，如"更新完成 新增N条 commit xxx" 或 "推送失败 <错误类型>"，错误类型只写一个简短分类，如 权限被拒403、网络错误、合并冲突，不要附报错原文或仓库地址），prompt 写"原样输出"。
 
+个别源的特殊处理：36氪（cn-36kr）的文章链接要把 `https://36kr.com/` 换成 `https://www.36kr.com/` 并去掉 `?f=rss` 再打开，不带 www 会被反爬虫验证页挡住；正文打不开时，可直接用 RSS 里 description 的全文写总结。计算文档 id 时仍用 RSS 里的原始 link。
+
 某个源或某篇文章失败时，记下来继续，不要停。

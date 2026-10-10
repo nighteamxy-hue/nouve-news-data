@@ -4,7 +4,7 @@
   "name": "36氪",
   "region": "cn",
   "category": "tech",
-  "url": "https://36kr.com/feed",
+  "url": "https://www.36kr.com/feed",
   "enabled": true,
   "builtin": true
  },
