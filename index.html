@@ -713,24 +713,35 @@ const player = (() => {
     const el = document.querySelector(`.card[data-id="${CSS.escape(n.id)}"]`);
     if (el && !$("lock").classList.contains("open") && document.visibilityState === "visible") el.scrollIntoView({block:"center", behavior: reduced ? "auto" : "smooth"});
   }
-  function playIdx(i, lead = true){
-    stopAll();
+  let lastURL = "", retried = "", resumeOnShow = false;
+  // auto = moving on by itself after a clip ended. Then we must NOT pause first:
+  // on iPhone a pause while the app is in the background lets the system close the
+  // audio session, and the next clip is no longer allowed to start.
+  function playIdx(i, lead = true, auto = false){
+    if (auto) tok++; else stopAll();
     if (i < 0) i = 0;
     if (i >= queue.length) { finish(); return; }
     idx = i; playing = true;
     const n = queue[i];
     const isFirst = introN > 0;
     if (useAudio()) {
-      keepAwake(false);                       // let the screen turn off — audio keeps going
-      loading = true; ui(); scrollToCurrent();
+      // start the next clip first, before any screen work
       const url = audioURL(n, !isFirst && lead, isFirst ? introN : 0);
       const ready = preload.get(url);
-      au.src = (ready && ready.blob) || url;
-      introN = 0; intro = "";
-      au.playbackRate = prefs.rate;
+      lastURL = url;
+      // in the background use the server address (the most reliable on iPhone); in front, the ready download
+      au.src = (document.visibilityState === "visible" && ready && ready.blob) || url;
+      au.defaultPlaybackRate = prefs.rate; au.playbackRate = prefs.rate;
       const p = au.play();
-      if (p && p.catch) p.catch(err => { if (err && err.name === "NotAllowedError") { playing = false; loading = false; ui(); toast("点一下 ▶ 开始播放"); } });
-      // warm up the next clip so the switch is instant
+      if (p && p.catch) p.catch(err => {
+        if (!err || err.name !== "NotAllowedError") return;
+        if (document.visibilityState === "hidden") { resumeOnShow = true; return; }   // carry on as soon as the page is back
+        playing = false; loading = false; ui(); toast("点一下 ▶ 开始播放");
+      });
+      introN = 0; intro = "";
+      keepAwake(false);                       // let the screen turn off — audio keeps going
+      loading = true; ui(); scrollToCurrent();
+      // warm up the next clips so the switch is instant
       for (const nx of queue.slice(i + 1, i + 3)) preloadAudio(audioURL(nx, true, 0));
       return;
     }
@@ -760,12 +771,22 @@ const player = (() => {
   }
   au.addEventListener("playing", () => { loading = false; au.playbackRate = prefs.rate; ui(); });
   au.addEventListener("waiting", () => { loading = true; ui(); });
-  au.addEventListener("ended", () => { if (playing) { markPlayed(current()); playIdx(idx + 1); } });
+  au.addEventListener("ended", () => {
+    if (!playing) return;
+    const done = current();
+    playIdx(idx + 1, true, true);             // switch straight away, no pause in between
+    markPlayed(done);
+  });
   au.addEventListener("error", () => {
     if (!playing || !au.src) return;
-    audioOK = false; loading = false;
-    toast("AI 语音暂时不可用，改用手机朗读（黑屏后会暂停）");
-    const n = current(); if (n) speakWithPhone(n, idx > 0);
+    const n = current(); if (!n) return;
+    // first try the clip again straight from the server
+    if (retried !== lastURL) { retried = lastURL; au.src = lastURL; au.play().catch(() => {}); return; }
+    // in the background the phone voice can't run, so skip to the next clip instead
+    if (document.visibilityState === "hidden") { playIdx(idx + 1, true, true); return; }
+    loading = false;
+    toast("这条 AI 语音没加载出来，改用手机朗读");
+    speakWithPhone(n, idx > 0);
   });
   const api = {
     current, ui, isPlaying: () => playing, queueTab: () => queueTab,
@@ -788,7 +809,8 @@ const player = (() => {
     },
     next(){ if (queue.length) playIdx(Math.min(idx+1, queue.length)); },
     prev(){ if (queue.length) playIdx(Math.max(idx-1, 0)); },
-    setRate(){ au.playbackRate = prefs.rate; ui(); }
+    setRate(){ au.defaultPlaybackRate = prefs.rate; au.playbackRate = prefs.rate; ui(); },
+    resumeIfNeeded(){ if (resumeOnShow && playing && au.paused) { resumeOnShow = false; au.play().catch(() => {}); } }
   };
   if ("mediaSession" in navigator) {
     const ms = navigator.mediaSession;
@@ -801,7 +823,7 @@ const player = (() => {
   return api;
 })();
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") { if (player.isPlaying() && !useAudio()) keepAwake(true); load(); }
+  if (document.visibilityState === "visible") { player.resumeIfNeeded(); if (player.isPlaying() && !useAudio()) keepAwake(true); load(); }
 });
 
 /* ---------- lock ---------- */
