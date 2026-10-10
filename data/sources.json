@@ -167,7 +167,7 @@
   "region": "us",
   "category": "stock",
   "url": "https://www.benzinga.com/news",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -176,7 +176,7 @@
   "region": "us",
   "category": "ai",
   "url": "https://venturebeat.com/feed/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
