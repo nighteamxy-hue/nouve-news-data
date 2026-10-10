@@ -65,6 +65,32 @@
 "fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
+"id": "cn-sina-ent-efb6aeba570c",
+"title": "闫妮三大奖全部陪跑",
+"summary": "闫妮凭小巷人家角逐三个大奖。最终都没有拿到。她说奖项可遇不可求。",
+"detail": "",
+"category": "ent",
+"region": "cn",
+"sourceId": "cn-sina-ent",
+"sourceName": "新浪娱乐",
+"url": "http://k.sina.com.cn/article_1796087453_m6b0e1e9d03301wjs8.html",
+"publishedAt": "2026-10-10T04:51:00Z",
+"fetchedAt": "2026-10-10T08:09:07Z"
+},
+{
+"id": "cn-sina-ent-358194bd9eae",
+"title": "征途收官，李健谈饰演朱德",
+"summary": "电视剧征途已经圆满收官。剧中李健饰演朱德。他说这是全新的尝试，也是一次精神洗礼。",
+"detail": "",
+"category": "ent",
+"region": "cn",
+"sourceId": "cn-sina-ent",
+"sourceName": "新浪娱乐",
+"url": "http://k.sina.com.cn/article_1700648435_655dd5f302001n6qk.html",
+"publishedAt": "2026-10-10T04:50:00Z",
+"fetchedAt": "2026-10-10T08:09:07Z"
+},
+{
 "id": "market-2026101013",
 "title": "股市速览：10月10日午间",
 "summary": "美股周五三大指数集体收涨，中概股走强。国际油价和金价同步上涨，A股新开户数降至年内低点。",
@@ -76,6 +102,19 @@
 "url": "",
 "publishedAt": "2026-10-10T04:43:36Z",
 "fetchedAt": "2026-10-10T04:43:36Z"
+},
+{
+"id": "kr-tenasia-cf5b1f80b046",
+"title": "金智媛新剧首播收视破两位数",
+"summary": "金智媛主演的新剧医生X首播。收视率达到11.4%。她和孙贤周饰演的新院长展开较量。",
+"detail": "SBS周末剧医生X首播收视率达到11.4%。成绩超过了前作的首播。金智媛饰演一名外聘医生，靠高超手术对抗不公。\n• 首集里，她在会议上公开反对手术方案。\n• 原院长突然倒下，她独自完成手术。随后却被通知解雇。\n• 新院长孙贤周掌握前院长把柄，重新聘用了她。但他撕掉了她的履历。\n• 他把她当成随时可弃的棋子，两人关系充满火药味。\n• 第二集10月10日晚上9点50分播出。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-tenasia",
+"sourceName": "텐아시아 TenAsia",
+"url": "https://www.tenasia.co.kr/article/2026101034224",
+"publishedAt": "2026-10-10T04:40:00Z",
+"fetchedAt": "2026-10-10T08:09:07Z"
 },
 {
 "id": "cn-ithome-d74854607280",
