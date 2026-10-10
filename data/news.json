@@ -1,5 +1,70 @@
 [
 {
+"id": "cn-cls-7c0cb45b8f7a",
+"title": "广电网络启动预重整",
+"summary": "广电网络发布公告，公司启动预重整程序。导火索是一笔约511万元的债务。后续重整进展值得关注。",
+"detail": "",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2501024",
+"publishedAt": "2026-10-10T05:11:12Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "cn-cls-3ccd2e42a8e4",
+"title": "货币基金单周吸金近1700亿美元",
+"summary": "美银数据显示，货币市场基金一周净流入近1700亿美元。加息环境下，投资者更偏爱现金类资产。",
+"detail": "",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2501012",
+"publishedAt": "2026-10-10T05:11:12Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "cn-cls-37d41aac46d5",
+"title": "资管机构大举减持美债期货",
+"summary": "美国商品期货交易委员会数据显示，资管机构大幅减持超长期美债期货多头。30年期美债收益率升至24年高点。",
+"detail": "",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2500998",
+"publishedAt": "2026-10-10T05:11:12Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "cn-sina-ent-e204a48f50fe",
+"title": "宋佳获飞天奖最佳女演员",
+"summary": "第35届电视剧飞天奖颁奖结果出炉。演员宋佳拿下最佳女演员奖。飞天奖是国内电视剧的重要奖项。",
+"detail": "",
+"category": "ent",
+"region": "cn",
+"sourceId": "cn-sina-ent",
+"sourceName": "新浪娱乐",
+"url": "http://k.sina.com.cn/article_5426766895_14375e42f00102z6wu.html",
+"publishedAt": "2026-10-10T04:52:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "cn-sina-ent-8518edab9d20",
+"title": "王仁君获飞天奖最佳男演员",
+"summary": "第35届电视剧飞天奖颁奖结果出炉。山东籍演员王仁君拿下最佳男演员奖。飞天奖是国内电视剧的重要奖项。",
+"detail": "",
+"category": "ent",
+"region": "cn",
+"sourceId": "cn-sina-ent",
+"sourceName": "新浪娱乐",
+"url": "http://k.sina.com.cn/article_5426766895_14375e42f00102z6wm.html",
+"publishedAt": "2026-10-10T04:51:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "market-2026101013",
 "title": "股市速览：10月10日午间",
 "summary": "美股周五三大指数集体收涨，中概股走强。国际油价和金价同步上涨，A股新开户数降至年内低点。",
@@ -234,6 +299,19 @@
 "fetchedAt": "2026-10-10T04:43:36Z"
 },
 {
+"id": "kr-tenasia-d33c2a80ee0a",
+"title": "金喜爱晒拍摄现场近况",
+"summary": "演员金喜爱分享拍摄现场照片。她裹着毯子取暖，素颜引发讨论。她已确定出演JTBC新剧。",
+"detail": "金喜爱最近分享了近况。天气转冷，她仍在忙着拍摄。照片里她裹着格子毯，坐在小暖炉前。\n• 照片里她没化浓妆，闭眼微笑。少了荧幕上的精致感。\n• 此前她在巴黎时装周受访，网友却盯着她的皱纹。\n• 有人说她显老。也有人觉得这是自然变化。\n• 金喜爱今年59岁。1983年出道，代表作有夫妻的世界。\n• 她已确定出演JTBC新剧。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-tenasia",
+"sourceName": "텐아시아 TenAsia",
+"url": "https://www.tenasia.co.kr/article/2026101033304",
+"publishedAt": "2026-10-10T02:20:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "kr-edaily-9d15fe8cc4df",
 "title": "攻击韩国金融业的AI工具停更",
 "summary": "一款被用来攻击韩国金融机构的AI渗透工具宣布停更。但是已经流出的版本已无法回收。",
@@ -271,6 +349,45 @@
 "url": "https://www.cls.cn/detail/2501064",
 "publishedAt": "2026-10-10T02:13:00Z",
 "fetchedAt": "2026-10-10T04:43:36Z"
+},
+{
+"id": "kr-hk-finance-5ae1992a1e63",
+"title": "券商警告长期利率下跌风险",
+"summary": "美国十年期国债收益率突破5%，市场紧张。但韩国券商认为，长期利率转跌才是更大风险。",
+"detail": "美国十年期国债收益率突破5%，市场十分紧张。但韩国券商认为，长期利率下跌才是更大的风险。\n• 7日美国十年期国债拍卖利率为5.3%。是2000年11月以来最高。\n• 分析师认为，利率上升主要来自增长预期。利率开始下滑反而是危险信号。\n• 增长放缓时长期利率会下降。市场可能重新担心衰退。\n• 2022年曾出现长短期利率倒挂。标普500指数九个月内跌了24%。\n• 目前倒挂还没出现。衰退担忧暂时不必过度。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026100804296",
+"publishedAt": "2026-10-10T02:11:48Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "kr-starnews-b9281f31b17d",
+"title": "KickFlip新歌合作伊安迪奥",
+"summary": "韩国男团KickFlip公开新歌幕后照。新歌请来美国歌手伊安迪奥合作。新专辑连续三天登上韩特日榜第一。",
+"detail": "韩国男团KickFlip公开了新歌音乐录影带的幕后照片。新歌请来美国歌手伊安迪奥合作。团体正借此延续回归热度。\n• 10月6日，团体发行新迷你专辑的第一部分。同时推出两首主打歌。\n• 新歌由成员桂勋和东和参与作词。主题是摆脱自我怀疑，勇敢向前。\n• 另一首主打歌讲二十岁凌晨的迷茫。由桂勋作词作曲。\n• 专辑在韩国唱片榜韩特，连续三天登上日榜第一。\n• 成员说这张专辑尝试了很多新东西。希望今后继续成长。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-starnews",
+"sourceName": "스타뉴스 Star News",
+"url": "https://www.starnewskorea.com/music/2026/10/10/2026101010592763750",
+"publishedAt": "2026-10-10T02:02:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "kr-tenasia-1d71c50fcd34",
+"title": "李世英黑裙亮相釜山电影节",
+"summary": "演员李世英现身第31届釜山国际电影节。她穿黑色露肩礼服，换了新发色。粉丝纷纷留言夸她美。",
+"detail": "演员李世英亮相第31届釜山国际电影节。一身黑色礼服很抢眼。她还在社交平台上传了照片。\n• 她穿黑色露肩贴身长裙。肩部有银色链条装饰，更显高级。\n• 她把头发染成偏红的颜色，低低扎起。\n• 闪亮眼妆配自然妆容，粉丝留言夸她像洋娃娃。\n• 她今年34岁。近期出演了迪士尼剧集再婚皇后。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-tenasia",
+"sourceName": "텐아시아 TenAsia",
+"url": "https://www.tenasia.co.kr/article/2026101033284",
+"publishedAt": "2026-10-10T02:00:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "cn-cls-ebc1199f41ad",
@@ -312,6 +429,19 @@
 "fetchedAt": "2026-10-10T04:43:36Z"
 },
 {
+"id": "kr-tenasia-61a19391e99d",
+"title": "卞曜汉给宋旻浩点爱心遭批",
+"summary": "宋旻浩因违反兵役法获缓刑后发文道歉。演员卞曜汉在下面留了爱心表情。网友批评他缺乏分寸。",
+"detail": "演员卞曜汉因为一条评论陷入争议。他给宋旻浩的道歉文点赞，还留下三个爱心表情。\n• 宋旻浩一审被判一年有期徒刑，缓刑两年。\n• 他在社会服务岗位上擅自离岗102天。违反了兵役法。\n• 八天后，宋旻浩发布亲笔道歉文。承诺认真履行义务。\n• 两人相识约十年。这次反应可能出于私交。\n• 公众认为他对敏感案件考虑不周。他近期刚与蒂芙尼结婚，不少人感到失望。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-tenasia",
+"sourceName": "텐아시아 TenAsia",
+"url": "https://www.tenasia.co.kr/article/2026101033564",
+"publishedAt": "2026-10-10T01:30:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "kr-starnews-09aea8bb77b6",
 "title": "南昌熙婚后八个月宣布当爸",
 "summary": "韩国艺人南昌熙官宣妻子已怀孕23周。两人今年2月才刚刚结婚，他正在全力照顾妻子。",
@@ -336,6 +466,19 @@
 "url": "https://www.edaily.co.kr/News/Read?newsId=01774486645611608&mediaCodeNo=257",
 "publishedAt": "2026-10-10T01:20:05Z",
 "fetchedAt": "2026-10-10T04:43:36Z"
+},
+{
+"id": "kr-starnews-1ea667f09bdf",
+"title": "NCT WISH首唱新歌I SPY",
+"summary": "韩国男团NCT WISH今天起办新专辑见面活动。主打歌I SPY舞台首次公开。新专辑12日正式发行。",
+"detail": "NCT WISH今天开始举办第四张迷你专辑的发行纪念活动。活动在高丽大学华井体育馆举行，10日到11日共三场。\n• 活动名叫I SPY YOU。主打歌I SPY的舞台首次公开。\n• 新歌是混合舞曲风格的流行曲。讲的是喜欢一个人时，所有感官都朝向对方。\n• 表演以望远镜造型的动作为亮点。结尾加入厚重的嘻哈节奏，气氛突变。\n• 11日下午6点的公演会同步直播。海外粉丝也能观看。\n• 音乐录影带预告11日零点公开。专辑12日下午6点正式发行。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-starnews",
+"sourceName": "스타뉴스 Star News",
+"url": "https://www.starnewskorea.com/music/2026/10/10/2026101010055221882",
+"publishedAt": "2026-10-10T01:10:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "cn-cls-2e5f9c4e6f04",
@@ -364,6 +507,19 @@
 "fetchedAt": "2026-10-10T04:43:36Z"
 },
 {
+"id": "cn-cls-3965e7d30397",
+"title": "霍尔木兹油轮遇袭创新高",
+"summary": "霍尔木兹海峡局势继续升级。油轮遇袭事件数量创下战时新高。伊朗打击范围也在扩大，能源市场风险上升。",
+"detail": "",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2501006",
+"publishedAt": "2026-10-10T00:14:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "cn-36kr-ef0810a63b6f",
 "title": "8点1氪：特朗普买入Meta股票",
 "summary": "披露文件显示，特朗普8月买入大量Meta股票。山姆拟限制亲友卡绑定。豆包上线生活缴费功能。",
@@ -390,6 +546,19 @@
 "fetchedAt": "2026-10-10T04:43:36Z"
 },
 {
+"id": "kr-hk-finance-6507fbbc6412",
+"title": "标普500加趋势策略ETF上市",
+"summary": "美国资管公司迪雷克森推出新ETF。它全仓跟踪标普500，又叠加一层趋势追踪策略，瞄准韩国的美股散户。",
+"detail": "美国资管公司迪雷克森推出一只新ETF，代码SPXP。它看着像普通标普500基金，内里多了一层策略。\n• 基金资金全部投向标普500期货。涨跌和指数基本同步。\n• 同一笔钱还跑趋势追踪策略。涨的买进，跌的卖出，覆盖21个期货市场。\n• 2008年金融危机时，标普500跌了38%。同类策略指数却涨了14%。\n• 现在美股估值偏高，债券也难分散风险。\n• 这只基金年费率0.92%。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610092663i",
+"publishedAt": "2026-10-10T00:00:03Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "cn-eastmoney-5d0198de4130",
 "title": "美联储沃勒称仍需加息",
 "summary": "美联储理事沃勒表示，未来很可能还需要进一步加息。但他对10月暂停加息持开放态度。",
@@ -401,6 +570,32 @@
 "url": "https://finance.eastmoney.com/a/202610103891699553.html",
 "publishedAt": "2026-10-09T23:32:00Z",
 "fetchedAt": "2026-10-10T04:43:36Z"
+},
+{
+"id": "kr-hk-finance-7d86c28d00c3",
+"title": "韩国理财账户收益远超大盘",
+"summary": "韩国投资者觉得炒股太累，纷纷把钱交给券商打理。全权委托账户客户已达201万人，同比增长11%。",
+"detail": "韩国券商的综合理财账户迎来新热潮。投资者觉得自己炒股太累。宁愿多付费，交给专业人士打理。\n• 一位投资者今年3月投入1亿韩元。目前收益率达41%。同期韩国综合指数只涨7%。\n• 截至10月9日，全权委托账户客户达201万人。同比增长11%。\n• 8月末，这类账户资产约123万亿韩元。一年增长35%。\n• 咨询型账户资产同比暴增220%。\n• 业绩报酬最高超过收益两成。但不少人认为，行情剧烈波动时，交给专家更省心。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026100928971",
+"publishedAt": "2026-10-09T23:29:26Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "kr-hk-finance-00cbaec204df",
+"title": "韩国芯片材料设备股走强",
+"summary": "三星电子季度利润迈入百万亿韩元级别。芯片景气正扩散到中小型材料零部件设备股。科斯达克半导体指数两个月涨了四成多。",
+"detail": "三星电子季度营业利润已进入百万亿韩元级别。芯片景气正从大盘股扩散到材料、零部件和设备企业。\n• 今年8到9月，科斯达克半导体指数涨了44.5%。\n• 同期三星电子只涨2.3%，SK海力士涨3.4%。\n• 文章认为，全球芯片景气和大企业扩大投资，推动这些公司进入结构性增长。\n• 后续关键看实际业绩能否兑现。短期资金流动也会带来波动风险。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610081365i",
+"publishedAt": "2026-10-09T23:00:09Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "cn-cls-e6601c9acecd",
@@ -427,6 +622,19 @@
 "url": "https://www.tenasia.co.kr/article/2026101032104",
 "publishedAt": "2026-10-09T22:59:00Z",
 "fetchedAt": "2026-10-10T04:43:36Z"
+},
+{
+"id": "cn-cls-dbc1f984b3c3",
+"title": "美国柴油涨七成 俄将增供",
+"summary": "美伊开战以来，美国柴油价格上涨约七成。特朗普与普京通话后，俄方同意提前解除柴油出口禁令。",
+"detail": "美国与俄罗斯领导人通了电话。俄方同意加快供应柴油。这时美国柴油价格正因美伊冲突大涨。\n• 俄方将提前解除柴油出口禁令。计划10月供应30万吨。11月增至50万吨，12月达到100万吨。\n• 美伊开战以来，美国柴油价格上涨约七成。10月8日全国均价达每加仑6.28美元。\n• 美国政府推动盟友释放储备。还允许公路车辆使用染色柴油。业内认为这些措施难解供应紧张。\n• 飓风伊萨亚斯逼近墨西哥湾。当地七成多石油产量已暂停。原油价格随之上涨。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2500999",
+"publishedAt": "2026-10-09T22:51:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "kr-starnews-2d33f95a93a5",
@@ -507,6 +715,19 @@
 "fetchedAt": "2026-10-09T22:44:29Z"
 },
 {
+"id": "kr-osen-403a2da0293c",
+"title": "崔有华哺乳照引争论",
+"summary": "韩国演员崔有华晒出在公共场所哺乳的照片。网友意见分成两派。有人称赞母爱伟大，也有人觉得不舒服。",
+"detail": "演员崔有华公开了在公共场所哺乳的照片。网友反应分成两派，引发不少争论。\n• 她在本月6日发文，庆祝宝宝满六个月。母乳喂养六个月的目标已经达成。\n• 她说夜里带娃很辛苦。但外出轻便，所以决定继续哺乳。\n• 支持者认为这是自然的育儿日常。称赞母亲很伟大。\n• 反对者觉得看着不舒服。也有人质疑她在炫耀。\n• 她去年12月宣布与圈外人结婚。今年4月生下儿子。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-osen",
+"sourceName": "OSEN",
+"url": "https://www.osen.co.kr/article/G1112890720",
+"publishedAt": "2026-10-09T22:30:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "kr-tenasia-7849445af06e",
 "title": "金信英考取米饭侍酒师证书",
 "summary": "金信英在我独自生活中挑战米饭侍酒师证书。她熬夜苦读，最终顺利通过。节目近期正陷入造假争议。",
@@ -531,6 +752,32 @@
 "url": "https://www.tenasia.co.kr/article/2026100923954",
 "publishedAt": "2026-10-09T22:29:00Z",
 "fetchedAt": "2026-10-09T22:44:29Z"
+},
+{
+"id": "kr-osen-b84a8dcbffea",
+"title": "吕艾斯特宣布要卖掉公司",
+"summary": "韩国艺人吕艾斯特的丈夫洪惠杰发文惹争议。公司也遭恶评刷屏。吕艾斯特随后宣布要卖掉公司。",
+"detail": "韩国艺人吕艾斯特在视频里吐露苦衷。丈夫洪惠杰因网上言论惹上麻烦。她随后宣布要卖掉自己的公司。\n• 洪惠杰发文评论电影暗杀者们。他批评有人用阴谋论诋毁已故人物，引发争议。\n• 吕艾斯特说，丈夫事后一直道歉。但他不保证以后不再犯。\n• 她表示要停掉给丈夫的生活费。用经济手段表明态度。\n• 公司网络被恶评刷屏。她干脆宣布不再赚钱，要卖掉公司。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-osen",
+"sourceName": "OSEN",
+"url": "https://www.osen.co.kr/article/G1112890719",
+"publishedAt": "2026-10-09T22:21:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "us-techcrunch-6adbdd9f781c",
+"title": "机械键盘依然值得买",
+"summary": "TechCrunch记者撰文力荐机械键盘。他说好键盘能让打字变成享受。文章重点介绍了Keychron的几款产品。",
+"detail": "TechCrunch记者撰文力荐机械键盘。他说，好键盘能让枯燥的打字变成享受。文章重点介绍了Keychron的几款产品。\n• Keychron在2017年靠众筹起家。如今产品线越来越丰富。\n• 入门款K2售价60美元。既能插线用，也支持蓝牙。\n• 全木外壳的K8 HE带背光。售价约200美元，主打颜值。\n• K、Q、V系列大多在100到200美元之间。\n• 键帽可以更换，敲击声清脆。作者觉得有九十年代电脑的复古感。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/09/long-live-the-mechanical-keyboard/",
+"publishedAt": "2026-10-09T22:08:24Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "kr-hk-finance-f2319bf64e47",
@@ -624,6 +871,19 @@
 "fetchedAt": "2026-10-09T22:44:29Z"
 },
 {
+"id": "kr-hk-econ-b7e9e8cf4823",
+"title": "AI提前预警员工离职",
+"summary": "韩国人力软件公司HCG推出AI预警功能。系统能提前发现员工离职迹象。推出后新增部署量翻了一倍。",
+"detail": "韩国人力管理软件公司HCG推出新功能。它的AI能提前发现员工离职迹象。还能识别职场倦怠风险。\n• 今年4月推出的新版本，会分析加班增多、年假减少等数据。\n• 新员工几个月内频繁离职，或某部门离职率走高，系统也会标记。\n• 中小企业人才储备薄弱。核心员工一走，公司可能受到冲击。\n• 推出后，新增部署量约是去年同期的两倍。公司计划让AI独立完成人事工作。\n• 公司内部还推行同事认可积分。每人每季度12点，每点折合4000韩元。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610081389i",
+"publishedAt": "2026-10-09T21:00:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "kr-edaily-24a280690fd9",
 "title": "高油价高利率下美股仍收涨",
 "summary": "尽管油价和美债收益率高企，美股周五仍然上涨。华尔街押注企业财报。标普500再次逼近历史高点。",
@@ -635,6 +895,45 @@
 "url": "https://www.edaily.co.kr/News/Read?newsId=01423526645611608&mediaCodeNo=257",
 "publishedAt": "2026-10-09T20:30:46Z",
 "fetchedAt": "2026-10-09T22:44:29Z"
+},
+{
+"id": "kr-edaily-bded3c1eb79b",
+"title": "CVS健康股价下跌1.86%",
+"summary": "美国医疗公司CVS健康股价下跌。原因是旗下安泰的医保评级下滑。分析师估计影响约7.2亿美元。",
+"detail": "美国医疗保健公司CVS健康股价下跌。原因是旗下保险公司安泰的医保评级下滑。周五股价跌1.86%，收于86.17美元。\n• 安泰2027年医保优势计划中，四星以上会员占比约69%。去年是81%，评级明显变差。\n• 美国政府按一到五星评级。四星以上的产品可以拿到奖金。\n• 这次评级将影响2028年的奖金发放。\n• 道明考恩分析师认为，如果不采取措施，影响约7.2亿美元。调整产品设计可抵消部分损失。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=01341526645611608&mediaCodeNo=257",
+"publishedAt": "2026-10-09T20:03:23Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "kr-edaily-221b2b4085e0",
+"title": "美光股价继续走弱",
+"summary": "美光科技前一天大跌后，周五仍在走弱。OpenAI营收担忧有所缓解，但投资者信心还没恢复。",
+"detail": "美光科技股价前一天大跌，周五仍然走弱。OpenAI营收担忧虽有缓解，投资者信心仍未恢复。\n• 美东时间9日下午，美光股价跌0.80%，报1027.60美元。\n• 巴伦周刊称，OpenAI年化营收少了200亿美元。美光前一天因此暴跌4.8%。\n• 华尔街认为，差异在于统计口径不同。主要看云合作伙伴收入是否计入。\n• 美光自上月中旬起，一直在1000到1100美元之间徘徊。\n• 瑞银预计美光12月起可能大举回购股票。给出买入评级，目标价1625美元。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=01328406645611608&mediaCodeNo=257",
+"publishedAt": "2026-10-09T19:57:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
+"id": "kr-edaily-60d051aba7e2",
+"title": "英伟达股价小幅走低",
+"summary": "英伟达周五盘中小跌0.38%。市场仍在担心OpenAI的营收规模。主要客户能否持续增长受到关注。",
+"detail": "英伟达股价周五盘中小幅走低。美国时间下午3点50分，报229.47美元，跌0.38%。市场仍在担心OpenAI的营收规模。\n• 巴伦周刊称，OpenAI年化营收比预期低200亿美元。英伟达前一天因此跌2.9%。\n• 华尔街认为，差异主要在云合作伙伴收入是否计入。这让担忧有所缓解。\n• 但投资者仍担心英伟达的大客户能否持续增长。\n• 英伟达投资的一家云服务商撤回了澳洲上市计划。原计划募资50亿美元。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=01325126645611608&mediaCodeNo=257",
+"publishedAt": "2026-10-09T19:55:40Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "cn-cls-fb85ec30996a",
@@ -778,6 +1077,19 @@
 "url": "https://www.therobotreport.com/boston-dynamics-gives-more-insight-into-its-redesigned-humanoid-hand/",
 "publishedAt": "2026-10-09T16:59:57Z",
 "fetchedAt": "2026-10-09T22:44:29Z"
+},
+{
+"id": "us-techcrunch-fd6b62e24c31",
+"title": "亚马逊数据中心谈判不再保密",
+"summary": "亚马逊表示，谈数据中心合同将不再签保密协议。微软今年早些时候也这样做了。保密引发了各地社区反弹。",
+"detail": "亚马逊表示，以后和地方政府谈数据中心合同，不再使用保密协议。微软今年早些时候也做了同样决定。\n• 保密做法引发社区强烈反弹。从纽约到旧金山，已有数百项暂停令。\n• 反对AI基础设施的声音越来越大。各地暂停令还在增加。\n• 节目讨论了取消保密协议，能否真正改变交易方式。\n• 另一批创业公司押注，用户会把邮箱、文件和信用卡交给AI代理。\n• 主持人认为，信任或许才是个人AI公司的真正产品。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/video/amazon-and-others-are-done-keeping-data-center-deals-secret-is-it-enough-to-build-trust/",
+"publishedAt": "2026-10-09T16:56:42Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "us-techcrunch-edf79715fb8e",
@@ -1300,6 +1612,19 @@
 "fetchedAt": "2026-10-09T16:39:48Z"
 },
 {
+"id": "kr-osen-b984adb96fae",
+"title": "徐章勋回应身家两万亿传闻",
+"summary": "前篮球明星徐章勋在综艺里回应身家传闻。他承认名下有三栋楼。但说两万亿韩元的说法太离谱。",
+"detail": "徐章勋在综艺节目中回应了身家两万亿韩元的传闻。他说自己名下有三栋楼。李瑞镇和金光奎也参与了讨论。\n• 传闻源于金希澈在综艺里的玩笑。数字越传越大，从几千亿变成了两万亿。\n• 徐章勋说，韩国身家两万亿的人只有35个。他估计一百人里只有六个会信。\n• 他还反问，自己到底靠什么赚到两万亿。\n• 李瑞镇说，韩国资产超500亿韩元的约有五千人。徐章勋只是笑笑，没有正面回答。",
+"category": "ent",
+"region": "kr",
+"sourceId": "kr-osen",
+"sourceName": "OSEN",
+"url": "https://www.osen.co.kr/article/G1112890685",
+"publishedAt": "2026-10-09T14:39:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
+},
+{
 "id": "cn-ithome-abb231770ffa",
 "title": "华为手表鸿蒙7新功能公布",
 "summary": "华为公布了多款手表的鸿蒙7升级亮点。新增高尿酸风险评估研究。界面也加入了光影效果。",
@@ -1766,6 +2091,19 @@
 "url": "https://www.tenasia.co.kr/article/2026100924274",
 "publishedAt": "2026-10-09T09:29:00Z",
 "fetchedAt": "2026-10-09T11:35:00Z"
+},
+{
+"id": "kr-hk-econ-4c6640811fed",
+"title": "世界韩商协会谋求法定地位",
+"summary": "世界韩人贸易协会会长朴钟范在深圳表示，正与国会议员讨论制度化方案。大会上还签下多项投资和出口合同。",
+"detail": "世界韩人贸易协会会长朴钟范在深圳接受采访。这次大会主打中韩双向交流。中国企业也来到现场。\n• 开幕式上，朴钟范与多位国会议员交换意见。\n• 双方讨论了制定特别法或指定法定团体。目前还在初期阶段。\n• 群山新万金的海苔出口合同金额达1亿美元。日本和中国企业都参与签约。\n• 忠清北道与中国企业签下约4300亿韩元的投资协议。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610092969i",
+"publishedAt": "2026-10-09T09:23:00Z",
+"fetchedAt": "2026-10-10T05:11:12Z"
 },
 {
 "id": "kr-starnews-7af121d986f1",
