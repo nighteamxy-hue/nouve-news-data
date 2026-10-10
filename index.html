@@ -397,8 +397,14 @@ if (!RATES.includes(prefs.rate)) prefs.rate = 1.25;
 if (!MODES.some(m => m[0] === prefs.mode)) prefs.mode = "brief";
 // one-time: turn on the new 股市 category for phones that saved settings before it existed
 if (!prefs.seenStock) { if (!prefs.categories.includes("stock")) prefs.categories.push("stock"); prefs.seenStock = true; lsSet("nr.prefs", JSON.stringify(prefs)); }
-// only today's and yesterday's news (local time)
-const freshSince = () => { const d = new Date(); d.setHours(0,0,0,0); d.setDate(d.getDate() - 1); return d.getTime(); };
+// A news day starts at 08:00 Seoul time. Keep news from the 08:00 before the latest one,
+// so the previous day's news drops off at each morning's 08:00 update.
+const freshSince = () => {
+  const H = 3600e3, k = new Date(Date.now() + 9 * H);            // Seoul wall clock in UTC fields
+  let day8 = Date.UTC(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate(), 8) - 9 * H;
+  if (Date.now() < day8) day8 -= 24 * H;
+  return day8 - 24 * H;
+};
 let tab = lsGet("nr.tab") || "mine";
 let loaded = false, loadError = false, openId = null, lastSig = "";
 const token = () => lsGet("nr.token") || "";

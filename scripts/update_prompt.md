@@ -9,8 +9,10 @@
 2. 新闻源：仓库里的 data/sources.json，只处理 enabled 不为 false 的源。
 3. 读 data/news.json（数组），得到已有新闻的 id 集合。
 
-## 时效
-只要首尔时间（UTC+9）"昨天 0 点"之后发布的新闻，更早的一律不要。发布时间不明确的，只有在页面上明显是最新内容时才收录，并把 publishedAt 记为抓取时间。
+## 时效（"新闻日"从首尔时间早上 8 点算起）
+截止点 = 首尔时间（UTC+9）最近一次已经到达的早上 8 点，再往前推 24 小时。例如：10 月 11 日 08:00 到 10 月 12 日 07:59 之间运行时，截止点都是 10 月 10 日 08:00。每天 08:00 那次更新时，截止点前移一天，前一天的旧新闻随之删除。
+python 计算：`k = now_utc + 9h；d = k.date() if k.hour >= 8 else k.date() - 1天；截止点 = (d 的 08:00 首尔时间) - 24h`。
+只要截止点之后发布的新闻，更早的一律不要。发布时间不明确的，只有在页面上明显是最新内容时才收录，并把 publishedAt 记为抓取时间。
 
 ## 类目
 category 只能是：ai（AI）、econ（宏观经济/公司财经/产业）、stock（股市：大盘、个股、板块、IPO、汇率与债市行情）、tech（科技/数码/互联网，含 VR、AR、XR、MR、头显、智能眼镜、空间计算、元宇宙）、robot（机器人/自动驾驶/具身智能）、ent（娱乐/影视/明星/音乐）、travel（文旅）。
@@ -38,8 +40,8 @@ category 只能是：ai（AI）、econ（宏观经济/公司财经/产业）、s
 8. 另外生成一条「股市速览」：id 为 "market-" + 首尔时间 YYYYMMDDHH，category stock，sourceId "market"，sourceName "股市速览"，url 留空，title 如"股市速览：10月9日晚间"。只用本次抓到的股市类新闻正文里明确写出的数字（主要指数点位与涨跌幅、汇率、热门板块和个股），按中国、韩国、美国分条；summary 两个短句；detail 3–6 条 '• ' 要点。没看到的数字绝对不要编；信息不足就不生成。
 
 ## 写入并推送
-9. 新旧合并，按 publishedAt 从新到旧排序；删除首尔时间"昨天 0 点"之前的条目；最多 600 条。写回 data/news.json：`json.dumps(data, ensure_ascii=False, indent=0)`。
-10. 写 data/meta.json：{"lastScanAt": 当前UTC ISO, "lastScanStatus": 一句中文如"新增 23 条，2 个源失败：A、B", "intervalHours": 6}。
+9. 新旧合并，按 publishedAt 从新到旧排序；删除 publishedAt 早于上面"截止点"的条目；最多 600 条。写回 data/news.json：`json.dumps(data, ensure_ascii=False, indent=0)`。
+10. 写 data/meta.json：{"lastScanAt": 当前UTC ISO, "lastScanStatus": 一句中文如"新增 23 条，2 个源失败：A、B", "intervalHours": 3}。
 11. `git add data && git commit -m "更新新闻 <UTC时间>"`（提交信息末尾加两行：`Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` 和 `Claude-Session: https://claude.ai/code/session_01KQihy8LhAk9dNTFGHfNbL1`），然后 `git pull --rebase origin main && git push origin HEAD:main`。失败等 10 秒重试一次。
 12. 用 WebFetch 打开 https://news.nouve.cn/api/log?m=<消息>（消息用 urllib.parse.quote 编码，如"更新完成 新增N条 commit xxx" 或 "推送失败 <错误类型>"，错误类型只写一个简短分类，如 权限被拒403、网络错误、合并冲突，不要附报错原文或仓库地址），prompt 写"原样输出"。
 
