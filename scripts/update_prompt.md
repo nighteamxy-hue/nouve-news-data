@@ -56,5 +56,6 @@ category 只能是：ai（AI）、econ（宏观经济/公司财经/产业）、s
 
 个别源的特殊处理：36氪（cn-36kr）的文章链接要把 `https://36kr.com/` 换成 `https://www.36kr.com/` 并去掉 `?f=rss` 再打开，不带 www 会被反爬虫验证页挡住；正文打不开时，可直接用 RSS 里 description 的全文写总结。计算文档 id 时，36氪统一用不带 www、不带 ?f=rss 的链接，文章是 `https://36kr.com/p/<数字>`，快讯是 `https://36kr.com/newsflashes/<数字>`，和已有条目保持一致，避免重复收录。
 韩国经济（hankyung.com 的几个源）用浏览器 User-Agent 请求会被 403 挡住，不带 User-Agent 反而能正常获取；遇到 403 时改用 curl 默认的 User-Agent（不加 -A 参数）重试一次。
+로봇신문（irobotnews.com）等韩国源给出的发布时间如果没有时区标记，一律按首尔时间（UTC+9）换算成 UTC 再写 publishedAt。
 
 某个源或某篇文章失败时，记下来继续，不要停。
