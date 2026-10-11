@@ -113,7 +113,7 @@ async function cachedClip(env, ctx, key, segs, ttl) {
   return hit ? decodeWav(hit) : makeClip(env, ctx, key, segs, ttl);
 }
 /* Speak each piece separately and join them with real silence, then cache the WAV. */
-async function makeClip(env, ctx, key, segs, ttl = 3 * 86400) {
+async function makeClip(env, ctx, key, segs, ttl = 2 * 86400) {
   const pcm = await mapLimit(segs, 4, s => tts(env, s.text).then(decodeWav));
   const rate = pcm.find(Boolean).rate;
   const chunks = [];
@@ -139,7 +139,9 @@ async function pregen(env, budget) {
   const doneList = (await env.NEWS_KV.get(`pregen_${AUDIO_VERSION}`, "json")) || [];
   const done = new Set(doneList);
   let calls = 0, made = 0, changed = false;
-  outer: for (const mode of ["brief", "detail"]) {
+  // Only the short version is made ahead of time: the detailed one is rarely played and
+  // its long clips would eat the free KV limits (1,000 writes a day, 1 GB storage).
+  outer: for (const mode of ["brief"]) {
     for (const n of fresh) {
       const k = `${n.id}:${mode}`;
       if (done.has(k)) continue;
