@@ -1,5 +1,161 @@
 [
 {
+"id": "cn-panews-bf0ed371e5a9",
+"title": "Aptos主网上线加密内存池",
+"summary": "Aptos宣布加密内存池已在主网上线。用户可以选择加密待处理交易，降低被抢跑的风险。",
+"detail": "Aptos在X平台宣布，加密内存池已在主网上线。\n• 用户可以按单笔交易选择开启。交易在区块确定前保持加密。\n• 被调用的函数和参数在执行前不公开。发送方和手续费仍然可见。\n• 目的是降低MEV攻击风险。\n• Aptos表示，功能面向机构、交易者和AI智能体。它可避免大额订单提前暴露意图。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a13110-f849-7205-918a-23441bb13b40",
+"publishedAt": "2026-10-12T20:11:41Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "kr-blockmedia-3d0d082db4d6",
+"title": "克拉肯获迪拜最终牌照",
+"summary": "加密交易所克拉肯获得迪拜监管机构的最终批准。它将在阿联酋推出迪拉姆交易、质押和代币化股票服务。",
+"detail": "克拉肯母公司Payward，拿到迪拜虚拟资产监管局的最终批准。距离5月拿到初步批准约5个月。\n• 未来几周，阿联酋用户可以用迪拉姆做现货和杠杆交易。他们还能直接出入金。\n• 平台还将支持链上质押、xStocks代币化股票和Krak转账。\n• 机构客户可以使用场外交易和Kraken Prime平台。\n• 衍生品和更多收益产品，计划今年底到明年推出。这些还需要另行获批。\n• Payward称，它在全球持有超过100项金融牌照和注册。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1150636?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-12T19:55:23Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "kr-blockmedia-325b7f7f47b4",
+"title": "比特币矿企转型AI缺钱",
+"summary": "比特币矿企扩展AI数据中心业务，面临巨大融资压力。研究估计，完成计划项目还需约500亿美元。",
+"detail": "Blocksbridge咨询发布报告。它认为矿企拿到AI客户后，仍需巨资建设设备和电力。\n• 上市矿企完成计划中的AI项目，约需500亿美元。\n• IREN缺口最大，约211亿美元。Riot缺口72亿美元，Hive缺口46亿美元。\n• 大型贷款机构更加谨慎，融资成本差距拉大。IREN两笔融资的利率分别是6%和9%。\n• 谷歌为Cipher Digital的14亿美元租约担保，换取5.4%股份的认股权。\n• 矿企债务已比2024年二季度增长约500%。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1150615?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-12T19:48:29Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "cn-cls-499a0f7ab23d",
+"title": "美元指数上涨0.37%",
+"summary": "美元指数12日上涨0.37%，收于102.59。欧元、英镑和日元对美元全线走弱。",
+"detail": "美元指数衡量美元对六种主要货币的强弱。它12日上涨0.37%，收于102.59。\n• 1欧元兑1.1156美元，低于前一交易日。\n• 1英镑兑1.3206美元，同样走低。\n• 1美元兑158.68日元，高于前一交易日。\n• 美元兑瑞士法郎、加元和瑞典克朗也全线走高。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502795",
+"publishedAt": "2026-10-12T19:46:11Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "kr-blockmedia-838aa3a37321",
+"title": "美拟将稳定币列为现金等价物",
+"summary": "美国财务会计准则委员会拟修订规则。符合条件的稳定币，可以在企业报表中列为现金等价物。",
+"detail": "美国财务会计准则委员会8月提出修订案。符合条件的稳定币，可列为现金等价物。\n• 目前即使有足额美元储备，稳定币也未必算现金等价物。这会影响企业流动性比率和贷款条款。\n• 核心条件是，企业对发行方拥有直接赎回的合同权利。\n• 只在交易所买入USDC，并不满足条件。\n• Stripe支持的Tempo项目举了个例子。Coinbase凭与Circle的赎回协议，已把USDC列为现金等价物。\n• 委员会征求意见到11月19日。最终规则和实施时间还没定。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1150657?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-12T19:10:55Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "kr-blockmedia-f7d256868a7f",
+"title": "波场三季度交易量达11亿笔",
+"summary": "波场三季度处理约11亿笔交易，同比增长33.7%。稳定币结算规模约2.21万亿美元。",
+"detail": "波场DAO发布三季度生态报告。网络处理约11亿笔交易，同比增长33.7%。\n• 稳定币结算规模约2.21万亿美元，日均240.5亿美元。\n• 月均活跃地址1800万个，环比增长9.8%。\n• USDT和USDD总供应938.8亿美元，环比增长5.5%。\n• 三季度稳定币卡支付共43.1亿美元。波场处理约9.98亿美元，份额23.2%排第一。\n• 网络手续费总计约7亿美元，日均费用环比下降4%。\n• 波场上的USDT流通量超过940亿美元，在所有公链中最多。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1150565?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-12T19:03:04Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "us-theblock-f1ede1d5d776",
+"title": "币安向英语用户推出AI交易工具",
+"summary": "币安向所有英语用户推出免费的Binance AI交易界面。此前约有15万名用户参与了测试。",
+"detail": "",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/business/2026-10-12-binance-ai-trading-interface-global-rollout-418349",
+"publishedAt": "2026-10-12T18:44:10Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "cn-eastmoney-cdf629d3b17b",
+"title": "机构称A股缩量是磨底",
+"summary": "三季度以来A股成交回落，大盘在4000点附近震荡。多家机构认为，这是以时间换空间的磨底阶段。",
+"detail": "三季度以来，A股成交量回落，大盘在4000点附近震荡。高利率环境和观望情绪，让四季度走势受到关注。\n• 星石投资方磊认为，9月缩量是7月调整后的磨底。杠杆资金稳定，ETF仍在净流入。\n• 银河证券杨超说，存量博弈不等于行情结束。资金正向确定性标的收敛。\n• 中邮证券黄付生提示了风险。指数重心下移、量能缺失的话，缩量就是风险释放中继。\n• 10年期美债收益率升至5.2%以上，创2007年以来新高。\n• 机构看好的潜在惊喜有三个。包括三季报超预期、政策落地和海外流动性改善。风险是美债收益率再度冲高。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610133893056135.html",
+"publishedAt": "2026-10-12T18:07:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "us-techcrunch-80d24e118917",
+"title": "Meta发布首个前沿模型",
+"summary": "Meta超级智能实验室发布Muse Wonder和Wonder Full两款模型。这是Meta首次推出前沿级大模型。",
+"detail": "Meta超级智能实验室周一发布Muse Wonder和Muse Wonder Full。这是公司首次尝试前沿模型。\n• Meta测试显示，两款模型的基准成绩与Fable 5.1和GPT-6 Astra相当。编程等复杂任务表现更好。\n• Wonder通过API收费，每百万输入令牌4美元，输出20美元。价格与GPT-6 Sol和Opus 5.5接近。\n• Wonder Full只开放给Muse Code订阅用户，不通过API提供。\n• Meta强调主动记忆能力。在MemoryBench测试中，Wonder得分超过Fable、Opus和Astra。\n• 模型在俄亥俄州的Prometheus数据中心训练。这是Alexandr Wang重组Meta AI后的首个前沿模型。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+"publishedAt": "2026-10-12T17:56:56Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "cn-cls-f7f11f0cd61e",
+"title": "英伟达开放Vera Rubin机柜设计",
+"summary": "英伟达在开放计算项目峰会上，开放Vera Rubin机柜关键设计。它还推动供电、液冷和光模块采用统一规格。",
+"detail": "英伟达在开放计算项目峰会上，开放了Vera Rubin机柜关键设计。\n• 新版MGX 1.2规格加入盲插液冷和5000安培液冷母排。机柜功率最高250千瓦。\n• 托盘推入机柜时，盲插液冷能自动对接冷却管路。这省去了手动连接。\n• 英伟达与思科合作开发下一代可插拔光模块。带宽密度将提升4倍。\n• 鸿海旗下公司公布了结合800伏直流架构的AI工厂设计。\n• 新的开源运维工具，能把集群部署从数天缩短到数小时。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502778",
+"publishedAt": "2026-10-12T17:52:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "us-techcrunch-8e8b602fc5f5",
+"title": "WindBorne获美空军气象合同",
+"summary": "气象气球公司WindBorne拿下美国空军合同，最高价值约4900万美元。空军将按需购买它的大气数据。",
+"detail": "美国空军将购买WindBorne自主气象气球收集的数据。合同最高价值4900万美元。\n• 空军按需下单，可以指定区域和时间。目前已订购170万美元的数据。\n• WindBorne约有700个气球在全球飞行。数据会对外出售，也用于自家AI天气预报模型。\n• 这是公司参与过的最大合同，而且未经竞标授予。\n• 公司8月完成3700万美元B轮融资。它称新模型WeatherMesh 6，比欧洲中期天气预报中心的模型更准。\n• 8月，它首次用无动力飞行器进入台风眼采集数据。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
+"publishedAt": "2026-10-12T17:19:14Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "cn-cls-0c5be6244fa0",
+"title": "哈萨克斯坦央行转向减持黄金",
+"summary": "哈萨克斯坦央行计划减持黄金。年底前黄金在外储中的占比将降到75%。原因是美债收益率走高。",
+"detail": "哈萨克斯坦央行正从全球主要买金方，转为卖方。\n• 副行长莫尔达别科娃说，美债收益率处于多年高位。这削弱了黄金的吸引力。\n• 该行黄金储备已增至386吨，约占外汇储备78%。目标是年底降到75%。\n• 截至9月底，该国外汇储备664亿美元，需要保持流动性。\n• 减持计划一半通过卖出黄金期权，一半出售实物黄金。\n• 周一现货金价跌至每盎司4160美元。世界黄金协会数据显示，各国央行今年整体仍在增持。主要买家包括波兰、中国和乌兹别克斯坦。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502775",
+"publishedAt": "2026-10-12T17:19:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "market-2026101302",
 "title": "股市速览：10月13日凌晨",
 "summary": "美股盘前期指窄幅震荡，芯片股承压。韩股收跌3.65%，A股深成指和创业板指跌超2%。",
@@ -11,6 +167,19 @@
 "url": "",
 "publishedAt": "2026-10-12T17:15:50Z",
 "fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "us-theblock-95ee7fa89ac1",
+"title": "StoneX上调Securitize目标",
+"summary": "StoneX把Securitize的目标价从12美元上调到18美元。理由是它的代币化股票交易平台带来新收入。",
+"detail": "",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/markets/2026-10-12-stonex-raises-securitize-price-target-tokenized-stocks-418313",
+"publishedAt": "2026-10-12T17:06:25Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-panews-34f8af13a008",
@@ -37,6 +206,19 @@
 "url": "https://www.panewslab.com/zh/articles/01a1310c-534b-72f8-88bd-b78328b64b81",
 "publishedAt": "2026-10-12T16:56:00Z",
 "fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-cls-db8f6fe09134",
+"title": "瑞银：AI行情下一步看电力",
+"summary": "瑞银报告认为，AI行情的关注点正转向供给端。电力、数据中心产能和融资，将左右后续走势。",
+"detail": "瑞银能源与资源专家戈登发布报告。她认为AI基础设施的约束正在显现。\n• 她指出，AI叙事重心正从模型开发转向配套建设。市场不担心需求，而是关注供给。\n• 电力供应正在成为关键约束。\n• 亚马逊与美国最大核电运营商星座能源签约20年。它将获得690兆瓦电力。\n• 谷歌母公司随后也与星座能源签约20年。它锁定了890兆瓦新增核电。\n• 报告称，巨头资本开支和资金来源仍有争论。项目能否如期落地，将决定AI交易的走向。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502763",
+"publishedAt": "2026-10-12T16:23:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "us-coindesk-99b9c04ea47b",
@@ -117,6 +299,19 @@
 "fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
+"id": "us-coindesk-701e0250a1db",
+"title": "汤姆李看好财富转移带动加密",
+"summary": "Bitmine董事长汤姆李称，大量财富将传给年轻人。规模最多约2万亿美元。他认为这会推动下一轮加密牛市。",
+"detail": "以太坊财库公司Bitmine的董事长汤姆李周一发表看法。他认为财富代际转移，可能推动下一轮加密牛市。\n• 他引用美国国税局和Fundstrat的估算。2026到2028年，约有1.5万亿到2万亿美元财富易手。\n• 继承者更年轻，对加密和股票的风险偏好更高。\n• 他还提到资产代币化和AI应用。财库公司长期持币也是推动力。\n• Bitmine上周又买入12532枚以太坊。总持仓约602.9万枚，约占总供应4.9%。\n• 公司称持仓到5%就停止增持。目前已质押约84%的以太坊。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/business/2026/10/12/tom-lee-sees-usd2-trillion-wealth-transfer-fueling-crypto-demand-as-bitmine-buys-more-ether",
+"publishedAt": "2026-10-12T15:27:09Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-ithome-883156a3e8f1",
 "title": "火狐158默认支持JPEG XL",
 "summary": "Mozilla发布火狐浏览器158版。这一版最大的亮点，是默认启用JPEG XL图片格式支持。",
@@ -128,6 +323,19 @@
 "url": "https://www.ithome.com/1/012/125.htm",
 "publishedAt": "2026-10-12T15:19:24Z",
 "fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-37e7279496b1",
+"title": "比亚迪与荣耀深化手车互联",
+"summary": "比亚迪宣布与荣耀战略合作。双方打通车机与手机的语音智能体。手机AI能力将带进座舱。",
+"detail": "比亚迪10月12日宣布与荣耀战略合作。双方共建AI语音融合，打通车机与手机的语音智能体。手机上的AI能力和服务，将带进汽车座舱。\n• 比亚迪将支持荣耀YOYO远程控车，包括语音寻车和语音备车。\n• 手机镜像桌面可让全部App上车，行车操控更从容。\n• 车机语音可以跨端操控手机，YOYO全部技能都能上车。\n• 今年8月，双方已官宣深度手车互联合作。地址流转和音乐无缝流转等功能已经落地。这需要DiLink100及以上座舱平台。\n• 2025年10月，双方签署战略合作协议。合作覆盖核心技术、渠道生态和联合传播三条主线。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/121.htm",
+"publishedAt": "2026-10-12T15:08:48Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-ithome-13e8cc23840f",
@@ -195,6 +403,19 @@
 "fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
+"id": "cn-cls-d6f89b1ee1ff",
+"title": "英伟达支持的Firmus搁置上市",
+"summary": "英伟达支持的澳大利亚AI基础设施公司Firmus撤回上市计划。亚太投资者对AI基建项目更加挑剔。",
+"detail": "澳大利亚AI基础设施公司Firmus上周五撤回澳股上市计划。它原计划募资最多55亿美元。\n• 公司正考虑向现有投资者私募融资。\n• Firmus规划的数据中心总容量912兆瓦，目前只建成46兆瓦。\n• 业内人士说，投资者更关心谁来买单和资本成本。所有交易的门槛都提高了。\n• 今年以来，亚太股权融资合计近2500亿美元。去年全年约2600亿美元。\n• 分析认为，已经盈利的AI相关企业受影响有限。比如电路板和存储芯片厂商。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502716",
+"publishedAt": "2026-10-12T14:29:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-ithome-6753a623aff0",
 "title": "AMD发布新款锐龙AI Halo",
 "summary": "AMD推出新一代锐龙AI Halo开发者平台。它最高支持192GB内存，能在本地运行超大模型。",
@@ -206,6 +427,19 @@
 "url": "https://www.ithome.com/1/012/104.htm",
 "publishedAt": "2026-10-12T14:27:12Z",
 "fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-cls-77f742a93874",
+"title": "神农集团董事长离婚分股24亿",
+"summary": "神农集团公告，实控人何祖训离婚达成调解。前妻罗婉瑜分得约7830万股，市值约23.8亿元。",
+"detail": "神农集团公告，董事长何祖训与罗婉瑜离婚。双方已在法院主持下达成调解。\n• 何祖训持有2.61亿股，其中30%归罗婉瑜，约7830.5万股。\n• 按当天收盘价30.43元计算，这部分股份市值约23.83亿元。\n• 何祖训须在30天内配合办理过户。罗婉瑜此前没有持股。\n• 双方同时签署一致行动协议。罗婉瑜在董事会和股东会上，与何祖训保持一致。\n• 何祖训直接持股比例为49.6%，仍是公司实际控制人。\n• 当天神农集团股价上涨1.7%，总市值约160亿元。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502705",
+"publishedAt": "2026-10-12T14:23:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-ithome-2c5e55bb3aa4",
@@ -260,6 +494,19 @@
 "fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
+"id": "cn-ithome-5439b20a27a1",
+"title": "拓竹预告S1三维扫描仪",
+"summary": "拓竹发布新品预告，S1三维扫描仪将在11月推出。这家公司的3D打印机国内销量已破百万台。",
+"detail": "拓竹10月12日发布新品预告。拓竹S1 3D扫描仪将在11月和用户见面，主打专业扫描更简单。\n• 拓竹是国内消费级3D打印机的龙头企业。\n• 它的消费级3D打印机国内累计销量已突破100万台。距离首款产品上市只有大约4年。\n• 2025年，拓竹用户的总打印时长超过2.9亿小时。\n• 超过3万名用户的打印机，平均每天要工作7个多小时。\n• 今年9月，拓竹还发布了R1激光切割机。它用55瓦二氧化碳激光，首发价14999元起。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/100.htm",
+"publishedAt": "2026-10-12T14:08:03Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-eastmoney-8b9c5e30bcb3",
 "title": "美股震荡 存储股走弱",
 "summary": "美股三大指数震荡整理，涨跌不大。存储板块走弱，美光科技跌超4%。",
@@ -284,6 +531,19 @@
 "url": "https://www.blockmedia.co.kr/archives/1150550?utm_source=general&utm_medium=rss",
 "publishedAt": "2026-10-12T13:55:06Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "kr-hk-econ-3d562f622c56",
+"title": "高盛上调全球股市评级",
+"summary": "高盛把全球股市未来三个月的评级，从中性上调为超配。高盛的理由是，企业盈利前景依然良好。",
+"detail": "据彭博报道，高盛策略师上调了全球股市的投资评级。\n• 未来三个月的评级，从中性上调为超配。\n• 未来12个月的展望维持看涨。\n• 高盛认为，油价和债券收益率走高，让股市涨势停顿。\n• 但企业盈利前景依然良好。全球股市目前已在历史高位附近。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610127280i",
+"publishedAt": "2026-10-12T13:48:05Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "us-theblock-157d0747de54",
@@ -416,6 +676,19 @@
 "fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
+"id": "cn-36kr-ace0164ec5b6",
+"title": "零跑A05亮相欧洲",
+"summary": "零跑A05在巴黎车展完成欧洲首秀。零跑同时宣布，B10车型已在西班牙工厂正式投产。",
+"detail": "巴黎国际车展期间，零跑A05完成欧洲首秀。\n• 零跑同时宣布，B10车型已经正式投产。\n• 生产地点是西班牙萨拉戈萨工厂。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022888410795911",
+"publishedAt": "2026-10-12T12:53:42Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-36kr-0bd30f740b00",
 "title": "盐田港拟投37.88亿建码头",
 "summary": "盐田港发布投资公告。它拟投资约37.88亿元。资金用于苏州港张家港港区的码头一期工程。",
@@ -481,6 +754,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "cn-36kr-4919c0df2472",
+"title": "吉视传媒称AI短剧收入极低",
+"summary": "两连板的吉视传媒发布公告。公司称AI微短剧业务暂无稳定收入。公司提醒注意投资风险。",
+"detail": "吉视传媒发布公告，回应媒体对其AI微短剧业务的报道。\n• 公司称，相关业务尚处起步培育和模式打磨阶段。\n• 目前暂未产生稳定收入，收入极低。\n• 预计对公司今年业绩没有重大影响。\n• 公司提醒投资者注意风险。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022879633887362",
+"publishedAt": "2026-10-12T12:44:47Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-36kr-dfac3cfc4f2c",
 "title": "美股科技股盘前多数下跌",
 "summary": "周一美股盘前，大型科技股多数走低。存储股领跌，美光科技和SK海力士都跌超2%。英特尔跌超1%。",
@@ -531,6 +817,19 @@
 "url": "https://www.hankyung.com/article/202610127256i",
 "publishedAt": "2026-10-12T12:34:45Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-36kr-9dbd188c325c",
+"title": "荣丰控股易主 今起复牌",
+"summary": "荣丰控股公告，控股股东将变更为广州昕图。实际控制人将变为陈群萍。公司股票10月13日复牌。",
+"detail": "荣丰控股公告，控股股东盛世达与广州昕图签了转让协议。\n• 盛世达拟以每股18.63元，转让29.99%的股份。\n• 转让完成后，广州昕图还拟要约收购5.01%股份。\n• 交易完成后，实际控制人将变更为陈群萍。\n• 公司股票10月13日复牌。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022863360741254",
+"publishedAt": "2026-10-12T12:28:13Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-36kr-a2d53be1db60",
@@ -585,6 +884,19 @@
 "fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
+"id": "cn-36kr-5cca18e4e167",
+"title": "博瑞医药降糖新药获批临床",
+"summary": "博瑞医药公告，旗下BGM0504片获得临床试验批准。试验对象是成人2型糖尿病患者。",
+"detail": "博瑞医药全资子公司博瑞制药，近日获得国家药监局批准。\n• 药监局同意BGM0504片开展临床试验。\n• 试验对象为成人2型糖尿病患者。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022844743127168",
+"publishedAt": "2026-10-12T12:18:10Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "us-theblock-6ee6b5638988",
 "title": "Strategy再买250枚比特币",
 "summary": "Strategy上周花2150万美元，买入250枚比特币。总持仓达84.825万枚。",
@@ -624,6 +936,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "us-coindesk-5c152f392d80",
+"title": "渣打迪拜托管瑞波稳定币",
+"summary": "渣打银行迪拜分行开始为瑞波稳定币RLUSD提供机构托管。它还计划让客户用RLUSD在LMAX做交易抵押。",
+"detail": "渣打银行通过迪拜分行，为瑞波稳定币RLUSD提供机构托管。RLUSD运行在XRP账本上。\n• 渣打管理的资产近4500亿美元。\n• 银行计划与瑞波和LMAX合作。客户托管的RLUSD，可以用作LMAX交易抵押品。这部分还没上线，需要测试和监管审批。\n• 这种安排把托管和交易分开。机构不必把资产转到交易平台。\n• 瑞波今年1月曾向LMAX提供1.5亿美元融资。\n• 渣打上周还表示，将在新加坡为机构提供加密资产托管。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/business/2026/10/12/standard-chartered-offers-rlusd-custody-in-dubai-and-plans-lmax-collateral-link",
+"publishedAt": "2026-10-12T12:09:09Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-ithome-4ed737bdc1c6",
 "title": "一加16发布 5999元起",
 "summary": "一加16手机正式发布，定价5999元起。国补后5199元起，10月13日开售。",
@@ -661,6 +986,19 @@
 "url": "https://www.coindesk.com/tech/2026/10/12/ledger-claims-cryptobilis-cases-are-limited-as-up-to-usd93m-is-traced-usd10m-frozen",
 "publishedAt": "2026-10-12T12:01:53Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-36kr-435d1125df68",
+"title": "新皇岗口岸开通首日平稳",
+"summary": "新皇岗口岸10月12日正式开通，首日运行平稳。截至当天18时，出入境人员约5.2万人次。",
+"detail": "新皇岗口岸10月12日早上6点半正式开通。口岸实行一地两检，合作查验，一次放行。\n• 旅客和客运车辆可以24小时通关。\n• 深圳边检总站统计，截至当天18时，出入境人员5.2万人次。\n• 其中入境2.7万人次，出境2.5万人次。\n• 出入境车辆约0.56万辆次。深港通勤、商务和探亲更省时。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022836749225856",
+"publishedAt": "2026-10-12T12:01:09Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "us-theblock-2035f305e1e9",
@@ -817,6 +1155,32 @@
 "url": "https://www.hankyung.com/article/202610127200i",
 "publishedAt": "2026-10-12T11:28:28Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-ithome-93c27b2eed12",
+"title": "微软Edge推出AI故障排查",
+"summary": "微软介绍Edge浏览器新的AI故障排查功能。它像聊天机器人，只在用户授权后才收集诊断数据。",
+"detail": "微软发文介绍Edge浏览器的修复问题功能。这是一项新的AI故障排查工具。\n• 功能集成在Edge设置里，用起来像AI聊天机器人。\n• 用户可以选预设问题，也可以自己输入提示词。AI会分析问题，再给出解释和建议。\n• 用户主动启动排查并授权后，Edge才收集可选诊断数据。用户拒绝的话，就不收集。\n• 数据收集只限当前排查会话，不会在后台持续进行。数据也只用于排查故障。\n• 微软也承认，AI回答偶尔可能不准确或不完整。复杂故障仍可能需要手动排查。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/069.htm",
+"publishedAt": "2026-10-12T11:28:24Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "cn-ithome-e05344150270",
+"title": "小鹏G9L巴黎上市",
+"summary": "小鹏G9L在巴黎车展全球上市。法国版起售价74990欧元，将登陆德国、荷兰等多个欧洲国家。",
+"detail": "小鹏汽车10月12日宣布，G9L在巴黎车展全球上市。法国版起售价74990欧元，约合56.3万元人民币。\n• 新车将登陆德国、荷兰、比利时、挪威、瑞典等欧洲国家。\n• G9L 9月17日已在国内上市，定位大五座科技旗舰。它有超级增程和纯电两种动力。\n• 车长5120毫米，轴距3100毫米。前后都有贯穿灯，共480颗LED灯珠。\n• 座舱首发智能四电机行政中岛。小桌板能随靠背自动调平。\n• 全系标配800V高压平台和5C快充。增程版综合续航1602公里，纯电版最高755公里。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/068.htm",
+"publishedAt": "2026-10-12T11:23:05Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "us-coindesk-cd1cf0988123",
@@ -1118,6 +1482,19 @@
 "fetchedAt": "2026-10-12T11:13:43Z"
 },
 {
+"id": "cn-ithome-6540d61def8b",
+"title": "问界M9九月销量破万",
+"summary": "博主公布鸿蒙智行9月细分销量。问界M9单月破万，尊界V800交付首月就超过2000台。",
+"detail": "ECC情报局的博主，分享了鸿蒙智行9月各车型上险量。\n• 问界依旧在鸿蒙智行里排名第一。其中问界M9单月销量破万。\n• 智界凭借V9车型，回升到五界第二名。随后是尚界、享界和尊界。\n• 百万级MPV尊界V800，交付首月销量就超过2000台。这款车8月31日开启交付。\n• 鸿蒙智行此前公布，9月共交付37490台。\n• 全系累计交付已突破156万台。这持续刷新新势力品牌的速度纪录。\n• 数据来源为上险量，由博主整理发布。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/041.htm",
+"publishedAt": "2026-10-12T10:08:25Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "kr-hk-it-4051e3c03d60",
 "title": "Olix眼药临床申请被退 股价跌9%",
 "summary": "韩国药企Olix的黄斑变性新药，在新西兰的临床申请被退回。公司股价当天跌9.46%。",
@@ -1142,6 +1519,19 @@
 "url": "https://www.hankyung.com/article/2026101268751",
 "publishedAt": "2026-10-12T10:06:10Z",
 "fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-943a2f61a7e3",
+"title": "搜狗问问11月7日停运",
+"summary": "腾讯旗下搜狗问问发布停服公告。平台将在11月7日晚停止服务，用户需要提前备份内容。",
+"detail": "因为业务调整，搜狗问问和问问商城将停止服务。时间是11月7日23点59分。届时相关页面将无法访问。\n• 停服后用户账号会自动注销，不需要手动操作。\n• 问豆兑换功能同步关闭。没用完的问豆将清零，也不能兑换现金。\n• 想兑换商品，需要保持账号活跃，问豆余额也要足够。\n• 用户的提问和回答，需要在停服前自行截图或复制保存。\n• 停服后，平台内容将依法删除或匿名化处理。\n• 搜狗问问前身是腾讯的SOSO问问，曾拥有过亿用户。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/040.htm",
+"publishedAt": "2026-10-12T10:06:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "kr-hk-econ-391c91c07b22",
@@ -1300,19 +1690,6 @@
 "fetchedAt": "2026-10-12T11:13:43Z"
 },
 {
-"id": "us-theblock-b748d36f0734",
-"title": "渣打为瑞波稳定币提供托管",
-"summary": "渣打银行在XRP账本上为瑞波稳定币RLUSD推出托管。它还与LMAX合作，让RLUSD充当保证金。",
-"detail": "",
-"category": "crypto",
-"region": "us",
-"sourceId": "us-theblock",
-"sourceName": "The Block",
-"url": "https://www.theblock.co/news/business/2026-10-12-standard-chartered-custody-ripple-rlusd-418258",
-"publishedAt": "2026-10-12T09:35:21Z",
-"fetchedAt": "2026-10-12T11:13:43Z"
-},
-{
 "id": "cn-cls-67d0a16e5060",
 "title": "新能源车出口退税降至9%",
 "summary": "两部门宣布下调新能源汽车出口退税率。明年4月起由13%降到9%。电子烟设备退税取消。",
@@ -1324,6 +1701,19 @@
 "url": "https://www.cls.cn/detail/2502325",
 "publishedAt": "2026-10-12T09:17:09Z",
 "fetchedAt": "2026-10-12T11:13:43Z"
+},
+{
+"id": "kr-hk-econ-c338061c270c",
+"title": "Flitto获芯片巨头AI翻译订单",
+"summary": "韩国AI语言企业Flitto与一家全球半导体企业签约。它将供应约39亿韩元的AI实时翻译系统。",
+"detail": "韩国AI语言服务企业Flitto 12日公告，拿下一份供货合同。客户是一家全球半导体企业。\n• 合同金额38.7亿韩元，相当于公司去年营收的10.76%。\n• 合同期从10月8日到12月30日。内容是AI实时口译和翻译系统，外加系统集成服务。\n• 客户名称应对方要求，没有对外公开。\n• Flitto主要供应AI训练用的语言数据，也做AI翻译服务。\n• 就在几天前，Flitto下调了另一份AI数据合同。金额从89亿韩元降到40亿韩元。\n• 下调公告第二天，公司股价下跌9.93%。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610127048i",
+"publishedAt": "2026-10-12T09:08:15Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "kr-blockmedia-cad2a57871ac",
@@ -1363,6 +1753,19 @@
 "url": "https://www.hankyung.com/article/2026101269421",
 "publishedAt": "2026-10-12T09:00:17Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "kr-hk-econ-3570d782d376",
+"title": "韩国东海废气田将拆除",
+"summary": "韩国政府决定拆除东海废弃气田的主要设施。业界担心，碳捕集与封存设施建设因此受阻。",
+"detail": "韩国东海气田曾让韩国跻身产油国，2021年停产。政府原计划把它改造成碳捕集与封存设施。\n• 产业通商部近日发函，要求韩国石油公社拆除海上平台。\n• 国会上月已修法，改作减碳用途可免除复原义务。产业部称，开采权7月就已到期。\n• 项目原计划每年封存120万吨二氧化碳。但经济性不足，迟迟没过可行性审查。\n• 气候部本想明年投入400亿韩元做小规模测试。如今这也可能落空。\n• 业界担心，设施拆掉后民企要重建，成本会大增。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101270411",
+"publishedAt": "2026-10-12T09:00:13Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "kr-hk-finance-e12965077d76",
@@ -1417,6 +1820,19 @@
 "fetchedAt": "2026-10-12T11:13:43Z"
 },
 {
+"id": "kr-hk-econ-64b55a7561dd",
+"title": "友利银行用生成式AI防诈骗",
+"summary": "韩国友利银行宣布，下月启用生成式AI监控系统。它将升级异常交易侦测，应对新型金融诈骗。",
+"detail": "友利银行12日召开记者会。它宣布下月起启用生成式AI监控系统。\n• 过去的异常交易侦测系统，靠预设规则找异常。新系统能分析新型诈骗，还能生成新的侦测场景。\n• 银行将扩大分析数据范围，年底前完成系统稳定。\n• 韩国警方数据显示，2022年金融诈骗损失7911亿韩元。去年增至约2.38万亿韩元。\n• 杀猪盘和追款诈骗等新手法正在扩散。\n• 银行还将组建专门团队。它已聘请一位有24年经验的前警官担任负责人。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101269101",
+"publishedAt": "2026-10-12T08:51:58Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-ithome-0eb55f51f534",
 "title": "首列具身智能地铁列车亮相",
 "summary": "中车长客牵头研制的数字地铁列车VELLINK亮相。官方称它是国内首列具身智能地铁列车。",
@@ -1428,6 +1844,32 @@
 "url": "https://www.ithome.com/1/011/985.htm",
 "publishedAt": "2026-10-12T08:51:01Z",
 "fetchedAt": "2026-10-12T11:13:43Z"
+},
+{
+"id": "kr-hk-econ-8b686f4ca8ed",
+"title": "海特真露将在韩生产麒麟啤酒",
+"summary": "海特真露与日本麒麟合作。它将在韩国全州工厂，生产麒麟一番榨罐装啤酒。初期产量约300万罐。",
+"detail": "海特真露进口销售日本麒麟一番榨啤酒已有20多年。现在它将在韩国本土直接生产。\n• 双方签署技术合作协议，产品在全州工厂生产。本月第一周已开始出货。\n• 首批产量约150万升，相当于300万罐500毫升装。\n• 到明年，韩国销量的约75%将由本土产品替代。\n• 麒麟首次允许没有资本关系的亚洲伙伴授权生产。\n• 过去从日本进口要一个半月，本土生产1到2周就能供货。\n• 工厂没有扩建，沿用麒麟的配方和质控标准。酵母由麒麟供应。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101270321",
+"publishedAt": "2026-10-12T08:50:55Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
+"id": "kr-hk-econ-e663a8bd81e2",
+"title": "Olive Young进驻东南亚丝芙兰",
+"summary": "CJ Olive Young完成入驻东南亚三国和香港的丝芙兰门店。它在店内开设韩国美妆专区。",
+"detail": "CJ Olive Young 12日宣布完成新一轮入驻。地点是马来西亚、新加坡、泰国和香港的丝芙兰门店。\n• 丝芙兰是路威酩轩旗下的全球最大美妆集合店。\n• 今年1月，双方结成伙伴关系。Olive Young在丝芙兰店内推出韩国美妆专区。\n• 8月美国丝芙兰首发后，入驻品牌的日均销售额环比翻倍。\n• 新加坡和泰国游客，是Olive Young韩国门店的消费大户。\n• 公司从10月8日起，还在新加坡一家高端商场办快闪活动。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101270281",
+"publishedAt": "2026-10-12T08:49:14Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-cls-f22d25eae98b",
@@ -1729,6 +2171,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "kr-hk-finance-51b91beb71f6",
+"title": "马斯克搅局 韩国电信股走弱",
+"summary": "市场担心SpaceX进军美国移动通信，美国电信股大跌。韩国SK电讯和KT股价也受拖累。",
+"detail": "SpaceX进军美国移动通信市场的担忧，蔓延到韩国电信股。\n• 12日，SK电讯收跌5.34%，报79700韩元。\n• KT下跌2.73%，报49900韩元。盘中一度创去年11月以来新低。\n• 分析认为，韩国频谱和建网门槛很高，实际竞争威胁有限。更多是投资情绪先受了打击。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610126514i",
+"publishedAt": "2026-10-12T07:18:44Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "kr-hk-it-2516badd18ed",
 "title": "AI智能体从聊天走向代办",
 "summary": "AI产业重心正从生成式AI转向智能体。智能体能替人办事。Meta的Muse上线一个月，下载已达660万次。",
@@ -1961,6 +2416,19 @@
 "url": "https://www.hankyung.com/article/2026101264236",
 "publishedAt": "2026-10-12T06:38:29Z",
 "fetchedAt": "2026-10-12T08:13:39Z"
+},
+{
+"id": "kr-hk-finance-c602b758c8fb",
+"title": "亚马逊拟70亿美元收购Decart",
+"summary": "据华尔街日报报道，亚马逊计划收购AI初创公司Decart。报价是70亿美元。这家公司专做虚拟环境生成模型。",
+"detail": "据华尔街日报报道，亚马逊计划收购AI初创公司Decart。收购价约70亿美元。\n• Decart 2023年成立于旧金山，创始人是三名以色列裔美国工程师。\n• 主力模型Lucy做直播视频编辑。Oasis为机器人和自动驾驶生成仿真环境。\n• 亚马逊云去年曾邀请Decart创始人，测试自研芯片Trainium。\n• Decart已获红杉等机构超过4亿美元投资。今年5月估值40亿美元。\n• Anthropic 8月曾出价60亿美元收购，最终谈判破裂。\n• 如果没有其他买家出现，亚马逊的收购有望达成。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610126426i",
+"publishedAt": "2026-10-12T06:37:47Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-cls-172b3e1ca0ab",
@@ -2221,6 +2689,19 @@
 "url": "https://www.etnews.com/20261012000261",
 "publishedAt": "2026-10-12T05:33:56Z",
 "fetchedAt": "2026-10-12T08:13:39Z"
+},
+{
+"id": "kr-hk-it-087cf7aa575c",
+"title": "AI冒充名人视频泛滥",
+"summary": "用AI复刻名人脸和声音的视频，在YouTube上不断扩散。冒充刘在石的频道被删后，又冒出类似频道。",
+"detail": "韩国YouTube上出现大量AI冒充名人的视频。冒充主持人刘在石的频道最典型。\n• 该频道用AI生成刘在石的脸做封面。它再用相似的合成声音讲各种故事。\n• 频道因举报被删除，但类似频道又出现了。也有视频冒充名医讲健康知识。\n• 未经同意使用名人肖像和声音，可以依法维权。依据包括形象权和反不正当竞争法。\n• 但目前没有专门条款，统一处罚用AI复刻他人的普通视频。\n• 今年1月施行的AI基本法，主要约束服务商。下月起，AI虚拟医生和药师推荐商品的广告将受限。\n• 检察官表示，仅仅冒充他人，很难按诽谤处罚。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/2026101254071",
+"publishedAt": "2026-10-12T05:32:26Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "kr-hk-finance-6b9df5b4bf5f",
@@ -2702,6 +3183,19 @@
 "url": "https://www.ctnews.com.cn/dongtai/content/2026-10/12/content_193053.html",
 "publishedAt": "2026-10-12T03:13:00Z",
 "fetchedAt": "2026-10-12T05:10:25Z"
+},
+{
+"id": "cn-ctnews-a1ce51340317",
+"title": "湖南通道县做强红色旅游",
+"summary": "湖南怀化通道县依托通道转兵历史，发展红色旅游。当地把红色研学和侗族民俗串成线路。",
+"detail": "湖南怀化通道侗族自治县，依托长征历史发展红色旅游。这段历史叫通道转兵。\n• 1934年，中央红军在通道会议后改向贵州进军。这为红军摆脱危局打下基础。\n• 通道转兵纪念馆推出情景宣讲和沉浸式研学。它每年接待大量研学团队。\n• 当地还打造了小水红色村庄等多个红色点位。\n• 皇都侗文化村保留着黄土苏维埃政府旧址。游客还能体验侗族合拢宴。\n• 县里推出红色民俗精品线路。民宿、农家乐和侗锦文创也在发展。\n• 纪念馆馆长说，文旅是当地县域经济的支柱产业。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/hongse/content/2026-10/12/content_193052.html",
+"publishedAt": "2026-10-12T03:13:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "cn-panews-dc13aa3accd3",
@@ -3315,6 +3809,19 @@
 "fetchedAt": "2026-10-12T08:13:39Z"
 },
 {
+"id": "cn-nweon-9e42b1034a51",
+"title": "SteamVR测试版推出新补丁",
+"summary": "Valve发布SteamVR测试版2.18.3小补丁。Steam Frame手柄在不支持VR输入的游戏里，默认改用手柄模式。",
+"detail": "Valve发布SteamVR测试版2.18.3，这是一个小型补丁。\n• 对不支持VR输入的游戏，Steam Frame控制器默认改用游戏手柄输入。用户可以在设置里更改。\n• 这项改动需要同时使用Steam和SteamVR测试版。\n• 修复了应用没有默认绑定时，保存新绑定会报错的问题。\n• Linux版修复了两个游戏崩溃问题。\n• Steam Link修复了部分AMD显卡画面偏灰的问题。它还放宽了对旧显卡驱动的要求。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-nweon",
+"sourceName": "映维网",
+"url": "https://news.nweon.com/143504",
+"publishedAt": "2026-10-12T01:08:14Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "cn-nweon-78a962c22e97",
 "title": "谷歌XR Blocks支持WebGPU",
 "summary": "谷歌XR Blocks新版支持WebGPU，但空间界面还不能用。新版加入设备端Gemma 4助手。",
@@ -3575,6 +4082,19 @@
 "fetchedAt": "2026-10-12T02:12:51Z"
 },
 {
+"id": "kr-hk-finance-e2c67634b977",
+"title": "赛特瑞恩季度业绩创新高",
+"summary": "赛特瑞恩三季度营收和营业利润都创单季新高。营业利润首次突破5000亿韩元。消息带动股价早盘上涨。",
+"detail": "赛特瑞恩公告，三季度营业利润5100亿韩元，同比增长69.21%。\n• 营收1.5万亿韩元，同比增长45.77%。\n• 营业利润首次突破5000亿韩元，营收和利润都创单季新高。\n• 公司称，高利润新产品占比提高，成本结构也在改善。\n• 12日早盘，股价上涨2.39%，报18.39万韩元。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101252336",
+"publishedAt": "2026-10-12T00:14:00Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
+},
+{
 "id": "kr-hk-it-c83d7dabd571",
 "title": "韩国非法贷款广告审议236天",
 "summary": "韩国网上非法放贷广告，从发现到审议平均要236天。三年拉长了8倍。期间九个月没有一次审议。",
@@ -3807,6 +4327,19 @@
 "url": "https://www.hankyung.com/article/202610092768i",
 "publishedAt": "2026-10-11T23:22:01Z",
 "fetchedAt": "2026-10-12T05:10:25Z"
+},
+{
+"id": "kr-hk-it-387bd601344e",
+"title": "i-SENS血糖仪达欧洲精度标准",
+"summary": "韩国i-SENS宣布，旗下连续血糖仪CareSens Air达到欧洲eCGM精度要求。研究已发表在国际期刊。",
+"detail": "i-SENS 12日宣布，CareSens Air满足欧洲eCGM标准的全部精度要求。论文发表在国际期刊糖尿病治疗上。\n• eCGM是欧洲专家提出的连续血糖仪标准。它的核心要求与美国FDA标准相近。\n• 研究合并分析了韩国和德国的3项临床试验数据。\n• 在低血糖区间，达标测量值的比例是91%。这高于85%的要求。\n• 15天佩戴期内精度保持稳定，数据可用率达99.7%。\n• 产品也达到澳大利亚和新西兰的推荐标准。公司计划借此扩大海外市场。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610125019i",
+"publishedAt": "2026-10-11T23:15:34Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "kr-hk-it-9238f339e6c8",
@@ -4067,6 +4600,19 @@
 "url": "https://www.hankyung.com/article/2026100816356",
 "publishedAt": "2026-10-11T21:30:01Z",
 "fetchedAt": "2026-10-11T23:12:57Z"
+},
+{
+"id": "us-techcrunch-2a599db62b35",
+"title": "苹果或周二发布HomeView",
+"summary": "彭博记者古尔曼爆料，苹果将在周二发布智能家居中枢HomeView。它带屏幕和A18芯片，由Siri驱动。",
+"detail": "彭博记者古尔曼称，苹果将在周二发布智能家居中枢HomeView。\n• HomeView由Siri驱动，配有屏幕和A18芯片。它可以控制其他智能家居设备。\n• 据报道它有两款，一款放台面，一款挂墙上。\n• 这将是苹果在智能家居领域最认真的一次押注。此前HomeKit和HomePod都反响平平。\n• 苹果周二还将更新Apple TV和HomePod mini。\n• 古尔曼此前还说，苹果计划与LG合作。双方将推出智能门锁、温控器和门铃。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+"publishedAt": "2026-10-11T21:14:40Z",
+"fetchedAt": "2026-10-12T20:11:41Z"
 },
 {
 "id": "kr-hk-econ-aaadc627d2b8",
