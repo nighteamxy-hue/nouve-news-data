@@ -1,5 +1,239 @@
 [
 {
+"id": "market-2026101302",
+"title": "股市速览：10月13日凌晨",
+"summary": "美股盘前期指窄幅震荡，芯片股承压。韩股收跌3.65%，A股深成指和创业板指跌超2%。",
+"detail": "• 美国：盘前三大期指窄幅震荡。道指期货涨0.09%，纳指100期货跌0.16%。\n• 美国：芯片股承压。美光科技、SK海力士和闪迪跌约2%。\n• 欧洲：德国DAX指数涨0.71%。英国富时100指数涨0.76%。\n• 韩国：KOSPI收跌3.65%，报6384.24点。外资持续抛售。\n• 韩国：外资净卖出SK海力士约1.04万亿韩元。三星电子被净卖出5331亿韩元。\n• 中国：沪指跌0.43%，深成指跌2.03%。创业板指跌2.61%。",
+"category": "stock",
+"region": "kr",
+"sourceId": "market",
+"sourceName": "股市速览",
+"url": "",
+"publishedAt": "2026-10-12T17:15:50Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-panews-34f8af13a008",
+"title": "钱志敏案比特币追索适用中国法",
+"summary": "英国高院裁定，钱志敏案比特币的产权主张适用中国法。中国受害者可能分享不到比特币大涨的收益。",
+"detail": "这起案件源于天津蓝天格锐非法集资案。涉案比特币超过6.1万枚。\n• 英国高院认定，中国投资者的财产权主张按中国法律判断。\n• 约1.6万名中国受害者参与了英国追索程序。\n• 他们最多可能只拿回本金和利息。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1310e-d0c8-711f-87d2-d66be7f18b46",
+"publishedAt": "2026-10-12T16:59:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-panews-902605785eb4",
+"title": "美联储哈玛克主张转向紧缩",
+"summary": "克利夫兰联储主席哈玛克说，应采取限制性货币政策。她倾向更频繁、幅度更小的利率调整。",
+"detail": "哈玛克是2026年联邦公开市场委员会票委。她在美国商业经济协会年会上讲话。\n• 她认为限制性立场是适当的，好让通胀及时回到2%。\n• 她说美债收益率虽然上升，金融状况整体仍偏中性。\n• 经济能承受更紧的政策。\n• 如果劳动力市场明显恶化，政策可能要作出回应。\n• 如果通胀高于预期，利率可能还要上调。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1310c-534b-72f8-88bd-b78328b64b81",
+"publishedAt": "2026-10-12T16:56:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "us-coindesk-99b9c04ea47b",
+"title": "Palantir欧洲主管：欧洲AI又掉队",
+"summary": "Palantir欧洲负责人莫斯利发出警告。他说欧洲在AI上可能重蹈互联网覆辙。美国企业的AI应用正在领先。",
+"detail": "Palantir英国和欧洲负责人路易斯·莫斯利接受采访。他说欧洲错过了互联网，在AI上又在犯同样的错。\n• 他说二十年前，欧美人均GDP大体相当。如今差距巨大。\n• 互联网时代欧洲几乎没出巨头。阿斯麦是少有的例外。\n• 他说欧洲企业对AI普遍观望，觉得新东西有风险。\n• Palantir在欧洲因国防和执法合同受到反对。他认为这分散了注意力。\n• 公司目前约有1000家客户。他认为公司仍处在早期阶段。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/policy/2026/10/12/palantir-executive-warns-europe-is-missing-the-boat-on-ai-just-like-it-did-with-the-internet",
+"publishedAt": "2026-10-12T16:18:03Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "kr-blockmedia-e8889b47b1dd",
+"title": "以太坊冲击2550美元受阻",
+"summary": "以太坊24小时涨2.3%，报约2561美元。但它多次没能突破2550到2560美元的阻力区。",
+"detail": "以太坊12日上涨2.3%，报2561美元左右。大户参与很少，反弹能否持续还不确定。\n• 当天价格在2495到2567美元之间波动。\n• 以太坊现货ETF截至9日连续9个交易日净流出。\n• 9日当天流出5610万美元。\n• 交易所以太坊储备近两周增加约23.3万枚。这可能加大抛压。\n• 24小时以太坊合约爆仓4825万美元。空头占79.1%。\n• 上方阻力在2660到2740美元区间。\n• 分析人士认为，关键看能否守住2500美元。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1150595?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-12T16:12:19Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "kr-blockmedia-1f20dac33809",
+"title": "比特币在8.2万美元附近走弱",
+"summary": "美股涨跌不一。比特币跌0.74%，报约8.26万美元。市场在等本周美国通胀数据和财报。",
+"detail": "美股三季报和通胀数据即将公布。比特币在8.2万美元一线走弱。中东局势和油价上涨压制风险偏好。\n• 比特币报82615美元，跌0.74%。\n• 以太坊逆势涨0.65%，报2528美元。\n• 加密货币总市值约2.87万亿美元，跌0.34%。\n• 比特币现货ETF流出6.81亿美元。\n• 比特币和以太坊ETF合计流出约12亿美元。\n• 分析认为，8.25万美元是关键支撑。8.4万美元是阻力。\n• 跌破支撑，可能下探8.15万美元。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1150592?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-12T16:03:53Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-cls-d26856bbc5e5",
+"title": "EnergyX与托克签20亿美元锂单",
+"summary": "美国锂业初创公司EnergyX与托克签署承购协议。托克将在10年内采购10万吨锂产品。",
+"detail": "EnergyX首次公开宣布签署承购协议。供货来自智利和美国，采用照付不议模式。\n• 托克每年采购氢氧化锂和碳酸锂各5000吨。\n• 按每吨近2万美元的锂价算，交易约20亿美元。\n• EnergyX成立于2018年。通用汽车和埃尼都支持它。\n• 它计划2028年在智利产碳酸锂。2029年在得州产氢氧化锂。\n• 托克采购量约占它得州项目初期产量的三分之一。\n• 这笔交易有助于它申请6.9亿美元进出口银行贷款。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502754",
+"publishedAt": "2026-10-12T15:55:39Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "us-techcrunch-fa08cc00ea9a",
+"title": "Honeyjar用AI做公关助手",
+"summary": "初创公司Honeyjar用AI帮企业做公关传播。它将亮相本周的TechCrunch Disrupt大会。",
+"detail": "初创公司Honeyjar想用AI，把资深公关的经验带给每家公司。它入选了Disrupt创业大赛200强。\n• 两位创始人都在公关行业干了几十年。\n• CEO马塞克曾在风投Obvious Ventures负责营销传播。\n• 产品能自动写公告，找合适的记者，发现演讲机会。\n• 它还能建媒体名单，扫描新闻和社媒，追踪报道。\n• 公司想把信号、策略、时机和执行整合进一个流程。\n• 目标用户不只是创始人，还有大量兼做传播的人。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company/",
+"publishedAt": "2026-10-12T15:45:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "us-techcrunch-6ecbcc7a7d94",
+"title": "AI几分钟生成可报批图纸",
+"summary": "初创公司Blueprints AI称，几分钟就能生成可报批的施工图。它将在Disrupt大会发布第二代产品。",
+"detail": "Blueprints AI用人工智能生成建筑施工图。输入二维草图或PDF即可。几分钟就能出合规图纸。\n• 创始人阿尔·德拉姆斯出身建筑世家。他早年就研究过类似软件。\n• 公司2025年在圣莫尼卡注册。联合创始人是Coco Cao。\n• 它入选了TechCrunch Disrupt创业大赛200强。\n• 大会10月13日到15日在旧金山举行。它将发布第二代软件。\n• 德拉姆斯说，建筑师八成时间在画图，只有两成在设计。\n• 他希望把这个比例倒过来。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/",
+"publishedAt": "2026-10-12T15:27:59Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-883156a3e8f1",
+"title": "火狐158默认支持JPEG XL",
+"summary": "Mozilla发布火狐浏览器158版。这一版最大的亮点，是默认启用JPEG XL图片格式支持。",
+"detail": "Mozilla推出火狐浏览器158版。\n• JPEG XL图片支持默认开启。以前要手动打开实验选项。\n• 官方称，它可替代WebP、JPEG、PNG和GIF等格式。\n• 智能窗口的表单填写变得更快。\n• 新版还支持CSS类型化算术运算。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/125.htm",
+"publishedAt": "2026-10-12T15:19:24Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-13e8cc23840f",
+"title": "腾势将在欧洲推天神之眼",
+"summary": "比亚迪旗下腾势宣布，天神之眼辅助驾驶将登陆欧洲。Z9 GT率先支持，预计明年推送。",
+"detail": "腾势在巴黎车展宣布，将在欧洲推出天神之眼辅助驾驶。首批车型是Z9 GT。预计明年通过OTA推送。\n• 欧洲版能识别红灯停车，进环岛会主动礼让。\n• 系统能自动遵守限速，支持城市领航辅助驾驶。\n• 遇到双排停车和缓行车流，它可以自动变道。\n• 在窄街上，它还会礼让行人和骑车人。\n• 团队正在做后期开发和校准。之后会申请联合国R171认证。\n• 系统会监测驾驶员视线、头部姿态和是否握着方向盘。\n• 首批车型Z9 GT将率先支持。",
+"category": "robot",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/118.htm",
+"publishedAt": "2026-10-12T15:00:05Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "us-coindesk-26bcd0b2194f",
+"title": "巨灾债券将推出代币化版本",
+"summary": "两家机构计划明年初发行代币化巨灾债券。分别是百慕大律所Harneys和平台dropRWA。每个代币代表债券的法律所有权。",
+"detail": "自然灾害去年造成2200亿美元经济损失。保险只覆盖了1070亿美元。代币化巨灾债券想补上这个缺口。\n• 巨灾债券把飓风、地震等风险，转给资本市场投资者。\n• 6月市场存量达656亿美元。二季度新发行113亿美元，创纪录。\n• 2023年，亚太地区91%的灾害损失没有保险。\n• 传统巨灾债券起投常在25万美元以上。新方案考虑拆成更小份额。\n• 业内人士说，代币化不会让保险变便宜。但它能引来更多资本。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/business/2026/10/12/tokenized-catastrophe-bonds-target-the-disaster-insurance-gap",
+"publishedAt": "2026-10-12T15:00:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "us-theblock-06db7cbee1cb",
+"title": "DFDV上周加仓SOL",
+"summary": "DeFi Development上周增持22070枚SOL。总持仓升到259万枚。它的优先股CHAD创下历史新高。",
+"detail": "",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/business/2026-10-12-defi-development-sol-holdings-2-59-million-chad-418307",
+"publishedAt": "2026-10-12T14:53:25Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-ddf17cc76b1e",
+"title": "微软发布Maia 300芯片",
+"summary": "微软发布Maia 300人工智能芯片。它采用台积电2纳米级工艺。内存是288GB HBM4。计划2027年部署。",
+"detail": "微软正式发布Maia 300人工智能芯片。它更适合推理任务，计划2027年部署。\n• 计算芯粒用台积电N2P工艺，属于2纳米级制程。\n• 它是多芯粒设计，另配独立的内存芯粒和输入输出芯粒。\n• FP4算力最高13.8 PFLOPS。FP8算力为6.9 PFLOPS。\n• 芯片配8组HBM4内存，共288GB。带宽每秒18TB。\n• 额定功耗950瓦，高于上一代的750瓦。\n• 单个机架能放96颗。最多可组成1.2万颗芯片的集群。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/115.htm",
+"publishedAt": "2026-10-12T14:45:30Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-cls-89fb9804996b",
+"title": "三季度全球手机出货降两成",
+"summary": "研究机构Counterpoint称，三季度全球手机出货同比降20%。这是2012年以来的同期最低。",
+"detail": "Counterpoint认为，AI基建持续挤占存储芯片。手机行业面临成本和供应双重压力。\n• 三季度全球手机出货同比降20%，创14年同期新低。\n• 今年以来，手机零售价累计上涨约20%。\n• 三星份额升至23%，稳居第一。\n• 苹果份额达22%，首次在三季度超过20%。\n• 小米出货降超30%，份额降至10%。OPPO和vivo分别为9%和8%。\n• 机构认为，存储成本改善前，出货难以明显复苏。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502696",
+"publishedAt": "2026-10-12T14:39:54Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-6753a623aff0",
+"title": "AMD发布新款锐龙AI Halo",
+"summary": "AMD推出新一代锐龙AI Halo开发者平台。它最高支持192GB内存，能在本地运行超大模型。",
+"detail": "AMD发布新一代锐龙AI Halo开发者平台。它搭载锐龙AI Max+ PRO 495处理器。\n• CPU、GPU和NPU性能都有提升。\n• 最高支持192GB内存，其中160GB可分给显存。\n• 这让本地运行超3000亿参数的大模型成为可能。\n• Linux版定价7299.99美元。约合4.89万元人民币。\n• 预装Windows的版本稍后推出。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/104.htm",
+"publishedAt": "2026-10-12T14:27:12Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-2c5e55bb3aa4",
+"title": "AMD推出Helion智能体机架",
+"summary": "AMD发布面向智能体AI的Helion机架方案。纯CPU版本最多可扩展到32768个核心。",
+"detail": "AMD当地时间周一发布Helion机架方案。它面向代理式人工智能负载。\n• 客户可以按需组合CPU和GPU资源。\n• 纯CPU版本基于第六代霄龙处理器，最多32768核。\n• AMD计划把Helion规范贡献给开放计算项目。\n• 产品计划2026年11月正式推出。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/103.htm",
+"publishedAt": "2026-10-12T14:17:31Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ithome-2be6ed33bf70",
+"title": "谷歌推出Fitbit Edge手环",
+"summary": "谷歌发布Fitbit Edge手环，售价179.99欧元。它内置GPS，支持心电图，续航约一周。",
+"detail": "谷歌发布新款Fitbit Edge手环。它主打健身用户。售价179.99欧元，约合1350元人民币。\n• 屏幕是1.34英寸AMOLED触控屏，支持常亮显示。\n• 内置GPS，跑步骑行不带手机也能记录轨迹。\n• 配有心率、血氧和皮肤温度传感器，还支持心电图。\n• 电池65毫安时，续航约一周，防水等级5ATM。\n• 它能接收通知、控制手机音乐，也能设闹钟和计时器。\n• 有银、灰、金、黑四种颜色。功能不如完整的智能手表。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/102.htm",
+"publishedAt": "2026-10-12T14:14:49Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "market-2026101223",
 "title": "股市速览：10月12日晚间",
 "summary": "韩股收盘大跌，外资持续撤离。美股开盘震荡，存储股走弱。",
@@ -11,6 +245,19 @@
 "url": "",
 "publishedAt": "2026-10-12T14:12:30Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "us-techcrunch-7a20cda74467",
+"title": "Ultrahuman牵手阿布扎比",
+"summary": "智能戒指公司Ultrahuman与阿布扎比卫生部门合作。双方将开发生物年龄模型，未来面向全阿联酋。",
+"detail": "印度健康科技公司Ultrahuman宣布新合作。它与阿布扎比公共卫生中心签了两年合作备忘录。\n• 双方将开发并验证一个生物年龄模型。\n• 模型结合临床指标和可穿戴设备数据，估算人的衰老速度。\n• 它还会找出睡眠、运动、心血管和代谢等影响因素。\n• 双方未来两年会做研究和临床验证。\n• 模型兼容戒指、手环、贴片等多种设备。\n• Ultrahuman已在全球卖出约80万枚智能戒指。\n• 未来，阿联酋居民可在政府数字健康平台查看健康年龄。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/12/smart-ring-maker-ultrahuman-to-roll-out-biological-age-model-across-uae/",
+"publishedAt": "2026-10-12T14:09:34Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "cn-eastmoney-8b9c5e30bcb3",
@@ -50,6 +297,19 @@
 "url": "https://www.theblock.co/news/business/2026-10-12-bitmine-eth-holdings-6-million-ether-treasury-418296",
 "publishedAt": "2026-10-12T13:43:32Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-panews-70fdc9fecd19",
+"title": "Citrini报告：智能体金融重塑加密",
+"summary": "研究机构Citrini发布79页报告。它建议从比特币和以太坊撤出。转向能收手续费的DeFi协议和基础设施股。",
+"detail": "Citrini Research发布79页报告。它认为AI智能体金融浪潮将建在区块链上。全天候、可编程的特性，让区块链找到了存在理由。\n• 它的15个代币组合，完全排除了比特币和以太坊。\n• Derive和Lighter合计权重约39%。收益质押类约27%。\n• 股票组合聚焦Securitize、Circle和Coinbase等公司。\n• 过去一年Derive涨了1300%。比特币、以太坊和XRP表现落后。\n• 报告也警告，智能体可能持续抽走银行的廉价存款。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a12f9a-51ce-7071-b2a8-9670cd9fde73",
+"publishedAt": "2026-10-12T13:43:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "cn-panews-ad860d9dd8be",
@@ -117,6 +377,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "us-ieee-5a7f7575a820",
+"title": "首座商用增强型地热电站投运",
+"summary": "美国Fervo能源的犹他州地热电站开始向电网售电。这是全球首个公用事业规模的新一代地热项目。",
+"detail": "Fervo能源的Cape Station项目开始向电网送电。首台33兆瓦机组上周启动，正在逐步升功率。\n• 本周四起正式商业运营，向壳牌能源供应零碳电力。\n• 项目总投资20亿美元，最终装机将达500兆瓦。\n• 它借用油气钻井技术，在干热岩中人造热储发电。\n• 公司计划明年1月1日前，再投运两台33兆瓦机组。\n• 剩余400兆瓦有谷歌协议支持，计划2028年投运。\n• 目前地热只占美国年发电量的0.4%。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-ieee",
+"sourceName": "IEEE Spectrum",
+"url": "https://spectrum.ieee.org/fervo-cape-station-geothermal",
+"publishedAt": "2026-10-12T13:00:02Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "cn-36kr-9e6756fcc66f",
 "title": "DeepSeek拟领投机器人AI初创",
 "summary": "DeepSeek计划领投一家机器人AI初创公司。对方由前腾讯科学家创办，投后估值约4亿美元。",
@@ -130,6 +403,32 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "cn-panews-ef24f8af18d7",
+"title": "大摩：债市已替美联储紧缩",
+"summary": "摩根士丹利认为，债券收益率攀升已提前完成部分紧缩。如果9月CPI温和，美股或迎喘息。",
+"detail": "摩根士丹利首席美股策略师迈克·威尔逊发表看法。他认为市场化紧缩，可能减轻美联储的加息压力。\n• 美国10年期国债收益率自2月以来上涨约120个基点。\n• 长端利率走高、美元走强和油价上涨，让金融条件收紧。\n• 他建议重点关注金融股表现和债市波动率指数。\n• 收益率上涨速度和债市波动，比绝对水平更重要。\n• 他说，金融业要证明高利率环境仍能被经济吸收。\n• 如果9月CPI温和，债市压力会缓解。股市可能更普遍上涨。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a13031-54d9-71f2-a5d6-7aac3c780c18",
+"publishedAt": "2026-10-12T12:58:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-36kr-0bd30f740b00",
+"title": "盐田港拟投37.88亿建码头",
+"summary": "盐田港发布投资公告。它拟投资约37.88亿元。资金用于苏州港张家港港区的码头一期工程。",
+"detail": "盐田港发布公告。投资主体是全资子公司深张港务公司。\n• 项目是张家港港区的深张港务码头一期工程。\n• 项目总投资约37.88亿元，资本金占40%。\n• 资本金靠股东增资筹集，其余主要靠银行贷款。\n• 该事项还要提交股东会审议。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022870685929601",
+"publishedAt": "2026-10-12T12:53:30Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "cn-cls-54603ebb14e5",
 "title": "81只基金或因宽基窄投整改",
 "summary": "证监会拟禁止宽基窄投。财联社统计，81只基金单一行业持仓过半，可能需要整改。",
@@ -141,6 +440,19 @@
 "url": "https://www.cls.cn/detail/2502620",
 "publishedAt": "2026-10-12T12:51:30Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-cls-8174cf3dfe41",
+"title": "IonQ拟13亿美元收购Elisity",
+"summary": "量子计算公司IonQ宣布全股票收购网安企业Elisity。交易对Elisity的估值最高13亿美元。",
+"detail": "IonQ周一宣布，以全股票方式收购Elisity。它想同时防范AI和量子计算带来的安全威胁。\n• 最高对价13亿美元，含最多1.5亿美元业绩对赌款。\n• Elisity成立于2019年。它专门阻止攻击在内网横向扩散。\n• 它的主要客户是医疗企业和医院。\n• IonQ上周五收于39.89美元。市值近152亿美元。\n• IonQ首席执行官说，网络安全正进入最危险的几年。\n• 今年早些时候，IonQ曾以18亿美元收购芯片厂SkyWater。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502611",
+"publishedAt": "2026-10-12T12:49:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "us-techcrunch-3ea17d5e3961",
@@ -167,6 +479,32 @@
 "url": "https://36kr.com/newsflashes/4022880725864579",
 "publishedAt": "2026-10-12T12:45:53Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-36kr-dfac3cfc4f2c",
+"title": "美股科技股盘前多数下跌",
+"summary": "周一美股盘前，大型科技股多数走低。存储股领跌，美光科技和SK海力士都跌超2%。英特尔跌超1%。",
+"detail": "周一美股盘前，大型科技股多数下跌。\n• 美光科技和SK海力士跌超2%，英特尔跌超1%。\n• 英伟达跌0.5%，亚马逊跌0.26%。\n• Meta和SpaceX涨超1%。\n• 苹果涨0.33%，微软涨0.28%。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022878782410886",
+"publishedAt": "2026-10-12T12:43:55Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-36kr-7ad96003f9b7",
+"title": "国恩股份15亿收购中氟能",
+"summary": "国恩股份拟出资15.04亿元，收购中氟能八成股权。公司将借此进入电子特气领域，扩充材料产品线。",
+"detail": "国恩股份发布收购公告。\n• 公司拟用现金15.04亿元收购。标的是四川中氟能80%股权。\n• 中氟能主营六氟化硫、四氟化碳和三氟化氮等电子特气。\n• 交易完成后，中氟能将成为控股子公司。\n• 公司将新增电子特气品类，完善高端材料布局。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022852551250052",
+"publishedAt": "2026-10-12T12:38:01Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-etnews-1b43bda6ab7b",
@@ -232,6 +570,19 @@
 "url": "https://www.cls.cn/detail/2502578",
 "publishedAt": "2026-10-12T12:21:34Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-cls-6df3bafca1d0",
+"title": "港交所将就T+1结算咨询",
+"summary": "港交所行政总裁陈翊庭发布新一期网志。她说将就T+1结算和多项上市优化措施展开咨询。",
+"detail": "陈翊庭发文介绍港交所的多元资产战略。她说国际投资者越来越想配置多种中国资产。\n• 港交所正在收集意见，希望尽快迈向T+1结算。\n• 上市机制第二阶段咨询正在进行，要降低并购重组成本。\n• 还将就特专科技公司和GEM上市制度展开咨询。\n• 今年在港上市的点心债已达2669亿元。同比增长14%。\n• 伦敦金属交易所在香港批准的交割仓库已增至19家。\n• 港交所还在研究代币化平台。它将推出新版人民币黄金期货。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502585",
+"publishedAt": "2026-10-12T12:21:21Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "us-theblock-6ee6b5638988",
@@ -312,6 +663,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "us-theblock-2035f305e1e9",
+"title": "Evernorth聘新人管XRP储备",
+"summary": "Evernorth任命一名前Coinbase投资高管。他将管理4.73亿枚XRP储备。公司计划通过借贷和收益策略运用这些XRP。",
+"detail": "",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/business/2026-10-12-evernorth-former-coinbase-investment-chief-steer-473-million-xrp-treasury-nasdaq-debut-418225",
+"publishedAt": "2026-10-12T12:01:02Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "cn-ithome-dbb066d96746",
 "title": "诺贝尔经济学奖颁给霍尔和伍德福德",
 "summary": "2026年诺贝尔经济学奖揭晓。美国经济学家罗伯特·霍尔和迈克尔·伍德福德获奖。",
@@ -336,6 +700,84 @@
 "url": "https://www.hankyung.com/article/202610126646g",
 "publishedAt": "2026-10-12T12:00:13Z",
 "fetchedAt": "2026-10-12T14:12:30Z"
+},
+{
+"id": "cn-36kr-ac8b380b3367",
+"title": "金蝶净新增ARR大增46.9%",
+"summary": "金蝶国际公布经营数据。三季度净新增ARR同比增长约46.9%。当天股价上涨3.45%。",
+"detail": "金蝶国际发布最新经营数据。订阅业务继续较快增长。\n• 9月末订阅ARR约46.04亿元。同比增长约19.3%。\n• 三季度净新增ARR同比增长约46.9%。\n• 前三季度，AI原生产品签约金额达10.02亿元。\n• 三季度新签中国中车、长安汽车、华住集团等客户。\n• 截至当天收盘，金蝶股价上涨3.45%。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022788907454344",
+"publishedAt": "2026-10-12T11:57:15Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-36kr-e55ad57dc6e0",
+"title": "斯泰兰蒂斯与塔塔扩大合作",
+"summary": "斯泰兰蒂斯印度公司与塔塔汽车签署协议。双方的合作范围扩展到先进技术和产品协作领域。",
+"detail": "一份证券交易所文件披露了这项协议。\n• 签约一方是斯泰兰蒂斯印度公司。\n• 另一方是塔塔乘用车公司及其电动车子公司。\n• 双方把合作扩展到先进技术和产品协作领域。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4022791107448962",
+"publishedAt": "2026-10-12T11:55:31Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-cls-3f62a9d66c53",
+"title": "大摩：美国AI供电缺口约77GW",
+"summary": "摩根士丹利预计，美国数据中心新增用电约160吉瓦。扣除现有能力后，仍有约77吉瓦缺口。",
+"detail": "摩根士丹利发布研报。它认为AI用电正推动美国电力设施转向分布式。\n• 2026到2029年，数据中心新增需求约160吉瓦。\n• 扣除电网余量和已购发电设备后，缺口约76.5吉瓦。\n• 到2029年，分布式供电设备市场约2400亿美元。\n• AI推理更看重时延，小型分布式节点会增多。\n• 算上GPU闲置成本，公共电网每兆瓦时成本达323美元。\n• 固体氧化物燃料电池只要131美元。它在评分中排第一。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2502536",
+"publishedAt": "2026-10-12T11:49:09Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ctnews-b0d6873295f5",
+"title": "广州借国际会议推入境游",
+"summary": "广州借一场国际航空业大会，办了文旅国际推介会。约600名全球航空业嘉宾到场，体验岭南文化。",
+"detail": "10月11日，广州在粤剧艺术博物馆办文旅推介会。借的是第134届国际航空技术共享联盟大会的契机。\n• 约600名全球航空业嘉宾到场。\n• 嘉宾在永庆坊看广彩广绣，还在长隆看演出。\n• 现场有英语推介、醒狮表演和非遗展示。\n• 饼印木艺、广绣、广彩等非遗项目一一亮相。\n• 嘉宾受邀登广州塔、游沙面岛、访陈家祠。\n• 接待方广之旅说，这是广州今年较大的单体入境商务团。\n• 旅行社挑选了30多名双语导游。\n• 广州酒家和陶陶居带来了广式点心。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/dongtai/content/2026-10/12/content_193081.html",
+"publishedAt": "2026-10-12T11:43:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ctnews-d7fb4016baa6",
+"title": "黑龙江到广州推介冰雪游",
+"summary": "黑龙江新一季冰雪旅游推介会在广州启动。冰雪大世界、雪乡、亚布力等景区集体亮相。目标是大湾区游客。",
+"detail": "10月12日，黑龙江新冰雪季推介会在广州举行。目标是粤港澳大湾区的客源。\n• 黑龙江将继续推进冬季冰雪旅游百日行动。\n• 行动覆盖吃住行游购娱，加强投诉处理和权益保障。\n• 哈尔滨冰雪大世界、中国雪乡、亚布力等景区登台推介。\n• 广东文旅部门说，两地产品差异大，互动空间巨大。\n• 广东旅游批发商正持续向北挖掘冰雪产品。\n• 推介会接下来还要去厦门、重庆、济南、上海和宁波。\n• 黑龙江希望扩大冰雪文旅品牌影响力。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/dongtai/content/2026-10/12/content_193080.html",
+"publishedAt": "2026-10-12T11:43:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-ctnews-179c1e52ea0e",
+"title": "三亚到合肥推暖冬旅游",
+"summary": "三亚在合肥举办旅游双城联动活动。它向合肥市民推出五大主题、6天5晚的精品线路。主题是过暖冬。",
+"detail": "10月8日到11日，三亚和合肥举办旅游双城联动活动。地点在合肥，主题是来三亚过暖冬。\n• 三亚文旅形象椰宝在街头快闪预热。\n• 10日晚，主题活动在合肥罍街开幕。三亚涉旅企业登台推介。\n• 线上主播同步直播活动实况。\n• 三亚推出五大主题线路，都是6天5晚。\n• 线路涵盖海洋运动、中医康养、珊瑚保育和离岛免税。\n• 线路满足运动度假、康养、研学和旅居等需求。\n• 两地文旅部门还交流了街区培育和夜间经济经验。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/dongtai/content/2026-10/12/content_193074.html",
+"publishedAt": "2026-10-12T11:43:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "cn-ctnews-4072a5811e9b",
@@ -689,6 +1131,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "kr-hk-it-fb479613fb4b",
+"title": "东国制药拟更名DK Centellian",
+"summary": "韩国东国制药董事会通过更名议案。公司要从医药扩展到健康美容，并加快开拓全球市场。",
+"detail": "东国制药12日召开董事会，通过了更名议案。\n• 公司将在下月27日召开临时股东大会，修改章程。\n• 新名字里的Centellian，取自马德卡索的主要成分积雪草。\n• 公司要把业务从药品扩展到健康和美容领域。\n• 同时，它会加强全球市场布局。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/2026101268751",
+"publishedAt": "2026-10-12T10:06:10Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "kr-hk-econ-391c91c07b22",
 "title": "韩国廉航扩大腹舱货运",
 "summary": "韩国9家廉价航空公司加码客机腹舱货运。年底航线将增至92条，前9个月货运量增长32%。",
@@ -702,6 +1157,45 @@
 "fetchedAt": "2026-10-12T11:13:43Z"
 },
 {
+"id": "kr-hk-it-ef2399416b18",
+"title": "KCD代表：好数据比大数据重要",
+"summary": "韩国信用数据公司代表金东浩说，好数据比大数据更重要。他建议企业建立自己独有的数据。",
+"detail": "韩国信用数据公司代表金东浩，在早餐会上分享经验。这场活动是创业支持机构DCAMP首次举办。\n• 他说，AI服务要差异化，就得有自己独有的数据。\n• 他认为数据不在多，而在能用好。\n• AI技术普及后，竞争力取决于独有数据的价值。\n• 收集数据之前，就要规划好怎么用。\n• 公司的小商户经营管理服务，约有100项功能。\n• 其中约27项用了AI，只有3项调用外部接口。\n• 他说，前五六年只专注解决客户刚需，因此积累了信任。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/2026101269671",
+"publishedAt": "2026-10-12T10:01:07Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "kr-hk-econ-d84e50e8b465",
+"title": "东远集团引入工科CEO转型",
+"summary": "韩国东远集团靠金枪鱼起家，近年引进多名理工科CEO。它正把食品技术延伸到电池材料和环保薄膜。",
+"detail": "东远集团靠金枪鱼等加工食品起家。近五年，它引进了5名技术背景的子公司CEO。\n• 控股公司东远产业新设技术部门。负责人是前现代汽车高管张仁成。\n• 东远系统把食品铝箔技术，延伸到储能用涂层正极箔。\n• 东远建设转做写字楼、物流中心和养老住宅。它在2024年扭亏。\n• 东远建设去年营业利润276亿韩元，是前一年的三倍多。\n• 东远饲料把集团的发酵技术用到了饲料上。\n• 集团营收2022年约9.03万亿韩元。去年增至约9.58万亿。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101269221",
+"publishedAt": "2026-10-12T09:59:41Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "kr-hk-econ-bdb22e50c212",
+"title": "三星E&A携手燃气安全公社出海",
+"summary": "三星E&A与韩国燃气安全公社签署合作备忘录。双方将联手开拓海外老旧工厂的诊断和改造市场。",
+"detail": "三星E&A与韩国燃气安全公社签署合作备忘录。双方瞄准海外老旧油气工厂的维护市场。\n• 签约于8日在首尔进行。去年11月，双方已签过合作意向书。\n• 机构预计，全球工厂资产管理市场今年约110亿美元。\n• 到2031年，这个市场将增至约195亿美元。\n• 合作覆盖项目发掘、安全诊断和设计采购施工。\n• 三星E&A出海外经验和人脉。公社出诊断设施和技术。\n• 三星E&A表示，要全面开拓老旧工厂现代化市场。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101269341",
+"publishedAt": "2026-10-12T09:58:24Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "kr-hk-econ-ae3425ea6c6b",
 "title": "韩华海洋设核潜艇开发团",
 "summary": "韩华海洋新设张保皋N开发团，对接韩国核潜艇项目。目前正招聘五年以上经验的人员。",
@@ -713,6 +1207,19 @@
 "url": "https://www.hankyung.com/article/2026101269331",
 "publishedAt": "2026-10-12T09:56:06Z",
 "fetchedAt": "2026-10-12T11:13:43Z"
+},
+{
+"id": "kr-hk-econ-36dbe8f32815",
+"title": "泛林集团在韩设半导体基金",
+"summary": "泛林集团首次在单一国家设立半导体基金。它将重点投资韩国的先进封装、先进制程和AI初创公司。",
+"detail": "泛林集团高管奥黛丽·查尔斯接受韩国经济新闻采访。泛林资本8日联手韩亚创投，设立半导体独角兽基金。\n• 这是泛林首次在单一国家设立半导体基金。\n• 泛林是沉积和刻蚀设备龙头。三星和SK海力士是主要客户。\n• 投资重点之一是先进封装，瞄准16层以上的HBM。\n• 它也会投创新的材料、零部件和设备企业。\n• 能用AI和机器人提升良率的公司，也在关注范围内。\n• 查尔斯说，遇到有吸引力的公司，也会考虑并购。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101269241",
+"publishedAt": "2026-10-12T09:55:52Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "cn-cls-5fdf5bfba640",
@@ -752,6 +1259,19 @@
 "url": "https://www.ithome.com/1/012/026.htm",
 "publishedAt": "2026-10-12T09:44:00Z",
 "fetchedAt": "2026-10-12T11:13:43Z"
+},
+{
+"id": "kr-hk-econ-76864eb95747",
+"title": "韩国明年运营高信用碳市场",
+"summary": "韩国政府决定，明年起正式运营全球高信用碳市场。它将全面引入区块链技术，防止数据被篡改。",
+"detail": "韩国政府12日讨论了全球高信用碳市场的细化方案。目标是提升碳信用市场的可信度。\n• 全球碳信用市场缺少统一标准，减排效果常被质疑。\n• 韩国希望借此在全球碳排放权市场取得主导权。\n• 政府今年争取参与国，明年细化架构并正式运营。\n• 发行机构设理事会、技术监督委员会和秘书处。\n• 发展中国家也可以进入理事会。\n• 区块链能防止碳数据被篡改和伪造。\n• 秘书处用区块链管理数据。它还在研究发行数字资产形式的碳信用。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101269961",
+"publishedAt": "2026-10-12T09:43:41Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-hk-econ-8fbf7865871c",
@@ -858,6 +1378,19 @@
 "fetchedAt": "2026-10-12T14:12:30Z"
 },
 {
+"id": "us-coindesk-ce70378a27da",
+"title": "加密市场本周看美国通胀",
+"summary": "本周美国将公布9月通胀数据。以太坊开发者将讨论后续升级。新加坡稳定币咨询也将截止。",
+"detail": "本周加密市场关注宏观数据和行业大事。美国通胀数据将检验利率预期。\n• 美国9月CPI周三公布。市场预期同比3.6%，前值3.4%。\n• 15日，以太坊核心开发者开会，讨论Glamsterdam等升级。\n• 新加坡金管局的稳定币监管咨询，16日截止。\n• 美联储主席沃什15日将与IMF总裁格奥尔基耶娃对话。\n• 三季度银行财报陆续发布。贝莱德14日公布业绩。\n• 本周Starknet、Arbitrum和Cronos等代币有解锁。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/markets/2026/10/12/u-s-inflation-ethereum-upgrade-talks-crypto-week-ahead",
+"publishedAt": "2026-10-12T08:58:24Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "kr-hk-finance-8888544c2314",
 "title": "韩国提高青年养老账户抵税",
 "summary": "韩国拟提高青年人IRP养老账户的税额抵扣率。但养老储蓄账户没有同步优惠。",
@@ -921,6 +1454,19 @@
 "url": "https://www.ithome.com/1/011/982.htm",
 "publishedAt": "2026-10-12T08:40:44Z",
 "fetchedAt": "2026-10-12T11:13:43Z"
+},
+{
+"id": "kr-hk-finance-2e21ba68f38f",
+"title": "韩国AI半导体主动ETF将上市",
+"summary": "韩国DS资产运用有一只新ETF，将在13日上市。它主动投资AI半导体。它覆盖整个AI芯片产业链。",
+"detail": "DS资产运用宣布，新ETF将在13日上市。它是AI半导体主动型产品。\n• 它不局限于存储或非存储等某个细分领域。\n• 基金会根据HBM、先进封装等热点切换，灵活调整持仓。\n• 投资范围还包括数据中心和能源电力等后端产业。\n• 公司的科斯达克主动型ETF，近一个月涨了23.01%。\n• 这一涨幅在全市场ETF中排第一，不含杠杆和反向产品。\n• 公司代表说，AI芯片行业主导权变化很快。灵活运用是关键。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101268256",
+"publishedAt": "2026-10-12T08:30:49Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-irobot-854931472a55",
@@ -1051,6 +1597,19 @@
 "url": "https://www.coindesk.com/tech/2026/10/12/ledger-says-unauthorized-implant-found-in-at-least-one-device-sold-by-cryptobilis",
 "publishedAt": "2026-10-12T07:49:40Z",
 "fetchedAt": "2026-10-12T08:13:39Z"
+},
+{
+"id": "cn-panews-5f16a4ba7715",
+"title": "Polygon已销毁1亿枚POL",
+"summary": "Polygon基金会创始人称，两周前已销毁1亿枚POL。下一阶段待销毁2200万枚。",
+"detail": "Polygon基金会创始人桑迪普·奈瓦尔发文，披露销毁进展。\n• 两周前，协议用网络手续费销毁了1亿枚POL。\n• 这约占总供应量的1%。\n• 下一阶段待销毁的POL已达2200万枚。\n• 这约占总供应量的0.2%。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a12f11-bc6f-7231-9991-967936245280",
+"publishedAt": "2026-10-12T07:44:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "cn-36kr-3d0e80a52c6c",
@@ -1207,6 +1766,19 @@
 "url": "https://www.etnews.com/20261012000313",
 "publishedAt": "2026-10-12T07:03:26Z",
 "fetchedAt": "2026-10-12T08:13:39Z"
+},
+{
+"id": "kr-hk-finance-086ccfb9c9c4",
+"title": "三星资管在全州设办事处",
+"summary": "三星资产运用在韩国国民年金基金运用本部旁开设办事处。国民年金给全州设点的机构加分，资管公司纷纷前往。",
+"detail": "三星资产运用12日在全州举行办事处开业仪式。办事处紧邻国民年金基金运用本部。\n• 三星主动资产运用和三星SRA资产运用也一同入驻。\n• 国民年金理事长和全州市长出席了开业仪式。\n• 三星计划把这里当作与国民年金的日常沟通窗口。\n• 国民年金6月起选委托机构时，给全州设点的公司加1分。\n• 这项规则也用于基础设施和私募股权委托。\n• 截至7日，全北革新城已有35家金融公司设点。\n• 其中资产管理公司有26家。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610126321i",
+"publishedAt": "2026-10-12T07:03:06Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-hk-it-3867551579fc",
@@ -1430,6 +2002,19 @@
 "fetchedAt": "2026-10-12T08:13:39Z"
 },
 {
+"id": "cn-36kr-b070b5ebacc1",
+"title": "影石公布移动摄影师计划",
+"summary": "影石在南京办了智能影像黑客松。它还首次公开移动摄影师计划，想让设备自己观察和拍摄。",
+"detail": "影石在南京举办智能影像挑战赛。220多名青年创客，四天三晚做出原型。公司还首次公开了移动摄影师计划。\n• 15支队伍进入决赛，角逐30万元现金和20万元奖品。\n• 有团队用全景设备帮视障人士找入口。还有团队用相机识别手语。\n• 影石把智能影像拆成选、拍、剪、传四个环节。AI贯穿整条链路。\n• 云存储订阅付费用户同比增长超过124%。自动剪辑已成购机主因之一。\n• 在这个计划里，AI是大脑，镜头是眼睛。无人机或机器人是躯干。\n• 公司说，相关基础能力会向研究社区开放。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/p/4022506242854788",
+"publishedAt": "2026-10-12T06:25:33Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "kr-hk-it-9b6204bdcad2",
 "title": "韩国门户收紧AI数据抓取",
 "summary": "韩国门户网站正在限制外部AI抓取数据。它们认为，韩文数据是对抗全球AI巨头的关键武器。",
@@ -1480,6 +2065,19 @@
 "url": "https://www.hankyung.com/article/202610126413i",
 "publishedAt": "2026-10-12T06:19:47Z",
 "fetchedAt": "2026-10-12T08:13:39Z"
+},
+{
+"id": "kr-hk-it-52a3844a9d07",
+"title": "韩企NewenAI推因果推理AI",
+"summary": "韩国AI分析公司NewenAI在展会上亮出新技术。它能从非结构化数据中推理因果关系。",
+"detail": "韩国AI分析公司NewenAI参加了AI FESTA 26展会。它展示了旗舰平台Quettai和新方案。\n• 平台用知识图谱和因果推理，实时整理网上的口语化数据。\n• 这些数据可用于品牌诊断、客户体验和市场分析。\n• 公司推出了企业定制版、订阅版和数据供应三类产品。\n• 它还发布了美妆市场分析和医疗风险监测等行业方案。\n• 新品Quettai MCP，让企业AI智能体直接检索它的数据。\n• 该服务计划在今年下半年正式上线。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610126410g",
+"publishedAt": "2026-10-12T06:17:20Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-irobot-1b23fbf7a0dc",
@@ -1560,6 +2158,19 @@
 "fetchedAt": "2026-10-12T08:13:39Z"
 },
 {
+"id": "kr-hk-it-931365282667",
+"title": "韩国国家公园试点AI导览",
+"summary": "韩国国家公园管理公团将试点AI导览。游客扫码就能和吉祥物半月熊对话，支持四种语言。",
+"detail": "一家韩国数字人企业与国家公园管理公团合作开发导览。它会先在北汉山、智异山和金井山试点。\n• 游客扫描指示牌上的二维码，就能在手机浏览器里对话。\n• 它能用语音介绍步道、设施、管制区和安全须知。\n• 支持韩语、英语、中文和日语四种语言。\n• 回答只限公团审核过的官方资料，不会随意编造。\n• 数字人的表情和动作在用户手机上生成，减轻服务器负担。\n• 该项目是韩国中小企业部的开放创新支持课题。\n• 它直接用公团现有的吉祥物和二维码，不用另建应用。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610126304g",
+"publishedAt": "2026-10-12T05:50:50Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "cn-ithome-bf0bb180ccb4",
 "title": "9月乘用车零售同比降28%",
 "summary": "乘联分会数据显示，9月乘用车零售161.8万辆。同比下降28%。新能源零售渗透率升到67%，创历史新高。",
@@ -1638,6 +2249,19 @@
 "fetchedAt": "2026-10-12T08:13:39Z"
 },
 {
+"id": "kr-hk-finance-c58b972c6a07",
+"title": "韩国投资证券推2000亿IMA",
+"summary": "韩国投资证券推出综合投资账户新品IMA S7。规模2000亿韩元，募集到15日截止。",
+"detail": "韩国投资证券推出综合投资账户产品IMA S7。总规模2000亿韩元，15日前募集。\n• 资金分散投向收购融资贷款、企业贷款和全球信贷基金。\n• 到期时，券商承担本金兑付义务。收益按实际业绩分配。\n• 基准收益率为年化4.5%，两年累计约9%。\n• 超过基准的部分，60%分给客户。\n• 线上客户还能获得特价发行票据额度。一年期年利率5%。\n• 半年期年利率4.7%。每人额度最高50亿韩元。\n• 按投入金额，客户还能领到手机礼券。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101262236",
+"publishedAt": "2026-10-12T05:21:41Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "kr-etnews-f70636e370c8",
 "title": "LG U+设安全业务专组",
 "summary": "LG U+准备在信息安全中心下新设安全业务支援小组。借此拓展面向企业的安全服务。",
@@ -1701,6 +2325,19 @@
 "url": "",
 "publishedAt": "2026-10-12T05:10:25Z",
 "fetchedAt": "2026-10-12T05:10:25Z"
+},
+{
+"id": "kr-irobot-5490814f92c5",
+"title": "韩国费斯托将讲数字孪生工厂",
+"summary": "韩国费斯托将在AMXPO 2026配套会议上发言。主题是用数字孪生和产业AI打造智能工厂。",
+"detail": "自动化企业韩国费斯托将参加AMXPO配套会议。展会21日至23日在高阳KINTEX举行。\n• AMXPO由韩国机械展更名而来。它涵盖AI、自主制造和机器人。\n• 22日，费斯托工程师将讲数字孪生和多层AI编排。\n• 数字孪生把实际设备和工序搬进虚拟环境，可做仿真验证。\n• 公司为自动化部件提供高质量数据和仿真模型。\n• 这能提高数字孪生的精度。\n• 它的工业AI平台Festo AX能实时分析数据。它可提前发现设备异常。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=48944",
+"publishedAt": "2026-10-12T05:09:55Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-etnews-cd1d9c9eebdf",
@@ -2249,6 +2886,19 @@
 "fetchedAt": "2026-10-12T05:10:25Z"
 },
 {
+"id": "kr-irobot-3f961aa90471",
+"title": "KAIST将办技术转让展会",
+"summary": "韩国科学技术院13日将在首尔办技术博览会。它将推介6项有望产业化的技术和4家教授创业企业。",
+"detail": "韩国科学技术院将借韩国电子展举办技术博览会。13日到16日，它在首尔COEX设特别馆。\n• 13日下午有技术转让说明会。会上介绍6项有望产业化的技术。\n• 其中有用机械臂推开障碍物前进的自动驾驶机器人技术。\n• 还有轻薄的降噪结构，和更轻的无线充电部件设计。\n• 另有可清洗复用的抗菌金属滤网，和多色反射材料。\n• 4家教授创业公司参展。领域包括多机器人统一控制和高光谱检测。\n• 现场还提供一对一技术转让咨询。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=48940",
+"publishedAt": "2026-10-12T02:25:51Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "cn-ithome-8cb195544542",
 "title": "高通PC处理器据称涨价一成",
 "summary": "台媒称高通本月起把PC处理器出货价上调10%。英特尔9月已涨价，AMD也在准备调价。",
@@ -2535,6 +3185,19 @@
 "fetchedAt": "2026-10-12T02:12:51Z"
 },
 {
+"id": "cn-panews-0b3372549330",
+"title": "币安bStocks发放美光分红",
+"summary": "币安将通过bStocks，向MUB持有者发放美光股票分红。分红会以MUB代币形式自动再投资。",
+"detail": "币安将向MUB持有者发放美光科技股票分红。\n• 扣除税费后，现金股息自动再投资为MUB代币。\n• 分红快照时间为北京时间10月14日8点。\n• 当天7点半起，暂停MU与MUB的兑换以及MUB充提。\n• 分配完成后，这些功能会自动恢复。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a12dac-1f26-74ac-b2d8-cfb6efc1f839",
+"publishedAt": "2026-10-12T01:13:00Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
 "id": "cn-ithome-3331c3766cf8",
 "title": "移动呼和浩特智算中心扩容",
 "summary": "中国移动呼和浩特智算中心扩容完工。总算力达2.01万P，九成服务京津冀。项目绿电占比88%。",
@@ -2663,6 +3326,19 @@
 "url": "https://news.nweon.com/143502",
 "publishedAt": "2026-10-12T01:08:11Z",
 "fetchedAt": "2026-10-12T02:12:51Z"
+},
+{
+"id": "cn-nweon-46723146ae95",
+"title": "上海海洋大学招标VR思政实验室",
+"summary": "上海海洋大学发布119.9万元招标。它要建一个VR加AR思政实践实验室。投标截止时间是11月3日。",
+"detail": "上海海洋大学发布招标公告。项目预算119.9万元，全部为自筹资金。\n• 学校将采购VR和AR软硬件，以及配套数字资源。\n• 平台能虚拟复原红色历史场景，支持沉浸式实训教学。\n• 招标文件10月10日到19日在上海市政府采购网获取。\n• 投标截止和开标时间都是11月3日上午10点。\n• 项目只面向中小微企业，不接受联合体投标。\n• 合同须在今年12月31日前履约完成。\n• 本国产品报价可享20%价格扣除。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-nweon",
+"sourceName": "映维网",
+"url": "https://news.nweon.com/143500",
+"publishedAt": "2026-10-12T01:08:08Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "cn-nweon-2e21b248afff",
@@ -2949,6 +3625,32 @@
 "url": "https://www.hankyung.com/article/202610125170i",
 "publishedAt": "2026-10-12T00:00:19Z",
 "fetchedAt": "2026-10-12T02:12:51Z"
+},
+{
+"id": "kr-hk-it-7f35cb6c5cc5",
+"title": "东亚ST贫血类似药登陆阿联酋",
+"summary": "韩国东亚ST的贫血治疗生物类似药，已在阿联酋上市。这是它在中东北非地区的首次商业化。",
+"detail": "东亚ST宣布，一款贫血药生物类似药已在阿联酋上市。原研药是二代的达贝泊汀α。开发代号是DA-3880。\n• 2024年11月，东亚ST与阿联酋药企Julphar签约。\n• 授权范围覆盖中东北非18个国家。\n• Julphar今年6月拿到阿联酋上市许可，随后完成上市。\n• 该药用于慢性肾衰竭和化疗引起的贫血。\n• 它在日本已获批销售。日本销售额从165亿韩元增至267亿韩元。\n• 公司还在推进美国和欧洲等主要市场的开发。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610125168i",
+"publishedAt": "2026-10-11T23:55:53Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
+},
+{
+"id": "cn-cls-efa0f9e165e4",
+"title": "动力煤价格重回千元关口",
+"summary": "秦皇岛港5500大卡动力煤价格报每吨1003元。同比上涨42.27%，创近两年新高。",
+"detail": "10月本是煤市淡季，动力煤价格却再次站上千元。\n• 截至10日，秦皇岛港动力煤平仓价每吨1003元。\n• 这是5500大卡山西产煤。价格同比上涨42.27%。\n• 这一价格创下近两年新高。\n• 环渤海动力煤现货参考价收于999元，环比涨5元。\n• 电厂耗煤回落，但冬储补库开启，对煤价形成支撑。\n• 大秦线秋季检修，印尼货源也偏紧。\n• 下游采购偏谨慎，进口煤补给有限。\n• 研报认为，煤矿复产进度是关键。低库存下煤价或进入上行通道。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2501684",
+"publishedAt": "2026-10-11T23:54:45Z",
+"fetchedAt": "2026-10-12T17:15:50Z"
 },
 {
 "id": "kr-hk-it-0a33bb99073e",
