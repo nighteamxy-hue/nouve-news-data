@@ -50,7 +50,7 @@
   "region": "cn",
   "category": "ent",
   "url": "https://ent.sina.com.cn/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -86,7 +86,7 @@
   "region": "kr",
   "category": "ent",
   "url": "https://www.osen.co.kr/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -95,7 +95,7 @@
   "region": "kr",
   "category": "ent",
   "url": "https://www.starnewskorea.com/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -140,7 +140,7 @@
   "region": "kr",
   "category": "ent",
   "url": "https://www.tenasia.co.kr/",
-  "enabled": true,
+  "enabled": false,
   "builtin": true
  },
  {
@@ -257,6 +257,42 @@
   "region": "us",
   "category": "tech",
   "url": "https://www.roadtovr.com/feed/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "cn-panews",
+  "name": "PANews",
+  "region": "cn",
+  "category": "crypto",
+  "url": "https://www.panewslab.com/zh/index.html",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "kr-blockmedia",
+  "name": "블록미디어",
+  "region": "kr",
+  "category": "crypto",
+  "url": "https://www.blockmedia.co.kr/feed",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-coindesk",
+  "name": "CoinDesk",
+  "region": "us",
+  "category": "crypto",
+  "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+  "enabled": true,
+  "builtin": true
+ },
+ {
+  "id": "us-theblock",
+  "name": "The Block",
+  "region": "us",
+  "category": "crypto",
+  "url": "https://www.theblock.co/rss.xml",
   "enabled": true,
   "builtin": true
  }

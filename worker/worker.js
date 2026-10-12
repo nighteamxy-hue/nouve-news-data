@@ -19,7 +19,7 @@ const STATIC = {
   "/icon-180.png": ["icon-180.png", "image/png", 86400],
   "/icon-512.png": ["icon-512.png", "image/png", 86400],
 };
-const CATS = ["ai", "econ", "stock", "tech", "robot", "ent", "travel", "general"];
+const CATS = ["ai", "econ", "stock", "crypto", "tech", "robot", "travel", "general"];
 const AUDIO_VERSION = "v3";
 
 export default {
@@ -43,6 +43,7 @@ export default {
         return new Response(body, { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
       }
       if (request.method === "GET" && p === "/api/audio") return audio(request, env, ctx, url);
+      if (request.method === "GET" && p === "/api/stream") return stream(request, env, ctx, url);
       if (request.method === "GET" && p === "/api/sources") return json(await loadSources(env));
       if (request.method === "GET" && p === "/api/log") {
         // Run log for the 6-hourly update task: ?m=<message> appends, no m reads.
@@ -119,7 +120,7 @@ async function makeClip(env, ctx, key, segs, ttl = 2 * 86400) {
   const chunks = [];
   segs.forEach((s, i) => { if (pcm[i] && pcm[i].rate === rate) { chunks.push(pcm[i].samples); chunks.push(silence(rate, s.gap)); } });
   const buf = encodeWav(chunks, rate);
-  const put = env.NEWS_KV.put(key, buf, { expirationTtl: ttl });
+  const put = env.NEWS_KV.put(key, buf, { expirationTtl: ttl, metadata: { pcm: buf.byteLength - 44 } });
   if (ctx) ctx.waitUntil(put); else await put;
   return { rate, samples: concat(chunks) };
 }
@@ -202,14 +203,17 @@ function decodeWav(buf) {
   return { rate, samples: data };
 }
 function silence(rate, ms) { return new Int16Array(Math.round(rate * ms / 1000)); }
+function writeWavHeader(v, dataBytes, rate) {
+  const w = (o, s) => { for (let i = 0; i < 4; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, "RIFF"); v.setUint32(4, 36 + dataBytes, true); w(8, "WAVE");
+  w(12, "fmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+  w(36, "data"); v.setUint32(40, dataBytes, true);
+}
 function encodeWav(chunks, rate) {
   const n = chunks.reduce((s, c) => s + c.length, 0);
   const buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
-  const w = (o, s) => { for (let i = 0; i < 4; i++) v.setUint8(o + i, s.charCodeAt(i)); };
-  w(0, "RIFF"); v.setUint32(4, 36 + n * 2, true); w(8, "WAVE");
-  w(12, "fmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
-  v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
-  w(36, "data"); v.setUint32(40, n * 2, true);
+  writeWavHeader(v, n * 2, rate);
   const pcm = new Int16Array(buf, 44); let o = 0;
   for (const c of chunks) { pcm.set(c, o); o += c.length; }
   return buf;
@@ -266,6 +270,114 @@ function wav(buf, request) {
     return new Response(buf.slice(start, end + 1), { status: 206, headers: { ...h, "content-range": `bytes ${start}-${end}/${size}`, "content-length": String(end - start + 1) } });
   }
   return new Response(buf, { headers: { ...h, "content-length": String(size) } });
+}
+
+/* ---------- continuous stream ----------
+   One long WAV for a whole list of news, sent piece by piece as the phone asks for it.
+   The phone then plays a single file from start to end, so it never has to start a new
+   file while the app is in the background (iPhone stops web audio at that point). */
+const LAYOUT_VERSION = "l1";
+async function sha1hex(text) {
+  const b = await crypto.subtle.digest("SHA-1", new TextEncoder().encode(text));
+  return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
+}
+/* Byte length of every cached clip, from the metadata saved with it (one list call). */
+async function clipLengths(env) {
+  const out = new Map(); let cursor;
+  do {
+    const r = await env.NEWS_KV.list({ prefix: `a:${AUDIO_VERSION}:`, cursor });
+    for (const k of r.keys) if (k.metadata && k.metadata.pcm) out.set(k.name, k.metadata.pcm);
+    cursor = r.list_complete ? null : r.cursor;
+  } while (cursor);
+  return out;
+}
+/* Where each clip sits inside the long stream. Worked out once per list, then cached. */
+async function streamLayout(env, ctx, mode, intro, ids) {
+  const key = `pl:${LAYOUT_VERSION}:` + await sha1hex(`${AUDIO_VERSION}|${mode}|${intro}|${ids.join(",")}`);
+  const hit = await env.NEWS_KV.get(key, "json");
+  if (hit) return hit;
+  const [news, lens] = await Promise.all([ghJSON("data/news.json", []), clipLengths(env)]);
+  const byId = new Map(news.map(n => [n.id, n]));
+  const list = ids.map(id => byId.get(id)).filter(Boolean);
+  if (!list.length) return null;
+  const nextKey = `a:${AUDIO_VERSION}:_next`, introKey = `a:${AUDIO_VERSION}:_intro:${intro}`;
+  const [nextClip, introClip] = await Promise.all([
+    cachedClip(env, ctx, nextKey, [{ text: "下一条。", gap: 500 }], 30 * 86400),
+    intro ? cachedClip(env, ctx, introKey, [{ text: `为你播报${intro}条新闻。`, gap: 600 }], 30 * 86400) : null,
+  ]);
+  const rate = nextClip.rate;
+  let budget = 28;   // text-to-speech calls allowed for clips that aren't ready yet
+  const lengths = new Array(list.length).fill(null);
+  await mapLimit(list.map((n, i) => ({ n, i })), 4, async ({ n, i }) => {
+    const k = coreKey(n.id, mode);
+    if (lens.has(k)) { lengths[i] = lens.get(k); return true; }
+    const v = await env.NEWS_KV.get(k, "arrayBuffer");
+    if (v) { lengths[i] = v.byteLength - 44; return true; }
+    const segs = speechSegments(n, mode);
+    if (budget < segs.length) return true;
+    budget -= segs.length;
+    const c = await makeClip(env, ctx, k, segs);
+    if (c.rate === rate) lengths[i] = c.samples.length * 2;
+    return true;
+  });
+  const parts = [], items = []; let pos = 0;
+  list.forEach((n, i) => {
+    if (lengths[i] == null) return;
+    const start = pos;
+    const pre = items.length === 0 ? (introClip ? [introKey, introClip.samples.length * 2] : null) : [nextKey, nextClip.samples.length * 2];
+    if (pre) { parts.push(pre); pos += pre[1]; }
+    parts.push([coreKey(n.id, mode), lengths[i]]); pos += lengths[i];
+    items.push([n.id, start, pos]);
+  });
+  const layout = { rate, parts, items, total: pos };
+  ctx.waitUntil(env.NEWS_KV.put(key, JSON.stringify(layout), { expirationTtl: 86400 }));
+  return layout;
+}
+async function stream(request, env, ctx, url) {
+  if (!env.AI) return json({ error: "no_ai_binding" }, 503);
+  const mode = ["brief", "detail", "title"].includes(url.searchParams.get("m")) ? url.searchParams.get("m") : "brief";
+  const intro = Math.max(0, Math.min(999, parseInt(url.searchParams.get("i") || "0", 10) || 0));
+  const ids = (url.searchParams.get("ids") || "").split(",").filter(x => /^[\w.-]{1,120}$/.test(x)).slice(0, 400);
+  if (!ids.length) return json({ error: "no_ids" }, 400);
+  const L = await streamLayout(env, ctx, mode, intro, ids);
+  if (!L || !L.items.length) return json({ error: "not_found" }, 404);
+  if (url.searchParams.get("layout") === "1") {
+    const sec = b => b / (2 * L.rate);
+    return json({ items: L.items.map(([id, s, e]) => ({ id, s: sec(s), e: sec(e) })) });
+  }
+  const size = 44 + L.total;
+  const h = { "content-type": "audio/wav", "accept-ranges": "bytes", "cache-control": "private, max-age=3600" };
+  let start = 0, end = size - 1, status = 200;
+  const m = /^bytes=(\d*)-(\d*)$/.exec(request.headers.get("range") || "");
+  if (m && (m[1] || m[2])) {
+    start = m[1] ? +m[1] : Math.max(0, size - +m[2]);
+    end = m[1] && m[2] ? Math.min(+m[2], size - 1) : size - 1;
+    if (start >= size || start > end) return new Response(null, { status: 416, headers: { ...h, "content-range": `bytes */${size}` } });
+    status = 206; h["content-range"] = `bytes ${start}-${end}/${size}`;
+  }
+  h["content-length"] = String(end - start + 1);
+  const header = new Uint8Array(44); writeWavHeader(new DataView(header.buffer), L.total, L.rate);
+  const starts = []; let acc = 44;
+  for (const [, len] of L.parts) { starts.push(acc); acc += len; }
+  let cur = start, k = 0;
+  const body = new ReadableStream({
+    async pull(ctrl) {
+      if (cur > end) { ctrl.close(); return; }
+      if (cur < 44) { const e2 = Math.min(44, end + 1); ctrl.enqueue(header.slice(cur, e2)); cur = e2; return; }
+      while (k < L.parts.length && starts[k] + L.parts[k][1] <= cur) k++;
+      if (k >= L.parts.length) { ctrl.close(); return; }
+      const [pk, plen] = L.parts[k];
+      const from = cur - starts[k], to = Math.min(plen, end + 1 - starts[k]);
+      const out = new Uint8Array(to - from);   // stays silent if a clip went missing
+      const v = await env.NEWS_KV.get(pk, { type: "arrayBuffer", cacheTtl: 3600 });
+      if (v && v.byteLength > 44) { const pcm = new Uint8Array(v, 44); if (from < pcm.length) out.set(pcm.subarray(from, Math.min(to, pcm.length))); }
+      ctrl.enqueue(out);
+      cur = starts[k] + to;
+    },
+  });
+  const { readable, writable } = new FixedLengthStream(end - start + 1);
+  ctx.waitUntil(body.pipeTo(writable));
+  return new Response(readable, { status, headers: h });
 }
 
 /* ---------- helpers ---------- */
