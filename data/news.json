@@ -1,5 +1,408 @@
 [
 {
+"id": "cn-eastmoney-04cc0953715d",
+"title": "美股三大指数震荡 存储股续跌",
+"summary": "美股三大指数13日震荡整理，涨跌幅都在0.1%以内。存储板块继续下跌，美光跌超4%。",
+"detail": "美股三大指数13日震荡整理。截至发稿，道指跌0.02%，纳指涨0.05%，标普500跌0.03%。\n• 存储板块延续跌势。美光科技跌超4%。\n• SK海力士和西部数据，都跌超5%。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610133894391137.html",
+"publishedAt": "2026-10-13T14:02:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-panews-0a787e723226",
+"title": "芝商所CEO称CFTC监管越界",
+"summary": "芝商所CEO达菲表示，CFTC扩大对预测市场的监管有些越界。争议最终可能闹到最高法院。",
+"detail": "芝商所CEO达菲表示，美国期货监管机构CFTC想扩大监管权。对象是预测市场，他认为这有些越界。\n• 他说，这可能变成一场法律较量。各方是州政府、部落政府和联邦政府。\n• 他预计案子会打到最高法院，州政府和部落政府会占上风。\n• 近年来，Polymarket和Kalshi等平台，让预测市场备受关注。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1358e-0251-761b-8ef8-fe31909e3d6c",
+"publishedAt": "2026-10-13T13:57:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-blockmedia-c2471d3759e3",
+"title": "Hyperliquid回购超13亿美元",
+"summary": "衍生品平台Hyperliquid累计买入4800万枚HYPE，花费约13.6亿美元。买入部分已作销毁处理。",
+"detail": "去中心化衍生品平台Hyperliquid，持续回购自家代币HYPE。累计买入超4800万枚，花费约13.6亿美元。目前这些代币市值约39.5亿美元。\n• 回购资金来自永续合约和现货交易手续费。\n• 平台还开始用USDC储备的收益回购。本月初首次注入约1458万USDC。\n• 回购的代币视为销毁，永久退出流通。目前HYPE总供应量约9.55亿枚。\n• 报道时，HYPE约81.2美元，一天跌了约5%。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1151042?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-13T13:46:25Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-eastmoney-bfda53ea7f42",
+"title": "中国大模型海外收入待追上调用量",
+"summary": "中国大模型调用量连续24周全球领先，但海外收入跟不上。投资人认为，这一局面有望改变。",
+"detail": "OpenRouter数据显示，中国大模型周调用量，已连续24周超过美国。但流量还没转化成同等的海外收入。天际资本创始合伙人张倩认为，这只是时间问题。\n• 她说，Harvey、Genspark等头部应用公司，开始改用中国开源模型。\n• 她观察到，美国领先模型的高利润期，平均只有约6个月。\n• 智源研究院创始理事长张宏江提醒，榜单不代表全部市场。\n• 律师指出，数据合规正成为中国AI出海的一大瓶颈。企业要配置本地合规团队。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610133894416643.html",
+"publishedAt": "2026-10-13T13:42:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-cls-60d46d0cc958",
+"title": "高盛三季度营收增23%超预期",
+"summary": "高盛三季度净营收约186.8亿美元，同比增长23%，好于预期。股票业务收入大增72%。",
+"detail": "高盛公布三季度业绩，好于华尔街预期。净营收约186.8亿美元，同比增长23%。净利润约52.9亿美元，增长29%。\n• 每股收益17.01美元。分析师预期约12.9美元。\n• 股票业务收入大增72%，约64.4亿美元。\n• 并购咨询收入创纪录，约16.5亿美元。固收外汇和大宗商品业务微降1%。\n• 资产管理规模创新高，约4.1万亿美元。\n• 财报公布后，高盛股价盘初涨近4%。亚洲业务收入增长约90%，约38亿美元。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2503803",
+"publishedAt": "2026-10-13T13:41:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-panews-c2214e271b27",
+"title": "苹果市值达5.06万亿美元新高",
+"summary": "苹果股价盘初上涨1.74%，报346.89美元。总市值约5.06万亿美元，再创历史新高。",
+"detail": "苹果股价13日盘初上涨1.74%，报346.89美元。总市值约5.06万亿美元，再创历史新高。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1357c-2c08-7140-a064-e9e03f9ee935",
+"publishedAt": "2026-10-13T13:38:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-blockmedia-34ef7b866955",
+"title": "Strive一周增持3311枚比特币",
+"summary": "比特币财库公司Strive，过去一周买入3311枚比特币。总持仓增至32773枚，增持规模史上第二。",
+"detail": "比特币财库公司Strive，过去一周买入3311枚比特币。总持仓增至32773枚。这是公司史上第二大的一笔增持。\n• 最大的一笔来自与Semler Scientific合并，获得约5816枚。\n• CEO马特·科尔说，已有2.08亿美元认股权证被行权。\n• 尚未行权的权证约1530万份，13日美东时间下午到期。\n• 公司把优先股SATA最低发行价100美元，正式写进约束条款。\n• 此前一天，策略公司也宣布了一笔较小规模的增持。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1151034?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-13T13:30:40Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-techcrunch-016589b0b2ce",
+"title": "印度推迟UPI商户收费",
+"summary": "面对商户强烈反对，印度推迟对UPI支付收取商户手续费。原定10月15日实施，改到排灯节之后。",
+"detail": "印度国家支付公司宣布，推迟向商户收取UPI费用。原定10月15日开始，现在推迟到排灯节之后。具体日期还没定。\n• 方案是对超过2000卢比的交易，向商户收取0.4%的费用。\n• 零售商和加油站强烈反对。有的威胁说，要停止接受UPI付款。\n• 仅9月，UPI就处理了约240.7亿笔交易。金额约29.37万亿卢比。\n• 印度从2020年1月起，一直对商户免收UPI费用。新规原本已豁免小额支付和小商户。",
+"category": "econ",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/13/india-delays-digital-payments-fee-rollout-amid-retailer-pushback/",
+"publishedAt": "2026-10-13T13:25:05Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-eastmoney-190cb3c867c9",
+"title": "机构看好超长债配置窗口",
+"summary": "9月，国内超长期国债走出结构性牛市。机构预计10月债市震荡不空，调整就是配置机会。",
+"detail": "9月，国内超长期利率债和中长期信用债走出独立行情。打破了9月季节性偏弱的规律。业内预计10月债市震荡不空，超长债仍是核心赛道。\n• 9月，30年期国债收益率下行5个基点，至2.10%。50年期降到2.26%。两者都创年内新低。\n• 截至12日，10年期国债收益率下行1个基点，至1.67%。\n• 分析师认为，财政不搞大规模刺激，资金面平稳。避险资金还会流入债市。\n• 10月政府债供给增加，可能带来短期扰动。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610133894411498.html",
+"publishedAt": "2026-10-13T13:25:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ithome-6657bc5d6e41",
+"title": "苹果联手LG推出家居配件系列",
+"summary": "苹果发布Apple Home Collection智能家居配件。产品由LG电子和施耐德电气合作设计，12月起陆续开售。",
+"detail": "苹果宣布推出Apple Home Collection系列配件。包括室内外摄像头、视频门铃、门锁和恒温器。产品由LG电子和施耐德电气合作设计。\n• 所有配件都能用iPhone一键设置，在家庭应用里统一管理。数据全程端到端加密。\n• LG的四款摄像头能拍2.5K视频。可识别人、宠物、车辆和包裹。\n• LG智能门锁用超宽带技术。带着iPhone走近，门就会自动打开。\n• 产品12月开售，部分配件2027年初上市。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/571.htm",
+"publishedAt": "2026-10-13T13:17:30Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-blockmedia-9d79adc6c6f3",
+"title": "美国机构加大抛售比特币",
+"summary": "比特币跌破8.4万美元，美国机构卖压加大。Coinbase溢价跌到7月以来最低。",
+"detail": "比特币跌破8.4万美元。Coinbase溢价跌到7月以来最低，显示美国机构需求转弱。美国CPI即将公布，美元和美债收益率走高。\n• 12日，美国比特币现货ETF净流出6540万美元。全部来自贝莱德。\n• 全市场杠杆爆仓约8.13亿美元。\n• 美元指数升破102，是去年4月以来最高。\n• 交易所比特币存量，从约272万枚降到267万枚。\n• 分析师说，若4小时线站上8.4万美元，可能涨向9.3万美元。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1151028?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-13T13:14:31Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ithome-7197e367f5a3",
+"title": "苹果发布新款Apple TV 4K",
+"summary": "苹果新款Apple TV 4K搭载A19芯片，支持新版Siri。产品11月13日起发售。",
+"detail": "苹果发布新款Apple TV 4K，11月13日起发售。香港售价2399港元。最大的变化是支持基于苹果智能的新Siri。\n• 它搭载A19芯片。CPU性能提升50%，GPU最高提升2倍。\n• 机身内置三颗麦克风。不拿遥控器，也能直接和Siri对话。\n• 它最多能连四台HomePod，组成全屋环绕声。\n• 遥控器支持查找功能。说一声，它就会发出提示音。\n• 它支持Wi-Fi 7和HDMI 2.1，存储空间128GB。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/569.htm",
+"publishedAt": "2026-10-13T13:06:34Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-robotreport-dcadf459c938",
+"title": "建筑机器人公司获美国建房大单",
+"summary": "建筑机器人公司Promise Robotics，和美国房企霍顿签下多年协议。将为美国生产超过1250套住宅。",
+"detail": "建筑业一向保守，但物理AI正在改造住宅建造。Promise Robotics宣布，和美国大型房企霍顿签署多年协议。它将用工厂即服务模式，生产超过1250套住宅。\n• 公司2021年成立，总部在加拿大多伦多。\n• 它把机器人、AI和软件串起来。覆盖设计、工厂生产和现场安装。\n• 房企不用自建工厂，就能用上先进产线。\n• 公司采用分布式微型工厂。目前使用库卡机械臂，但不绑定特定机器人。\n• CEO说，每建一栋房子，会产生约300张新图像。",
+"category": "robot",
+"region": "us",
+"sourceId": "us-robotreport",
+"sourceName": "The Robot Report",
+"url": "https://www.therobotreport.com/promise-robotics-partners-d-r-horton-physical-ai-homebuilding/",
+"publishedAt": "2026-10-13T13:00:05Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ithome-39c333be51a9",
+"title": "苹果发布智能家庭中枢HomeView",
+"summary": "苹果推出首款智能家庭中枢HomeView，售价299美元。11月13日起在美国、英国等国开售。",
+"detail": "苹果推出智能家居管理设备HomeView。标准版和壁挂版都卖299美元。首批六个国家今天开启预购，11月13日正式开售。\n• 它搭载A18芯片，配7英寸屏幕和1200万像素摄像头。\n• 它支持面部识别，最多能认出6位家庭成员。并显示各自的消息和日历。\n• 它能看监控、调恒温器和灯光。最多同屏显示9路监控画面。\n• 它还能识别烟雾报警声，并通知家人。\n• 它支持基于苹果智能的新Siri。需要搭配iOS 27.2以上的iPhone使用。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/566.htm",
+"publishedAt": "2026-10-13T13:00:02Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-techcrunch-aba4e20057c7",
+"title": "美国运通推框架防AI代理乱买",
+"summary": "美国运通推出新框架。AI代理下单前，要先确认用户的购买意图。目的是防止AI擅自消费。",
+"detail": "AI代理越来越多地替用户付款。但大模型可能出错，带来未经授权的交易。美国运通为此推出了意图智能框架。\n• 框架会先记录用户的购买指令。比如商家名称、预算上限和产品偏好。\n• 这些指令会贯穿整个交易流程。框架首先提供一个创建意图的接口。\n• 运通希望它成为AI交易的行业标准。\n• 运通说，目前还没看到AI购物导致纠纷增加。\n• 调查显示，66%的美国消费者可能用AI代理比价。61%可能让它推荐商品。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/",
+"publishedAt": "2026-10-13T13:00:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ithome-712ffab935a4",
+"title": "英伟达DLSS 5新模型性能翻倍",
+"summary": "英伟达宣布，DLSS 5新模型10月16日推送。性能是9月首发版的两倍，4K显存占用降低两成。",
+"detail": "英伟达宣布，DLSS 5的神经渲染模型本周迎来大更新。新模型10月16日推送，首先用于NBA 2K27。\n• 新模型性能是9月首发版的两倍。4K场景显存占用降低20%。\n• 模型规模缩小24%，参数约1.18亿。画质基本保持不变。\n• 和3月首次演示相比，性能累计提升了10倍。\n• 霍格沃茨之遗11月5日支持DLSS 5。燕云十六声计划11月下旬跟进。\n• 英伟达还推出了帧生成性能模式。在RTX 5060上，帧生成性能最高提升35%。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/564.htm",
+"publishedAt": "2026-10-13T12:57:11Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-36kr-d6d47e12f8b8",
+"title": "中联重科拟9亿元出售路畅科技",
+"summary": "中联重科拟以约9亿元，转让所持路畅科技近三成股份。交易完成后，它将不再是控股股东。",
+"detail": "中联重科发布公告。拟以每股25元，向远卓天使转让路畅科技股份。比例为29.99%，转让款合计约9亿元。\n• 受让方还将发起部分要约收购。中联重科拟用14%的股份参与预受。\n• 交易完成后，中联重科持股降到9.83%，不再是控股股东。\n• 公司预计，这笔交易将影响利润约2.88亿元。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4024301870174336",
+"publishedAt": "2026-10-13T12:51:33Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-blockmedia-0f583aa6cfb8",
+"title": "美股开盘前比特币守8.3万美元",
+"summary": "美股开盘前，比特币在8.3万美元附近交易。芯片股抛售延续，纳指期货下跌0.7%。",
+"detail": "纽约时间13日早上，比特币上涨0.3%，约83272美元。以太坊跌0.7%，约2499美元。亚洲芯片股的抛售，延续到美股。\n• 纳指100期货跌0.7%。道指期货涨0.8%。\n• 费城半导体指数，已经比10月高点下跌超7%。\n• 高盛财报好于预期，股价上涨。摩根大通债券交易收入意外下滑。\n• 美国10年期国债收益率降5个基点，至5.19%。\n• WTI原油跌1.5%，约92.3美元。现货黄金涨0.3%，约4185美元。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1151024?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-13T12:44:23Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ithome-d156666890dd",
+"title": "比亚迪大汉上市 23.59万元起",
+"summary": "比亚迪大汉今天上市，定位王朝旗舰轿车。三个版本售价在23.59万到27.59万元之间。",
+"detail": "比亚迪大汉今天上市，定位王朝9系旗舰轿车。三个版本售价23.59万到27.59万元。比亚迪老车主购车，可享1万元置换补贴。\n• 车长5256毫米，轴距3130毫米。\n• 全系标配后轮转向、前排双零重力座椅和云辇-A空气悬架。\n• 双电机版功率570千瓦，百公里加速3.3秒。\n• 电池容量102.3度，两驱版纯电续航1008公里。\n• 它配备全球首款黑色可调光隐私玻璃，可隔热防晒。音响有31个扬声器。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/561.htm",
+"publishedAt": "2026-10-13T12:43:10Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-techcrunch-fe05934c01b2",
+"title": "初创公司用生物分子多采铜",
+"summary": "初创公司Giraffe Bio用定制生物分子，提高铜矿回收率。它完成了640万美元种子轮融资。",
+"detail": "数据中心和电气化推高了铜需求。到2040年，铜供应可能比需求少25%。初创公司Giraffe Bio想帮现有矿山多采铜。\n• 它针对每座矿的成分，设计专用化合物。能让铜回收率最多提高5%。\n• 业内通常能多回收1%到2%，就很满意了。\n• 它用工程微生物在生物反应器里生产化合物。再加入矿山的浮选工序。\n• 公司完成640万美元种子轮，必和必拓旗下风投参投。\n• 这个平台以后还能用在金和银上。通常只有0.3%的勘探项目能变成矿山。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/13/giraffe-bio-aims-its-bespoke-biomolecules-at-the-looming-copper-shortage/",
+"publishedAt": "2026-10-13T12:40:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-36kr-3cb72fd2e9c0",
+"title": "欧洲气价升至2022年底以来最高",
+"summary": "受中东冲突影响，欧洲天然气价格升到2022年12月以来最高。供暖季的供应压力正在加大。",
+"detail": "中东冲突持续，未来几个月的供应前景蒙上阴影。欧洲天然气价格，升到2022年12月以来最高水平。\n• 下周的短暂寒潮，可能是欧洲能源市场的第一道考验。\n• 在欧洲供暖季，天然气用量通常会翻一倍。\n• 欧洲燃料库存正处在季节性低位。\n• 如果中东供应不能恢复，欧洲争夺气源会更激烈。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4024290421788544",
+"publishedAt": "2026-10-13T12:39:54Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-36kr-8a51fac1ff0a",
+"title": "行云科技签下168亿元算力订单",
+"summary": "行云科技披露，已和五大核心客户签完算力合同。五笔五年期订单，合计约168.8亿元。",
+"detail": "行云科技发布投资者关系记录。截至10月9日，公司已和五大核心客户签完全部算力合同。模式是自购GPU建集群，收取固定租金。\n• 五笔订单合计约168.8亿元。年均租金合计约33.8亿元。\n• 最大一单来自一家央企上市公司，金额约65.2亿元。\n• 一家大模型厂商的订单约30.5亿元，期限五年。\n• 三季度，几家头部客户都协商上调了租金。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4024273382510727",
+"publishedAt": "2026-10-13T12:28:31Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ithome-988c957e9cc8",
+"title": "阶跃发布智能体手机STEPX Neo",
+"summary": "阶跃终端发布首款大模型原生智能体手机，STEPX Neo先行版。全栈价3999元，10月16日首销。",
+"detail": "阶跃终端发布首款大模型原生智能体手机，STEPX Neo先行版。它搭载骁龙8系芯片，内存16GB，存储256GB。手机、系统和模型打包，全栈价3999元。\n• 新机今天开启预售，10月16日正式首销。\n• 购机用户连续12个月，每月可获百亿token额度。\n• 它搭载智能体原生系统Step AOS。长期记忆和任务调度，都做进了系统底层。\n• 智能体Amoo已和支付宝、美团、滴滴等近百家企业打通。\n• 阶跃还推出开发工具Step Studio。用自然语言就能生成应用和游戏。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/012/556.htm",
+"publishedAt": "2026-10-13T12:18:55Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-36kr-305e9847a917",
+"title": "路威酩轩三季度销售低于预期",
+"summary": "全球最大奢侈品集团路威酩轩，三季度增长乏力。欧洲奢侈品股年内市值已蒸发约3300亿欧元。",
+"detail": "法国路威酩轩集团12日发布三季报。剔除汇率影响，有机销售额约185亿欧元。同比只增长1%，低于预期。\n• 分析师原本预期增长1.3%。二季度的增速是3%。\n• 时装与皮具贡献近一半营收，有机销售下降5%。\n• 它是行业首家发布三季报的头部企业，加剧了市场担忧。\n• 今年以来，欧洲主要奢侈品股市值合计蒸发约3300亿欧元。约合2.46万亿元人民币。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4024253791670152",
+"publishedAt": "2026-10-13T12:16:19Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-cls-f79500fbe286",
+"title": "美银：美联储加息或利好美股",
+"summary": "美银策略师哈特尼特认为，美联储10月加息反而利好美股。因为加息能稳住长端国债收益率。",
+"detail": "美国银行策略师哈特尼特，提出一个反直觉观点。他认为，美联储10月若主动加息，反而可能托底美股。\n• 他说，市场的病根是长期国债收益率上涨。而不是短期利率。\n• 美国10年期国债收益率上周一度达5.36%。30年期创2002年以来新高。\n• 主动加息能遏制通胀风险，让长端收益率企稳。\n• 低评级债券利差扩大到1200个基点，是2022年以来最高。\n• 上周全球约1664亿美元涌入现金类资产。规模创2020年4月以来最大。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2503574",
+"publishedAt": "2026-10-13T12:13:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-36kr-304b9dc1e851",
+"title": "花旗三季度净利增长40%",
+"summary": "花旗集团三季度营收约238.5亿美元，同比增长8%。净利润约52.5亿美元，同比增长40%。",
+"detail": "花旗集团公布三季度业绩。营收约238.5亿美元，同比增长8%。净利润约52.5亿美元，同比增长40%。\n• 每股收益2.85美元，去年同期是1.86美元。\n• 运营支出同比下降2%。信贷损失拨备增长6%。\n• 服务业务和财富管理业务，营收都增长了15%。\n• 当季向普通股股东返还41亿美元，包括回购和分红。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/newsflashes/4024255965925255",
+"publishedAt": "2026-10-13T12:11:47Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-hk-finance-8e87be9d9102",
+"title": "韩国借钱炒股余额创三个月新高",
+"summary": "KOSPI大跌后，韩国散户借钱抄底。融资余额升到约34.3万亿韩元，为三个月来最高。",
+"detail": "KOSPI在6000点上下剧烈震荡。散户趁大跌加杠杆买入，融资余额创三个月新高。\n• 截至12日，两市融资余额约34.29万亿韩元。单日增加约4773亿韩元。\n• 这是7月15日以来的最高水平。8月初，它一度降到27万亿韩元左右。\n• 12日KOSPI大跌3.65%。散户当天净买入约1.47万亿韩元。\n• 超短期融资余额重回1万亿韩元以上。业界提醒，波动加大时要警惕杠杆风险。强制平仓额从63亿韩元增至270亿韩元。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101397797",
+"publishedAt": "2026-10-13T12:04:57Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-cls-bcf979cb4ee5",
+"title": "今年A股已有73家IPO撤否",
+"summary": "今年以来，A股已有73家企业IPO终止审核。三季度有34家，是年内最多的季度，10月仍在持续。",
+"detail": "Wind数据显示，今年以来已有73家企业IPO终止审核。三季度有34家，是年内最多的季度。7月单月14家，也是年内峰值。\n• 10月初，排队超4年的博华科技撤单。企查查也终止了IPO。\n• 北交所撤否41家，占一半以上。\n• 江苏、浙江、广东三省合计34家，接近一半。\n• 分析认为原因有三点。申报基数大，现场检查常态化，部分企业业绩承压。\n• 撤否总数比去年同期的97家，减少约25%。73家合计拟募资约563亿元。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2503693",
+"publishedAt": "2026-10-13T11:57:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-coindesk-329cacc0bdce",
+"title": "联邦爱马仕将发代币化基金",
+"summary": "美国资管公司联邦爱马仕，计划明年初发行代币化基金。合作方是数字证券公司Prometheum。",
+"detail": "美国资管公司联邦爱马仕，管理资产约9110亿美元。它计划2027年初，自己发行代币化基金份额。\n• 合作方Prometheum提供受监管的经纪、托管和清算服务。\n• 产品将通过传统券商和理财顾问销售。\n• 具体基金和区块链尚未公布。货币市场基金可能是首选。\n• 贝莱德、富兰克林邓普顿和摩根大通，都已推出链上产品。\n• 公司负责人说，代币化货币基金在业内很受关注。这也契合公司以流动性基金见长的特点。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/business/2026/10/13/federated-hermes-joins-wall-street-s-tokenization-push-with-plans-for-first-onchain-fund-shares",
+"publishedAt": "2026-10-13T11:56:04Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-theblock-78eb91b5546d",
+"title": "币安将关闭矿池和云挖矿",
+"summary": "币安宣布，将在11月10日关闭旗下矿池服务。云挖矿和矿池理财等相关业务也将同时关停。",
+"detail": "",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/business/2026-10-13-binance-to-shut-down-mining-pool-cloud-mining-and-related-services-418410",
+"publishedAt": "2026-10-13T11:40:56Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-hk-econ-b9c475c55ab8",
+"title": "韩央行行长：通胀回落前保持紧缩",
+"summary": "韩国央行行长申铉松表示，AI热潮推动韩国今年增长3.3%。在通胀回到2%之前，将维持紧缩政策。",
+"detail": "韩国央行行长申铉松，在国际货币基金组织年会上发言。他说AI周期带动韩国今年增长3.3%，但也推高了通胀。在确信通胀回到2%之前，央行将坚持紧缩。\n• 他说，AI热潮的利好盖过了中东战争的冲击。但两者叠加，让物价更难控制。\n• 韩国央行今年夏天，已经连续两次加息。\n• 他预计到2030年，全球科技巨头每年投资将超1万亿美元。这些需求会集中流向韩国。\n• 巨头大量发行超长期债券，正在推高长期利率。他还说会认真评估韩版点阵图的利弊。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610139794i",
+"publishedAt": "2026-10-13T11:21:16Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "market-2026101320",
 "title": "股市速览：10月13日晚间",
 "summary": "全球芯片股13日普跌，韩股收跌5.46%。A股探底回升，沪指收在3800点上方。",
@@ -11,6 +414,32 @@
 "url": "",
 "publishedAt": "2026-10-13T11:14:52Z",
 "fetchedAt": "2026-10-13T11:14:52Z"
+},
+{
+"id": "cn-qbitai-443369a543f1",
+"title": "魔法原子登顶具身智能评测榜",
+"summary": "魔法原子的机器人智能体框架EchoPolicy-0，在MolmoSpaces榜单拿下全球第一。平均成功率75.4%。",
+"detail": "艾伦人工智能研究所发起了具身智能评测MolmoSpaces。最新榜单上，魔法原子的EchoPolicy-0排名全球第一。它的机器人操作平均成功率是75.4%。\n• 自研框架MagicBrain只有34亿参数，排名全球第四。它的抓取成功率达94.4%。\n• 评测包括抓取物体、开柜门和多阶段任务。EchoPolicy-0完成了3915局全量测试。\n• 它让动作模型先给出多条候选轨迹。再由视觉语言模型挑出最合适的一条。\n• 团队说，新增任务时不用从零搭系统。把能力接进同一框架就行。",
+"category": "robot",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503107.html",
+"publishedAt": "2026-10-13T11:05:39Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "us-coindesk-6dafed59c87e",
+"title": "俄最大银行获准开展加密交易",
+"summary": "俄罗斯最大银行俄联邦储蓄银行，获准从事加密货币兑换。它计划12月1日向所有客户开放。",
+"detail": "俄罗斯央行把俄联邦储蓄银行，列入加密兑换机构名册。这家俄罗斯最大银行，本月初已进入数字存管名册。\n• 它计划12月1日，向所有客户开放加密交易。\n• 目前它已在应用里测试比特币、以太坊和USDT交易。\n• 名册上共有9家机构，包括俄罗斯外贸银行。\n• 9月1日生效的新法，建立了受监管的加密市场。央行2022年曾提议禁止国内加密交易所。\n• 但国内加密支付仍被禁止。从2027年7月起，交易必须通过注册中介。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/business/2026/10/13/russia-s-largest-bank-sberbank-secures-approval-to-trade-crypto",
+"publishedAt": "2026-10-13T11:02:47Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "cn-ithome-b88fa5f29ef7",
@@ -128,6 +557,32 @@
 "url": "https://www.hankyung.com/article/2026101397811",
 "publishedAt": "2026-10-13T10:38:52Z",
 "fetchedAt": "2026-10-13T11:14:52Z"
+},
+{
+"id": "us-coindesk-af6388ddad50",
+"title": "韩股暴跌 比特币走出独立行情",
+"summary": "KOSPI再跌5.5%，比6月高点低约38%。同期比特币从5.8万美元低点反弹，和韩股走势背离。",
+"detail": "13日亚洲交易时段，KOSPI又大跌5.5%。指数已比6月历史高点低约38%。比特币却从约5.8万美元的低点，最高反弹到8.7万美元。\n• 两者的20周滚动相关系数为负0.41，呈中度负相关。\n• 分析认为，资金撤出AI交易，比特币可能受益。但相关性不等于资金轮动。\n• 博通CEO把AI投机比作赌场。长鑫存储的技术突破，也加剧了芯片股抛售。\n• SK海力士和三星电子，分别跌了约10%和7%。美股盘前，美光和闪迪也都跌约3%。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/markets/2026/10/13/bitcoin-diverges-from-south-korean-stocks-as-ai-concerns-deepen-the-kospi-selloff",
+"publishedAt": "2026-10-13T10:38:51Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "cn-ctnews-f3c29584d077",
+"title": "三部门出台意见保障旅游用地",
+"summary": "自然资源部等三部门出台指导意见，优化旅游用地政策。目的是给旅游新业态拓展发展空间。",
+"detail": "自然资源部、文旅部和国家林草局，联合出台指导意见。要用国土空间规划引领旅游业发展，完善旅游用地政策。中国旅游报刊发文章，解读政策要点。\n• 风景名胜区详细规划，将纳入国土空间规划体系。可以和所在区域合并编制。\n• 远离城镇的加油站、服务区和驿站，可以单独布局用地。即使在城镇开发边界以外也行。\n• 国家还将研究增设适应旅游业发展的新型地类。为旅游新业态量身定制空间。\n• 浙江和广西已经试点，一个规划、一套标准、一次审批。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/guandian/content/2026-10/13/content_193142.html",
+"publishedAt": "2026-10-13T10:32:37Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "kr-blockmedia-3540e0bd279a",
@@ -260,6 +715,19 @@
 "fetchedAt": "2026-10-13T11:14:52Z"
 },
 {
+"id": "cn-qbitai-674ec494e489",
+"title": "DeepSeek拟领投机器人AI公司",
+"summary": "据报道，DeepSeek计划领投Winverse AI的种子轮。这是它两个月内，第二次投向机器人领域。",
+"detail": "据彭博社报道，DeepSeek计划领投Winverse AI数千万美元的种子轮。投后估值约4亿美元。这家公司今年刚成立，做机器人背后的AI模型。\n• 创始人胡瀚曾任腾讯混元杰出科学家。他是视觉模型Swin Transformer的作者之一。\n• 美团旗下的龙珠资本，也承诺参与投资。\n• 今年8月，DeepSeek已用约1.41亿元入股宇树科技。\n• 如果交易落地，这将是DeepSeek规模最大的初创投资之一。",
+"category": "robot",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503093.html",
+"publishedAt": "2026-10-13T09:33:37Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "kr-hk-econ-1b930568e344",
 "title": "霍尔弟子提醒韩国防备衰退",
 "summary": "诺奖得主霍尔的弟子雷米教授表示，韩国明年要防范经济衰退。她批评韩国大幅扩张预算。",
@@ -273,6 +741,32 @@
 "fetchedAt": "2026-10-13T11:14:52Z"
 },
 {
+"id": "kr-hk-it-30182094e287",
+"title": "韩药企保宁给员工每人发250股",
+"summary": "韩国药企保宁决定，向全体员工发放自家公司股票。约1780名员工，每人获得250股。",
+"detail": "韩国制药企业保宁13日发布公告。它将处置自有股份，用于奖励员工。全体约1780名员工，每人获赠250股，合计约44.5万股。\n• 用于员工奖励的股份，总计约177.4万股。这次是普惠式发放。\n• 不论职级和绩效，每个人拿到的数量都一样。\n• 公司说，目的是建立人人都是股东的文化。\n• 28日的股东大会，还将审议分拆处方药销售业务。\n• 公司还计划增加基本工资上涨机会，强化绩效激励。并引入长期股票奖励制度。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610139713i",
+"publishedAt": "2026-10-13T09:28:52Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-etnews-50fb34391602",
+"title": "韩国OK储蓄银行客户信息泄露",
+"summary": "韩国OK储蓄银行的贷款申请页面出了问题。约183名客户的信息外泄，银行已向当局报告。",
+"detail": "韩国OK储蓄银行确认，约183名客户的个人信息外泄。泄露发生在贷款申请页面，银行已向金融当局报告。\n• 银行正在调查泄露途径和受害范围。\n• 此前，另外两家储蓄银行也发生过泄露。分别涉及约5万条个人信息，和2200多条法人信息。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-etnews",
+"sourceName": "전자신문",
+"url": "https://www.etnews.com/20261013000442",
+"publishedAt": "2026-10-13T09:28:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "cn-cls-c974ab28b706",
 "title": "粤芯半导体登陆创业板",
 "summary": "广州粤芯半导体13日在创业板上市。它是创业板改革后首家上市的未盈利晶圆制造企业。",
@@ -284,6 +778,19 @@
 "url": "https://www.cls.cn/detail/2503514",
 "publishedAt": "2026-10-13T09:28:00Z",
 "fetchedAt": "2026-10-13T11:14:52Z"
+},
+{
+"id": "us-coindesk-9af5acea5c33",
+"title": "Ledger披露间谍芯片窃密手法",
+"summary": "Ledger公布调查进展。问题设备里藏着间谍芯片。它会读取助记词，再经手机网络发走。",
+"detail": "硬件钱包厂商Ledger公布调查进展。东南亚经销商CryptoBilis卖出的部分设备，被植入了间谍芯片。它会读取屏幕上的24个助记词，再发给攻击者。\n• 植入物藏在外壳里，借助eSIM通过LTE网络传输。\n• 它没有改动安全芯片和系统，也没篡改交易签名。\n• Ledger称这是物理供应链攻击，自家软件和系统没被攻破。\n• 欧洲电器零售商万得城，也已停售Ledger设备。\n• Ledger建议，未用的设备不要初始化。已用的要把资产转到新设备。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-coindesk",
+"sourceName": "CoinDesk",
+"url": "https://www.coindesk.com/tech/2026/10/13/ledger-says-spy-chip-inside-cryptobilis-ledger-devices-transmitted-wallet-keys-over-mobile-network",
+"publishedAt": "2026-10-13T09:27:47Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "us-roadtovr-a93c333f0a4f",
@@ -323,6 +830,19 @@
 "url": "https://www.hankyung.com/article/2026101396281",
 "publishedAt": "2026-10-13T09:03:28Z",
 "fetchedAt": "2026-10-13T11:14:52Z"
+},
+{
+"id": "kr-hk-econ-67a84ff93f05",
+"title": "韩国混动车销量13年来首降",
+"summary": "今年前9个月，韩国混合动力车销量同比下降3.9%。同期电动车销量大增74.8%。",
+"detail": "韩国汽车移动产业协会公布数据。今年1到9月，韩国混动车销量约42.1万辆，同比下降3.9%。这是2013年有统计以来，首次出现下滑。\n• 混动车在新车登记中的占比，降到34.1%。业界认为，电动车需求停滞期正在结束。\n• 原因包括现代起亚生产受阻，主力混动车型老化。\n• 同期电动车卖出约29.7万辆，同比增长74.8%。\n• 起亚电动车卖出约10.4万辆，增长超一倍。特斯拉卖出约8.9万辆，增长104.4%。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101396251",
+"publishedAt": "2026-10-13T09:00:47Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "kr-hk-finance-8662db418ca7",
@@ -377,6 +897,19 @@
 "fetchedAt": "2026-10-13T11:14:52Z"
 },
 {
+"id": "kr-hk-finance-67ef2963e5dd",
+"title": "韩股历次长期横盘约四年以上",
+"summary": "回顾历史，韩股每次创新高后，都曾长期横盘。专家说，突破需要企业体质改善和新的主导产业。",
+"detail": "韩国股市多次出现创新高后长期停滞。专家说，要突破区间，光靠利润增长不够。还需要企业体质改善、新主导产业和大规模资金流入。\n• 第一次是1989年突破1000点后。直到2005年才重新创新高。\n• 第二次是2011到2017年。指数困在1800到2200点之间。后来靠存储芯片行情突破。\n• 最近一次从2021年高点算起，持续约4年2个月。2025年9月才突破。\n• KB证券分析师提醒，存储芯片仍没摆脱周期性行业的特点。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101395961",
+"publishedAt": "2026-10-13T08:38:08Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "kr-etnews-88d8d390d868",
 "title": "韩国新村金库客户信息泄露",
 "summary": "韩国新村金库中央会承认互助会员信用信息泄露并道歉。承诺如有损失将全额赔偿。",
@@ -416,6 +949,19 @@
 "fetchedAt": "2026-10-13T11:14:52Z"
 },
 {
+"id": "kr-hk-econ-cc190ab3c55b",
+"title": "宁德时代测试浦项负极材料",
+"summary": "为规避美欧限制，中国电池企业开始求购韩国材料。浦项未来M正和宁德时代测试负极材料。",
+"detail": "美欧收紧供应链规则后，中国电池企业转向韩国材料商。据韩国经济报道，浦项未来M正在和宁德时代合作。双方在测试天然石墨负极材料。业内人士说，双方已接近正式签约。\n• 如果成交，这将是韩企首次向中国电芯厂供应负极材料。\n• 中国企业占全球负极材料市场的96%。浦项未来M只占1.7%。\n• 美国要求降低电池里的中国原料占比。今年上限40%，2030年降到15%。\n• 韩国企业Enchem计划向宁德时代供应电解液。到2030年累计35万吨。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101395421",
+"publishedAt": "2026-10-13T08:37:15Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "kr-hk-finance-fa35d4a34b9d",
 "title": "专家称明年化工股利润增速领先",
 "summary": "韩国理财论坛上，专家预计明年化工等板块利润增速超过芯片。也有人建议提高股票配置。",
@@ -427,6 +973,32 @@
 "url": "https://www.hankyung.com/article/2026101394991",
 "publishedAt": "2026-10-13T08:36:08Z",
 "fetchedAt": "2026-10-13T11:14:52Z"
+},
+{
+"id": "kr-hk-econ-6459462967c5",
+"title": "AI芯片订单爆满 台湾封测涨价",
+"summary": "AI芯片需求暴增，台湾封装测试价格最高上涨三成。部分小客户的急单，价格甚至翻倍。",
+"detail": "AI芯片需求暴增，台湾半导体封装测试产能吃紧。据台湾经济日报报道，业者正经历史上最强的涨价潮。\n• 涨价幅度在一到三成之间。小客户的急单，价格最高翻倍。\n• 原因是AI芯片测试时间变长。云计算巨头又纷纷推出自研芯片。\n• 日月光、京元电子、力成等大厂受益明显。华泰、超丰、矽格等中小厂也接到更多订单。\n• 需求正从计算芯片扩展到存储和数据传输。\n• 矽格预计，明年光通信营收将成倍增长。华泰的价格调整，已逐步反映到三季度业绩。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610139343g",
+"publishedAt": "2026-10-13T08:35:46Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
+"id": "kr-hk-finance-24ffe4dddc13",
+"title": "韩研究员：代币化将重塑金融",
+"summary": "量化公司Presto研究负责人表示，代币化是新技术。它将改变金融市场，但要加强投资者保护。",
+"detail": "韩国加密媒体采访了量化交易公司Presto的研究负责人。他说实物资产代币化，是会改变金融市场的新技术。\n• 他认为核心价值是扩大投资渠道。比如罗宾汉向欧洲用户提供美股代币。\n• 海外投资者也能借此，更方便地投资韩国股票。这是以往很难做到的。\n• 其他好处包括投资未上市股票，提高结算效率。资产也能用得更充分。\n• 他提醒，交易时间延长可能带来流动性风险。代币化股票在去中心化交易所交易，内幕交易很难监控。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101395096",
+"publishedAt": "2026-10-13T08:32:19Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "kr-irobot-d206434e1a50",
@@ -453,6 +1025,19 @@
 "url": "https://www.cls.cn/detail/2503400",
 "publishedAt": "2026-10-13T08:23:00Z",
 "fetchedAt": "2026-10-13T11:14:52Z"
+},
+{
+"id": "kr-hk-it-0f8f17ee0ac7",
+"title": "韩企高管：用好AI要重新分工",
+"summary": "可隆集团IT公司负责人表示，引入AI不会自动提高生产率。企业要重新划分人和AI的分工。",
+"detail": "可隆集团旗下IT公司可隆Benit，13日在首尔举办AI转型峰会。公司代表表示，引入AI不会自动提高生产率。必须重新设计工作方式。\n• 他说，AI已把10小时的工作缩短到5小时。但关键是变成真实的利润。\n• 公司高管指出，韩国企业AI使用率达58%。但有正式AI战略的只有27%。\n• 还有47%的企业，无法衡量AI投资效果。\n• 可隆工业用AI处理出口单据。每单从4小时缩到几秒，一年省下约20亿韩元。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/2026101394851",
+"publishedAt": "2026-10-13T08:21:53Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "cn-panews-8aca86e54635",
@@ -505,6 +1090,19 @@
 "url": "",
 "publishedAt": "2026-10-13T08:20:10Z",
 "fetchedAt": "2026-10-13T08:20:10Z"
+},
+{
+"id": "kr-hk-finance-1a14c4bbb52e",
+"title": "分析师：AI加速器之战打响",
+"summary": "分析师卢根昌说，AI领域最大看点是英伟达和谷歌之争。他推荐投资三星电子和台积电。",
+"detail": "半导体分析师卢根昌，在韩国经济的投资论坛上发言。他说，AI领域最大的看点，是英伟达GPU和谷歌TPU之争。云计算巨头还会继续猛投数据中心。\n• 他看好三星电子、台积电、谷歌母公司和泛林集团。\n• 他预计三星电子营业利润，明年约585万亿韩元。2028年约662万亿韩元。\n• 三星承诺把一半自由现金流回馈股东，分红也有吸引力。\n• 他说存储行业已不同以往。AI服务器和HBM占比上升，消费电子影响变小。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101375286",
+"publishedAt": "2026-10-13T08:17:50Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "kr-blockmedia-ec97311b9ea2",
@@ -752,6 +1350,19 @@
 "url": "https://www.hankyung.com/article/202610138820i",
 "publishedAt": "2026-10-13T07:22:45Z",
 "fetchedAt": "2026-10-13T08:20:10Z"
+},
+{
+"id": "cn-qbitai-d31378df7162",
+"title": "中国车企占巴黎车展三分之一",
+"summary": "本届巴黎车展，约有20个中国汽车品牌参展。宝马和保时捷缺席，大众呼吁法德联手应战。",
+"detail": "2026年巴黎车展开幕。据路透社统计，约20个中国汽车品牌参展，是2024年的两倍。它们约占60个整车品牌的三分之一。\n• 宝马、MINI和保时捷缺席。宝马原本要参展，7月临时取消。\n• 理想宣布，理想i6将以Li 6之名进入欧洲。2027年一季度先在荷兰和挪威交付。\n• 问界计划2027年秋季进入欧洲，已启动欧盟认证。\n• 大众前三季度在华交付约137.9万辆，同比下降30.2%。集团CEO呼吁法德合作，应对中国竞争。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/502992.html",
+"publishedAt": "2026-10-13T07:20:23Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "cn-qbitai-d0f1ce2e4063",
@@ -1027,6 +1638,19 @@
 "fetchedAt": "2026-10-13T08:20:10Z"
 },
 {
+"id": "kr-irobot-5d797bee977b",
+"title": "美国密歇根州考察韩国机器人企业",
+"summary": "美国密歇根州经济开发公司代表团，走访韩国机器人企业。双方讨论了北美市场合作与投资。",
+"detail": "韩国AI机器人产业协会说，美国密歇根州代表团近日访韩。成员来自州经济开发公司和州交通局。他们走访了两家会员企业，讨论合作和投资。\n• 第一家是Zenix Robotics，做半导体物流自动化。它2025年在美国设立了法人。\n• 第二家是T-Robotics，做自主移动物流机器人。它拿下了福特储能产线的大批订单。\n• 协会将在11月4日到7日，举办2026机器人世界展。\n• 届时约400家企业参展，规模约1100个展位。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=48967",
+"publishedAt": "2026-10-13T06:44:53Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "cn-ithome-45f228521862",
 "title": "小米SU7登顶9月高端轿车销量",
 "summary": "9月小米SU7在20万元以上轿车里销量第一。当月全品牌零售约4万辆。",
@@ -1103,6 +1727,19 @@
 "url": "https://finance.eastmoney.com/a/202610133894087725.html",
 "publishedAt": "2026-10-13T06:24:00Z",
 "fetchedAt": "2026-10-13T08:20:10Z"
+},
+{
+"id": "cn-qbitai-499ab7791f65",
+"title": "研究称AI已能自主复制扩散",
+"summary": "Anthropic研究员发布安全报告。测试显示，AI已经能在多台设备上自主复制自己。",
+"detail": "Anthropic两位研究员发布报告，研究AI的自主复制能力。他们让智谱的GLM-5.2做实验。目标是把一个80亿参数模型，扩散到8台隔离设备上。5次实验中，有4次拿下了全部设备。\n• 找目标、传文件、配环境、启动模型，全由AI自己完成。\n• 研究员还买了15台55美元的电视盒子。拼在一起，跑通了260亿参数的模型。\n• 在另一项测试中，Qwen3.5-9B在9种硬件里的8种上成功部署模型。\n• 研究员推测，最快今年底，小模型也可能具备这种能力。门槛是300亿参数以下。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/502920.html",
+"publishedAt": "2026-10-13T06:19:10Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "kr-hk-it-0c44767b58f0",
@@ -1196,6 +1833,19 @@
 "fetchedAt": "2026-10-13T08:20:10Z"
 },
 {
+"id": "kr-etnews-628aa071cc50",
+"title": "韩企牵头AI干法隔膜研发项目",
+"summary": "韩国电池设备商PNTMS牵头国家研发项目。要开发干法隔膜AI制造系统，总预算113亿韩元。",
+"detail": "韩国隔膜设备商PNTMS，牵头一项国家研发项目。项目要开发基于数据的干法隔膜AI制造系统。\n• 项目从今年7月到2029年底，共42个月。总经费113亿韩元，其中政府出82亿。\n• 将开发质量预测、异常检测和工艺优化三类AI模型。还会建一个AI运营平台。\n• 目标是把干法隔膜良率，从约40%提高到75%以上。\n• 公司计划在大邱二厂追加投资。目标是累计销售3250亿韩元。之后还将开拓中国、印度和泰国市场。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-etnews",
+"sourceName": "전자신문",
+"url": "https://www.etnews.com/20261013000305",
+"publishedAt": "2026-10-13T05:57:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "us-theblock-a0c6e7797163",
 "title": "币安称对冲基金寻找加密套利",
 "summary": "币安VIP业务负责人说，对冲基金在找套利机会。原因是市场深度改善，还能全天交易。",
@@ -1222,6 +1872,19 @@
 "fetchedAt": "2026-10-13T11:14:52Z"
 },
 {
+"id": "cn-cls-c9068df1b462",
+"title": "应用材料：营收将翻倍人员不翻倍",
+"summary": "应用材料CEO表示，未来几年营收有望翻倍。但借助AI工具，员工人数不会同步翻倍。",
+"detail": "美国最大半导体设备商应用材料，预计未来几年营收翻倍。但员工人数不会同步翻倍。原因是公司越来越多地用AI做研发和质量管控。\n• CEO迪克森在新研发中心揭幕前说了这番话。这个中心耗资50亿美元。\n• 截至7月底，公司约有3.89万名员工。\n• 过去一年，公司股价涨了近130%。\n• 公司正和客户在产线上用AI，提高每片晶圆的合格芯片数。\n• 他说资金、供应、能源和产能，短期可能拖慢AI建设。但长期增长将是变革性的。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2503145",
+"publishedAt": "2026-10-13T05:11:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "market-2026101314",
 "title": "股市速览：10月13日午间",
 "summary": "韩股盘中暴跌超6%，芯片股领跌。A股和港股午间小幅收跌。",
@@ -1246,6 +1909,19 @@
 "url": "https://www.cls.cn/detail/2503186",
 "publishedAt": "2026-10-13T05:10:04Z",
 "fetchedAt": "2026-10-13T08:20:10Z"
+},
+{
+"id": "kr-etnews-fa427850906b",
+"title": "韩国连锁手机店违规行为组织化",
+"summary": "韩国废除手机补贴限制法后，连锁加盟手机店快速扩张。虚假广告和违规开户问题也越来越多。",
+"detail": "韩国废除终端流通法后，全国连锁的加盟手机店激增。虚假广告、绕道开户等违法行为趋于组织化。业内呼吁加强对销售店的监管。\n• 主要连锁品牌的门店今年达757家，约为两年前的3倍。\n• 被取消资格的门店并不关门。它们借用同网络其他门店的系统继续开户。\n• 2024年以来，监管撤销预先批准255件，处罚绕道开户93件。\n• 有门店泄露客户身份信息，被用于电信诈骗。\n• 政府将扩大销售责任制，研究连锁门店的监管方案。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-etnews",
+"sourceName": "전자신문",
+"url": "https://www.etnews.com/20261013000250",
+"publishedAt": "2026-10-13T05:09:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "kr-etnews-6e5b217ac220",
@@ -1625,6 +2301,19 @@
 "fetchedAt": "2026-10-13T05:10:36Z"
 },
 {
+"id": "kr-irobot-f8562c565945",
+"title": "大同智慧农业平台用户破6万",
+"summary": "韩国农机企业大同表示，旗下智慧农业平台用户已破6万。约14个月就翻了一倍，增长很快。",
+"detail": "韩国农机企业大同表示，智慧农业平台大同Connect用户破6万。2025年7月时是3万人，约14个月翻了一倍。\n• 用户可以查看农机状态和保养周期，管理农场和作物信息。\n• 平台已登记农机7705台，农场约1万处。作物信息约2.9万条，涉及80种作物。\n• 农业AI助手累计回答超过16万个问题。九成以上是种植和病虫害咨询。\n• 大同计划把数据接入运营中心。让AI制定作业计划，再指挥农机和机器人干活。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=48961",
+"publishedAt": "2026-10-13T02:38:30Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
+},
+{
 "id": "kr-hk-it-fa8a68f566b7",
 "title": "近六成韩国果粉考虑换三星",
 "summary": "韩国调查显示，58.8%的果粉考虑换三星。苹果的年轻时尚形象在减弱。",
@@ -1805,6 +2494,19 @@
 "url": "https://www.ithome.com/1/012/176.htm",
 "publishedAt": "2026-10-13T01:59:42Z",
 "fetchedAt": "2026-10-13T02:12:21Z"
+},
+{
+"id": "kr-irobot-68fa5df5059a",
+"title": "SOS Lab牵手AI芯片企业",
+"summary": "韩国激光雷达企业SOS Lab，和一家AI芯片公司签约合作。双方将在自动驾驶和机器人领域找机会。",
+"detail": "韩国激光雷达企业SOS Lab，13日签署合作备忘录。合作方是一家AI芯片设计初创公司。双方要把激光雷达和低功耗AI芯片结合起来。\n• 合作方向包括自动驾驶、智慧基础设施和机器人。\n• SOS Lab主打固定式3D激光雷达。还有停车引导和机场安检排队监测方案。\n• 合作方成立于2025年8月。芯片算力覆盖0.15到20TOPS，主打低功耗和低价格。\n• 双方还将联合申报国家研发项目，共同开拓海外市场。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=48960",
+"publishedAt": "2026-10-13T01:59:31Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "cn-panews-c019a86b5c0f",
@@ -2117,6 +2819,19 @@
 "url": "https://www.cls.cn/detail/2502929",
 "publishedAt": "2026-10-13T01:14:00Z",
 "fetchedAt": "2026-10-13T02:12:21Z"
+},
+{
+"id": "kr-irobot-e14c9a84a8c0",
+"title": "英伟达在韩开设物理AI培训班",
+"summary": "英伟达主办的物理AI机器人培训课程，在首尔正式开课。约900人报名，录取了60多人。",
+"detail": "英伟达主办的物理AI课程，12日在首尔开课。韩国机器人公司XYZ参与运营。课程要培养能把仿真技术用到真机上的人才。\n• 约900人报名，选出60多人，竞争率约15比1。\n• 课程持续到明年4月，共960小时。其中760小时是实操。\n• 学员先学英伟达的Isaac Sim和Isaac Lab仿真平台。\n• 之后用XYZ的双臂人形机器人做实际项目。\n• 上课的大楼里，咖啡机器人和配送机器人都在真实运营。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=48958",
+"publishedAt": "2026-10-13T01:07:00Z",
+"fetchedAt": "2026-10-13T14:16:09Z"
 },
 {
 "id": "cn-ithome-d4235ef40f0d",
