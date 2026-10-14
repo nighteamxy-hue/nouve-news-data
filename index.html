@@ -262,7 +262,7 @@ section.blk h3{margin:0 0 4px;font-size:16px}
     </div>
   </div>
   <div class="ctrls">
-    <button class="cb small" id="speedBtn" aria-label="播报速度">1.25×</button>
+    <button class="cb small" id="speedBtn" aria-label="播报速度">1×</button>
     <button class="cb" id="prevBtn" aria-label="上一条"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
     <button class="cb main" id="ppBtn" aria-label="播放"></button>
     <button class="cb" id="nextBtn" aria-label="下一条"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
@@ -382,7 +382,7 @@ const RATES = [1, 1.1, 1.25, 1.5, 1.75];
 const IS_IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 const realRate = r => IS_IOS ? (r <= 1 ? r * 0.95 : 0.95 + (r - 1) * 0.6) : r;
 const MODES = [["brief","简要"],["detail","完整总结"],["title","只读标题"]];
-const DEFAULT_PREFS = {categories:["ai","econ","stock","crypto","tech","robot","travel","general"], keywords:[], rate:1.25, mode:"brief", pause:"1"};
+const DEFAULT_PREFS = {categories:["ai","econ","stock","crypto","tech","robot","travel","general"], keywords:[], rate:1, mode:"brief", pause:"1"};
 const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>';
 const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
 
@@ -394,10 +394,12 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let news = [], sources = [], meta = {};
 let prefs = (() => { try { return {...DEFAULT_PREFS, ...JSON.parse(lsGet("nr.prefs") || "{}")}; } catch { return {...DEFAULT_PREFS}; } })();
-if (!RATES.includes(prefs.rate)) prefs.rate = 1.25;
+if (!RATES.includes(prefs.rate)) prefs.rate = 1;
 if (!MODES.some(m => m[0] === prefs.mode)) prefs.mode = "brief";
 // one-time: turn on the new 股市 category for phones that saved settings before it existed
 // one-time: 娱乐 removed, 数字资产 added (Oct 12)
+// one-time: the new voice reads at a natural pace, so 1.0× is the comfortable default (Oct 15)
+if (!prefs.seenRate1) { if (prefs.rate === 1.25) prefs.rate = 1; prefs.seenRate1 = true; lsSet("nr.prefs", JSON.stringify(prefs)); }
 if (!prefs.seenCrypto) { prefs.categories = prefs.categories.filter(k => k !== "ent"); if (!prefs.categories.includes("crypto")) prefs.categories.push("crypto"); prefs.seenCrypto = true; lsSet("nr.prefs", JSON.stringify(prefs)); }
 if (!prefs.seenStock) { if (!prefs.categories.includes("stock")) prefs.categories.push("stock"); prefs.seenStock = true; lsSet("nr.prefs", JSON.stringify(prefs)); }
 // A news day starts at 08:00 Seoul time. Keep news from the 08:00 before the latest one,
@@ -516,7 +518,7 @@ function renderList(animate){
   const cur = player.current(); const playing = player.isPlaying();
   L.classList.remove("anim");
   const firstHeard = v.findIndex(isPlayed);
-  L.innerHTML = v.map((n, i) => `${i === firstHeard ? `<div class="heard">已听过 ${v.length - i} 条<button type="button" id="clearHeard">清空记录</button></div>` : ""}
+  L.innerHTML = v.map((n, i) => `${i === firstHeard ? `<div class="heard">已听过 ${v.length - i} 条</div>` : ""}
     <button class="card${isPlayed(n) ? " done" : ""}${cur && cur.id===n.id ? " now" + (playing ? "" : " paused") : ""}" style="--c:${catColor(catOf(n))};--i:${Math.min(i,12)}" data-id="${esc(n.id)}">
       <div class="meta">
         ${mixed ? `<span class="cat">${CAT[catOf(n)]}</span><span class="dotsep"></span>` : ""}
@@ -903,7 +905,6 @@ $("menu").addEventListener("click", e => {
   // while something is playing, switching category only browses; it doesn't interrupt
 });
 $("list").addEventListener("click", e => {
-  if (e.target.closest("#clearHeard")) { played = {}; savePlayed(); renderList(true); toast("已清空收听记录"); return; }
   const r = e.target.closest(".card"); if (r) openDetail(r.dataset.id);
 });
 $("playAll").addEventListener("click", playUnheard);

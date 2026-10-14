@@ -20,12 +20,17 @@ const STATIC = {
   "/icon-512.png": ["icon-512.png", "image/png", 86400],
 };
 const CATS = ["ai", "econ", "stock", "crypto", "tech", "robot", "travel", "general"];
-const AUDIO_VERSION = "v3";
+// v3 = Cloudflare's free voice (MeloTTS). v4 = Microsoft Azure voice 晓晓, used once the
+// AZURE_SPEECH_KEY / AZURE_SPEECH_REGION settings exist. Clips of the two never mix.
+let AUDIO_VERSION = "v3";
+const useAzure = env => !!(env.AZURE_SPEECH_KEY && env.AZURE_SPEECH_REGION);
+const AZ_VOICE = "zh-CN-XiaoxiaoNeural", AZ_RATE = 24000;
 
 export default {
   // Cron trigger: turn new news into speech ahead of time, so play starts at once.
-  async scheduled(event, env, ctx) { ctx.waitUntil(pregen(env, 36)); },
+  async scheduled(event, env, ctx) { AUDIO_VERSION = useAzure(env) ? "v4" : "v3"; ctx.waitUntil(pregen(env, 36)); },
   async fetch(request, env, ctx) {
+    AUDIO_VERSION = useAzure(env) ? "v4" : "v3";
     const url = new URL(request.url);
     const p = url.pathname;
     try {
@@ -98,7 +103,7 @@ async function audio(request, env, ctx, url) {
     const news = await ghJSON("data/news.json", []);
     const n = news.find(x => x.id === id);
     if (!n) return null;
-    return makeClip(env, ctx, coreKey(id, mode), speechSegments(n, mode));
+    return makeClip(env, ctx, coreKey(id, mode), speechSegments(n, mode, env));
   })();
   const openText = intro ? `为你播报${intro}条新闻。` : lead ? "下一条。" : "";
   const openKey = intro ? `a:${AUDIO_VERSION}:_intro:${intro}` : `a:${AUDIO_VERSION}:_next`;
@@ -115,7 +120,7 @@ async function cachedClip(env, ctx, key, segs, ttl) {
 }
 /* Speak each piece separately and join them with real silence, then cache the WAV. */
 async function makeClip(env, ctx, key, segs, ttl = 2 * 86400) {
-  const pcm = await mapLimit(segs, 4, s => tts(env, s.text).then(decodeWav));
+  const pcm = await mapLimit(segs, 4, s => tts(env, s).then(decodeWav).then(c => useAzure(env) ? resample(c, AZ_RATE) : c));
   const rate = pcm.find(Boolean).rate;
   const chunks = [];
   segs.forEach((s, i) => { if (pcm[i] && pcm[i].rate === rate) { chunks.push(pcm[i].samples); chunks.push(silence(rate, s.gap)); } });
@@ -147,7 +152,7 @@ async function pregen(env, budget) {
       const k = `${n.id}:${mode}`;
       if (done.has(k)) continue;
       if (mode === "detail" && !n.detail) { done.add(k); changed = true; continue; }
-      const segs = speechSegments(n, mode);
+      const segs = speechSegments(n, mode, env);
       if (calls + segs.length > budget) break outer;
       calls += segs.length;
       try {
@@ -163,8 +168,14 @@ async function pregen(env, budget) {
   return { made, calls };
 }
 
-/* Title and body pieces, each with the pause (ms) that follows it. */
-function speechSegments(n, mode) {
+/* Title and body pieces, each with the pause (ms) that follows it.
+   With Azure the whole news item is one piece: the voice then reads it as a whole,
+   with natural pauses and tone, instead of sentence by sentence. */
+function speechSegments(n, mode, env) {
+  if (env && useAzure(env)) {
+    const t = speechText(n, "title");
+    return [{ text: t, body: mode === "title" ? "" : speechText(n, mode).slice(t.length), gap: 1100 }];
+  }
   const segs = [];
   const t = speechText(n, "title");
   segs.push({ text: t, gap: mode === "title" ? 1200 : 800 });
@@ -190,7 +201,7 @@ function decodeWav(buf) {
   while (o + 8 <= buf.byteLength) {
     const id = v.getUint32(o, false), size = v.getUint32(o + 4, true);
     if (id === 0x666d7420) { ch = v.getUint16(o + 10, true); rate = v.getUint32(o + 12, true); bits = v.getUint16(o + 22, true); }
-    else if (id === 0x64617461) { data = new Int16Array(buf.slice(o + 8, o + 8 + Math.min(size, buf.byteLength - o - 8) & ~1)); break; }
+    else if (id === 0x64617461) { const avail = buf.byteLength - o - 8; data = new Int16Array(buf.slice(o + 8, o + 8 + ((size && size <= avail ? size : avail) & ~1))); break; }
     o += 8 + size + (size & 1);
   }
   if (!data || bits !== 16) throw new Error("bad_wav");
@@ -247,7 +258,11 @@ function splitForTTS(text, max) {
   if (buf.trim()) out.push(buf);
   return out;
 }
-async function tts(env, prompt) {
+/* Speech for one piece: Azure 晓晓 when set up (falls back to the free voice if Azure fails). */
+async function tts(env, seg) {
+  if (typeof seg === "string") seg = { text: seg };
+  if (useAzure(env)) { try { return await ttsAzure(env, seg); } catch (e) { /* e.g. monthly free quota used up */ } }
+  const prompt = seg.body ? seg.text + seg.body : seg.text;
   const r = await env.AI.run("@cf/myshell-ai/melotts", { prompt, lang: "zh" });
   if (r instanceof ArrayBuffer) return r;
   if (r instanceof Uint8Array) return r.buffer;
@@ -257,6 +272,31 @@ async function tts(env, prompt) {
   const bin = atob(b64); const bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   return bytes.buffer;
+}
+const xmlEsc = t => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+function ssmlFor(seg) {
+  const withBreaks = t => xmlEsc(t).replace(/([。！？；])/g, '$1<break time="200ms"/>');
+  let inner = withBreaks(seg.text);
+  if (seg.body) inner += '<break time="600ms"/>' + withBreaks(seg.body);
+  return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="zh-CN">` +
+    `<voice name="${AZ_VOICE}"><mstts:express-as style="newscast">${inner}</mstts:express-as></voice></speak>`;
+}
+async function ttsAzure(env, seg) {
+  const r = await fetch(`https://${env.AZURE_SPEECH_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`, {
+    method: "POST",
+    headers: { "Ocp-Apim-Subscription-Key": env.AZURE_SPEECH_KEY, "Content-Type": "application/ssml+xml",
+               "X-Microsoft-OutputFormat": "riff-24khz-16bit-mono-pcm", "User-Agent": "nouve-news" },
+    body: ssmlFor(seg),
+  });
+  if (!r.ok) throw new Error("azure_" + r.status);
+  return r.arrayBuffer();
+}
+/* Simple linear resampling, so free-voice fallback clips still match Azure clips. */
+function resample(c, to) {
+  if (c.rate === to) return c;
+  const n = Math.round(c.samples.length * to / c.rate), out = new Int16Array(n), k = c.rate / to;
+  for (let i = 0; i < n; i++) { const x = i * k, j = Math.floor(x), f = x - j; const a = c.samples[j] || 0, b = c.samples[j + 1] ?? a; out[i] = Math.round(a + (b - a) * f); }
+  return { rate: to, samples: out };
 }
 function wav(buf, request) {
   // iPhone Safari fetches audio in byte ranges; answer them so playback starts.
@@ -313,7 +353,7 @@ async function streamLayout(env, ctx, mode, intro, ids) {
     if (lens.has(k)) { lengths[i] = lens.get(k); return true; }
     const v = await env.NEWS_KV.get(k, "arrayBuffer");
     if (v) { lengths[i] = v.byteLength - 44; return true; }
-    const segs = speechSegments(n, mode);
+    const segs = speechSegments(n, mode, env);
     if (budget < segs.length) return true;
     budget -= segs.length;
     const c = await makeClip(env, ctx, k, segs);
