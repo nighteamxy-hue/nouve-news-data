@@ -49,6 +49,12 @@ export default {
       }
       if (request.method === "GET" && p === "/api/audio") return audio(request, env, ctx, url);
       if (request.method === "GET" && p === "/api/stream") return stream(request, env, ctx, url);
+      if (request.method === "GET" && p === "/api/voicecheck") {
+        // Is the Azure voice set up and answering? (never returns the key)
+        if (!useAzure(env)) return json({ azure: false, voice: "MeloTTS" });
+        try { const b = await ttsAzure(env, { text: "测试。" }); return json({ azure: true, ok: true, bytes: b.byteLength, voice: AZ_VOICE }); }
+        catch (e) { return json({ azure: true, ok: false, error: String(e && e.message || e).slice(0, 80) }); }
+      }
       if (request.method === "GET" && p === "/api/sources") return json(await loadSources(env));
       if (request.method === "GET" && p === "/api/log") {
         // Run log for the 6-hourly update task: ?m=<message> appends, no m reads.
