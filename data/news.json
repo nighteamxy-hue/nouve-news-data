@@ -1,5 +1,109 @@
 [
 {
+"id": "cn-cls-9f5dff12613e",
+"title": "iPhone Duo预售秒罄 现货加价",
+"summary": "苹果首款折叠屏iPhone Duo预售很快售罄。首批现货出现加价。溢价从六千元起。",
+"detail": "",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2507194",
+"publishedAt": "2026-10-17T05:05:42Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "cn-panews-40671b759ad1",
+"title": "Jump Trading入场算力期货",
+"summary": "量化巨头Jump Trading和DRW布局AI算力市场。Jump将为芝商所的算力期货做市。两家都投入了自有资金。",
+"detail": "量化巨头Jump Trading和DRW正在布局AI算力市场。两家投入交易团队和自有资金。不过这个市场仍有不少挑战。\n• Jump已组建专门团队，用自有资金承担交易风险。\n• Jump将为芝商所的算力期货做市。也会为洲际交易所的竞品合约做市。\n• DRW计划派出三个策略不同的团队交易算力。\n• 分析认为，算力价格不透明，显卡价差大，而且算力无法储存。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14814-2357-7697-8c30-75ae46165178",
+"publishedAt": "2026-10-17T04:18:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "cn-panews-dc163afeef66",
+"title": "以太坊ETF连续三天净流出",
+"summary": "以太坊现货ETF周五净流出约6968万美元。这是连续第三天净流出。流出全部来自贝莱德的ETHA。",
+"detail": "以太坊现货ETF周五净流出约6968万美元。这是连续第三天净流出。\n• 流出全部来自贝莱德旗下的ETHA。\n• ETHA历史累计净流入仍有约125亿美元。\n• 以太坊现货ETF总资产净值约149.5亿美元。\n• 它们的市值约占以太坊总市值的5.07%。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14808-9c72-73ab-bdfb-ca653ea473ad",
+"publishedAt": "2026-10-17T04:05:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "cn-panews-a28db7c1bc40",
+"title": "比特币ETF单日净流出8239万美元",
+"summary": "比特币现货ETF周五净流出约8239万美元。贝莱德IBIT流出最多。富达FBTC紧随其后。",
+"detail": "比特币现货ETF周五净流出约8239万美元。数据来自SoSoValue。\n• 贝莱德IBIT单日净流出约7178万美元，居首。\n• 富达FBTC净流出约1061万美元。\n• 比特币现货ETF总资产净值约1043亿美元。\n• 它们约占比特币总市值的6.35%。历史累计净流入约569亿美元。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14807-42fe-7231-9d6a-ed8f58465e72",
+"publishedAt": "2026-10-17T04:04:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "kr-blockmedia-0ceba218b494",
+"title": "Solana应用月收入1.93亿美元",
+"summary": "Solana链上应用近30天收入约1.93亿美元。居各公链生态第一。链上真实世界资产一年涨了六倍多。",
+"detail": "Solana链上应用近30天收入约1.93亿美元。这是所有数字资产生态中最高的。分析认为这笔收入比预想的更可持续。\n• 迷因币平台Pump.fun是最大收入来源。月收入约3900万美元。\n• 头部集中度在下降。前三名应用占比从64%降到50.2%。\n• 真实世界资产市值一年涨了六倍多，达到约43.7亿美元。\n• 代币化股票从6300万美元涨到4.55亿美元。\n• 不过生态仍高度依赖投机活动。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152850?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T03:01:43Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "kr-blockmedia-59b26ffab02b",
+"title": "韩法院叫停摘牌 币圈能否借鉴",
+"summary": "韩国法院暂停了韩交所对两家公司的摘牌决定。理由是程序有问题。业内关注这能否影响币圈下架纠纷。",
+"detail": "首尔南部地方法院暂停了韩国交易所对两家公司的摘牌决定。法院认为企业缺少申辩机会，程序有问题。这能否影响加密货币下架纠纷，成了新焦点。\n• 韩交所先把科斯达克市值门槛提到150亿韩元。7月又提到200亿。\n• 法院看重的是执行程序是否正当。\n• 专家说，股票摘牌有资本市场法做依据。\n• 加密货币下架更多靠自律和合同，难以直接套用。\n• 数字资产基本法出台后，法院审查可能更严格。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152495?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T03:01:40Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "cn-panews-d6712004e71e",
+"title": "美国捣毁加密连环诈骗网络",
+"summary": "布鲁克林检方联合联邦调查局捣毁一个加密诈骗网络。团伙骗完钱后又冒充追回机构再骗一次。涉案金额达数千万美元。",
+"detail": "布鲁克林检方联合联邦调查局，捣毁一个加密诈骗网络。团伙专挑美国俄语群体下手。骗完钱后，又冒充追回机构再骗一次。\n• 骗局从脸书上的俄语广告开始，诱导人们投资加密货币。\n• 受害人把钱转进假平台后，就无法提现。\n• 几周后，骗子假扮资产追回机构，收取预付款和手续费。\n• 涉案金额估计达数千万美元。目前只扣押了约30万美元。\n• 执法行动查封了112台服务器和241个网站。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14477-4024-75b9-9fa6-cee6c357ff23",
+"publishedAt": "2026-10-17T03:00:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "kr-blockmedia-d3190166fa0f",
+"title": "富达：比特币与实际利率高度相关",
+"summary": "富达数字资产报告称，比特币和美债实际收益率的相关性超过0.6。这是历史最高水平。美国财政压力是主要原因。",
+"detail": "富达数字资产最新报告显示，比特币和十年期美债实际收益率的相关性超过0.6。两者过去几乎无关，现在明显同向。报告认为美国财政压力是主因。\n• 美国联邦债务已超过40万亿美元。利息已是预算第二大支出。\n• 2026财年赤字约1.99万亿美元，创疫情后新高。\n• 过去两个月，比特币涨了约30%。十年期美债收益率涨超10%。\n• 报告提醒，依赖旧相关性做对冲的策略可能失效。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152839?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T02:31:27Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "cn-ctnews-256e88482d22",
 "title": "第九届进博会11月5日开幕",
 "summary": "第九届进博会将在11月5日到10日在上海举办。共有4142家境外企业参展。筹备工作已基本就绪。",
@@ -286,6 +390,19 @@
 "fetchedAt": "2026-10-16T16:41:31Z"
 },
 {
+"id": "cn-eastmoney-8866f5f48d75",
+"title": "全球科技股普跌背后的反差",
+"summary": "全球科技股近期遭遇跨市场抛售。费城半导体指数连跌七天，累计跌超12%。业绩亮眼却挡不住下跌。",
+"detail": "全球科技股近期遭遇跨市场抛售。费城半导体指数连跌七天，累计跌幅超12%。10月15日韩股触发熔断。\n• 当天三星大跌近10%，SK海力士跌约11%。\n• 台积电三季度净利同比大增68.7%。阿斯麦上调指引，股价却仍下跌。\n• 云厂商自由现金流转负。市场担心资本开支见顶。\n• 美国9月通胀反弹到3.7%。十年期美债收益率升到二十多年高位。\n• 作者提醒，中国AI产业别盲目堆算力，要多用耐心资本。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610163898753125.html",
+"publishedAt": "2026-10-16T15:02:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "cn-ithome-010d7a2645fd",
 "title": "京东支持员工反诉抖音电商",
 "summary": "京东发布声明，支持被抖音电商起诉的采销员工反诉。抖音方面则表示，将依法追加起诉。",
@@ -403,6 +520,19 @@
 "fetchedAt": "2026-10-16T16:32:18Z"
 },
 {
+"id": "cn-eastmoney-8b747ef7ae5a",
+"title": "A股缩量修复 沪指微涨",
+"summary": "周五A股缩量修复。沪指收涨0.24%，创业板指跌0.39%。两市成交额降到1.57万亿元。",
+"detail": "周五A股缩量修复。两市成交额降至1.57万亿元。沪指收涨0.24%，创业板指跌0.39%。\n• 军工和汽车板块大涨。飞行汽车概念受消息带动。\n• CRO板块领跌。药明康德大跌6.6%。\n• 受访人士认为，这里大概率是本轮情绪杀跌的低点。\n• 建议仓位控制在五到七成，采用哑铃型配置。\n• 下周重点看三季度GDP、金融街论坛和三季报。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610163898676890.html",
+"publishedAt": "2026-10-16T13:00:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "us-techcrunch-fa1478d9672f",
 "title": "Replit CEO谈自动驾驶公司",
 "summary": "Replit首席执行官马萨德提出新设想。未来公司会像自动驾驶一样运转。AI代理处理日常，人专注高层决策。",
@@ -414,6 +544,19 @@
 "url": "https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/",
 "publishedAt": "2026-10-16T12:55:09Z",
 "fetchedAt": "2026-10-16T16:32:18Z"
+},
+{
+"id": "cn-qbitai-5199aaef7e49",
+"title": "清华特奖得主创业做世界模型",
+"summary": "清华特奖得主吴海旭开始创业。他的物原科技主攻物理世界模型。公司估值已达数亿美元。",
+"detail": "清华特奖得主吴海旭开启世界模型创业。公司叫物原科技。今年已完成多轮融资。\n• 公司估值已到数亿美元。蚂蚁和美团等机构已入局。\n• 吴海旭是GeoPT论文一作。这项工作让模型从无标签数据学物理直觉。\n• 他2022年获清华特奖。代表作还有时序模型Autoformer。\n• 他目前在麻省理工做博士后。主攻科学机器学习和物理系统建模。\n• 公司从物理建模能力切入世界模型。延续GeoPT的研究路线。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503880.html",
+"publishedAt": "2026-10-16T12:54:54Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
 "id": "cn-36kr-9776e519ee12",
@@ -650,6 +793,19 @@
 "fetchedAt": "2026-10-16T16:41:31Z"
 },
 {
+"id": "us-uploadvr-da75bdfd7a6e",
+"title": "健身应用Supernatural将回归",
+"summary": "曾被Meta停更的VR健身应用Supernatural即将回归。新独立团队将在Quest上推出抢先体验版。老用户进度可以保留。",
+"detail": "VR健身应用Supernatural即将在Quest上推出抢先体验版。它曾被Meta转入维护模式。现在由十五人的独立团队接手。\n• 首发就有数千套训练。经典课程重新制作，每周上新。\n• 积分、连续打卡和收藏都能保留。老用户进度不会丢。\n• 团队计划推出多人训练，还有能追踪心率的手机应用。\n• 所有人都能参加抢先体验。订阅每月20美元。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-uploadvr",
+"sourceName": "UploadVR",
+"url": "https://www.uploadvr.com/supernatural-reveals-new-features-plans-to-launch-soon-in-early-access/",
+"publishedAt": "2026-10-16T11:03:27Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "kr-hk-econ-432fa3744fa5",
 "title": "外国游客带火韩国户外服饰",
 "summary": "红叶季临近，韩国户外服饰卖得火。北面白标九月刷卡额同比涨了约111%。外国游客成了主力。",
@@ -661,6 +817,19 @@
 "url": "https://www.hankyung.com/article/2026101670691",
 "publishedAt": "2026-10-16T11:00:09Z",
 "fetchedAt": "2026-10-16T23:05:41Z"
+},
+{
+"id": "kr-hk-econ-a878961a8369",
+"title": "韩国Harim将扩张超市门店",
+"summary": "韩国Harim集团会长金洪国表示，将扩大Homeplus Express门店。门店将接入集团的食品采购渠道。",
+"detail": "Harim集团会长金洪国表示，将扩大Homeplus Express门店。门店会打通NS Home Shopping的食品采购渠道。这能帮本地农户和中小食品企业扩大销路。\n• Homeplus Express重组后，供货一度受阻，品类明显减少。\n• NS Home Shopping在6月完成收购。供应链随后恢复正常。\n• 现有门店集中在首都圈和大城市。今后会逐步增加。\n• Harim正在益山投资1400亿韩元建肉类加工厂。明年投产。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610167221i",
+"publishedAt": "2026-10-16T11:00:00Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
 "id": "us-coindesk-35d99220f920",
@@ -700,6 +869,19 @@
 "url": "https://www.coindesk.com/business/2026/10/16/elon-musk-s-flying-roadster-reveal-sent-tesla-crypto-trading-into-overdrive-while-stock-markets-were-closed",
 "publishedAt": "2026-10-16T10:48:49Z",
 "fetchedAt": "2026-10-16T16:32:18Z"
+},
+{
+"id": "kr-hk-econ-66c2f54592c9",
+"title": "韩媒专栏：AI热潮如何收场",
+"summary": "韩国经济报专栏讨论AI热潮何时降温。作者认为模型价格暴跌是关键拐点。需求必须大涨才能撑住收入。",
+"detail": "韩国经济报一篇专栏指出，AI热潮终会降温。但具体何时结束，谁也说不准。\n• 美国头部模型每百万词元收费1到2美元。\n• 中国开源模型只要6到12美分。便宜约九成。\n• 小模型已能在电脑和手机上运行。斯坦福研究显示，单轮问答成功率约88.7%。\n• 作者警告，价格跌九成，需求要涨九倍才能保住收入。\n• 他提到，历史上芯片降价过猛，曾导致大量工厂倒闭。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610167284i",
+"publishedAt": "2026-10-16T10:43:20Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
 "id": "cn-36kr-56c83ad878cc",
@@ -910,6 +1092,19 @@
 "fetchedAt": "2026-10-16T23:05:41Z"
 },
 {
+"id": "kr-irobot-a275482ec139",
+"title": "韩企推物理AI数据一站式方案",
+"summary": "韩国Nexdata Korea推出物理AI数据解决方案。覆盖数据采集、标注、仿真和模型验证全流程。",
+"detail": "Nexdata Korea推出物理AI开发用的一站式数据方案。覆盖采集、标注、仿真和模型验证全流程。\n• 公司提供自研的六摄像头第一视角采集设备。支持实时六自由度追踪。\n• 公司已有约1万小时的现成数据集，还有遥操作数据。\n• 另有约11.6万组三维手部姿态数据。\n• 公司在8000平方米的机器人训练场验证模型。\n• 公司2011年起做AI数据业务。下一步扩大物理AI数据业务。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=49037",
+"publishedAt": "2026-10-16T08:15:55Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "cn-36kr-5d03027b781a",
 "title": "元环智能获数亿元融资",
 "summary": "清华博导刘子鸣创办的元环智能完成两轮融资。累计金额达数亿元。公司要打造能自己设计模型的元模型。",
@@ -934,6 +1129,19 @@
 "url": "https://www.hankyung.com/article/202610166906i",
 "publishedAt": "2026-10-16T08:02:35Z",
 "fetchedAt": "2026-10-16T16:41:31Z"
+},
+{
+"id": "cn-qbitai-9814af4b45d5",
+"title": "优必选世界模型霸榜三大评测",
+"summary": "优必选推出世界模型Thinker-WM。它在三大具身世界模型评测中都排第一。一套权重就能实现六种能力。",
+"detail": "优必选推出世界模型Thinker-WM。它在三大具身世界模型评测中全部第一。突破来自视觉、几何和动作的统一表征。\n• 在WorldOlympiad测试中，综合得分0.740，位列榜首。\n• 在EWMBench评测中总分4.66。超过了Sora2等主流模型。\n• 核心做法是把画面、深度和动作放进同一个空间。\n• 加入深度信息后，任务成功率提升15个百分点。\n• 同一套权重支持六种能力。已在优必选机器人上部署验证。",
+"category": "robot",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503843.html",
+"publishedAt": "2026-10-16T08:00:31Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
 "id": "cn-eastmoney-0a39caac751d",
@@ -1014,6 +1222,32 @@
 "fetchedAt": "2026-10-16T16:41:31Z"
 },
 {
+"id": "cn-qbitai-0a0d9103482d",
+"title": "范式开源AI部署平台模域",
+"summary": "范式智能联合睿思智联推出模域平台。这是一站式生产级AI部署平台。平台免费开源，已在GitHub发布。",
+"detail": "范式智能联合睿思智联推出模域平台。平台面向企业免费开源。目标是降低大模型部署和运维门槛。\n• 平台把算力管理、模型部署和运行优化放进一个系统。\n• 内置自动扩缩容和多级缓存。服务运行更稳定。\n• 官方称，极限吞吐提升约285%。\n• 平台能统一调度昇腾、摩尔线程和海光等国产芯片。不用重写底层代码。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503829.html",
+"publishedAt": "2026-10-16T07:16:11Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "cn-qbitai-6483f0dfe179",
+"title": "亚马逊CTO谈企业AI决策",
+"summary": "亚马逊首席技术官沃格尔斯在深圳演讲。他提醒企业别因焦虑盲目跟风AI。先想清楚要解决什么问题。",
+"detail": "亚马逊首席技术官沃格尔斯在深圳谈AI决策。他提醒企业别被恐惧推着走。关键是先想清楚要解决的问题。\n• 他回顾2004年一次数据库故障。那次让亚马逊损失数百万美元，也催生了DynamoDB。\n• 他认为企业不必追着榜单第一名跑。小模型够用时，成本能大幅下降。\n• 智能体要有明确权限。比如设定每天的花费上限，超出就交给人决定。\n• 他强调，谁构建系统，谁就要为它负责。\n• 他还提醒警惕验证债。AI写得快，人工检查未必跟得上。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503815.html",
+"publishedAt": "2026-10-16T07:01:31Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "cn-eastmoney-1fd39911bf09",
 "title": "A股涨跌不一 飞行汽车股大涨",
 "summary": "10月16日A股三大指数涨跌不一。两市成交额约1.57万亿元，继续缩量。飞行汽车概念股逆市大涨。",
@@ -1079,6 +1313,19 @@
 "fetchedAt": "2026-10-16T16:41:31Z"
 },
 {
+"id": "cn-qbitai-a1c6f6c97cd7",
+"title": "四川陪伴机器人获超亿元融资",
+"summary": "四川具身智能公司EIR完成超1亿元融资。主打陪伴机器人爱湫，起售价9.8万元。资金将用于建设万台产线。",
+"detail": "四川EIR公司完成超1亿元融资。资金用于产品迭代、万台产线和销售体系。\n• 省市县三级国资联动支持这笔融资。\n• 主打产品爱湫起售价9.8万元。它主打情感陪伴，面部用投影方案。\n• 核心团队来自电子科技大学。走软硬件全栈自研路线。\n• 德阳量产基地预计今年底投产。产能从千台逐步扩到万台。\n• 公司还有四足和人形两条产品线。都已进入批量交付。",
+"category": "robot",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503782.html",
+"publishedAt": "2026-10-16T06:17:53Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
 "id": "cn-36kr-9f1071e5e409",
 "title": "大疆发布机场4 换电只需25秒",
 "summary": "大疆发布第四代无人机机场。它首次采用自动换电，25秒就能换好电池。国内套装售价约16.8万元。",
@@ -1090,6 +1337,19 @@
 "url": "https://36kr.com/p/4028154318738053",
 "publishedAt": "2026-10-16T06:10:53Z",
 "fetchedAt": "2026-10-16T16:41:31Z"
+},
+{
+"id": "cn-qbitai-8e02586ac96e",
+"title": "百度世界2026定档11月12日",
+"summary": "百度世界2026将在11月12日于北京举办。主题是智能组织。李彦宏将做年度主题演讲。",
+"detail": "百度世界2026将于11月12日在北京国家会议中心举办。主题是智能组织。聚焦企业怎么把AI用进组织。\n• 李彦宏将做年度主题演讲。他会研判AI发展趋势。\n• 百度将集中发布多款产品。展示从芯片到智能体的全栈布局。\n• 大会设12场分论坛。话题包括AI办公和智能体规模化落地。\n• 现场有6000平方米AI展区。观众可以体验人和智能体协作。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503779.html",
+"publishedAt": "2026-10-16T06:07:41Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
 "id": "us-theblock-79f634a7b02e",
@@ -1168,6 +1428,19 @@
 "url": "https://www.coindesk.com/tech/2026/10/16/an-openai-agent-ran-out-of-ethereum-funds-and-took-from-a-wallet-it-did-not-own",
 "publishedAt": "2026-10-16T04:29:19Z",
 "fetchedAt": "2026-10-16T16:41:31Z"
+},
+{
+"id": "kr-irobot-d7d29685b811",
+"title": "韩国将在大邱展出4款人形机器人",
+"summary": "韩国机器人产业振兴院将参加大邱未来创新技术博览会。现场展出4款国产人形机器人。展会10月21日开幕。",
+"detail": "韩国机器人产业振兴院将参加2026未来创新技术博览会。展会10月21日到24日在大邱举行。现场展出4款国产人形机器人。\n• 四款机器人都入选了2025年人形机器人示范项目。\n• 现场会演示魔术、送爆米花、分拣物品和双足行走。\n• 宣传馆将介绍国家机器人测试场等主要业务。\n• 院长表示，这是民众了解国产机器人技术的好机会。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=49028",
+"publishedAt": "2026-10-16T04:10:24Z",
+"fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
 "id": "cn-36kr-8819e5f178b5",
