@@ -1,5 +1,83 @@
 [
 {
+"id": "cn-panews-b750228c780d",
+"title": "Anthropic私下推AI安全法案",
+"summary": "Anthropic自拟了一份前沿AI安全法案。据报道已私下推介给美国议员。核心是高风险时可叫停模型发布。",
+"detail": "Anthropic自拟了一份前沿AI安全监管法案。据报道，它已私下向美国国会议员推介。草案核心是让政府在高风险时阻止模型发布。\n• 触发条件包括生物武器、失控和网络攻击三类。\n• 门槛是损失超10亿美元，或造成50人死亡或重伤。\n• 评估机构认定后，72小时内要报告商务部。商务部可向法院申请禁令。\n• 开发商还要公开测试结果，接受独立机构定期审查。\n• 公司确认这是其一贯主张。从6月起已在游说议员。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1496a-0ae9-750a-a71f-9aa034caab52",
+"publishedAt": "2026-10-17T10:35:13Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-panews-11933ade243c",
+"title": "苹果挖来Meta资深法务高管",
+"summary": "苹果聘请了Meta资深法务高管Scott Tucker。他将负责全球诉讼和金融服务法务。这是苹果法务团队重组的一部分。",
+"detail": "苹果聘请了Meta资深法务高管Scott Tucker。他将出任新设的全球诉讼与金融服务副总裁。这是苹果法务团队重组的一部分。\n• 他负责全球商业和专利诉讼，也管金融产品的法律事务。\n• 他将和苹果总法律顾问再次共事。对方今年3月从Meta加入苹果。\n• 苹果正面临美国反垄断诉讼，还有应用商店纠纷。\n• 消息来自彭博社。苹果和Meta都拒绝置评。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14964-e533-74f5-9240-dd4d5e48bb0f",
+"publishedAt": "2026-10-17T10:30:13Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-panews-07dd7833a606",
+"title": "DeepSeek搜索抓取调用将收费",
+"summary": "DeepSeek将从11月1日起收费。对象是编程工具里的搜索和网页抓取调用。每千次成功请求收5元。",
+"detail": "DeepSeek将从11月1日起开始收费。收费对象是部分编程工具里的搜索和网页抓取调用。此前这部分调用一直免费。\n• 收费标准统一，每1000次成功请求收5元人民币。\n• 按次计费，不看Token用量。\n• 请求失败、没有结果或超时，都不收费。\n• 两个接口分别限速。每个账号每秒最多5次请求。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1495b-ed01-768a-8e4e-173cc855135e",
+"publishedAt": "2026-10-17T10:20:13Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-panews-09dca28af2df",
+"title": "Anthropic上市估值或下调",
+"summary": "路透社报道，部分投资者考虑下调Anthropic的上市估值预期。讨论中的估值约1.5万亿美元。原因是增速放缓。",
+"detail": "据路透社报道，部分投资者正考虑下调Anthropic的上市估值预期。原因是最新财务数据显示增速放缓。\n• 投资者讨论的估值约1.5万亿美元。此前市场预期约2万亿美元。\n• 第三季度营收环比增长45%，达到168亿美元。公司还实现了经调整盈利。\n• 第二季度营收曾翻倍到116亿美元。增速放缓让部分投资者失望。\n• 这些只是投资者讨论，不是最终定价。Anthropic暂未回应。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14951-4c75-7032-877b-2109ed5edff3",
+"publishedAt": "2026-10-17T10:08:13Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-panews-61d0b7917773",
+"title": "Anthropic联创称AI将推高GDP",
+"summary": "Anthropic联合创始人杰克克拉克称，AI进步很快。到2030年，美国经济产出或达44万亿美元。",
+"detail": "Anthropic联合创始人杰克克拉克说，AI进步非常快。他在曼谷的IMF和世界银行年会上发表这一看法。他称到2030年，美国经济产出或达44万亿美元。\n• 目前美国GDP略高于30万亿美元。这个预测来自公司内部经济模型。\n• 他承认这个数字听起来很夸张。但他认为AI正在大幅加速科学发现。\n• 他呼吁各国携手，为这项技术制定严格规则。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14930-fec9-706e-acfe-d3520add871a",
+"publishedAt": "2026-10-17T09:47:13Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-panews-8e37ca1c93a5",
+"title": "DeepSeek快速版模型更新",
+"summary": "DeepSeek把V4.1 Flash更新到1017版本。网页、APP和API已同步切换。各项基准测试都有提升。",
+"detail": "DeepSeek把V4.1 Flash模型更新到了1017版本。网页端、APP和API已经同步切换。\n• 新版本在各项基准测试中都有提升。\n• 这次升级重点优化了多个开发平台框架的适配。\n• 腾讯旗下的编程助手平台也在优化范围内。\n• 开发者和普通用户都可以直接体验新版本。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a1490a-7f07-72f4-9190-8d2c79b4c4f6",
+"publishedAt": "2026-10-17T09:07:13Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
 "id": "cn-cls-9f5dff12613e",
 "title": "iPhone Duo预售秒罄 现货加价",
 "summary": "苹果首款折叠屏iPhone Duo预售很快售罄。首批现货出现加价。溢价从六千元起。",
@@ -104,6 +182,97 @@
 "fetchedAt": "2026-10-17T05:05:42Z"
 },
 {
+"id": "kr-blockmedia-dee5678bc9c5",
+"title": "DeepSigma推美股链上合约",
+"summary": "DeepSigma推出去中心化永续合约模拟平台。覆盖77个传统金融市场。团队来自华尔街和科技公司。",
+"detail": "DeepSigma团队来自华尔街和科技公司。他们推出了去中心化永续合约模拟交易平台。平台覆盖77个传统市场，跟随外部价格数据。\n• 平台目前还是模拟版本，正式交易时间未定。\n• 支持标普500、纳指等股指，也有原油、黄金和铜等商品。\n• 传统市场夜间和周末休市。平台用部分清算和熔断来控制风险。\n• 第三季度链上实物资产合约交易量达3650亿美元。环比增长32%。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152835?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T01:54:58Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "kr-blockmedia-66767b7d5c3c",
+"title": "比特币新巨鲸占比超三成",
+"summary": "比特币新入场巨鲸占比已超三分之一。他们的平均成本约7.7万美元。这个价位值得关注。",
+"detail": "比特币大户的结构正在变化。新入场巨鲸的占比，已经超过三分之一。\n• 新巨鲸的实现市值约786亿美元，占全部巨鲸的33%。\n• 新巨鲸的平均持仓成本，从约6.8万美元升到7.7万美元。\n• 比特币目前约8.2万美元，高于这一成本约6.7%。\n• 如果价格长期跌破7.7万美元，他们可能止损卖出，加大抛压。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152819?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T00:57:46Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-nweon-eced9354e83a",
+"title": "两部门鼓励影院做VR体育体验",
+"summary": "国家电影局和体育总局联合发文。推动电影和体育跨界合作。鼓励用VR做沉浸式体育体验。",
+"detail": "国家电影局和体育总局近日联合发文。目标是推动电影和体育跨界合作。文件鼓励用VR电影技术，做沉浸式体育体验。\n• 文件支持体育运动进影院。可在符合条件的影院开展适宜项目。\n• 文件还鼓励影院设体育主题影厅，打造观赛第二现场。\n• 北京和杭州已有影院做过VR体育类活动。\n• 业内认为，VR体育体验正从自发探索走向规范发展。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-nweon",
+"sourceName": "映维网",
+"url": "https://news.nweon.com/143635",
+"publishedAt": "2026-10-17T00:56:00Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-nweon-f59573342c8c",
+"title": "MyDearest收购游戏工作室",
+"summary": "日本VR公司MyDearest全资收购了moze。moze是一家做Roblox游戏的工作室。双方将整合团队。",
+"detail": "日本VR内容公司MyDearest全资收购了moze。moze是一家日本Roblox游戏工作室。收购后双方整合团队，重点做Roblox和自有IP作品。\n• moze成立于2023年，作品累计游玩超过2000万次。\n• MyDearest去年上线的一款Roblox游戏，访问量已破1000万次。\n• 公司将以自有IP为核心，面向更年轻的玩家推出多平台作品。\n• 公司更换了负责人。新负责人表示期待合作做Steam和VR内容。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-nweon",
+"sourceName": "映维网",
+"url": "https://news.nweon.com/143631",
+"publishedAt": "2026-10-17T00:56:00Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-nweon-8350850f944d",
+"title": "Meta试点AI眼镜帮视障者看展",
+"summary": "Meta联合米兰布雷拉美术馆推出试点项目。用AI眼镜帮盲人和低视力人士欣赏艺术。",
+"detail": "Meta联合米兰布雷拉美术馆等机构，推出一个试点项目。目标是用AI眼镜，帮盲人和低视力人士接触艺术。\n• 眼镜接入博物馆应用，把八件作品的形状和构图转成语音。\n• 声音从镜架上的开放式扬声器播放。参观者仍能听到周围环境。\n• 作品之间有方位引导。Meta AI还能回答作品背景问题。\n• 观众还能连线视力正常的志愿者，获得实时帮助。导览需要预约。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-nweon",
+"sourceName": "映维网",
+"url": "https://news.nweon.com/143629",
+"publishedAt": "2026-10-17T00:56:00Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "us-robotreport-e093b12183aa",
+"title": "机器人车队兴起随时补电",
+"summary": "机器人车队规模越来越大。业内认为随时补电正成为关键。这样机器人不用长时间停机。",
+"detail": "美国机器人报告网推出一期播客。嘉宾是无线充电公司WiBotic的CEO。节目认为，随时补电正成为机器人车队持续运转的关键。\n• 随时补电指机器人在工作间隙充电，不用长时间停机。\n• WiBotic主营无线充电和电池管理软件。客户有移动机器人、无人机和洗地机。\n• 公司称，方案能提高车队运行时间和投资回报。\n• 节目还提到，费城一名女子因阻挡配送机器人被捕。",
+"category": "robot",
+"region": "us",
+"sourceId": "us-robotreport",
+"sourceName": "The Robot Report",
+"url": "https://www.therobotreport.com/why-opportunity-charging-is-winning-as-robot-fleets-scale/",
+"publishedAt": "2026-10-16T23:39:33Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "kr-hk-finance-84e9d69f1ef8",
+"title": "SK海力士估值为何更低",
+"summary": "韩媒分析认为SK海力士估值明显低于美光。主因是外资抛售和韩股折价。子公司赴美上市也有争议。",
+"detail": "韩媒分析认为，SK海力士估值明显低于美光。问题不在存储周期。主要是外资抛售和韩股固有的折价。\n• SK海力士股价跌了4.05%，收于160.5万韩元。\n• 它的前瞻市盈率从4.46倍降到3.7倍。\n• 子公司Solidigm计划赴美上市。测算募资约100亿美元。\n• 子公司上市能增强融资能力。但母公司可能被单独折价。\n• 股东意见分裂。有人担心稀释，也有人认为融资能回馈股东。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101775157",
+"publishedAt": "2026-10-16T23:06:22Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
 "id": "cn-ctnews-256e88482d22",
 "title": "第九届进博会11月5日开幕",
 "summary": "第九届进博会将在11月5日到10日在上海举办。共有4142家境外企业参展。筹备工作已基本就绪。",
@@ -141,6 +310,45 @@
 "url": "",
 "publishedAt": "2026-10-16T23:05:41Z",
 "fetchedAt": "2026-10-16T23:05:41Z"
+},
+{
+"id": "kr-hk-finance-f8e5fd57c08f",
+"title": "三星电机腰斩 协力厂商却大涨",
+"summary": "三星电机股价从6月高点腰斩。它的协力厂商走势分化。电路板股上涨，手机零件股下跌。",
+"detail": "三星电机股价从6月高点腰斩。同期它的协力厂商和对手走势明显分化。电路板板块上涨，手机零部件板块普遍下跌。\n• 26家相关公司一个月平均涨11.46%。三星电机同期跌了13.98%。\n• 协力厂商Neotis一个月暴涨约59%。主要因为微钻头供应紧张。\n• 对手韩国电路涨了27.31%。四季度起出货和涨价效果有望显现。\n• 手机零部件板块平均跌3.57%。智能手机出货停滞，相关企业承压。\n• Amotech涨了16.25%。它拿到了数据中心电容的供货资格。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610166853i",
+"publishedAt": "2026-10-16T22:30:06Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "us-theblock-65e131d330dd",
+"title": "Strive狂买比特币 获上调目标价",
+"summary": "Strive近期大举买入比特币，持仓达35595枚。TD Cowen把它的目标价从44美元上调到56美元。",
+"detail": "Strive公司近期大举买入比特币。持仓已达35595枚，超过MARA，位居上市公司第四。投行TD Cowen把目标价从44美元上调到56美元。\n• 过去两周它买入约7600枚比特币。远超分析师对整个四季度的预测。\n• 认股权证行权曾增加稀释，压低每股指标。这一压力有望缓解。\n• 公司扩大优先股发行，计划募资6.3亿美元。\n• 周五股价跌了6.6%，但今年以来仍涨超38%。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/markets/2026-10-16-strives-bitcoin-buying-spree-earns-27-price-target-hike-td-cowen-418839",
+"publishedAt": "2026-10-16T20:22:57Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "us-theblock-59b786b1031f",
+"title": "Coinbase合作推稳定币卡",
+"summary": "支付公司Marqeta和Coinbase合作延长六年。双方将推出稳定币支持的支付卡。企业客户可用来消费。",
+"detail": "支付公司Marqeta和Coinbase的合作延长六年。双方将推出由稳定币余额支持的支付卡。企业客户可以用这类卡消费。\n• Coinbase负责托管稳定币，并完成和法币的兑换。\n• Marqeta负责发卡和支付处理。持卡人可在数百万商户消费。\n• 交易结算走Coinbase旗下的Base区块链。企业可全天候充值。\n• 服务面向加密公司和传统企业。费用和上线时间暂未公布。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/business/2026-10-16-coinbase-to-power-stablecoin-backed-cards-for-marqeta-customers-418833",
+"publishedAt": "2026-10-16T17:21:29Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
 },
 {
 "id": "cn-cls-b84e4a0c1b27",
@@ -702,6 +910,19 @@
 "fetchedAt": "2026-10-16T16:32:18Z"
 },
 {
+"id": "cn-ithome-015c0bad8874",
+"title": "华硕新款电竞显示器开售",
+"summary": "华硕ROG超杀27二代显示器开售。到手价3299元。主打320赫兹的OLED屏。",
+"detail": "华硕ROG超杀27二代显示器已经开售。到手价3299元。它主打高刷新率的OLED屏幕。\n• 屏幕是26.5英寸2K面板，刷新率最高320赫兹。\n• 面板是量子点OLED，响应时间只要0.03毫秒。\n• 色域覆盖99%的DCI-P3，通过了HDR500认证。\n• 新涂层更耐刮，抗刮能力是前代的2.5倍。\n• 接口有DP、HDMI，还有能供电15瓦的USB-C。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/014/140.htm",
+"publishedAt": "2026-10-16T11:49:09Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
 "id": "cn-ithome-0aa18741ded0",
 "title": "赵非接替朱华荣任长安董事长",
 "summary": "长安汽车发布高层人事调整公告。朱华荣辞去董事长职务。赵非接任董事长，叶沛出任总裁。",
@@ -1001,6 +1222,19 @@
 "fetchedAt": "2026-10-16T16:41:31Z"
 },
 {
+"id": "kr-hk-it-531649d34a5b",
+"title": "韩国创业公司参与世界号发射",
+"summary": "韩国第五次世界号火箭发射成功。这是首次由民间主导。多家初创公司参与其中。",
+"detail": "韩国第五次世界号火箭发射成功。这是首次由民间主导的发射。约300家韩国企业参与，其中有不少初创公司。\n• 一枚火箭约有37万个零件，每个都要准时可靠。\n• 六家代表性初创企业承担了重要任务。多数成立于2021年到2024年。\n• 有初创公司负责制作验证卫星主体，目前运行良好。\n• 另一家主导开发的立方体卫星，双向通信已经成功。\n• 韩国航天部门表示，到2032年每年至少一次民间主导发射。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/2026101670881",
+"publishedAt": "2026-10-16T08:53:07Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
 "id": "kr-hk-it-c7a4b9949a9b",
 "title": "韩国世界号所送卫星将陆续上岗",
 "summary": "韩国世界号火箭第五次发射，把14颗卫星送入轨道。卫星正在做入轨检测。主卫星群明年3月正式工作。",
@@ -1103,6 +1337,19 @@
 "url": "https://www.irobotnews.com/news/articleView.html?idxno=49037",
 "publishedAt": "2026-10-16T08:15:55Z",
 "fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "cn-qbitai-304c578cf24f",
+"title": "世界模型加VLA 机器人走进药房",
+"summary": "国内机器人已在药房和工厂上岗。业内认为VLA管能干。世界模型管想清楚再干。",
+"detail": "国内机器人已经在药房取药，也进了工厂和实验室。业内认为，VLA负责能干活。世界模型负责先想清楚再干。\n• 蚂蚁灵波的通用大脑已适配17个主流机器人品牌。它已在上海多家药房上岗。\n• 智元的新模型把预测和动作放进同一个模型。训练数据从300小时扩到3万小时。\n• 新模型在陌生场景的成功率，约提升到原来的2.6倍。\n• 机器人作业时，大约每100毫秒预测一次未来。\n• 业内也说了难点。推演要快，拟真要准，数据要足。有人估计需要近千万小时数据。",
+"category": "robot",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503865.html",
+"publishedAt": "2026-10-16T08:12:01Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
 },
 {
 "id": "cn-36kr-5d03027b781a",
@@ -1493,6 +1740,19 @@
 "url": "https://www.irobotnews.com/news/articleView.html?idxno=49030",
 "publishedAt": "2026-10-16T02:56:54Z",
 "fetchedAt": "2026-10-16T16:41:31Z"
+},
+{
+"id": "kr-etnews-519fd24ef3c0",
+"title": "KT推出AI店铺选歌服务",
+"summary": "韩国电信KT推出店铺音乐新服务。AI按行业和天气自动选歌。主要面向小商户。",
+"detail": "韩国电信KT推出AI店铺音乐服务。AI会综合行业、店铺氛围、时段和天气来选歌。主要面向咖啡馆和餐厅等小商户。\n• 服务按时段自动换歌，美发店等也能用。\n• 店里可放二维码，顾客扫码就能留言，方便维护老客。\n• 月费9900韩元，可和KT手机费一起交。新用户前三个月免费。\n• KT表示，希望帮小商户提高经营效率。之后还会完善营销功能。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-etnews",
+"sourceName": "전자신문",
+"url": "https://www.etnews.com/20261016000151",
+"publishedAt": "2026-10-16T02:54:00Z",
+"fetchedAt": "2026-10-17T11:07:13Z"
 },
 {
 "id": "kr-irobot-e8b41082845b",
