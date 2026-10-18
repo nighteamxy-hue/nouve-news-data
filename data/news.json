@@ -1,5 +1,161 @@
 [
 {
+"id": "cn-cls-31f225ae785b",
+"title": "科创板龙头开启新一轮回购",
+"summary": "多家科创板龙头公司开启新一轮回购。领头的有长鑫科技、佰维存储和拓荆科技。",
+"detail": "",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2507461",
+"publishedAt": "2026-10-18T11:06:16Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-cls-ada8f886a0e0",
+"title": "算力需求催热高速接口IP",
+"summary": "算力需求增长，带火了高速接口IP。多家厂商正在加码布局。业内认为产业链协同是关键。",
+"detail": "",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2507504",
+"publishedAt": "2026-10-18T11:06:16Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "market-2026101820",
+"title": "股市速览：10月18日晚间",
+"summary": "韩国股市上周暴跌14.4%。A股上周全A指数跌5.1%，美债长端收益率仍在5%上方。",
+"detail": "• 中国：全A指数上周下跌5.10%。创业板指和北证50跌超8%。\n• 中国：上证指数本周一度探底3674.82点。随后强力反击。\n• 韩国：综合股指上周暴跌14.4%。必需消费品指数逆势涨0.72%。\n• 韩国：KT&G一周逆势上涨7.5%。散户约六千亿韩元涌入杠杆产品。\n• 美国：十年期美债收益率超过5%。三十年期达到5.5%。\n• 美国：9月CPI同比3.7%。30年国债剥离型ETF上周涨8.18%。",
+"category": "stock",
+"region": "cn",
+"sourceId": "market",
+"sourceName": "股市速览",
+"url": "",
+"publishedAt": "2026-10-18T11:06:16Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-panews-9b64f62b1d51",
+"title": "Cysic跨链桥遭攻击",
+"summary": "Cysic跨链桥遭到攻击。攻击者在BNB链上非法铸造1000万枚CYS。项目方已暂停跨链桥。",
+"detail": "Cysic跨链桥10月17日遭到攻击。攻击者在BNB链上非法铸造了1000万枚CYS。项目方随即暂停了跨链桥。\n• 攻击者利用了桥接数据库的未授权访问。还叠加了一处逻辑漏洞。\n• 官方称，只有跨链桥铸币功能受影响。主网和用户资产安全。\n• 涉事地址已被拉黑。约280万枚CYS转账被限制。\n• 实际损失仍在核查。安全审查完成后才会恢复跨链桥。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14ea8-a145-7122-a8be-25d954ad9339",
+"publishedAt": "2026-10-18T10:57:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-panews-1ac77eebf5cc",
+"title": "美债长端转向定价AI周期",
+"summary": "美国9月通胀数据超预期。中信证券认为，长端美债反应很快消退。定价锚已转向增长和AI周期。",
+"detail": "美国9月CPI同比3.7%，PPI同比6.3%。两项都超出预期。中信证券认为，长端美债反应很快消退。\n• CPI公布后，十年期收益率先冲高，随后回落。\n• PPI公布后，十年期几乎不动。三十年期反而下行。\n• 长端定价已转向增长和AI周期。\n• 市场更担心AI投资下行的尾部风险。\n• 资金可能从AI转向能源和防御板块。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14e9c-ca5c-7217-a52d-5e1bc0547591",
+"publishedAt": "2026-10-18T10:44:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-panews-e20d956a46ab",
+"title": "中小市值币罕见领涨比特币",
+"summary": "分析师称，八月下旬以来中小市值币涨得最猛。通常是比特币先带动行情。这次小盘趋势反转风险较高。",
+"detail": "分析师Darkfost称，八月下旬以来，中小市值币涨势最猛。这种走势很少见。通常是比特币先带动行情。\n• 中小市值币相对年均水平的偏离达到41%。\n• 同期比特币只有7%，大市值币只有3.5%。\n• 2023年熊市结束后，是比特币率先启动。\n• 小盘资产弹性大，涨得快，跌得也猛。\n• 分析师提醒，要留意趋势反转的风险。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14e8c-310c-73b9-84e4-53f263dee48c",
+"publishedAt": "2026-10-18T10:26:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-panews-7cca2c1ff459",
+"title": "微软退出Nscale数据中心项目",
+"summary": "微软退出了与英国云服务商Nscale的数据中心合作。此时Nscale正在筹备上市。IPO计划又添变数。",
+"detail": "微软退出了与英国云服务商Nscale的数据中心合作。消息正好出现在Nscale筹备上市的关键时期。\n• 微软没说原因。但项目一直延误不断。\n• 当地称电力要到2030年代才能接入。\n• 挪威旗舰项目落后约半年。规划30兆瓦，只运行了6.4兆瓦。\n• Nscale约85%合同依赖微软和Anthropic。\n• 它计划上市融资至多30亿美元，最快本月上市。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14e7d-90b7-7537-a935-80945de51e73",
+"publishedAt": "2026-10-18T10:10:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-panews-20bbb51c21ac",
+"title": "Hyperliquid盼监管落在应用层",
+"summary": "彭博社报道，Hyperliquid联创正推动美国立规。他希望保护区块链本身。监管责任放在应用层。",
+"detail": "彭博社报道，Hyperliquid联合创始人Jeff Yan在推动美国立规。他希望规则能保护区块链本身。目前Hyperliquid还没向美国客户开放。\n• 他认为监管应落在应用层。也就是在链上运营市场的金融机构。\n• 这样链本身不必承担交易所的全部合规负担。\n• 他把Hyperliquid比作亚马逊云服务。\n• 它想给传统金融机构提供底层交易技术。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14e78-4897-731a-ad25-12767525bd09",
+"publishedAt": "2026-10-18T10:04:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-panews-b5ed8a693660",
+"title": "比特币MVRV跌至25.7%",
+"summary": "比特币接近8.7万美元时遇阻回落。分析师称MVRV指标跌破30%分位。市场进入过渡积累阶段。",
+"detail": "比特币在接近8.7万美元时遇阻回落。分析师Darkfost指出，MVRV指标重新跌破30%分位。市场再次进入过渡阶段。\n• 当前MVRV分位为25.7%，处在较低区间。\n• 这一区间历史上只占约四分之一的时间。\n• 价格已离开极度低估的底部区域。\n• 分析师认为，眼下仍有筹码积累区的特征。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14e03-7e35-7479-85a8-0ca2d3ccb6f5",
+"publishedAt": "2026-10-18T09:00:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "kr-hk-finance-7516df9276ba",
+"title": "韩养老金投资者转买美股ETF",
+"summary": "韩国养老金投资者九月调整组合。他们卖出国内半导体ETF。转而大举买入美国大盘指数产品。",
+"detail": "韩国养老金投资者在九月调整了组合。他们卖出国内半导体ETF。转而大举买入美国大盘指数产品。\n• 起因是三星电子和SK海力士七月大跌。之后股价一直窄幅震荡。\n• 投资者想降低过度集中的风险。\n• 九月净买入增幅前四名，全是美国指数ETF。\n• 排第一的是标普500ETF，第二是纳指100ETF。\n• 第五名是一只美国道琼斯股息ETF。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610167004i",
+"publishedAt": "2026-10-18T06:35:56Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "kr-hk-finance-79aa8f93f880",
+"title": "韩国主动ETF落后中日",
+"summary": "全球都在推进完全主动型ETF。中国可能下月推出首只。韩国至今还没迈出第一步。",
+"detail": "全球市场都在推进完全主动型ETF。这类产品不受指数约束。中国可能下个月推出首只，韩国还没起步。\n• 沪深交易所六月出台指引。已有18只产品申报。\n• 日本2023年就推出了首只同类产品。\n• 韩国原定上半年提交法案，至今没有动静。\n• 单一股票杠杆ETF之争，吸走了市场关注。\n• 旧规制还让表现好的主动ETF接连下市。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610140311i",
+"publishedAt": "2026-10-18T05:25:53Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "kr-hk-finance-bd2679910c38",
+"title": "美长债和原油ETF领涨",
+"summary": "上周美国长期国债和原油ETF表现最好。韩国股市暴跌后，散户约六千亿韩元涌入杠杆产品。",
+"detail": "上周美国长期国债和原油ETF表现最好。美债长端利率回落。油价因中东供应担忧反弹。\n• 美国30年国债剥离型ETF领涨。一周涨了8.18%。\n• 这类ETF对利率很敏感。利率一降，价格涨得快。\n• 美国原油库存减少，原油ETF也走强。\n• 散户押注韩国股市反弹。约六千亿韩元流入杠杆产品。\n• 大量资金停在货币市场ETF，等待入场。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/202610167299i",
+"publishedAt": "2026-10-18T05:20:48Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "cn-ctnews-93a49a96ab6a",
 "title": "非遗传播蓝皮书发布",
 "summary": "第四届非遗保护年会在辽宁朝阳开幕。会上发布了非遗传播蓝皮书。去年相关发文增长超过两倍。",
@@ -39,19 +195,6 @@
 "fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
-"id": "market-2026101814",
-"title": "股市速览：10月18日午间",
-"summary": "美股上周大跌，纳指一周跌了4.5%。A股连跌四周，但沪指周五收复3700点。",
-"detail": "• 中国：本周沪指一度跌到3670多点。周五尾盘重回3700点上方。\n• 中国：全A连续四周收跌。日均成交不足1.58万亿元。\n• 中国：股票ETF逆势吸金。整周净流入超过650亿元。\n• 美国：纳指一周跌4.5%，标普500跌1.9%。\n• 美国：纳斯达克100一周跌5.5%。前二十大AI和芯片股市值蒸发超一万亿美元。\n• 韩国：AI股抛售波及首尔股市，一度触发熔断。周四韩国央行公布利率决议。",
-"category": "stock",
-"region": "cn",
-"sourceId": "market",
-"sourceName": "股市速览",
-"url": "",
-"publishedAt": "2026-10-18T05:06:32Z",
-"fetchedAt": "2026-10-18T05:06:32Z"
-},
-{
 "id": "kr-edaily-4aa9e476c17e",
 "title": "还清贷款 信用分却没涨",
 "summary": "韩国政策性小额贷款还清后，过半的人信用分没回升。议员呼吁改革信用评价体系。",
@@ -63,6 +206,19 @@
 "url": "https://www.edaily.co.kr/News/Read?newsId=02151686645614232&mediaCodeNo=257",
 "publishedAt": "2026-10-18T04:54:00Z",
 "fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-edaily-709af06b962b",
+"title": "韩国美妆新秀靠口碑出海",
+"summary": "韩国美妆创业公司迪马普在开拓美日市场。它不靠大渠道和网红，而是直接接触顾客。今年海外占比有望达三成。",
+"detail": "韩国美妆创业公司迪马普正在扩大美国和日本市场。它不靠大型渠道，也不依赖网红。公司选择直接接触顾客。\n• 主打产品是泡沫精华液。累计卖出超过110万瓶。\n• 两年前纽约快闪店，单日卖了一万美元。\n• 去年销售额约140亿韩元。海外占比不到一成。\n• 今年海外占比已达两成。全年有望翻倍增长。\n• 今年融资30亿韩元。卡卡奥风投等机构参投。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=02148406645614232&mediaCodeNo=257",
+"publishedAt": "2026-10-18T04:54:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
 },
 {
 "id": "kr-edaily-286666eb2e77",
@@ -104,6 +260,19 @@
 "fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
+"id": "cn-eastmoney-c512665c68f2",
+"title": "浙商证券：A股底部迎曙光",
+"summary": "浙商证券认为，本周A股加速赶底后开始反击。底部重构迎来曙光。建议确立多头思维，不要盲目杀跌。",
+"detail": "浙商证券表示，本周市场加速赶底。后半周开始反击。它认为底部重构已迎来曙光。\n• 周四周五尾盘，主流ETF有大资金放量买入。\n• 上证指数一度探底到3674.82点。随后强力反击。\n• 恒生科技本周跌幅小于A股。有望率先企稳。\n• 防御看电力、消费红利和中字头。进攻看恒科、证券和军工。\n• 风险是经济修复不及预期，以及地缘政治变化。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610183899115926.html",
+"publishedAt": "2026-10-18T04:19:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "kr-edaily-5918606d95d6",
 "title": "韩国美元保险再度热卖",
 "summary": "韩元汇率下跌，美元保险又火了。九月银行渠道销售创年内新高。监管担心误导销售。",
@@ -117,6 +286,32 @@
 "fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
+"id": "cn-eastmoney-917552c4ceb6",
+"title": "国金：美欧成金融风险源",
+"summary": "国金证券认为，美欧正成为金融风险源。发达经济体财政压力突出。新兴市场的缓冲垫明显变厚。",
+"detail": "国金证券发布宏观报告。它认为美欧正在成为金融风险源。新兴市场的抗风险能力则在变强。\n• 发达经济体财政压力大。初级赤字恶化是主因。\n• 美国债务率升到126%左右。利息负担快速增加。\n• 美国十年期国债收益率超过5%。三十年期达到5.5%。\n• 民粹主义抬头，削减赤字更难。\n• 新兴市场外储占GDP，从8.9%升到18.5%。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610183899115773.html",
+"publishedAt": "2026-10-18T04:11:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "cn-eastmoney-ba7e722bd1e3",
+"title": "银河策略：科技超跌有修复空间",
+"summary": "上周全A指数下跌5.1%。中国银河认为，压力主要来自海外利率和油价。科技成长超跌，存在修复空间。",
+"detail": "上周A股连续调整。全A指数下跌5.10%。创业板指和北证50跌超8%。\n• 银河认为，压力主要来自海外利率和油价。\n• 美债收益率长期在5%以上，压制风险资产。\n• 美国9月CPI超预期，加息押注升温。\n• 股票型ETF连续净流入，资金有托底信号。\n• 看好通信设备、PCB、存储和服务器。三季报将决定板块分化。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610183899115481.html",
+"publishedAt": "2026-10-18T04:08:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "cn-eastmoney-dc1882503049",
 "title": "A股震荡 股票ETF逆势吸金",
 "summary": "本周A股大幅震荡，沪指一度跌破3700点。周五尾盘反弹收复。股票ETF整周净流入超650亿元。",
@@ -128,6 +323,19 @@
 "url": "https://finance.eastmoney.com/a/202610183899115316.html",
 "publishedAt": "2026-10-18T04:06:00Z",
 "fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-hk-finance-edaeefe64035",
+"title": "韩股暴跌 KT&G逆势涨7%",
+"summary": "上周韩国综合股指暴跌14.4%。防御型消费股逆势上涨。KT&G一周涨了7.5%。",
+"detail": "上周韩国综合股指暴跌14.4%。主因是AI引发的信用风险担忧。防御型消费股却逆势上涨。\n• 必需消费品指数逆势涨了0.72%。\n• KT&G一周涨了7.5%。三季度业绩有望创新高。\n• 三季度营业利润预计4600亿到5100亿韩元。\n• 海外香烟销量增长是主要动力。\n• 公司正回购3600亿韩元股票，持续到12月22日。",
+"category": "stock",
+"region": "kr",
+"sourceId": "kr-hk-finance",
+"sourceName": "한국경제 증권",
+"url": "https://www.hankyung.com/article/2026101667136",
+"publishedAt": "2026-10-18T04:00:06Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
 },
 {
 "id": "cn-panews-16ca45ec058a",
@@ -338,6 +546,19 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "us-techcrunch-568162b981af",
+"title": "Meta删除争议抓取条款",
+"summary": "Meta更新商业条款，一段话引发担忧。外界怕它借此抓取网站训练AI。现在这段话已被删除。",
+"detail": "Meta最近更新了商业使用条款。其中一段话引发担心。外界认为它可能借此抓取网站训练AI。现在这段话已被删除。\n• 原条款覆盖商业账户的网站内容。用途包括开发和训练产品。\n• Meta称这些条款只适用于广告和商业产品。\n• 发言人坚称，爬取网页的方式没有改变。\n• Meta去年赢了一场AI版权官司。其他相关诉讼仍在继续。",
+"category": "tech",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+"publishedAt": "2026-10-17T21:31:32Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "kr-blockmedia-3aa15b37edc1",
 "title": "中东紧张叠加ETF流出 币市走弱",
 "summary": "中东局势紧张，加上ETF资金外流，加密市场走弱。比特币在8.15万美元附近。市场关注8万美元能否守住。",
@@ -364,6 +585,19 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "us-techcrunch-b769f5e984a3",
+"title": "Anthropic初级员工变少",
+"summary": "Anthropic发布报告，谈员工结构变化。初级员工占比明显下降。人均开会时间反而增加了两成。",
+"detail": "Anthropic发布报告，讲公司员工结构的变化。过去一年，初级员工占比明显下降。开会时间也变多了。\n• 技术岗初级员工占比，从21%降到14%。\n• 招聘中初级技术岗占比，从27%跌到9%。\n• 两成员工说，工作重心变成了管理多个AI。\n• 报告认为，人的注意力成了效率瓶颈。\n• 人均会议时间同比增加20%。公司认为面对面协作不可替代。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+"publishedAt": "2026-10-17T20:21:19Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "kr-blockmedia-b1ba630ac6b5",
 "title": "法国拟对换稳定币征税",
 "summary": "法国国民议会以一票之差通过修正案。数字资产兑换稳定币也要缴资本利得税。法案还需参议院表决。",
@@ -388,6 +622,45 @@
 "url": "https://www.blockmedia.co.kr/archives/1152940?utm_source=general&utm_medium=rss",
 "publishedAt": "2026-10-17T20:04:30Z",
 "fetchedAt": "2026-10-18T02:11:37Z"
+},
+{
+"id": "us-theblock-56c8ce3d03f9",
+"title": "九家美企反对股票代币化交易",
+"summary": "九家美国上市公司反对自家股票在OKXICE上代币化交易。名单包括博通和威瑞森。平台仍计划上线数十只美股。",
+"detail": "九家美国上市公司反对自家股票被代币化交易。交易平台是OKXICE。它由OKX和洲际交易所合资成立。\n• 反对名单有CoreWeave、博通、威瑞森和联合健康。\n• 应用光电说，担心股价和流动性受影响。\n• 纳斯达克也将选择退出。它担心价格偏离主市场。\n• 平台仍计划上线苹果、微软、英伟达等股票。\n• 代币化股票总市值约35亿美元。年初只有6亿多。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/markets/2026-10-17-coreweave-broadcom-verizon-among-nine-companies-objecting-to-tokenized-trading-of-their-shares-on-okxice-418859",
+"publishedAt": "2026-10-17T19:56:25Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "us-techcrunch-51c1c9a5e48b",
+"title": "Replit默认模型改用OpenAI",
+"summary": "Replit首席执行官说，默认模型换成OpenAI。用户仍可选择Claude。Replit曾是Anthropic的大客户。",
+"detail": "Replit首席执行官马萨德表示，不再与Anthropic合作。他随后澄清，用户仍可选用Claude。但默认模型已换成OpenAI。\n• 马萨德说，原因包括成本、合作关系和性能。\n• 知情人士反驳称，双方合作仍在进行。\n• Replit曾是Anthropic前五大客户之一。切换默认可能大减相关支出。\n• 企业业务今年约占收入一成半。他预计2027年将过半。",
+"category": "ai",
+"region": "us",
+"sourceId": "us-techcrunch",
+"sourceName": "TechCrunch",
+"url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+"publishedAt": "2026-10-17T18:48:08Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
+"id": "us-theblock-8919d13e6295",
+"title": "土耳其证实Hex创始人被捕",
+"summary": "土耳其证实，Hex创始人理查德哈特已被捕。警方查获约715万美元现金和6个冷钱包。Hex代币一天跌了约14%。",
+"detail": "土耳其证实，Hex和PulseChain创始人理查德哈特已被拘留。他10月14日在伊斯坦布尔被捕。妻子和三名保镖也被带走。\n• 警方搜查15处地址。查获约715万美元现金。\n• 还扣押了6个冷钱包、7支枪和1400发子弹。\n• 芬兰申请了国际刑警红色通缉。罪名涉嫌逃税和袭击。\n• 美国证交会此前的诉讼已被法院驳回。\n• Hex代币24小时内下跌约14%。",
+"category": "crypto",
+"region": "us",
+"sourceId": "us-theblock",
+"sourceName": "The Block",
+"url": "https://www.theblock.co/news/regulation/2026-10-17-turkey-confirms-hex-founder-richard-hearts-arrest-says-police-seized-7-15-million-and-six-cold-wallets-418852",
+"publishedAt": "2026-10-17T18:14:43Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
 },
 {
 "id": "cn-ithome-e37d22dead67",
@@ -453,6 +726,19 @@
 "url": "https://www.ithome.com/1/014/404.htm",
 "publishedAt": "2026-10-17T13:56:46Z",
 "fetchedAt": "2026-10-18T02:11:37Z"
+},
+{
+"id": "cn-ithome-bb8c9bc15162",
+"title": "华硕推八类万兆电竞网线",
+"summary": "华硕推出ROG八类电竞网线。它配套八爪鱼8路由器。1.5米卖299元，3米卖399元。",
+"detail": "华硕推出一款ROG八类万兆电竞网线。它是八爪鱼8路由器的配套产品。一共有两种长度。\n• 1.5米版卖299元。3米版卖399元。\n• 华硕称它支持40Gbps带宽。载波频率达到2000MHz。\n• 相比七类网线，带宽提升了4倍。\n• 网线用双重屏蔽，抗串扰能力强。外层编织护套，耐磨耐拉。\n• 线芯是无氧铜，长距离损耗更低。水晶头镀金，更耐插拔。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/014/399.htm",
+"publishedAt": "2026-10-17T13:15:27Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
 },
 {
 "id": "us-ieee-f5f0086a8065",
@@ -598,6 +884,19 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "cn-cls-20fb3ed30501",
+"title": "平陆运河带旺造修船",
+"summary": "财联社记者调研平陆运河沿线船厂。船厂订单饱满。运河正在打开造船修船的新增量。",
+"detail": "",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-cls",
+"sourceName": "财联社",
+"url": "https://www.cls.cn/detail/2507471",
+"publishedAt": "2026-10-17T09:19:00Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "cn-panews-8e37ca1c93a5",
 "title": "DeepSeek快速版模型更新",
 "summary": "DeepSeek把V4.1 Flash更新到1017版本。网页、APP和API已同步切换。各项基准测试都有提升。",
@@ -676,6 +975,19 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "kr-hk-econ-aa2dfb868bf1",
+"title": "韩国低地板公交陷财政难题",
+"summary": "韩国要求新购公交必须是低地板车。规定由中央定，钱却主要由地方出。各地普及进度差距很大。",
+"detail": "韩国从2023年起，要求新购公交必须是低地板车。2027年起，广域公交也要纳入。问题是规定中央定，钱却多由地方出。\n• 低地板车更贵，票价却涨不上去。企业没有动力多买。\n• 政府用补贴填补车价差额。国家和地方各出一半。\n• 首尔比例不同。国家出四成，首尔出六成。\n• 各地财政实力差距大。普及率因此参差不齐。\n• 部分地区进度慢，乘客出行便利受影响。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/202610141445i",
+"publishedAt": "2026-10-17T06:00:04Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
+},
+{
 "id": "kr-hk-econ-f7d3265d405d",
 "title": "特斯拉SpaceX合并传闻再起",
 "summary": "特斯拉展示会飞的新跑车后，合并传闻升温。马斯克称两家工程师密切合作。但合并尚未宣布。",
@@ -752,6 +1064,19 @@
 "url": "https://www.panewslab.com/zh/articles/01a14807-42fe-7231-9d6a-ed8f58465e72",
 "publishedAt": "2026-10-17T04:04:00Z",
 "fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "kr-hk-it-8bd8b331104f",
+"title": "iPhone Duo韩国开启预购",
+"summary": "苹果折叠屏iPhone Duo在韩国开启预购。三大运营商推出大额优惠。初期货源偏紧。",
+"detail": "苹果首款折叠屏iPhone Duo在韩国开启预购。三大运营商同步推出优惠。它要和三星Fold8争夺用户。\n• 起售价约320万韩元。顶配首次突破500万韩元。\n• SK电讯优惠最高约221万韩元。LG U+优惠超过100万韩元。\n• KT推出可自由组合的套餐方案。\n• 经销商称初期货少。补贴竞争可能没那么激烈。\n• 三星Fold8销量据称是前作两倍多。年轻女性也很青睐。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610166963g",
+"publishedAt": "2026-10-17T04:00:04Z",
+"fetchedAt": "2026-10-18T11:06:16Z"
 },
 {
 "id": "kr-hk-econ-7d4021987046",
