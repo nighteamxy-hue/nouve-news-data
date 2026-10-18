@@ -1,5 +1,200 @@
 [
 {
+"id": "cn-ctnews-93a49a96ab6a",
+"title": "非遗传播蓝皮书发布",
+"summary": "第四届非遗保护年会在辽宁朝阳开幕。会上发布了非遗传播蓝皮书。去年相关发文增长超过两倍。",
+"detail": "第四届非遗保护年会在辽宁朝阳开幕。年会发布了一份非遗传播蓝皮书。它总结了2025年非遗传播的整体情况。\n• 去年非遗相关发文约2.8亿条。同比增长252%。\n• 全网互动量达到2157亿次。同比增长约26%。\n• 中央和地方媒体一起发力，传播主体更丰富。\n• 年轻人参与积极，全年热度不断。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/jujiao/content/2026-10/17/content_193313.html",
+"publishedAt": "2026-10-18T05:06:32Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-ctnews-02b84740ca2a",
+"title": "30名青年非遗传承人获扶持",
+"summary": "第二期全国青年非遗传承人扶持计划公布名单。共有30人入选。第一期入选的是20人。",
+"detail": "第四届非遗保护年会上，公布了第二期青年非遗传承人扶持计划名单。共有30位青年传承人入选。\n• 入选者包括湘绣传承人夏艳。还有南通蓝印花布传承人吴灵姝。\n• 入选要经过报名、初选、复选和面试等多个环节。\n• 这项计划由中国非遗保护协会在2023年发起。\n• 第一期有20人入选。三年来在技艺和品牌上都有成长。",
+"category": "travel",
+"region": "cn",
+"sourceId": "cn-ctnews",
+"sourceName": "中国旅游新闻网",
+"url": "https://www.ctnews.com.cn/dongtai/content/2026-10/17/content_193312.html",
+"publishedAt": "2026-10-18T05:06:32Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-nweon-e8bcce889b3f",
+"title": "VR电影半条被子长沙首映",
+"summary": "VR电影半条被子在长沙首映。观众戴上PICO头显观看。它把红色故事做成了沉浸体验。",
+"detail": "为纪念长征胜利九十周年，VR电影半条被子在长沙首映。观众借助PICO头显身临其境。\n• 故事发生在湖南汝城县沙洲村。三名女红军留下了半条被子。\n• 首映地点在长沙县一家XR影城。\n• 主办方说，作品让革命历史走出了史料。\n• 这是湖南推动红色文化和数字科技融合的成果。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-nweon",
+"sourceName": "映维网",
+"url": "https://news.nweon.com/143637",
+"publishedAt": "2026-10-18T05:06:32Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "market-2026101814",
+"title": "股市速览：10月18日午间",
+"summary": "美股上周大跌，纳指一周跌了4.5%。A股连跌四周，但沪指周五收复3700点。",
+"detail": "• 中国：本周沪指一度跌到3670多点。周五尾盘重回3700点上方。\n• 中国：全A连续四周收跌。日均成交不足1.58万亿元。\n• 中国：股票ETF逆势吸金。整周净流入超过650亿元。\n• 美国：纳指一周跌4.5%，标普500跌1.9%。\n• 美国：纳斯达克100一周跌5.5%。前二十大AI和芯片股市值蒸发超一万亿美元。\n• 韩国：AI股抛售波及首尔股市，一度触发熔断。周四韩国央行公布利率决议。",
+"category": "stock",
+"region": "cn",
+"sourceId": "market",
+"sourceName": "股市速览",
+"url": "",
+"publishedAt": "2026-10-18T05:06:32Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-edaily-4aa9e476c17e",
+"title": "还清贷款 信用分却没涨",
+"summary": "韩国政策性小额贷款还清后，过半的人信用分没回升。议员呼吁改革信用评价体系。",
+"detail": "韩国政策性小额贷款还清一年后，过半的人信用分没有改善。国会议员公开数据后指出，按时还款没换来信用修复。\n• 五年里约92万人还清贷款。其中52.1%评分没改善。\n• 去年还清贷款的人，平均分数反而降了62分。\n• 议员朴敏奎主张，评分要反映还款意愿。\n• 他建议改革评价体系，让中低信用者更容易贷款。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=02151686645614232&mediaCodeNo=257",
+"publishedAt": "2026-10-18T04:54:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-edaily-286666eb2e77",
+"title": "AI热潮抬升韩国国际地位",
+"summary": "韩国财经部长李亨一出席国际会议。AI和芯片景气让韩国更受重视。他一口气举行了19场双边会谈。",
+"detail": "韩国财政经济部长李亨一在曼谷出席国际会议。受AI和半导体景气带动，韩国地位明显上升。\n• 他举行了19场双边会谈。是前任的两到四倍。\n• 韩美财长和央行行长首次举行二加二会谈。\n• 韩日货币互换协议将延长三年。规模100亿美元。\n• 他预计今年韩国经济增长超过3%。\n• 国际货币基金组织提醒，韩国对AI投资周期依赖加深。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=02109046645614232&mediaCodeNo=257",
+"publishedAt": "2026-10-18T04:48:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-edaily-8352b5f698d6",
+"title": "韩国大力士人形机器人年底亮相",
+"summary": "韩国KNR系统将在年底推出液压人形机器人。它目标单手举起300公斤。明年计划卖5到10台。",
+"detail": "韩国KNR系统计划年底公开一款大型液压人形机器人。它主打力量，目标是单手托起300公斤。\n• 机器人手部用液压驱动。只有四根手指，重在抓握。\n• 手臂比常人长。摔倒时能撑地，还能爬坡。\n• 现在售价约5亿到6亿韩元。量产后有望降到1亿多。\n• 长期目标是远程操控。灾害现场可以代替人干活。\n• 公司希望政府先采购，帮国产机器人打开市场。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=02072966645614232&mediaCodeNo=257",
+"publishedAt": "2026-10-18T04:46:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-panews-26e4f04e781f",
+"title": "Solana九月转账量增三成",
+"summary": "Solana网络九月转账量达5.57亿笔。比八月增长33%。稳定币转账量排名第一。",
+"detail": "Solana网络九月的转账量达到5.57亿笔。比八月增长了33%。数据来自Blockworks。\n• 九月日均转账约1860万笔。\n• Solana的稳定币转账量排名第一。\n• 稳定币需求持续增长。公链使用热度在上升。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14d40-4db2-73d3-9053-e5f2a77dda1d",
+"publishedAt": "2026-10-18T04:23:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-edaily-5918606d95d6",
+"title": "韩国美元保险再度热卖",
+"summary": "韩元汇率下跌，美元保险又火了。九月银行渠道销售创年内新高。监管担心误导销售。",
+"detail": "最近韩元汇率走低，美元保险又卖火了。投保人用美元交保费，到期也拿美元。不少人想趁汇率低时入场。\n• 今年三大银行渠道美元保险卖了约6445亿韩元。\n• 九月卖出1311亿韩元，创年内新高。比六月涨了五倍多。\n• 中途退保可能亏本。外币保险平均返还率不到九成。\n• 汇率上涨时，保费负担也会加重。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-edaily",
+"sourceName": "이데일리 Edaily",
+"url": "https://www.edaily.co.kr/News/Read?newsId=01863046645614232&mediaCodeNo=257",
+"publishedAt": "2026-10-18T04:12:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-eastmoney-dc1882503049",
+"title": "A股震荡 股票ETF逆势吸金",
+"summary": "本周A股大幅震荡，沪指一度跌破3700点。周五尾盘反弹收复。股票ETF整周净流入超650亿元。",
+"detail": "本周A股三大指数大幅震荡。沪指一度跌到3670多点。周五尾盘反弹，重回3700点上方。\n• 股票ETF逆势吸金。整周净流入超过650亿元。\n• 15日单日净流入超过470亿元。宽基ETF是主要方向。\n• 有观点认为，部分资金在护盘，稳住权重股。\n• 技术上3600点是重要支撑。\n• 但ETF吸金不等于见底。美联储月底议息是关键变量。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610183899115316.html",
+"publishedAt": "2026-10-18T04:06:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-panews-16ca45ec058a",
+"title": "三大投行看好资产代币化",
+"summary": "高盛、富国和大摩在三季报会上都看好代币化。它们把代币化看成增长机会。而不是威胁。",
+"detail": "高盛、富国银行和摩根士丹利在三季度财报会上都表态看好代币化。它们把它看成增长机会，而不是威胁。\n• 高盛认为，代币化能扩大交易业务。\n• 富国银行说，代币化存款系统已用于跨境支付。最快两分钟到账。\n• 摩根士丹利预计，代币化会带来更多财富管理需求。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14d2c-0d7f-7642-bb4e-66c6e375ea47",
+"publishedAt": "2026-10-18T04:00:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-panews-f0a56849be0c",
+"title": "OpenCode遭蒸馏攻击",
+"summary": "编程工具OpenCode遭遇大规模蒸馏攻击。约1.4%的控制台用户受影响。团队正与多家AI公司补救。",
+"detail": "OpenCode发生一起安全事件。有人发起大规模蒸馏攻击，想批量抽取模型能力。约1.4%的控制台用户受到影响。\n• 团队已发邮件通知受影响用户。\n• 波及范围只限关联外部服务商的用户。\n• 事件还在处理中，技术细节暂未公开。\n• OpenCode正与Anthropic、OpenAI和谷歌一起补救。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14d1b-ca1d-7320-a551-fcafd292b2ad",
+"publishedAt": "2026-10-18T04:00:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-panews-380c067808ca",
+"title": "Kraken加速并购 拟收欧洲银行",
+"summary": "Kraken母公司签约收购芬兰Saldo银行。它想借此拿到欧盟银行牌照。新掌门上任后并购明显提速。",
+"detail": "Kraken母公司Payward签约收购芬兰Saldo银行的母公司。价格没有公布。交易预计2027年完成，还要等监管批准。\n• Saldo银行在立陶宛、芬兰、瑞典和德国营业。\n• Payward想拿到欧盟银行牌照。把存贷款、支付和数字资产整合起来。\n• 联席CEO塞西上任后，先后收购了NinjaTrader、Bitnomial等公司。\n• 有前高管担心他兼任风投董事长，存在利益冲突。Kraken称已获董事会批准。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14d29-f741-7252-9895-c6caa609f397",
+"publishedAt": "2026-10-18T04:00:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-eastmoney-9c394637ddc4",
+"title": "A股连跌四周 券商看反弹",
+"summary": "A股已连续四周收跌，成交接近地量。历史上四连阴后多次反弹。多家券商认为超跌反弹时机渐近。",
+"detail": "上周A股再度探底。全A指数连续四周收跌。日均成交不足1.58万亿元，处于地量水平。\n• 上周宽基ETF净流入836亿元，是抄底主力。\n• 历史上周线四连阴后，七次里有六次出现反弹。\n• 方正证券认为，超跌反弹的时机正在成熟。\n• 华金证券认为短期可能见底，建议关注科技成长。\n• 下周金融街论坛等事件，或能缓和悲观情绪。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610183899110241.html",
+"publishedAt": "2026-10-18T03:12:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-panews-9ab0166250f4",
+"title": "韩国将与五大交易所谈币税",
+"summary": "韩国政府10月20日将召集五大加密交易所。双方讨论明年开征的虚拟资产税。业界呼吁再次推迟。",
+"detail": "韩国政府将在10月20日召集五大加密交易所和行业协会。听取明年开征虚拟资产税的意见。\n• 所得先扣250万韩元，再按22%征税。\n• 这项税2020年提出，已经推迟了三次。\n• 业界认为，质押、空投和DeFi的规则还不完善。\n• 业界呼吁再次延期，但政府仍按原计划推进。",
+"category": "crypto",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14d04-3021-70e4-9ff8-c2e75965a4a2",
+"publishedAt": "2026-10-18T03:00:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
 "id": "cn-nweon-73b2305710b1",
 "title": "Steam Frame更新提升无线稳定性",
 "summary": "Valve为Steam Frame推出小补丁。无线适配器配对更可靠。整体稳定性也有提升。",
@@ -11,6 +206,19 @@
 "url": "https://news.nweon.com/143633",
 "publishedAt": "2026-10-18T02:11:37Z",
 "fetchedAt": "2026-10-18T02:11:37Z"
+},
+{
+"id": "cn-panews-8a9b79e5f819",
+"title": "下周看点 美股财报季迎高潮",
+"summary": "上周纳指跌4.5%，是六月以来最差一周。下周美联储进入静默期。特斯拉和Meta等巨头将发财报。",
+"detail": "上周美股明显转弱，科技股集体遭抛售。下周美联储进入静默期，财报季成为焦点。\n• 纳指一周跌4.5%，是六月以来最差表现。标普500跌1.9%。\n• 美联储10月27日到28日开会。会前官员通常不表态。\n• 下周约70家标普成分股发财报。包括特斯拉、Meta和AT&T。\n• 周四韩国央行公布利率决议。欧洲央行行长拉加德也将讲话。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-panews",
+"sourceName": "PANews",
+"url": "https://www.panewslab.com/zh/articles/01a14cc7-11ca-76af-bff4-f310671ce919",
+"publishedAt": "2026-10-18T02:00:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
 "id": "cn-panews-167d2b5ee077",
@@ -65,6 +273,32 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "cn-eastmoney-21a0c549b4c1",
+"title": "对冲基金一周狂抛AI股",
+"summary": "高盛数据显示，对冲基金连续五天抛售AI股。一年多的净买入一周就清零。全球前二十大AI股市值蒸发超一万亿美元。",
+"detail": "对冲基金大举撤出AI股。从2025年初以来的净买入，一周之内全部抹平。抛售还波及全球市场，首尔股市一度熔断。\n• 高盛数据显示，8日到14日对冲基金连续五天净卖出。\n• 前二十大AI和芯片股市值蒸发超过一万亿美元。\n• 纳斯达克100指数一周跌5.5%。是去年四月以来最大周跌幅。\n• 投资者怀疑AI投入能否回本。博通和英特尔高管提醒，融资可能成难题。\n• 高盛警告，高杠杆和拥挤持仓会放大波动。",
+"category": "stock",
+"region": "cn",
+"sourceId": "cn-eastmoney",
+"sourceName": "东方财富 股市",
+"url": "https://finance.eastmoney.com/a/202610183899096732.html",
+"publishedAt": "2026-10-17T23:39:00Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-blockmedia-723fb1f66179",
+"title": "比特币横盘 关注八万美元",
+"summary": "比特币在8.1万美元附近横盘。短期指标偏弱，长期均线仍向上。八万美元成关键支撑。",
+"detail": "比特币在8.12万美元附近横盘。买卖双方还在拉锯。短期指标偏弱，但长期均线仍然向上。\n• 上方阻力在8.25万美元。下方支撑在8.1万美元。\n• 成交量在下降。近期反弹缺少买盘支撑。\n• 美国九月生产者价格环比涨1.3%，远超预期。\n• 美联储主席沃什没有释放再加息信号。\n• 文章认为，八万美元是中期方向的关键考验。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152961?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T23:31:52Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
 "id": "kr-blockmedia-8f12f1c88e93",
 "title": "泰达投资AI自主支付公司AIsa",
 "summary": "泰达投资了AI自主支付初创公司AIsa。AIsa累计融资超过900万美元。它让AI代理能直接付款。",
@@ -76,6 +310,19 @@
 "url": "https://www.blockmedia.co.kr/archives/1152959?utm_source=general&utm_medium=rss",
 "publishedAt": "2026-10-17T22:36:41Z",
 "fetchedAt": "2026-10-18T02:11:37Z"
+},
+{
+"id": "kr-blockmedia-dcc3b60e2f08",
+"title": "以太坊ETF十月流出近十亿",
+"summary": "以太坊现货ETF持续流出。十月累计流出接近9.55亿美元。预测市场仍看好守住2100美元。",
+"detail": "以太坊现货ETF资金持续流出。但预测市场认为，以太坊20日前守住2100美元的概率高达99.4%。\n• 17日以太坊在2400美元附近交易。\n• 17日美国以太坊现货ETF净流出6970万美元。十月累计流出近9.55亿美元。\n• 贝莱德的以太坊ETF一周流出2.99亿美元。\n• 十年期美债收益率升到5.26%，通胀担忧再起。\n• 分析师看法分歧。有人认为回踩2100美元一带是买点。",
+"category": "crypto",
+"region": "kr",
+"sourceId": "kr-blockmedia",
+"sourceName": "블록미디어",
+"url": "https://www.blockmedia.co.kr/archives/1152955?utm_source=general&utm_medium=rss",
+"publishedAt": "2026-10-17T21:47:48Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
 "id": "kr-blockmedia-0a31cd3dbc58",
@@ -182,6 +429,19 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "cn-ithome-dc5e98ec2c46",
+"title": "倍思新国标充电宝开售",
+"summary": "倍思上架一款新国标充电宝。容量两万毫安时，最大45瓦。首发价171元。",
+"detail": "倍思在京东上架了一款新国标移动电源。它内置两万毫安时电芯，还自带两根线。首发价171元，日常价202元。\n• 自带一根45瓦C口线。还有一根27瓦苹果接口线。\n• 机身另有一个45瓦C口。还有一个33瓦A口。\n• 整机重357克，方便携带。\n• 外壳用阻燃塑料。有蓝色和粉色，正面带数显屏。",
+"category": "tech",
+"region": "cn",
+"sourceId": "cn-ithome",
+"sourceName": "IT之家",
+"url": "https://www.ithome.com/1/014/405.htm",
+"publishedAt": "2026-10-17T14:20:45Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
 "id": "cn-ithome-8d4e81eeb0eb",
 "title": "奔驰纯电C300L申报图公布",
 "summary": "奔驰全新纯电C300L完成工信部申报。轴距3051毫米。最大功率230千瓦。",
@@ -219,6 +479,32 @@
 "url": "https://www.panewslab.com/zh/articles/01a149fb-cd4b-7132-9f6a-9a712195eb58",
 "publishedAt": "2026-10-17T12:59:00Z",
 "fetchedAt": "2026-10-18T02:11:37Z"
+},
+{
+"id": "cn-qbitai-8e2dfa5ad77d",
+"title": "智谱推出法律模型GLM-Legal",
+"summary": "智谱发布法律专用开源模型。它能审合同、做合规。在开放权重模型里排名第一。",
+"detail": "智谱推出法律专用开源模型GLM-Legal。它能审合同、梳理证据。还能做跨境合规。\n• 测评全通过率19.2%。准确率86.23%。\n• 它在两个榜单的开放权重模型中都排第一。\n• 测评覆盖1200多项模拟律所任务。\n• 它比Gemini慢近30分钟。但单项成本只有对方七十分之一。\n• 智谱邀请律所申请试用。后续还将接入AutoClaw。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503965.html",
+"publishedAt": "2026-10-17T12:13:45Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "cn-qbitai-13e2c19dd74e",
+"title": "清华开源智能体系统PilotDeck",
+"summary": "清华团队开源智能体操作系统PilotDeck 2.0。它让AI记忆可查可改。任务成本最多降了八成。",
+"detail": "清华自然语言处理实验室联合面壁智能，开源了PilotDeck 2.0。这是一套AI智能体操作系统。它主攻记忆管理、长任务和成本。\n• 每个项目有独立空间。文件、记忆和技能互不干扰。\n• 用户能查看、修改和删除AI的记忆。空闲时系统还会整理记忆。\n• 强模型负责规划，便宜模型负责执行。一项测试里成本从12.58美元降到2.83美元。\n• 用户关掉对话后，智能体还能继续跑长任务。\n• 系统原生支持MCP。这些数据来自团队自测。",
+"category": "ai",
+"region": "cn",
+"sourceId": "cn-qbitai",
+"sourceName": "量子位",
+"url": "https://www.qbitai.com/2026/10/503935.html",
+"publishedAt": "2026-10-17T12:10:35Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
 "id": "us-coindesk-85d39d7f8f78",
@@ -325,6 +611,19 @@
 "fetchedAt": "2026-10-17T11:07:13Z"
 },
 {
+"id": "kr-hk-econ-75e4b4f94824",
+"title": "长鑫存储业绩暴增 追赶三星",
+"summary": "韩媒关注中国长鑫存储快速崛起。三季度营收同比增长近七倍。公司已扭亏为盈。",
+"detail": "韩国经济新闻关注长鑫存储的业绩。三季度营收预计同比增长近七倍。公司由亏损转为大幅盈利。\n• 三季度净利润约十万亿韩元。去年同期还在亏损。\n• AI需求暴增，内存供不应求，价格大涨。\n• 二季度长鑫全球份额升到一成，排名第四。\n• 三星和SK海力士仍明显领先。但长鑫正在快速追赶。",
+"category": "econ",
+"region": "kr",
+"sourceId": "kr-hk-econ",
+"sourceName": "한국경제 경제",
+"url": "https://www.hankyung.com/article/2026101779027",
+"publishedAt": "2026-10-17T09:06:38Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
 "id": "cn-cls-dcad3228e7e9",
 "title": "AI缺钱担忧席卷市场",
 "summary": "市场担心AI产业资金吃紧。Meta将率先发布财报。巨额AI投资正面临信心考验。",
@@ -414,6 +713,19 @@
 "url": "https://www.panewslab.com/zh/articles/01a14814-2357-7697-8c30-75ae46165178",
 "publishedAt": "2026-10-17T04:18:00Z",
 "fetchedAt": "2026-10-17T05:05:42Z"
+},
+{
+"id": "kr-irobot-8113fd694ca1",
+"title": "韩国全国体育大会用上机器人",
+"summary": "韩国机器人产业振兴院在全国体育大会设展区。配送机器人发水、收垃圾。人形机器人也来表演。",
+"detail": "韩国机器人产业振兴院在济州全国体育大会设了体验区。活动从16日持续到22日。\n• 现场有两台四足机器人。还有15台配送机器人。\n• 配送机器人给观众发矿泉水。还负责收垃圾。\n• 四款人形机器人同场展示。能变魔术、发爆米花。\n• 振兴院希望让市民近距离体验机器人。",
+"category": "robot",
+"region": "kr",
+"sourceId": "kr-irobot",
+"sourceName": "로봇신문",
+"url": "https://www.irobotnews.com/news/articleView.html?idxno=49040",
+"publishedAt": "2026-10-17T04:07:16Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
 "id": "cn-panews-dc163afeef66",
@@ -533,6 +845,19 @@
 "fetchedAt": "2026-10-18T02:11:37Z"
 },
 {
+"id": "kr-hk-it-0516d639b569",
+"title": "减肥针热带火配套管理应用",
+"summary": "韩国减肥针用户越来越多。专门的管理应用随之走红。业界也担心健康数据隐私。",
+"detail": "韩国减肥针热潮带火了一类健康应用。它们专门服务使用司美格鲁肽等药物的人。\n• 应用能记录注射日期和剂量。还能记录体重和副作用。\n• 有的应用提供食谱。拍照就能估算热量。\n• 大多数应用免费，靠广告赚钱。部分功能要付费。\n• 用药和症状记录很敏感，隐私问题受到关注。\n• 文章提醒，应用不能替代医生的用药指导。",
+"category": "tech",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610167095i",
+"publishedAt": "2026-10-17T02:00:02Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
 "id": "kr-blockmedia-dee5678bc9c5",
 "title": "DeepSigma推美股链上合约",
 "summary": "DeepSigma推出去中心化永续合约模拟平台。覆盖77个传统金融市场。团队来自华尔街和科技公司。",
@@ -544,6 +869,32 @@
 "url": "https://www.blockmedia.co.kr/archives/1152835?utm_source=general&utm_medium=rss",
 "publishedAt": "2026-10-17T01:54:58Z",
 "fetchedAt": "2026-10-17T11:07:13Z"
+},
+{
+"id": "cn-36kr-abfa65e3bae4",
+"title": "特斯拉飞行跑车开订 技术出口拟收紧",
+"summary": "特斯拉发布第二代Roadster跑车。中国官网已开放预订。中国还拟新增40项限制出口技术。",
+"detail": "特斯拉发布第二代Roadster跑车。中国官网已经可以预订。意向金33.2万元，可以全额退。\n• 新车演示了倒置坡道行驶。还展示了短暂腾空。\n• 马斯克称它能短途飞行。能否上市还要看各地法规。\n• 中国拟修订出口技术目录。新增40项技术。\n• 这些技术涉及AI、生物医药和光伏三大领域。",
+"category": "econ",
+"region": "cn",
+"sourceId": "cn-36kr",
+"sourceName": "36氪",
+"url": "https://36kr.com/p/4029260041245314",
+"publishedAt": "2026-10-17T01:00:30Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
+},
+{
+"id": "kr-hk-it-06c0c44c24ce",
+"title": "硅谷按绩效分配AI额度",
+"summary": "硅谷公司开始按效率分配AI用量。用不出成果，额度就会被砍。AI额度正成为新的职场福利。",
+"detail": "硅谷科技公司开始按效率和岗位分配AI用量额度。AI额度正成为工资之外的新福利。它也慢慢变成职场等级的标志。\n• 智能体公司Cognition表示，会按员工用量和效率调整额度。\n• 腾讯也给员工设了上限。不同员工差距最多七倍。\n• 业内认为，AI额度已和工资、期权并列，成了第四种报酬。\n• 网上有人调侃，普通开发者只能排队求额度。",
+"category": "ai",
+"region": "kr",
+"sourceId": "kr-hk-it",
+"sourceName": "한국경제 IT",
+"url": "https://www.hankyung.com/article/202610166454i",
+"publishedAt": "2026-10-17T01:00:02Z",
+"fetchedAt": "2026-10-18T05:06:32Z"
 },
 {
 "id": "kr-blockmedia-66767b7d5c3c",
