@@ -1,5 +1,5 @@
 {
- "lastScanAt": "2026-10-20T23:02:55Z",
- "lastScanStatus": "本次抓取失败：网页访问权限未获批准，全部 23 个源均无法读取，新闻未变动",
+ "lastScanAt": "2026-10-21T05:57:13Z",
+ "lastScanStatus": "新增 57 条，另生成股市速览 1 条，1 个源失败：로봇신문；IT之家、이데일리、TechCrunch、The Robot Report 部分文章无法打开",
  "intervalHours": 6
 }
