@@ -1,5 +1,5 @@
 {
- "lastScanAt": "2026-10-22T05:36:31Z",
- "lastScanStatus": "新增 56 条，删除 89 条过期条目，现有 80 条。5 个源无新增或失败：中国国家地理、이데일리、전자신문、UploadVR、CoinDesk",
+ "lastScanAt": "2026-10-22T11:07:58Z",
+ "lastScanStatus": "本次抓取失败：网页访问权限未获批准，全部 23 个源均无法读取，新闻未变动",
  "intervalHours": 6
 }
