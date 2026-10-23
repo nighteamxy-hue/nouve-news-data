@@ -577,8 +577,9 @@ const stripTags = s => decodeEntities(unCDATA(s).replace(/<script[\s\S]*?<\/scri
 const tag = (xml, name) => { const m = new RegExp(`<${name}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${name}>`, "i").exec(xml); return m ? m[1] : ""; };
 
 async function fetchFeed(s) {
+  let last = "";
   const one = async url => {
-    const text = await getText(url);
+    const text = await getText(url); last = text;
     if (/<(rss|feed|rdf:RDF)[\s>]/i.test(text.slice(0, 2000)) || /<item[\s>]/i.test(text)) return parseFeed(text, url);
     return parseListPage(text, url);
   };
@@ -588,6 +589,7 @@ async function fetchFeed(s) {
     const alt = /:\/\/www\./.test(s.url) ? s.url.replace("://www.", "://") : s.url.replace("://", "://www.");
     try { items = await one(alt); } catch {}
   }
+  if (!items.length) throw new Error("空页面 " + stripTags(last).slice(0, 50));
   return items;
 }
 function parseFeed(xml, base) {
@@ -685,7 +687,8 @@ async function runModel(env, state, messages, maxTokens, jsonMode) {
       const opts = { messages, max_tokens: maxTokens, temperature: 0.2 };
       if (jsonMode) opts.response_format = { type: "json_object" };
       const r = await env.AI.run(model, opts);
-      const out = typeof r === "string" ? r : (r.response ?? r.result?.response ?? "");
+      let out = typeof r === "string" ? r : (r.response ?? r.result?.response ?? "");
+      if (out && typeof out === "object") out = JSON.stringify(out); // some models hand back parsed JSON
       if (!out) throw new Error("empty");
       state.model = model;
       return out;
