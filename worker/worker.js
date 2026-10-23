@@ -532,7 +532,8 @@ async function pipelineTick(env, force) {
   }
 
   // 4. keep only the news day, newest first
-  let kept = news.filter(n => Date.parse(n.publishedAt) >= cutoff);
+  // An item whose publish time equals its fetch time had no real date (older code stored those); drop it.
+  let kept = news.filter(n => Date.parse(n.publishedAt) >= cutoff && (n.sourceId === "market" || n.publishedAt !== n.fetchedAt));
   kept.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   const removed = news.length - kept.length;
   kept = kept.slice(0, 400);
