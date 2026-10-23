@@ -493,7 +493,7 @@ async function pipelineTick(env, force) {
         const id = s.id + "-" + (await sha1hex(it.link)).slice(0, 12);
         if (known.has(id) || seen[id] || queue.some(q => q.id === id)) continue;
         if (it.date && it.date < cutoff) { seen[id] = now; continue; }
-        queue.push({ id, sourceId: s.id, sourceName: s.name, region: s.region || "", cat: s.category, title: it.title, link: it.link, desc: it.desc, date: it.date || 0 });
+        queue.push({ id, sourceId: s.id, sourceName: s.name, region: s.region || "", cat: s.category, title: it.title, link: it.link, desc: it.desc, date: it.date || 0, at: now });
         added++;
       }
       log.push(`${s.name}：${items.length} 条，新 ${added}`);
@@ -501,18 +501,21 @@ async function pipelineTick(env, force) {
   }
 
   // 2. turn a few queued items into finished news
-  let made = 0, skipped = 0, dup = 0;
+  let made = 0, skipped = 0, dup = 0, old = 0, undated = 0;
   const batch = state.dayCount >= PER_TICK.dayCap ? [] : queue.splice(0, PER_TICK.items);
   for (const q of batch) {
     seen[q.id] = now;
     try {
-      const text = await fetchArticle(q.link).catch(() => "");
-      const r = await summarize(env, state, q, text);
+      const art = await fetchArticle(q.link).catch(() => ({ text: "", date: 0 }));
+      let published = q.date || art.date || 0;
+      // Old evergreen pages are the main junk source: drop before spending AI on them.
+      if (published && published < cutoff) { skipped++; old++; continue; }
+      const r = await summarize(env, state, q, art.text);
       state.dayCount++;
       if (!r || r.skip) { skipped++; continue; }
-      let published = q.date || 0;
       if (!published && r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date)) published = Date.parse(r.date + "T12:00:00+09:00") || 0;
-      if (published && published < cutoff) { skipped++; continue; }
+      if (published && published < cutoff) { skipped++; old++; continue; }
+      if (!published) { skipped++; undated++; continue; }
       if (isDuplicate(r, news)) { dup++; continue; }
       const cat = CAT_NAMES[r.category] ? r.category : (CAT_NAMES[q.cat] ? q.cat : "tech");
       news.push({ id: q.id, title: r.title, summary: r.summary, detail: r.detail || "", category: cat, region: q.region, sourceId: q.sourceId, sourceName: q.sourceName, url: q.link,
@@ -534,8 +537,10 @@ async function pipelineTick(env, force) {
   const removed = news.length - kept.length;
   kept = kept.slice(0, 400);
   for (const k in seen) if (now - seen[k] > 4 * 86400e3) delete seen[k];
-  queue = queue.filter(q => !(q.date && q.date < cutoff)).slice(0, 200);
-  state.log = [{ at: new Date(now).toISOString(), made, skipped, dup, removed, queue: queue.length, notes: log.slice(0, 8) }, ...(state.log || [])].slice(0, 30);
+  // Items that waited over 8 hours are stale; newest-first so fresh news gets summarized sooner.
+  queue = queue.filter(q => !(q.date && q.date < cutoff) && now - (q.at || now) < 8 * 3600e3).slice(-150);
+  if (old || undated) log.push(`过期 ${old} 条，无日期 ${undated} 条`);
+  state.log = [{ at: new Date(now).toISOString(), made, skipped, dup, removed, queue: queue.length, notes: log.slice(0, 10) }, ...(state.log || [])].slice(0, 30);
 
   const meta = await loadMeta(env);
   if (made || removed) { meta.lastScanAt = new Date(now).toISOString(); meta.lastScanStatus = `新增 ${made} 条` + (removed ? `，清理 ${removed} 条` : ""); }
@@ -624,13 +629,34 @@ function parseListPage(html, base) {
 /* Main text of an article page: the paragraphs, else the whole body, cut to ~2500 chars. */
 async function fetchArticle(link) {
   const html = await getText(link, 300000);
+  const date = findDate(html);
   let body = html.replace(/<(script|style|nav|header|footer|aside|form|iframe|noscript)[\s\S]*?<\/\1>/gi, " ");
   const art = /<article[\s\S]*?<\/article>/i.exec(body);
   const scope = art ? art[0] : body;
   const paras = (scope.match(/<p[\s>][\s\S]*?<\/p>/gi) || []).map(stripTags).filter(t => t.length >= 25);
   let text = paras.join("\n");
   if (text.length < 300) text = stripTags(scope);
-  return text.slice(0, 2500);
+  return { text: text.slice(0, 2500), date };
+}
+/* Publish time of an article page: meta tags first, then the first full date in the visible text. */
+function findDate(html) {
+  const metas = [
+    /property=["']article:published_time["'][^>]*content=["']([^"']+)/i, /content=["']([^"']+)["'][^>]*property=["']article:published_time["']/i,
+    /"datePublished"\s*:\s*"([^"]+)"/i, /itemprop=["']datePublished["'][^>]*content=["']([^"']+)/i,
+    /name=["'](?:pubdate|publishdate|publish_date|PubDate|og:release_date|weibo:article:create_at|apub:time)["'][^>]*content=["']([^"']+)/i,
+  ];
+  for (const re of metas) { const m = re.exec(html); if (m) { const t = parseLooseDate(m[1]); if (t) return t; } }
+  const head = stripTags(html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").slice(0, 120000)).slice(0, 15000);
+  const m = /(20\d{2})[-年.\/](\d{1,2})[-月.\/](\d{1,2})日?(?:[^\d]{0,4}(\d{1,2}):(\d{2}))?/.exec(head);
+  if (!m) return 0;
+  return Date.parse(`${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}T${(m[4] || "12").padStart(2, "0")}:${m[5] || "00"}:00+08:00`) || 0;
+}
+function parseLooseDate(s) {
+  s = String(s).trim();
+  let t = Date.parse(s); if (t) return t;
+  const m = /(20\d{2})[-年.\/](\d{1,2})[-月.\/](\d{1,2})日?(?:[^\d]{0,4}(\d{1,2}):(\d{2}))?/.exec(s);
+  if (!m) return 0;
+  return Date.parse(`${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}T${(m[4] || "12").padStart(2, "0")}:${m[5] || "00"}:00+08:00`) || 0;
 }
 
 /* ---- AI editing ---- */
@@ -691,8 +717,8 @@ async function summarize(env, state, q, text) {
   const msgs = [{ role: "system", content: SYSTEM }, { role: "user", content: user }];
   let out = await runModel(env, state, msgs, 1100);
   let r = parseJSON(out);
-  if (!r) { out = await runModel(env, state, msgs, 1100, true).catch(() => ""); r = parseJSON(out); }
-  if (!r) throw new Error("bad_json");
+  if (!r) { state.lastBad = String(out).slice(0, 400); out = await runModel(env, state, msgs, 1100, true).catch(e => "ERR " + (e.message || e)); r = parseJSON(out); }
+  if (!r) { state.lastBad2 = String(out).slice(0, 400); throw new Error("bad_json"); }
   if (r.skip) return r;
   const clean = s => String(s || "").replace(/[“”"「」『』【】《》]/g, "").replace(/\s*[\/｜|]\s*/g, "，").trim();
   r.title = clean(r.title).slice(0, 30); r.summary = clean(r.summary).slice(0, 200);
