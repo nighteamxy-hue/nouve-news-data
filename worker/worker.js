@@ -444,7 +444,8 @@ const NEWS_KEY = "news_v1", QUEUE_KEY = "queue_v1", STATE_KEY = "pipe_v1", SEEN_
 const SEOUL = 9 * 3600e3;
 const CAT_NAMES = { ai: "AI", econ: "经济", stock: "股市", crypto: "数字资产", tech: "科技", robot: "机器人", travel: "文旅" };
 // Tried in order; the one that answered last time is tried first.
-const AI_MODELS = ["@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/google/gemma-3-12b-it", "@cf/meta/llama-3.1-8b-instruct"];
+// Cheapest good Chinese writer first (Qwen3 ≈ 1/7 the neurons of Llama 70B), then the fallbacks.
+const AI_MODELS = ["@cf/qwen/qwen3-30b-a3b-fp8", "@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/meta/llama-3.1-8b-instruct"];
 const PER_TICK = { feeds: 3, items: 6, feedEvery: 2.5 * 3600e3, dayCap: 90 };
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
@@ -533,7 +534,8 @@ async function pipelineTick(env, force) {
 
   // 4. keep only the news day, newest first
   // An item whose publish time equals its fetch time had no real date (older code stored those); drop it.
-  let kept = news.filter(n => Date.parse(n.publishedAt) >= cutoff && (n.sourceId === "market" || n.publishedAt !== n.fetchedAt));
+  let kept = news.filter(n => Date.parse(n.publishedAt) >= cutoff && (n.sourceId === "market" || n.publishedAt !== n.fetchedAt)
+    && !/[가-힣]/.test(n.title + n.summary));
   kept.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
   const removed = news.length - kept.length;
   kept = kept.slice(0, 400);
@@ -687,6 +689,8 @@ async function runModel(env, state, messages, maxTokens, jsonMode) {
     try {
       const opts = { messages, max_tokens: maxTokens, temperature: 0.2 };
       if (jsonMode) opts.response_format = { type: "json_object" };
+      // Qwen3 "thinks" out loud unless told not to; that would waste the token budget.
+      if (/qwen3/.test(model)) opts.messages = messages.map((m, i) => i === 0 ? { ...m, content: m.content + "\n/no_think" } : m);
       const r = await env.AI.run(model, opts);
       let out = typeof r === "string" ? r : (r.response ?? r.result?.response ?? "");
       if (out && typeof out === "object") out = JSON.stringify(out); // some models hand back parsed JSON
@@ -698,7 +702,7 @@ async function runModel(env, state, messages, maxTokens, jsonMode) {
   throw lastErr || new Error("ai_failed");
 }
 function parseJSON(s) {
-  s = String(s).replace(/```(?:json)?/gi, "");
+  s = String(s).replace(/<think>[\s\S]*?<\/think>/gi, "").replace(/```(?:json)?/gi, "");
   const start = s.indexOf("{"); if (start < 0) return null;
   let body = s.slice(start);
   const end = body.lastIndexOf("}");
