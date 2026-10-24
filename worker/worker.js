@@ -446,7 +446,9 @@ const CAT_NAMES = { ai: "AI", econ: "经济", stock: "股市", crypto: "数字�
 // Tried in order; the one that answered last time is tried first.
 // Cheapest good Chinese writer first (Qwen3 ≈ 1/7 the neurons of Llama 70B), then the fallbacks.
 const AI_MODELS = ["@cf/qwen/qwen3-30b-a3b-fp8", "@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/meta/llama-3.1-8b-instruct"];
-const PER_TICK = { feeds: 3, items: 6, feedEvery: 2.5 * 3600e3, dayCap: 90 };
+// dayCap is an AI budget in "Qwen calls" (~25 neurons each; free tier is 10k neurons/day).
+// A call that fell back to Llama 70B costs about 6 Qwen calls. srcCap/catCap keep one topic from flooding the list.
+const PER_TICK = { feeds: 3, items: 6, feedEvery: 2.5 * 3600e3, dayCap: 300, srcCap: 12, catCap: { crypto: 20 } };
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
 /* The news day starts at 08:00 Seoul: keep items from the 08:00 before the latest one. */
@@ -478,7 +480,8 @@ async function pipelineTick(env, force) {
   const sources = sourcesAll.filter(s => s.enabled !== false);
   const log = [];
   const seoulDay = new Date(now + SEOUL).toISOString().slice(0, 10);
-  if (state.day !== seoulDay) { state.day = seoulDay; state.dayCount = 0; }
+  if (state.day !== seoulDay) { state.day = seoulDay; state.dayCount = 0; state.srcMade = {}; state.catMade = {}; }
+  state.srcMade = state.srcMade || {}; state.catMade = state.catMade || {};
   const cutoff = cutoffMs(now);
   const known = new Set(news.map(n => n.id));
 
@@ -503,7 +506,15 @@ async function pipelineTick(env, force) {
 
   // 2. turn a few queued items into finished news
   let made = 0, skipped = 0, dup = 0, old = 0, undated = 0;
-  const batch = state.dayCount >= PER_TICK.dayCap ? [] : queue.splice(0, PER_TICK.items);
+  // Pick fairly: sources that have produced least today first, newest items first; skip sources/topics at their cap.
+  const full = q => (state.srcMade[q.sourceId] || 0) >= PER_TICK.srcCap || (state.catMade[q.cat] || 0) >= (PER_TICK.catCap[q.cat] || 1e9);
+  const order = queue.filter(q => !full(q)).sort((a, b) => (state.srcMade[a.sourceId] || 0) - (state.srcMade[b.sourceId] || 0) || (b.date || b.at || 0) - (a.date || a.at || 0));
+  const picked = [], perSrc = {};
+  for (const q of order) { if (picked.length >= PER_TICK.items) break; if ((perSrc[q.sourceId] || 0) >= 2) continue; perSrc[q.sourceId] = (perSrc[q.sourceId] || 0) + 1; picked.push(q); }
+  const batch = state.dayCount >= PER_TICK.dayCap ? [] : picked;
+  if (!batch.length && state.dayCount >= PER_TICK.dayCap) log.push("今日 AI 额度已用完，明天 0 点恢复");
+  const pickedIds = new Set(batch.map(q => q.id));
+  queue = queue.filter(q => !pickedIds.has(q.id));
   for (const q of batch) {
     seen[q.id] = now;
     try {
@@ -512,7 +523,7 @@ async function pipelineTick(env, force) {
       // Old evergreen pages are the main junk source: drop before spending AI on them.
       if (published && published < cutoff) { skipped++; old++; continue; }
       const r = await summarize(env, state, q, art.text);
-      state.dayCount++;
+      state.dayCount += /qwen/.test(state.model || "") ? 1 : 6;
       if (!r || r.skip) { skipped++; continue; }
       if (!published && r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date)) published = Date.parse(r.date + "T12:00:00+09:00") || 0;
       if (published && published < cutoff) { skipped++; old++; continue; }
@@ -522,6 +533,7 @@ async function pipelineTick(env, force) {
       news.push({ id: q.id, title: r.title, summary: r.summary, detail: r.detail || "", category: cat, region: q.region, sourceId: q.sourceId, sourceName: q.sourceName, url: q.link,
         publishedAt: new Date(published || now).toISOString(), fetchedAt: new Date(now).toISOString() });
       known.add(q.id); made++;
+      state.srcMade[q.sourceId] = (state.srcMade[q.sourceId] || 0) + 1; state.catMade[cat] = (state.catMade[cat] || 0) + 1;
     } catch (e) { log.push(`${q.sourceName}：总结失败 ${String(e.message || e).slice(0, 60)}`); }
   }
 
