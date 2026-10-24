@@ -45,10 +45,10 @@ export default {
         return new Response(r.body, { headers: { "content-type": type, "cache-control": `public, max-age=${Math.min(ttl, 300)}` } });
       }
       if (request.method === "GET" && p === "/api/news") {
-        const [news, meta, sources] = await Promise.all([loadNews(env), loadMeta(env), loadSources(env)]);
+        const [news, meta, sources, digests] = await Promise.all([loadNews(env), loadMeta(env), loadSources(env), loadDigests(env)]);
         const newsText = JSON.stringify(news);
         if (env.AI) ctx.waitUntil(pregen(env, 12).catch(() => {}));   // someone is listening: get the next clips ready
-        const body = `{"news":${newsText},"sources":${JSON.stringify(sources)},"meta":${JSON.stringify({ ...meta, voice: !!env.AI })}}`;
+        const body = `{"news":${newsText},"digests":${JSON.stringify(digests)},"sources":${JSON.stringify(sources)},"meta":${JSON.stringify({ ...meta, voice: !!env.AI })}}`;
         return new Response(body, { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
       }
       if (request.method === "GET" && p === "/api/audio") return audio(request, env, ctx, url);
@@ -116,7 +116,7 @@ async function audio(request, env, ctx, url) {
   const corePromise = (async () => {
     const hit = await env.NEWS_KV.get(coreKey(id, mode), "arrayBuffer");
     if (hit) return decodeWav(hit);
-    const news = await loadNews(env);
+    const news = await loadPlayable(env);
     const n = news.find(x => x.id === id);
     if (!n) return null;
     return makeClip(env, ctx, coreKey(id, mode), speechSegments(n, mode, env));
@@ -155,7 +155,7 @@ function concat(chunks) {
    `budget` caps the number of text-to-speech calls in one run. */
 async function pregen(env, budget) {
   if (!env.AI || !env.NEWS_KV) return;
-  const news = await loadNews(env);
+  const news = await loadNews(env);   // round-ups are voiced only when tapped, to save the voice quota
   const since = Date.now() - 48 * 3600e3;
   const fresh = news.filter(n => !(Date.parse(n.publishedAt) < since));
   const doneList = (await env.NEWS_KV.get(`pregen_${AUDIO_VERSION}`, "json")) || [];
@@ -352,7 +352,7 @@ async function streamLayout(env, ctx, mode, intro, ids) {
   const key = `pl:${LAYOUT_VERSION}:` + await sha1hex(`${AUDIO_VERSION}|${mode}|${intro}|${ids.join(",")}`);
   const hit = await env.NEWS_KV.get(key, "json");
   if (hit) return hit;
-  const [news, lens] = await Promise.all([loadNews(env), clipLengths(env)]);
+  const [news, lens] = await Promise.all([loadPlayable(env), clipLengths(env)]);
   const byId = new Map(news.map(n => [n.id, n]));
   const list = ids.map(id => byId.get(id)).filter(Boolean);
   if (!list.length) return null;
@@ -440,7 +440,7 @@ async function stream(request, env, ctx, url) {
    Runs inside the 30-minute cron, with no Claude involved: each tick refreshes a few
    feeds, pulls the article text of a few queued items, and has Workers AI (free tier)
    write the Chinese title / summary / detail. Everything lives in KV. */
-const NEWS_KEY = "news_v1", QUEUE_KEY = "queue_v1", STATE_KEY = "pipe_v1", SEEN_KEY = "seen_v1", META_KEY = "meta_v1";
+const NEWS_KEY = "news_v1", QUEUE_KEY = "queue_v1", STATE_KEY = "pipe_v1", SEEN_KEY = "seen_v1", META_KEY = "meta_v1", DIGEST_KEY = "digest_v1";
 const SEOUL = 9 * 3600e3;
 const CAT_NAMES = { ai: "AI", econ: "经济", stock: "股市", crypto: "数字资产", tech: "科技", robot: "机器人", travel: "文旅" };
 // Tried in order; the one that answered last time is tried first.
@@ -448,7 +448,11 @@ const CAT_NAMES = { ai: "AI", econ: "经济", stock: "股市", crypto: "数字�
 const AI_MODELS = ["@cf/qwen/qwen3-30b-a3b-fp8", "@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/meta/llama-3.1-8b-instruct"];
 // dayCap is an AI budget in "Qwen calls" (~25 neurons each; free tier is 10k neurons/day).
 // A call that fell back to Llama 70B costs about 6 Qwen calls. srcCap/catCap keep one topic from flooding the list.
-const PER_TICK = { feeds: 3, items: 6, feedEvery: 2.5 * 3600e3, dayCap: 300, srcCap: 12, catCap: { crypto: 20 } };
+const PER_TICK = { feeds: 4, items: 6, feedEvery: 2.5 * 3600e3, dayCap: 360, srcCap: 12, catCap: { crypto: 20 } };
+// What the list may hold at once, so one busy source or topic can't crowd out the rest.
+const KEEP = { perSource: 15, perCat: { crypto: 20 } };
+// Category round-ups: rebuilt at most every 3 hours, and only when at least 3 new items came in.
+const DIGEST = { every: 3 * 3600e3, minNew: 3, perTick: 2, maxItems: 40 };
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
 /* The news day starts at 08:00 Seoul: keep items from the 08:00 before the latest one. */
@@ -462,6 +466,14 @@ async function loadNews(env) {
   const kv = env.NEWS_KV ? await env.NEWS_KV.get(NEWS_KEY, "json") : null;
   if (Array.isArray(kv)) return kv;
   return ghJSON("data/news.json", []);
+}
+async function loadDigests(env) {
+  return (env.NEWS_KV ? await env.NEWS_KV.get(DIGEST_KEY, "json") : null) || {};
+}
+/* News items plus the category round-ups: everything the voice can read. */
+async function loadPlayable(env) {
+  const [news, dg] = await Promise.all([loadNews(env), loadDigests(env)]);
+  return news.concat(Object.values(dg));
 }
 async function loadMeta(env) {
   const kv = env.NEWS_KV ? await env.NEWS_KV.get(META_KEY, "json") : null;
@@ -546,14 +558,28 @@ async function pipelineTick(env, force) {
 
   // 4. keep only the news day, newest first
   // An item whose publish time equals its fetch time had no real date (older code stored those); drop it.
-  let kept = news.filter(n => Date.parse(n.publishedAt) >= cutoff && (n.sourceId === "market" || n.publishedAt !== n.fetchedAt)
+  // One-time clean-out (Oct 24, at the user's request): drop everything before this morning's 08:00.
+  const purgeBefore = state.purge === "p1" ? 0 : Date.parse("2026-10-23T23:00:00Z"); state.purge = "p1";
+  const liveSrc = new Set(sources.map(s => s.id));
+  let kept = news.filter(n => Date.parse(n.publishedAt) >= Math.max(cutoff, purgeBefore) && (n.sourceId === "market" || n.publishedAt !== n.fetchedAt)
+    && (n.sourceId === "market" || liveSrc.has(n.sourceId))
     && !/[가-힣]/.test(n.title + n.summary) && (String(n.title).match(/[一-鿿]/g) || []).length >= 4);
   kept.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  { const bySrc = {}, byCat = {};
+    kept = kept.filter(n => {
+      if (n.sourceId === "market") return true;
+      bySrc[n.sourceId] = (bySrc[n.sourceId] || 0) + 1; byCat[n.category] = (byCat[n.category] || 0) + 1;
+      return bySrc[n.sourceId] <= KEEP.perSource && byCat[n.category] <= (KEEP.perCat[n.category] || 1e9);
+    }); }
   const removed = news.length - kept.length;
   kept = kept.slice(0, 400);
   for (const k in seen) if (now - seen[k] > 4 * 86400e3) delete seen[k];
   // Items that waited over 8 hours are stale; newest-first so fresh news gets summarized sooner.
-  queue = queue.filter(q => !(q.date && q.date < cutoff) && now - (q.at || now) < 8 * 3600e3).slice(-150);
+  queue = queue.filter(q => liveSrc.has(q.sourceId) && !(q.date && q.date < cutoff) && now - (q.at || now) < 8 * 3600e3).slice(-150);
+
+  // 5. category round-ups (text the user reads, or taps to hear)
+  let digests = await loadDigests(env), digestsChanged = false;
+  try { digestsChanged = await refreshDigests(env, state, kept, digests, now, log); } catch (e) { log.push("汇总失败 " + String(e.message || e).slice(0, 60)); }
   if (old || undated) log.push(`过期 ${old} 条，无日期 ${undated} 条`);
   state.log = [{ at: new Date(now).toISOString(), made, skipped, dup, removed, queue: queue.length, notes: log.slice(0, 10) }, ...(state.log || [])].slice(0, 30);
 
@@ -564,8 +590,53 @@ async function pipelineTick(env, force) {
     env.NEWS_KV.put(NEWS_KEY, JSON.stringify(kept)), env.NEWS_KV.put(QUEUE_KEY, JSON.stringify(queue)),
     env.NEWS_KV.put(STATE_KEY, JSON.stringify(state)), env.NEWS_KV.put(SEEN_KEY, JSON.stringify(seen)),
     env.NEWS_KV.put(META_KEY, JSON.stringify(meta)),
+    digestsChanged ? env.NEWS_KV.put(DIGEST_KEY, JSON.stringify(digests)) : null,
   ]);
   return { made, skipped, dup, removed, queue: queue.length, feeds: due.map(s => s.name), log };
+}
+
+/* ---- category round-ups ---- */
+const DIGEST_SYSTEM = `你是中文新闻电台的主播。把用户给的一组新闻整理成一段汇总，让听众一眼看懂、也适合直接朗读。
+要求：
+- 第一行用一句话概括整体，例如：今天人工智能领域主要有四件事。
+- 然后按重要性挑出最重要的几件事，每件单独一行，用 第一、第二、第三 这样开头，每件一到两个短句，讲清楚谁做了什么、关键数字或影响。
+- 讲同一件事的多条新闻合并成一件。
+- 最后可以用一句话说说整体趋势；没有明显趋势就不写。
+- 只用新闻里写到的事实和数字，不要编造。每句不超过 25 个字。不用括号、引号，不写网址，不出现韩文。
+- 只输出汇总正文，不要标题，不要其他说明。`;
+async function refreshDigests(env, state, kept, digests, now, log) {
+  const pool = kept.filter(n => n.sourceId !== "market");
+  const groups = { all: pool };
+  for (const c of Object.keys(CAT_NAMES)) groups[c] = pool.filter(n => n.category === c);
+  let changed = false;
+  for (const c of Object.keys(digests)) if (!groups[c] || groups[c].length < 2) { delete digests[c]; changed = true; }
+  const due = Object.keys(groups).filter(c => {
+    const items = groups[c]; if (items.length < 2) return false;
+    const d = digests[c]; if (!d) return true;
+    const fresh = items.filter(n => Date.parse(n.fetchedAt) > d.at).length;
+    const gone = (d.ids || []).filter(id => !items.some(n => n.id === id)).length;
+    return now - d.at > DIGEST.every && (fresh + gone >= DIGEST.minNew);
+  }).sort((a, b) => ((digests[a] || {}).at || 0) - ((digests[b] || {}).at || 0)).slice(0, DIGEST.perTick);
+  for (const c of due) {
+    if (state.dayCount >= PER_TICK.dayCap) break;
+    const items = groups[c].slice(0, c === "all" ? 50 : DIGEST.maxItems);
+    const label = c === "all" ? "全部" : CAT_NAMES[c];
+    const list = items.map((n, i) => `${i + 1}. ${c === "all" ? "【" + (CAT_NAMES[n.category] || "综合") + "】" : ""}${n.title}：${n.summary}`).join("\n");
+    const ask = c === "all"
+      ? `下面是今天各领域的 ${items.length} 条新闻。挑出最重要的 6 到 8 件事，尽量覆盖不同领域，写成 250 到 450 字的汇总。\n\n${list}`
+      : `下面是今天${label}领域的 ${items.length} 条新闻。挑出最重要的最多 6 件事，写成 150 到 350 字的汇总。\n\n${list}`;
+    const out = await runModel(env, state, [{ role: "system", content: DIGEST_SYSTEM }, { role: "user", content: ask }], 900);
+    state.dayCount += /qwen/.test(state.model || "") ? 2 : 10;
+    let text = String(out).replace(/<think>[\s\S]*?<\/think>/gi, "").replace(/[“”"「」『』【】《》*#]/g, "").replace(/\r/g, "")
+      .split("\n").map(l => l.trim()).filter(Boolean).join("\n").slice(0, 900);
+    if ((text.match(/[\u4e00-\u9fff]/g) || []).length < 60 || /[\uac00-\ud7a3]/.test(text)) { log.push(`${label}汇总不合格，已跳过`); continue; }
+    const iso = new Date(now).toISOString();
+    digests[c] = { id: `digest-${c}-${now.toString(36)}`, digestCat: c, category: c === "all" ? "general" : c, title: `${label}新闻汇总`,
+      summary: text, detail: text, sourceId: "digest", sourceName: "新闻汇总", url: "", count: groups[c].length,
+      ids: groups[c].map(n => n.id), at: now, publishedAt: iso, fetchedAt: iso };
+    changed = true; log.push(`${label}汇总已更新`);
+  }
+  return changed;
 }
 
 /* ---- fetching ---- */

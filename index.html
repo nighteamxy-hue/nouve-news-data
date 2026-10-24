@@ -116,6 +116,19 @@ button{cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-se
 .card.done{background:color-mix(in srgb,var(--c-done) 7%,var(--surface));border-color:color-mix(in srgb,var(--c-done) 35%,var(--line));box-shadow:none}
 .card.done h3{color:var(--muted);font-weight:600}
 .tag.done{color:var(--c-done);background:color-mix(in srgb,var(--c-done) 14%,transparent);border-color:transparent;font-weight:700}
+.digest{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:14px 16px 12px;margin:0 0 12px;box-shadow:var(--shadow);border-left:4px solid var(--accent)}
+.digest .dh{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.digest .dh b{color:var(--accent);font-weight:700;font-size:13px}
+.digest .dh .sp{flex:1}
+.digest .dtext{margin-top:8px;font-size:15.5px;line-height:1.75;color:var(--ink);overflow:hidden;max-height:7em;position:relative}
+.digest .dtext p{margin:0 0 4px}
+.digest .dtext::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2em;background:linear-gradient(transparent,var(--surface))}
+.digest.open .dtext{max-height:none}
+.digest.open .dtext::after{display:none}
+.digest .dacts{display:flex;gap:8px;margin-top:10px}
+.digest .dbtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font-size:14px;font-weight:600}
+.digest .dbtn.play{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.digest .dbtn svg{width:14px;height:14px}
 .heard{display:flex;align-items:center;gap:10px;margin:8px 2px 0;font-size:12.5px;color:var(--c-done);font-weight:700}
 .heard::before,.heard::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--c-done) 35%,transparent)}
 .heard button{border:0;background:none;color:var(--muted);font:inherit;font-weight:500;padding:6px 4px;text-decoration:underline;text-underline-offset:3px}
@@ -248,6 +261,7 @@ section.blk h3{margin:0 0 4px;font-size:16px}
   <nav class="menu" id="menu" aria-label="新闻类目"></nav>
 
   <div class="sec"><h2 id="secTitle">全部</h2><span class="cnt" id="listCount"></span></div>
+  <div class="digest" id="digest" hidden></div>
   <div class="list" id="list">
     <div class="empty"><h4>正在加载新闻…</h4>稍等片刻。</div>
   </div>
@@ -334,7 +348,7 @@ section.blk h3{margin:0 0 4px;font-size:16px}
 
       <section class="blk">
         <h3>新闻源</h3>
-        <p class="hint">服务器每 30 分钟自动抓取新闻并用 AI 写总结，每个源约 3 小时刷新一次。修改新闻源需要管理密码。</p>
+        <p class="hint">服务器每 30 分钟自动抓取新闻并用 AI 写总结，每个源约 4 到 5 小时刷新一次；每个类目顶部有 AI 汇总，约 3 小时更新一次。修改新闻源需要管理密码。</p>
         <form class="frow" id="tokenForm" style="margin-bottom:6px">
           <input class="field" id="tokenInput" type="password" placeholder="管理密码" autocomplete="current-password">
           <button class="btn press" type="submit" style="flex:0 0 auto">保存</button>
@@ -392,7 +406,7 @@ const lsGet = k => { try { return localStorage.getItem(k); } catch { return null
 const lsSet = (k,v) => { try { localStorage.setItem(k,v); } catch {} };
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-let news = [], sources = [], meta = {};
+let news = [], sources = [], meta = {}, digests = {}, digestOpen = false;
 let prefs = (() => { try { return {...DEFAULT_PREFS, ...JSON.parse(lsGet("nr.prefs") || "{}")}; } catch { return {...DEFAULT_PREFS}; } })();
 if (!RATES.includes(prefs.rate)) prefs.rate = 1;
 if (!MODES.some(m => m[0] === prefs.mode)) prefs.mode = "brief";
@@ -448,7 +462,7 @@ async function load(){
     const d = await api("/api/news");
     const since = freshSince();
     news = (d.news || []).filter(n => n.category !== "ent" && (Date.parse(n.publishedAt || n.fetchedAt) || 0) >= since);   // 娱乐 no longer shown
-    sources = d.sources || []; meta = d.meta || {};
+    sources = d.sources || []; meta = d.meta || {}; digests = d.digests || {};
     loaded = true; loadError = false;
   } catch { loaded = true; loadError = !news.length; }
   const sig = news.length + "|" + (news[0] && news[0].id) + "|" + meta.lastScanAt;
@@ -499,7 +513,7 @@ function renderMenu(){
   }).join("");
 }
 function renderList(animate){
-  renderMenu();
+  renderMenu(); renderDigest();
   const v = visible();
   const mixed = tab === "mine" || tab === "watch";
   $("secTitle").textContent = tabLabel(tab);
@@ -531,6 +545,28 @@ function renderList(animate){
     </button>`).join("");
   if (animate && !reduced) { void L.offsetWidth; L.classList.add("anim"); }
 }
+/* The round-up for the category on screen: text first; tap ▶ to hear it. */
+function renderDigest(){
+  const el = $("digest");
+  const d = digests[tab === "mine" ? "all" : tab];
+  if (!loaded || !d || !d.summary) { el.hidden = true; el.dataset.id = ""; return; }
+  if (el.dataset.id !== d.id) digestOpen = false;
+  el.hidden = false; el.dataset.id = d.id;
+  el.classList.toggle("open", digestOpen);
+  const cur = player.current(), on = cur && cur.id === d.id && player.isPlaying();
+  const paras = String(d.summary).split(/\n+/).map(t => t.trim()).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join("");
+  el.innerHTML = `<div class="dh"><b>${esc(tab === "mine" ? "今日要闻汇总" : CAT[tab] + " 汇总")}</b><span>根据 ${d.count || 0} 条新闻</span><span class="sp"></span><span class="mono">${ago(d.publishedAt)}</span></div>
+    <div class="dtext" data-dg="toggle">${paras}</div>
+    <div class="dacts"><button type="button" class="dbtn play press" data-dg="play">${on ? ICON_PAUSE + "暂停" : ICON_PLAY + "听汇总"}</button><button type="button" class="dbtn press" data-dg="toggle">${digestOpen ? "收起" : "展开全文"}</button></div>`;
+}
+$("digest").addEventListener("click", e => {
+  const b = e.target.closest("[data-dg]"); if (!b) return;
+  const d = digests[tab === "mine" ? "all" : tab]; if (!d) return;
+  if (b.dataset.dg === "toggle") { digestOpen = !digestOpen; renderDigest(); return; }
+  const cur = player.current();
+  if (cur && cur.id === d.id) player.toggle(true); else player.playList([d], null, false);
+  renderDigest();
+});
 function renderStatus(){
   $("lastScan").textContent = meta.lastScanAt ? fmtTime(new Date(meta.lastScanAt)) : "—";
   const dayAgo = Date.now() - 24*3600*1000;
@@ -705,6 +741,7 @@ const player = (() => {
     $("prog").style.width = n ? ((idx+1)/queue.length*100) + "%" : "0";
     $("lockNow").textContent = n ? (playing ? "正在播报：" : "已暂停：") + n.title : "";
     $("speedBtn").textContent = prefs.rate + "×";
+    if (typeof renderDigest === "function") renderDigest();
     document.querySelectorAll(".card").forEach(el => { const on = !!n && el.dataset.id===n.id; el.classList.toggle("now", on); el.classList.toggle("paused", on && !playing); });
     if ("mediaSession" in navigator) {
       try {
@@ -853,9 +890,9 @@ const player = (() => {
       if (useStream()) { startStream(queue, i, introN); introN = 0; intro = ""; return; }
       playIdx(i, false);
     },
-    toggle(){
+    toggle(sameQueue){
       if (playing) { playing = false; tok++; if (synth) synth.cancel(); au.pause(); keepAwake(false); ui(); return; }
-      if (!queue.length || queueTab !== tab) { playUnheard(); return; }   // ▶ always plays the category on screen
+      if (!queue.length || (queueTab !== tab && !sameQueue)) { playUnheard(); return; }   // ▶ always plays the category on screen
       if (useAudio() && au.src && !au.ended && au.currentTime > 0) { playing = true; au.playbackRate = prefs.rate; au.play().catch(() => {}); ui(); return; }  // resume where it stopped
       playIdx(Math.max(0, idx), false);
     },

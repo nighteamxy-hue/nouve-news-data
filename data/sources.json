@@ -1,15 +1,5 @@
 [
   {
-    "id": "cn-36kr",
-    "name": "36氪",
-    "region": "cn",
-    "category": "tech",
-    "url": "https://www.36kr.com/feed",
-    "enabled": false,
-    "builtin": true,
-    "note": "被火山引擎反爬验证拦截，服务器无法读取"
-  },
-  {
     "id": "cn-qbitai",
     "name": "量子位",
     "region": "cn",
@@ -37,33 +27,6 @@
     "builtin": true
   },
   {
-    "id": "cn-1905",
-    "name": "1905电影网",
-    "region": "cn",
-    "category": "ent",
-    "url": "https://www.1905.com/news/",
-    "enabled": false,
-    "builtin": true
-  },
-  {
-    "id": "cn-sina-ent",
-    "name": "新浪娱乐",
-    "region": "cn",
-    "category": "ent",
-    "url": "https://ent.sina.com.cn/",
-    "enabled": false,
-    "builtin": true
-  },
-  {
-    "id": "cn-ggrobot",
-    "name": "高工机器人",
-    "region": "cn",
-    "category": "robot",
-    "url": "https://www.gg-robot.com/",
-    "enabled": false,
-    "builtin": true
-  },
-  {
     "id": "cn-dili360",
     "name": "中国国家地理",
     "region": "cn",
@@ -79,24 +42,6 @@
     "category": "travel",
     "url": "https://www.ctnews.com.cn/",
     "enabled": true,
-    "builtin": true
-  },
-  {
-    "id": "kr-osen",
-    "name": "OSEN",
-    "region": "kr",
-    "category": "ent",
-    "url": "https://www.osen.co.kr/",
-    "enabled": false,
-    "builtin": true
-  },
-  {
-    "id": "kr-starnews",
-    "name": "스타뉴스 Star News",
-    "region": "kr",
-    "category": "ent",
-    "url": "https://www.starnewskorea.com/",
-    "enabled": false,
     "builtin": true
   },
   {
@@ -136,48 +81,12 @@
     "builtin": true
   },
   {
-    "id": "kr-tenasia",
-    "name": "텐아시아 TenAsia",
-    "region": "kr",
-    "category": "ent",
-    "url": "https://www.tenasia.co.kr/",
-    "enabled": false,
-    "builtin": true
-  },
-  {
     "id": "kr-irobot",
     "name": "로봇신문",
     "region": "kr",
     "category": "robot",
     "url": "https://www.irobotnews.com/rss/allArticle.xml",
     "enabled": true,
-    "builtin": true
-  },
-  {
-    "id": "us-bloomberg",
-    "name": "Bloomberg 彭博社",
-    "region": "us",
-    "category": "econ",
-    "url": "https://feeds.bloomberg.com/markets/news.rss",
-    "enabled": false,
-    "builtin": true
-  },
-  {
-    "id": "us-benzinga",
-    "name": "Benzinga",
-    "region": "us",
-    "category": "stock",
-    "url": "https://www.benzinga.com/news",
-    "enabled": false,
-    "builtin": true
-  },
-  {
-    "id": "us-venturebeat",
-    "name": "VentureBeat",
-    "region": "us",
-    "category": "ai",
-    "url": "https://venturebeat.com/feed/",
-    "enabled": false,
     "builtin": true
   },
   {
@@ -196,15 +105,6 @@
     "category": "robot",
     "url": "https://www.therobotreport.com/feed/",
     "enabled": true,
-    "builtin": true
-  },
-  {
-    "id": "us-cnbc",
-    "name": "CNBC",
-    "region": "us",
-    "category": "econ",
-    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-    "enabled": false,
     "builtin": true
   },
   {
@@ -294,6 +194,105 @@
     "region": "us",
     "category": "crypto",
     "url": "https://www.theblock.co/rss.xml",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "cn-jiqizhixin",
+    "name": "机器之心",
+    "url": "https://www.jiqizhixin.com/rss",
+    "region": "cn",
+    "category": "ai",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "kr-aitimes",
+    "name": "AI타임스",
+    "url": "https://www.aitimes.com/rss/allArticle.xml",
+    "region": "kr",
+    "category": "ai",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "us-decoder",
+    "name": "The Decoder",
+    "url": "https://the-decoder.com/feed/",
+    "region": "us",
+    "category": "ai",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "kr-yna-econ",
+    "name": "연합뉴스 经济",
+    "url": "https://www.yna.co.kr/rss/economy.xml",
+    "region": "kr",
+    "category": "econ",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "kr-yna-market",
+    "name": "연합뉴스 证券",
+    "url": "https://www.yna.co.kr/rss/market.xml",
+    "region": "kr",
+    "category": "stock",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "us-marketwatch",
+    "name": "MarketWatch",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "region": "us",
+    "category": "stock",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "cn-huxiu",
+    "name": "虎嗅",
+    "url": "https://www.huxiu.com/rss/0.xml",
+    "region": "cn",
+    "category": "tech",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "us-verge",
+    "name": "The Verge",
+    "url": "https://www.theverge.com/rss/index.xml",
+    "region": "us",
+    "category": "tech",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "cn-ofweek-robot",
+    "name": "OFweek 机器人",
+    "url": "https://robot.ofweek.com/",
+    "region": "cn",
+    "category": "robot",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "cn-people-travel",
+    "name": "人民网 旅游",
+    "url": "https://travel.people.com.cn/",
+    "region": "cn",
+    "category": "travel",
+    "enabled": true,
+    "builtin": true
+  },
+  {
+    "id": "cn-xinhua-travel",
+    "name": "新华网 旅游",
+    "url": "https://www.news.cn/travel/",
+    "region": "cn",
+    "category": "travel",
     "enabled": true,
     "builtin": true
   }
