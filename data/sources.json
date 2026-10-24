@@ -198,15 +198,6 @@
     "builtin": true
   },
   {
-    "id": "cn-jiqizhixin",
-    "name": "机器之心",
-    "url": "https://www.jiqizhixin.com/rss",
-    "region": "cn",
-    "category": "ai",
-    "enabled": true,
-    "builtin": true
-  },
-  {
     "id": "kr-aitimes",
     "name": "AI타임스",
     "url": "https://www.aitimes.com/rss/allArticle.xml",
@@ -281,7 +272,7 @@
   {
     "id": "cn-people-travel",
     "name": "人民网 旅游",
-    "url": "https://travel.people.com.cn/",
+    "url": "http://travel.people.com.cn/",
     "region": "cn",
     "category": "travel",
     "enabled": true,
