@@ -452,7 +452,7 @@ const PER_TICK = { feeds: 4, items: 6, feedEvery: 2.5 * 3600e3, dayCap: 360, src
 // What the list may hold at once, so one busy source or topic can't crowd out the rest.
 const KEEP = { perSource: 15, perCat: { crypto: 20 } };
 // Category round-ups: rebuilt at most every 3 hours, and only when at least 3 new items came in.
-const DIGEST = { every: 3 * 3600e3, minNew: 3, perTick: 2, maxItems: 40 };
+const DIGEST = { every: 3 * 3600e3, minNew: 3, perTick: 3, maxItems: 40 };
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
 /* The news day starts at 08:00 Seoul: keep items from the 08:00 before the latest one. */
@@ -599,9 +599,9 @@ async function pipelineTick(env, force) {
 const DIGEST_SYSTEM = `你是中文新闻电台的主播。把用户给的一组新闻整理成一段汇总，让听众一眼看懂、也适合直接朗读。
 要求：
 - 第一行用一句话概括整体，例如：今天人工智能领域主要有四件事。
-- 然后按重要性挑出最重要的几件事，每件单独一行，用 第一、第二、第三 这样开头，每件一到两个短句，讲清楚谁做了什么、关键数字或影响。
+- 然后按重要性挑出最重要的几件事，每件单独一行，行首用「• 」开头，不要写 第一、第二、首先 这类序号词。每件一到两个短句，讲清楚谁做了什么、关键数字或影响。
 - 讲同一件事的多条新闻合并成一件。
-- 最后可以用一句话说说整体趋势；没有明显趋势就不写。
+- 最后可以另起一行，不加圆点，用一句话说说整体趋势；没有明显趋势就不写。
 - 只用新闻里写到的事实和数字，不要编造。每句不超过 25 个字。不用括号、引号，不写网址，不出现韩文。
 - 只输出汇总正文，不要标题，不要其他说明。`;
 async function refreshDigests(env, state, kept, digests, now, log) {
@@ -612,7 +612,7 @@ async function refreshDigests(env, state, kept, digests, now, log) {
   for (const c of Object.keys(digests)) if (!groups[c] || groups[c].length < 2) { delete digests[c]; changed = true; }
   const due = Object.keys(groups).filter(c => {
     const items = groups[c]; if (items.length < 2) return false;
-    const d = digests[c]; if (!d) return true;
+    const d = digests[c]; if (!d || d.v !== 2) return true;
     const fresh = items.filter(n => Date.parse(n.fetchedAt) > d.at).length;
     const gone = (d.ids || []).filter(id => !items.some(n => n.id === id)).length;
     if (items.length >= 2 * (d.count || 0) && now - d.at > 30 * 60e3) return true;   // the list has doubled: don't wait 3 hours
@@ -629,10 +629,12 @@ async function refreshDigests(env, state, kept, digests, now, log) {
     const out = await runModel(env, state, [{ role: "system", content: DIGEST_SYSTEM }, { role: "user", content: ask }], 900);
     state.dayCount += /qwen/.test(state.model || "") ? 2 : 10;
     let text = String(out).replace(/<think>[\s\S]*?<\/think>/gi, "").replace(/[“”"「」『』【】《》*#]/g, "").replace(/\r/g, "")
-      .split("\n").map(l => l.trim()).filter(Boolean).join("\n").slice(0, 900);
+      .split("\n").map(l => l.trim()).filter(Boolean)
+      .map(l => l.replace(/^(?:[•·\-]\s*)?(?:第[一二三四五六七八九十]+|首先|其次|再次|\d+[.、)）])[，,、：:.\s]*/, "• ").replace(/^[•·\-]\s*/, "• "))
+      .join("\n").slice(0, 900);
     if ((text.match(/[\u4e00-\u9fff]/g) || []).length < 60 || /[\uac00-\ud7a3]/.test(text)) { log.push(`${label}汇总不合格，已跳过`); continue; }
     const iso = new Date(now).toISOString();
-    digests[c] = { id: `digest-${c}-${now.toString(36)}`, digestCat: c, category: c === "all" ? "general" : c, title: `${label}新闻汇总`,
+    digests[c] = { v: 2, id: `digest-${c}-${now.toString(36)}`, digestCat: c, category: c === "all" ? "general" : c, title: `${label}新闻汇总`,
       summary: text, detail: text, sourceId: "digest", sourceName: "新闻汇总", url: "", count: groups[c].length,
       ids: groups[c].map(n => n.id), at: now, publishedAt: iso, fetchedAt: iso };
     changed = true; log.push(`${label}汇总已更新`);

@@ -122,6 +122,9 @@ button{cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-se
 .digest .dh .sp{flex:1}
 .digest .dtext{margin-top:8px;font-size:15.5px;line-height:1.75;color:var(--ink);overflow:hidden;max-height:7em;position:relative}
 .digest .dtext p{margin:0 0 4px}
+.digest .dtext ul{margin:2px 0 4px;padding-left:1.15em}
+.digest .dtext li{margin:0 0 6px;padding-left:2px}
+.digest .dtext li::marker{color:var(--accent)}
 .digest .dtext::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2em;background:linear-gradient(transparent,var(--surface))}
 .digest.open .dtext{max-height:none}
 .digest.open .dtext::after{display:none}
@@ -554,7 +557,7 @@ function renderDigest(){
   el.hidden = false; el.dataset.id = d.id;
   el.classList.toggle("open", digestOpen);
   const cur = player.current(), on = cur && cur.id === d.id && player.isPlaying();
-  const paras = String(d.summary).split(/\n+/).map(t => t.trim()).filter(Boolean).map(t => `<p>${esc(t)}</p>`).join("");
+  const paras = detailHtml(d.summary);   // "• " lines become a bullet list
   el.innerHTML = `<div class="dh"><b>${esc(tab === "mine" ? "今日要闻汇总" : CAT[tab] + " 汇总")}</b><span>根据 ${d.count || 0} 条新闻</span><span class="sp"></span><span class="mono">${ago(d.publishedAt)}</span></div>
     <div class="dtext" data-dg="toggle">${paras}</div>
     <div class="dacts"><button type="button" class="dbtn play press" data-dg="play">${on ? ICON_PAUSE + "暂停" : ICON_PLAY + "听汇总"}</button><button type="button" class="dbtn press" data-dg="toggle">${digestOpen ? "收起" : "展开全文"}</button></div>`;
