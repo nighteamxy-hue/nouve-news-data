@@ -615,6 +615,7 @@ async function refreshDigests(env, state, kept, digests, now, log) {
     const d = digests[c]; if (!d) return true;
     const fresh = items.filter(n => Date.parse(n.fetchedAt) > d.at).length;
     const gone = (d.ids || []).filter(id => !items.some(n => n.id === id)).length;
+    if (items.length >= 2 * (d.count || 0) && now - d.at > 30 * 60e3) return true;   // the list has doubled: don't wait 3 hours
     return now - d.at > DIGEST.every && (fresh + gone >= DIGEST.minNew);
   }).sort((a, b) => ((digests[a] || {}).at || 0) - ((digests[b] || {}).at || 0)).slice(0, DIGEST.perTick);
   for (const c of due) {
