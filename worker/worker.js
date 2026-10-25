@@ -63,7 +63,7 @@ export default {
       if (request.method === "GET" && p === "/api/pipeline") {
         // ?run=1 forces one tick now (for checking); plain GET shows the state
         if (url.searchParams.get("run") === "1") return json(await pipelineTick(env, url.searchParams.get("force") === "1"));
-        const [st, q] = await Promise.all([env.NEWS_KV.get(STATE_KEY, "json"), env.NEWS_KV.get(QUEUE_KEY, "json")]);
+        const { state: st, queue: q } = await loadPipe(env);
         return json({ state: st, queue: (q || []).length, queueHead: (q || []).slice(0, 5).map(x => x.title) });
       }
       if (request.method === "GET" && p === "/api/log") {
@@ -158,28 +158,21 @@ async function pregen(env, budget) {
   const news = await loadNews(env);   // round-ups are voiced only when tapped, to save the voice quota
   const since = Date.now() - 48 * 3600e3;
   const fresh = news.filter(n => !(Date.parse(n.publishedAt) < since));
-  const doneList = (await env.NEWS_KV.get(`pregen_${AUDIO_VERSION}`, "json")) || [];
-  const done = new Set(doneList);
-  let calls = 0, made = 0, changed = false;
+  // Which clips exist already: one list call instead of a "done" record that cost a KV write each run.
+  const have = await clipLengths(env);
+  let calls = 0, made = 0;
   // Only the short version is made ahead of time: the detailed one is rarely played and
   // its long clips would eat the free KV limits (1,000 writes a day, 1 GB storage).
-  outer: for (const mode of ["brief"]) {
-    for (const n of fresh) {
-      const k = `${n.id}:${mode}`;
-      if (done.has(k)) continue;
-      if (mode === "detail" && !n.detail) { done.add(k); changed = true; continue; }
-      const segs = speechSegments(n, mode, env);
-      if (calls + segs.length > budget) break outer;
-      calls += segs.length;
-      try {
-        if (!(await env.NEWS_KV.get(coreKey(n.id, mode), "arrayBuffer"))) { await makeClip(env, null, coreKey(n.id, mode), segs); made++; }
-        done.add(k); changed = true;
-      } catch {}
-    }
-  }
-  if (changed) {
-    const live = new Set(fresh.map(n => n.id));
-    await env.NEWS_KV.put(`pregen_${AUDIO_VERSION}`, JSON.stringify([...done].filter(k => live.has(k.slice(0, k.lastIndexOf(":"))))));
+  for (const n of fresh) {
+    const key = coreKey(n.id, "brief");
+    if (have.has(key)) continue;
+    const segs = speechSegments(n, "brief", env);
+    if (calls + segs.length > budget) break;
+    calls += segs.length;
+    try {
+      // the list can lag a minute behind, so check the clip itself before making it
+      if (!(await env.NEWS_KV.get(key, "arrayBuffer"))) { await makeClip(env, null, key, segs); made++; }
+    } catch {}
   }
   return { made, calls };
 }
@@ -441,6 +434,14 @@ async function stream(request, env, ctx, url) {
    feeds, pulls the article text of a few queued items, and has Workers AI (free tier)
    write the Chinese title / summary / detail. Everything lives in KV. */
 const NEWS_KEY = "news_v1", QUEUE_KEY = "queue_v1", STATE_KEY = "pipe_v1", SEEN_KEY = "seen_v1", META_KEY = "meta_v1", DIGEST_KEY = "digest_v1";
+// state + queue + seen live in ONE key, written once per tick: the free plan allows 1,000 KV writes a day.
+const PIPE_KEY = "pipe_v2";
+async function loadPipe(env) {
+  const p = await env.NEWS_KV.get(PIPE_KEY, "json");
+  if (p) return p;
+  const [state, queue, seen] = await Promise.all([env.NEWS_KV.get(STATE_KEY, "json"), env.NEWS_KV.get(QUEUE_KEY, "json"), env.NEWS_KV.get(SEEN_KEY, "json")]);
+  return { state, queue, seen };
+}
 const SEOUL = 9 * 3600e3;
 const CAT_NAMES = { ai: "AI", econ: "经济", stock: "股市", crypto: "数字资产", tech: "科技", robot: "机器人", travel: "文旅" };
 // Tried in order; the one that answered last time is tried first.
@@ -483,9 +484,8 @@ async function loadMeta(env) {
 async function pipelineTick(env, force) {
   if (!env.AI || !env.NEWS_KV) return { error: "no_bindings" };
   const now = Date.now();
-  const [stateRaw, sourcesAll, queueRaw, news, seenRaw] = await Promise.all([
-    env.NEWS_KV.get(STATE_KEY, "json"), loadSources(env), env.NEWS_KV.get(QUEUE_KEY, "json"), loadNews(env), env.NEWS_KV.get(SEEN_KEY, "json"),
-  ]);
+  const [pipe, sourcesAll, news] = await Promise.all([loadPipe(env), loadSources(env), loadNews(env)]);
+  const stateRaw = pipe.state, queueRaw = pipe.queue, seenRaw = pipe.seen;
   const state = stateRaw || { lastFeed: {}, lastMarket: 0, day: "", dayCount: 0, model: "", log: [] };
   const seen = seenRaw || {};
   let queue = queueRaw || [];
@@ -553,7 +553,7 @@ async function pipelineTick(env, force) {
   const seoulHour = new Date(now + SEOUL).getUTCHours(), seoulMin = new Date(now + SEOUL).getUTCMinutes();
   if ([8, 14, 20, 2].includes(seoulHour) && seoulMin < 30 && now - (state.lastMarket || 0) > 5 * 3600e3) {
     state.lastMarket = now;
-    try { const m = await marketSnapshot(env, state, news, now); if (m) { news.push(m); log.push("股市速览已生成"); } } catch (e) { log.push("股市速览失败 " + String(e.message || e).slice(0, 60)); }
+    try { const m = await marketSnapshot(env, state, news, now); if (m) { news.push(m); made++; log.push("股市速览已生成"); } } catch (e) { log.push("股市速览失败 " + String(e.message || e).slice(0, 60)); }
   }
 
   // 4. keep only the news day, newest first
@@ -583,15 +583,19 @@ async function pipelineTick(env, force) {
   if (old || undated) log.push(`过期 ${old} 条，无日期 ${undated} 条`);
   state.log = [{ at: new Date(now).toISOString(), made, skipped, dup, removed, queue: queue.length, notes: log.slice(0, 10) }, ...(state.log || [])].slice(0, 30);
 
-  const meta = await loadMeta(env);
-  if (made || removed) { meta.lastScanAt = new Date(now).toISOString(); meta.lastScanStatus = `新增 ${made} 条` + (removed ? `，清理 ${removed} 条` : ""); }
-  meta.intervalHours = 6; meta.auto = true;
-  await Promise.all([
-    env.NEWS_KV.put(NEWS_KEY, JSON.stringify(kept)), env.NEWS_KV.put(QUEUE_KEY, JSON.stringify(queue)),
-    env.NEWS_KV.put(STATE_KEY, JSON.stringify(state)), env.NEWS_KV.put(SEEN_KEY, JSON.stringify(seen)),
-    env.NEWS_KV.put(META_KEY, JSON.stringify(meta)),
-    digestsChanged ? env.NEWS_KV.put(DIGEST_KEY, JSON.stringify(digests)) : null,
-  ]);
+  // Write only what changed (free plan: 1,000 KV writes a day; voice clips need most of them).
+  const newsChanged = made > 0 || removed > 0 || kept.length !== news.length;
+  const busy = due.length || batch.length || newsChanged || digestsChanged;
+  const writes = [];
+  if (busy) writes.push(env.NEWS_KV.put(PIPE_KEY, JSON.stringify({ state, queue, seen })));
+  if (newsChanged) {
+    const meta = await loadMeta(env);
+    meta.lastScanAt = new Date(now).toISOString(); meta.lastScanStatus = `新增 ${made} 条` + (removed ? `，清理 ${removed} 条` : "");
+    meta.intervalHours = 6; meta.auto = true;
+    writes.push(env.NEWS_KV.put(NEWS_KEY, JSON.stringify(kept)), env.NEWS_KV.put(META_KEY, JSON.stringify(meta)));
+  }
+  if (digestsChanged) writes.push(env.NEWS_KV.put(DIGEST_KEY, JSON.stringify(digests)));
+  await Promise.all(writes);
   return { made, skipped, dup, removed, queue: queue.length, feeds: due.map(s => s.name), log };
 }
 
